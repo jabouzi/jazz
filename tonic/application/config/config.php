@@ -16,6 +16,7 @@
 */
 $_protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
 $config['base_url']	= $_protocol.$_SERVER['HTTP_HOST'].'/tonic/';
+echo $config['base_url'];
 
 /*
 |--------------------------------------------------------------------------
