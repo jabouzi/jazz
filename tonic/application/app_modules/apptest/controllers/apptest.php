@@ -29,5 +29,10 @@ class Apptest extends MX_Controller
         echo site_url().$this->lang->switch_uri('en');
     }
     
+    function _test()
+    {
+        echo 123;
+    }
+    
     
 }
