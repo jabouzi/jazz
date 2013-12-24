@@ -72,6 +72,15 @@ $config['url_suffix'] = '';
 */
 $config['language']	= 'english';
 
+/* default language abbreviation */
+$config['language_abbr'] = "es";
+
+/* set available language abbreviations */
+$config['lang_uri_abbr'] = array("es" => "spanish", "en" => "english", "fr" => "french");
+
+/* hide the language segment (use cookie) */
+$config['lang_ignore'] = FALSE;
+
 /*
 |--------------------------------------------------------------------------
 | Default Character Set
