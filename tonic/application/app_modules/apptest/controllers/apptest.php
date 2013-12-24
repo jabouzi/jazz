@@ -21,7 +21,7 @@ class Apptest extends MX_Controller
     {
         $this->load->helper('language');
         $this->load->helper('url');
-        var_dump($this->lang->default_lang());
+        var_dump($this->lang);
         $view_data['module'] = 'apptest';
         $view_data['view_file'] = 'apptest';
         $this->load->module('mytest')->speak('Skander');
