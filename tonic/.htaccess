@@ -1,11 +1,5 @@
 <IfModule mod_rewrite.c>
 
-    DirectoryIndex index.php
-
-	RewriteEngine on
-	RewriteBase /
-	Order allow,deny
-	Allow from all
 
     #Removes access to the system folder by users.
     #Additionally this will allow you to create a System.php controller,
