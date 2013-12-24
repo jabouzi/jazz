@@ -28,6 +28,8 @@ class Apptest extends MX_Controller
         $this->load->module('mytest')->speak('Skander');
         echo modules::run('mytest/speak', 'Yo man');
         echo site_url().$this->lang->switch_uri('en');
+        echo '<br />';
+        echo anchor('login','Login');
     }
     
     function _test()
