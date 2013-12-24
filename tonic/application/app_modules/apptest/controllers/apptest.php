@@ -16,10 +16,9 @@ class Apptest extends MX_Controller
     
     function print_other()
     {
-        $this->load->module('mytest');
-        $this->mytest->speak('Skander');
-        $param = 'skander';
-        var_dump(modules::run('modules/mytest/index')); 
+        $this->load->module('mytest')->speak('Skander');
+        //$this->mytest->speak('Skander');
+
     }
     
     
