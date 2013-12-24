@@ -4,6 +4,8 @@
 // http://maestric.com/en/doc/php/codeigniter_i18n
 // version 10 - May 10, 2012
 
+require APPPATH."third_party/MX/Lang.php";
+
 class MY_Lang extends MX_Lang {
 
 	/**************************************************

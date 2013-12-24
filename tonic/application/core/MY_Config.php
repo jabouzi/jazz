@@ -4,6 +4,8 @@
 // http://maestric.com/en/doc/php/codeigniter_i18n
 // version 10 - May 10, 2012
 
+require APPPATH."third_party/MX/Config.php";
+
 class MY_Config extends MX_Config {
 
 	function site_url($uri = '')
