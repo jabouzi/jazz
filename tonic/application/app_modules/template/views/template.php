@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8"/>
-	<title>Dashboard I Admin Panel</title>
+	<title><?php echo $page_title; ?> Admin Panel</title>
 	
 	<link rel="stylesheet" href="/tonic/assets/css/admin.css" type="text/css" media="screen" />
 	<!--[if lt IE 9]>

@@ -12,6 +12,7 @@ class Apptest extends MX_Controller
     {
         //$view_data['text'] = 'THIS IS A PRINT TEST<br />';
         //$this->load->view('apptest', $view_data);
+        $view_data['page_title'] = 'App test';
         echo modules::run('template');
 
     }

@@ -8,9 +8,9 @@ class Template extends MX_Controller
         parent::__construct();
     }
     
-    function index()
+    function index($view_data = array())
     {
-        $this->load->view('template');
+        $this->load->view('template', $view_data);
     }
     
 }
