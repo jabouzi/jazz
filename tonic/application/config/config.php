@@ -73,13 +73,13 @@ $config['url_suffix'] = '';
 $config['language']	= 'english';
 
 /* default language abbreviation */
-$config['language_abbr'] = "en";
+//$config['language_abbr'] = "en";
 
 /* set available language abbreviations */
-$config['lang_uri_abbr'] = array("en" => "english", "fr" => "french", "es" => "spanish");
+//$config['lang_uri_abbr'] = array("en" => "english", "fr" => "french", "es" => "spanish");
 
 /* hide the language segment (use cookie) */
-$config['lang_ignore'] = FALSE;
+//$config['lang_ignore'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
