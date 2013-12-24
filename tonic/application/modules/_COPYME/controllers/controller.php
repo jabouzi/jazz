@@ -1,6 +1,6 @@
 <?php
 
-class Perfectcontroller extends MX_Controller
+class Controller extends MX_Controller
 {
     
     function __construct()
