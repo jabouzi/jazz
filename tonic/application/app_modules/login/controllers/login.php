@@ -10,7 +10,10 @@ class Login extends MX_Controller
     
     function index()
     {
-        $this->load->view('login');
+        $this->load->helper('language');
+        $this->load->helper('form');
+        $view_data['languages'] = $this->lang->languages;
+        $this->load->view('login', $view_data);
     }
     
 }
