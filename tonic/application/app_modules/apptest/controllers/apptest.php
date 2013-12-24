@@ -19,7 +19,7 @@ class Apptest extends MX_Controller
         $this->load->module('mytest');
         $this->mytest->speak('Skander');
         $param = 'skander';
-        var_dump(Modules::run('../modules/mytest/index')); 
+        var_dump(modules::run('modules/mytest/index')); 
     }
     
     
