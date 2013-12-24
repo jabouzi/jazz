@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$_protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+
 $config['base_url']	= '';
 
 /*
@@ -359,10 +359,10 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 
-//$config['modules_locations'] = array(
-    //APPPATH.'modules/' => '../modules/',
-    //APPPATH.'app_modules/' => '../app_modules/',
-//);
+$config['modules_locations'] = array(
+    APPPATH.'modules/' => '../modules/',
+    APPPATH.'app_modules/' => '../app_modules/',
+);
 
 
 /* End of file config.php */
