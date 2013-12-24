@@ -14,5 +14,11 @@ class Apptest extends MX_Controller
         echo '<br />';
     }
     
+    function print_other()
+    {
+        $params = array('skander');
+        modules::run('module/mytest/speak', $params); 
+    }
+    
     
 }
