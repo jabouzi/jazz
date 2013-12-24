@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Template extends MX_Controller
+class Login extends MX_Controller
 {
     
     function __construct()
@@ -10,7 +10,7 @@ class Template extends MX_Controller
     
     function index()
     {
-        $this->load->view('template');
+        $this->load->view('login');
     }
     
 }
