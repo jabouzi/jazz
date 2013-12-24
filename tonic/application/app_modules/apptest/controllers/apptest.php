@@ -10,8 +10,9 @@ class Apptest extends MX_Controller
     
     function print_test()
     {
-        echo 'THIS IS A PRINT TEST';
-        echo '<br />';
+        $view_data['text'] = 'THIS IS A PRINT TEST<br />';
+        $this->load->view('apptest', $view_data);
+
     }
     
     function print_other()
