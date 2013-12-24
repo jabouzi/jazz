@@ -18,7 +18,7 @@ class Apptest extends MX_Controller
     {
         $this->load->module('mytest');
         $this->mytest->speak('Skander');
-        //$param = 'skander';
+        $param = 'skander';
         Modules::run('mytest/speak', $param); 
     }
     
