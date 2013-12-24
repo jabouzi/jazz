@@ -12,7 +12,7 @@ class Apptest extends MX_Controller
     {
         //$view_data['text'] = 'THIS IS A PRINT TEST<br />';
         //$this->load->view('apptest', $view_data);
-        echo modules::run('template/index');
+        echo modules::run('mytest/speak', 'Jabouzi');
 
     }
     
