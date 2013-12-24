@@ -1,6 +1,6 @@
 <?php
 
-class Mdl_perfectmodel extends CI_Model
+class Mdl_model extends CI_Model
 {
     
     function __construct()
