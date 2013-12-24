@@ -1,135 +1,165 @@
-<?php (defined('BASEPATH')) OR exit('No direct script access allowed');
-/**
-* Language Identifier
-* 
-* Adds a language identifier prefix to all site_url links
-* 
-* @copyright     Copyright (c) 2011 Wiredesignz
-* @version         0.29
-* 
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-* 
-* The above copyright notice and this permission notice shall be included in
-* all copies or substantial portions of the Software.
-* 
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-* THE SOFTWARE.
-*/
-class MY_Lang extends CI_Lang
-{
-    function __construct() {
-        
-        global $URI, $CFG, $IN;
-        
-        $config =& $CFG->config;
-        
-        $index_page    = $config['index_page'];
-        $lang_ignore   = $config['lang_ignore'];
-        $default_abbr  = $config['language_abbr'];
-        $lang_uri_abbr = $config['lang_uri_abbr'];
-        
-        /* get the language abbreviation from uri */
-        $uri_abbr = $URI->segment(1);
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-        /* adjust the uri string leading slash */
-        $URI->uri_string = preg_replace("|^\/?|", '/', $URI->uri_string);
-        
-        if ($lang_ignore) {
-            
-            if (isset($lang_uri_abbr[$uri_abbr])) {
-            
-                /* set the language_abbreviation cookie */
-                $IN->set_cookie('user_lang', $uri_abbr, $config['sess_expiration']);
-                
-            } else {
-                
-                /* get the language_abbreviation from cookie */
-                $lang_abbr = $IN->cookie($config['cookie_prefix'].'user_lang');
-            
-            }
-            
-            if (strlen($uri_abbr) == 2) {
-                
-                /* reset the uri identifier */
-                $index_page .= empty($index_page) ? '' : '/';
-                
-                /* remove the invalid abbreviation */
-                $URI->uri_string = preg_replace("|^\/?$uri_abbr\/?|", '', $URI->uri_string);
-            
-                /* redirect */
-                header('Location: '.$config['base_url'].$index_page.$URI->uri_string);
-                exit;
-            }
-            
-        } else {
-            
-            /* set the language abbreviation */
-            $lang_abbr = $uri_abbr;
-        }
+// CodeIgniter i18n library by Jérôme Jaglale
+// http://maestric.com/en/doc/php/codeigniter_i18n
+// version 10 - May 10, 2012
 
-        /* check validity against config array */
-        if (isset($lang_uri_abbr[$lang_abbr])) {
-           
-           /* reset uri segments and uri string */
-           $URI->_reindex_segments(array_shift($URI->segments));
-           $URI->uri_string = preg_replace("|^\/?$lang_abbr|", '', $URI->uri_string);
-           
-           /* set config language values to match the user language */
-           $config['language'] = $lang_uri_abbr[$lang_abbr];
-           $config['language_abbr'] = $lang_abbr;
-            
-           /* if abbreviation is not ignored */
-           if ( ! $lang_ignore) {
-                   
-                   /* check and set the uri identifier */
-                   $index_page .= empty($index_page) ? $lang_abbr : "/$lang_abbr";
-                
-                /* reset the index_page value */
-                $config['index_page'] = $index_page;
-           }
+class MY_Lang extends CI_Lang {
 
-           /* set the language_abbreviation cookie */               
-           $IN->set_cookie('user_lang', $lang_abbr, $config['sess_expiration']);
-           
-        } else {
-                       
-            /* if abbreviation is not ignored */   
-            if ( ! $lang_ignore) {                   
-                   
-                   /* check and set the uri identifier to the default value */    
-                $index_page .= empty($index_page) ? $default_abbr : "/$default_abbr";
-                
-                if (strlen($lang_abbr) == 2) {
-                    
-                    /* remove invalid abbreviation */
-                    $URI->uri_string = preg_replace("|^\/?$lang_abbr|", '', $URI->uri_string);
-                }
-                
-                /* redirect */
-                header('Location: '.$config['base_url'].$index_page.$URI->uri_string);
-                exit;
-            }
+	/**************************************************
+	 configuration
+	***************************************************/
 
-            /* set the language_abbreviation cookie */                
-            $IN->set_cookie('user_lang', $default_abbr, $config['sess_expiration']);
-        }
-        
-        log_message('debug', "Language_Identifier Class Initialized");
-    }
+	// languages
+	var $languages = array(
+		'en' => 'english',
+		'fr' => 'french'
+	);
+
+	// special URIs (not localized)
+	var $special = array (
+		""
+	);
+	
+	// where to redirect if no language in URI
+	var $default_uri = ''; 
+
+	/**************************************************/
+	
+	
+	function __construct()
+	{
+		parent::__construct();		
+		
+		global $CFG;
+		global $URI;
+		global $RTR;
+		
+		$segment = $URI->segment(1);
+		
+		if (isset($this->languages[$segment]))	// URI with language -> ok
+		{
+			$language = $this->languages[$segment];
+			$CFG->set_item('language', $language);
+
+		}
+		else if($this->is_special($segment)) // special URI -> no redirect
+		{
+			return;
+		}
+		else	// URI without language -> redirect to default_uri
+		{
+			// set default language
+			$CFG->set_item('language', $this->languages[$this->default_lang()]);
+
+			// redirect
+			header("Location: " . $CFG->site_url($this->localized($this->default_uri)), TRUE, 302);
+			exit;
+		}
+	}
+	
+	// get current language
+	// ex: return 'en' if language in CI config is 'english' 
+	function lang()
+	{
+		global $CFG;		
+		$language = $CFG->item('language');
+		
+		$lang = array_search($language, $this->languages);
+		if ($lang)
+		{
+			return $lang;
+		}
+		
+		return NULL;	// this should not happen
+	}
+	
+	function is_special($uri)
+	{
+		$exploded = explode('/', $uri);
+		if (in_array($exploded[0], $this->special))
+		{
+			return TRUE;
+		}
+		if(isset($this->languages[$uri]))
+		{
+			return TRUE;
+		}
+		return FALSE;
+	}
+	
+	function switch_uri($lang)
+	{
+		$CI =& get_instance();
+
+		$uri = $CI->uri->uri_string();
+		if ($uri != "")
+		{
+			$exploded = explode('/', $uri);
+			if($exploded[0] == $this->lang())
+			{
+				$exploded[0] = $lang;
+			}
+			$uri = implode('/',$exploded);
+		}
+		return $uri;
+	}
+	
+	// is there a language segment in this $uri?
+	function has_language($uri)
+	{
+		$first_segment = NULL;
+		
+		$exploded = explode('/', $uri);
+		if(isset($exploded[0]))
+		{
+			if($exploded[0] != '')
+			{
+				$first_segment = $exploded[0];
+			}
+			else if(isset($exploded[1]) && $exploded[1] != '')
+			{
+				$first_segment = $exploded[1];
+			}
+		}
+		
+		if($first_segment != NULL)
+		{
+			return isset($this->languages[$first_segment]);
+		}
+		
+		return FALSE;
+	}
+	
+	// default language: first element of $this->languages
+	function default_lang()
+	{
+		foreach ($this->languages as $lang => $language)
+		{
+			return $lang;
+		}
+	}
+	
+	// add language segment to $uri (if appropriate)
+	function localized($uri)
+	{
+		if($this->has_language($uri)
+				|| $this->is_special($uri)
+				|| preg_match('/(.+)\.[a-zA-Z0-9]{2,4}$/', $uri))
+		{
+			// we don't need a language segment because:
+			// - there's already one or
+			// - it's a special uri (set in $special) or
+			// - that's a link to a file
+		}
+		else
+		{
+			$uri = $this->lang() . '/' . $uri;
+		}
+		
+		return $uri;
+	}
+	
 }
 
-/* translate helper */
-function t($line) {
-    global $LANG;
-    return ($t = $LANG->line($line)) ? $t : $line;
-}
+/* End of file */
