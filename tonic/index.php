@@ -203,8 +203,3 @@ require_once BASEPATH.'core/CodeIgniter.php';
 
 /* End of file index.php */
 /* Location: ./index.php */
-
-        echo $config['language'];
-        echo '<br />';
-        echo $config['lang_abbr'];
-        echo '<br />';

@@ -19,6 +19,7 @@ class Apptest extends MX_Controller
     
     function print_other()
     {
+        echo $this->lang->lang();
         $view_data['module'] = 'apptest';
         $view_data['view_file'] = 'apptest';
         $this->load->module('mytest')->speak('Skander');
