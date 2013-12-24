@@ -22,7 +22,7 @@ class Apptest extends MX_Controller
         $view_data['module'] = 'apptest';
         $view_data['view_file'] = 'apptest';
         $this->load->module('mytest')->speak('Skander');
-
+        echo modules::run('mytest/speak', 'Yo man');
     }
     
     
