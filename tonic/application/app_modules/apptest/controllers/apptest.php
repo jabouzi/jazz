@@ -16,8 +16,8 @@ class Apptest extends MX_Controller
     
     function print_other()
     {
-        $params = array('skander');
-        modules::run('module/mytest/speak', $params); 
+        $param = 'skander';
+        modules::run('module/mytest/speak', $param); 
     }
     
     
