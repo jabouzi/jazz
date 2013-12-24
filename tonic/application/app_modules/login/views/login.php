@@ -19,6 +19,12 @@
         <p><input type="password" name="password" value="" placeholder="Password"></p>
         <p class="remember_me">
           <label>
+            <?php echo form_dropdown('lang', $languages); ?>
+            Language
+          </label>
+        </p>
+        <p class="remember_me">
+          <label>
             <input type="checkbox" name="remember_me" id="remember_me">
             Remember me on this computer
           </label>
