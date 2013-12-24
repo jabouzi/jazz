@@ -10,15 +10,17 @@ class Apptest extends MX_Controller
     
     function print_test()
     {
-        $view_data['text'] = 'THIS IS A PRINT TEST<br />';
-        $this->load->view('apptest', $view_data);
+        //$view_data['text'] = 'THIS IS A PRINT TEST<br />';
+        //$this->load->view('apptest', $view_data);
+        modules::run('template');
 
     }
     
     function print_other()
     {
+        $view_data['module'] = 'apptest';
+        $view_data['view_file'] = 'apptest';
         $this->load->module('mytest')->speak('Skander');
-        //$this->mytest->speak('Skander');
 
     }
     
