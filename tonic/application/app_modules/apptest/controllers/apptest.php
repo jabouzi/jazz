@@ -34,5 +34,10 @@ class Apptest extends MX_Controller
         echo 123;
     }
     
+    function test()
+    {
+        echo 123;
+    }
+    
     
 }
