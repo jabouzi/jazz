@@ -38,8 +38,6 @@ class MY_Lang extends CI_Lang
         $default_abbr  = $config['language_abbr'];
         $lang_uri_abbr = $config['lang_uri_abbr'];
         
-        var_dump($config);
-        
         /* get the language abbreviation from uri */
         $uri_abbr = $URI->segment(1);
 
