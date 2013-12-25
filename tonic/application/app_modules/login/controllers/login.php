@@ -42,7 +42,7 @@ class Login extends MX_Controller
                     'name'   => 'tonic_cms',
                     'value'  => '1',
                     'expire' => '86500',
-                    'domain' => site_url(),
+                    'domain' => '.'.$_SERVER['HTTP_HOST'],
                     'path'   => '/',
                     'prefix' => 'tonic_',
                     'secure' => TRUE
