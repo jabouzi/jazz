@@ -13,8 +13,6 @@ class Login extends MX_Controller
         $this->load->helper('form');
         $this->lang->load('login');
         $this->lang->load('lang');
-        $this->load->helper('cookie');
-        var_dump($this->get_cookie());
         foreach($this->lang->languages as $key => $value)
         {
             $view_data['languages'][site_url().$this->lang->switch_uri($key)] = lang($value);
@@ -56,6 +54,7 @@ class Login extends MX_Controller
                 $this->set_cookie($username.'||'.$hash);
                 $this->mdl_login->insert('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
             }
+            redirect('dashboard');
             //var_dump($this->session->userdata('user_email'));
             //var_dump($this->session->all_userdata());
         }        
@@ -89,6 +88,7 @@ class Login extends MX_Controller
             $this->session->set_userdata($user_data);            
             $this->delete_cookie($cookie['value']);
             $this->set_cookie($username.'||'.$hash);
+            redirect('dashboard');
         }
     }
 
