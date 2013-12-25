@@ -9,6 +9,7 @@ class Login extends MX_Controller
     
     function index()
     {
+        $this->load->model('mdl_login');
         $this->load->helper('cookie');
         $this->delete_cookie('','');
         var_dump($this->get_cookie());
