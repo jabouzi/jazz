@@ -43,7 +43,7 @@ class Login extends MX_Controller
                     'value'  => '1',
                     'expire' => '86500',
                     'domain' => '.'.$_SERVER['HTTP_HOST'],
-                    'secure' => TRUE
+                    'secure' => False
                 );
                 var_dump($cookie);
                 var_dump($this->input->set_cookie($cookie));
