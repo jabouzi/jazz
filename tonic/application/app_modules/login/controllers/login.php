@@ -49,7 +49,7 @@ class Login extends MX_Controller
             $remember_me = $this->input->post('remember_me');
             if ($remember_me)
             {
-                $hash = $this->encryption->generateRandomString(26);
+                $hash = date('H:i:s'); //$this->encryption->generateRandomString(26);
                 $this->delete_cookie("");
                 var_dump($_COOKIE);
                 echo '<hr>';
