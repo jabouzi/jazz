@@ -10,9 +10,13 @@ class Dashboard extends MX_Controller
     
     function index()
     {
+        $this->show();
+    }
+    
+    function show()
+    {
         $view_data['page_title'] = 'Dasboard';
         echo modules::run('template', $view_data);
-
     }
     
     function print_other()
