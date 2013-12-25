@@ -50,7 +50,7 @@ class Login extends MX_Controller
             if ($remember_me)
             {
                 $hash = $this->encryption->generateRandomString(26);
-                setcookie("tonic_cms", "",  time() - 60000);
+                $this->delete_cookie("")
                 var_dump($_COOKIE["tonic_cms"]);
                 $this->set_cookie($username.'||'.$hash);
                 var_dump($username.'||'.$hash, $hash, $_COOKIE);
@@ -127,8 +127,9 @@ class Login extends MX_Controller
             'value'  => $value,
             'expire' => (time() - 60000)
         );
-        var_dump($cookie);
-        var_dump(date('Y-m-d',(time()  - 60000)));
-        delete_cookie('tonic_cms');
+        setcookie('tonic_cms', $value, (time() - 60000), '/', $_SERVER['HTTP_HOST']);
+        //var_dump($cookie);
+        //var_dump(date('Y-m-d',(time()  - 60000)));
+        //delete_cookie('tonic_cms');
     }
 }
