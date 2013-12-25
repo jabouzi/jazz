@@ -14,6 +14,7 @@ class Login extends MX_Controller
         $this->load->helper('form');
         $this->lang->load('login');
         $view_data['languages'] = $this->lang->languages;
+        $view_data['lang'] = $lang;
         $this->load->view('login', $view_data);
     }
     
