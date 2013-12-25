@@ -19,7 +19,7 @@
         <p><input type="password" name="password" value="" placeholder="<?php echo lang('login.password'); ?>"></p>
         <p>
             <?php echo lang('login.lang'); ?>
-            <?php echo form_dropdown('lang', $languages, $lang); ?>
+            <?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
         </p>
         <p class="remember_me">
           <label>
