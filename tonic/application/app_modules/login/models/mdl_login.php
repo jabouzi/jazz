@@ -10,7 +10,7 @@ class Mdl_login extends CI_Model
     
     function get_table()
     {
-        $table = "users";
+        $table = "tonic_users";
         return $table;
     }
     
