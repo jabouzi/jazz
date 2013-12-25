@@ -39,7 +39,7 @@ class Login extends MX_Controller
             if ($remember_me)
             {
                 $this->delete_cookie($username);
-                $this->set_cookie($username);
+                //$this->set_cookie($username);
                 var_dump($this->get_cookie());
                 
             }
