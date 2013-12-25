@@ -10,9 +10,9 @@ class Login extends MX_Controller
     function index()
     {
         $this->load->library('encryption');
-        $str = $this->encryption->encrypt_url('$sj7024043$', 'clétonic');
+        $str = $this->encryption->encrypt_str('$sj7024043$', 'clétonic');
         echo $str;
-        echo $this->encryption->decrypt_url($str, 'clétonic');
+        echo $this->encryption->decrypt_str($str, 'clétonic');
          
         $this->load->helper('language');
         $this->load->helper('form');
