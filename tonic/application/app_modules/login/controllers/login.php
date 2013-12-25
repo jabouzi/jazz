@@ -52,8 +52,9 @@ class Login extends MX_Controller
                 $hash = $this->encryption->generateRandomString(26);
                 $this->delete_cookie("");
                 var_dump($_COOKIE);
-                //$this->set_cookie($username.'||'.$hash);
-                //var_dump($username.'||'.$hash, $hash, $_COOKIE);
+                echo '<hr>';
+                $this->set_cookie($username.'||'.$hash);
+                var_dump($username.'||'.$hash, $hash, $_COOKIE);
                 //setcookie("lang", $lang_value, 0, '/', 'defi7chanceux.ca');
                 //$cookie = $this->get_cookie();
                 //var_dump($cookie, $hash);
