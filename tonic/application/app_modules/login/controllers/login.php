@@ -9,6 +9,8 @@ class Login extends MX_Controller
     
     function index()
     {
+        $this->load->library('encryption');
+        $this->encryption->getEncrypt($this->security->xss_clean('7024043', 'clétonic');
         $this->load->helper('language');
         $this->load->helper('form');
         $this->lang->load('login');
@@ -25,8 +27,14 @@ class Login extends MX_Controller
     function process()
     {
         $this->load->library('encryption');
-        $str = $this->encryption->getEncrypt('$sj7024043$', 'clétonic');
-        echo $str;
-        echo $this->encryption->getDecrypt($str, 'clétonic');
+        $this->load->model('mdl_login');
+        $username = $this->security->xss_clean($this->input->post('email'));
+        $password = $this->encryption->getEncrypt($this->security->xss_clean($this->input->post('password')), 'clétonic');
+        $result = $this->login_model->validate($username, $password);
+        if(!$result){
+            $this->index();
+        }else{
+            redirect('home');
+        }        
     }
 }
