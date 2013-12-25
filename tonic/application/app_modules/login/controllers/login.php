@@ -17,7 +17,6 @@ class Login extends MX_Controller
         {
             $view_data['languages'][site_url().$this->lang->switch_uri($key)] = lang($value);
         }
-        echo $this->lang->lang();
         $view_data['lang'] = site_url().$this->lang->switch_uri($this->lang->lang());
         $view_data['redirect'] = 'onChange="window.document.location.href=this.options[this.selectedIndex].value;"';
         $this->load->view('login', $view_data);
