@@ -13,6 +13,8 @@ class Login extends MX_Controller
         $this->load->helper('form');
         $this->lang->load('login');
         $this->lang->load('lang');
+        $this->load->helper('cookie');
+        var_dump($this->get_cookie());
         foreach($this->lang->languages as $key => $value)
         {
             $view_data['languages'][site_url().$this->lang->switch_uri($key)] = lang($value);
@@ -49,20 +51,10 @@ class Login extends MX_Controller
             $remember_me = $this->input->post('remember_me');
             if ($remember_me)
             {
-                $hash = date('H:i:s'); //$this->encryption->generateRandomString(26);
-                $this->delete_cookie("");
-                var_dump($_COOKIE);
-                echo '<hr>';
-                //$this->set_cookie($username.'||'.$hash);
-                var_dump($username.'||'.$hash, $hash, $_COOKIE);
-                //setcookie("lang", $lang_value, 0, '/', 'defi7chanceux.ca');
-                //$cookie = $this->get_cookie();
-                //var_dump($cookie, $hash);
-                //$this->delete_cookie($cookie);
-                //var_dump($this->get_cookie());
-                //$this->set_cookie($username.'||'.$hash);
-                //$this->mdl_login->insert('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
-                //var_dump($this->get_cookie());
+                $hash = $this->encryption->generateRandomString(26);
+                $this->delete_cookie('tonic_cms');
+                $this->set_cookie($username.'||'.$hash);
+                $this->mdl_login->insert('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
             }
             //var_dump($this->session->userdata('user_email'));
             //var_dump($this->session->all_userdata());
@@ -111,9 +103,11 @@ class Login extends MX_Controller
         $cookie = array(
             'name'   => 'tonic_cms',
             'value'  => $value,
-            'expire' => (time() + 31536000)
+            'expire' => (time() + 31536000),
+            'domain' => $_SERVER['HTTP_HOST'],
+            'path'   => '/',
         );
-        setcookie('tonic_cms', $value, (time() + 31536000), '/', $_SERVER['HTTP_HOST']);
+        set_cookie($cookie);
     }
     
     function get_cookie()
@@ -126,11 +120,10 @@ class Login extends MX_Controller
         $cookie = array(
             'name'   => 'tonic_cms',
             'value'  => $value,
-            'expire' => (time() - 60000)
+            'expire' => (time() - 60000),
+            'domain' => $_SERVER['HTTP_HOST'],
+            'path'   => '/',
         );
-        setcookie('tonic_cms', $value, (time() - 60000), '/', $_SERVER['HTTP_HOST']);
-        //var_dump($cookie);
-        //var_dump(date('Y-m-d',(time()  - 60000)));
-        //delete_cookie('tonic_cms');
+        delete_cookie('tonic_cms');
     }
 }
