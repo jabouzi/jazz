@@ -121,7 +121,7 @@ class Login extends MX_Controller
             'expire' => (time() - 100)
         );
         var_dump($cookie);
-        var_dump(date('Y-m-d', (time() - 100)));
+        var_dump(date('Y-m-d', (time() - 1000)));
         $this->input->set_cookie($cookie);
     }
 }
