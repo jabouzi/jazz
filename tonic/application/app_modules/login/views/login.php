@@ -24,8 +24,8 @@
         </p>
         <p class="remember_me">
           <label>
-            <input type="checkbox" name="remember_me" id="remember_me" <?php if (get_cookie('tonic_cms')) echo 'checked' ?> >
-            <?php echo lang('login.remember'); var_dump(get_cookie('tonic_cms'));?>
+            <input type="checkbox" name="remember_me" id="remember_me" <?php if (get_cookie('tonic_cms')) echo 'checked'; ?> >
+            <?php echo lang('login.remember'); ?>
           </label>
         </p>
         <p class="submit"><input type="submit" name="commit" value="Login"></p>
