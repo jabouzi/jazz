@@ -21,6 +21,7 @@ class Login extends MX_Controller
     
     function show($message = null)
     {
+        $this->load->helper('cookie');
         $this->load->helper('language');
         $this->load->helper('form');
         $this->lang->load('login');
@@ -86,8 +87,8 @@ class Login extends MX_Controller
         else
         {    
             $hash = $this->encryption->generateRandomString(26);
-            $this->mdl_login->delete('tonic_cookies', $result->cookie_id);
-            $this->mdl_login->insert('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
+            $this->mdl_login->delete_cookie('tonic_cookies', $result->cookie_id);
+            $this->mdl_login->insert_cookie('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
             $result = $this->mdl_login->get_where_custom('user_email', $username, 'tonic_users')->row();
             $user_data = array(
                 'user_id' => $result->user_id,

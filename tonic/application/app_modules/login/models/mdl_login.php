@@ -45,20 +45,20 @@ class Mdl_login extends CI_Model
         return $query;
     }
     
-    function insert($table, $data)
+    function insert_cookie($table, $data)
     {
         $this->db->insert($table, $data);
     }
     
-    function update($table, $id, $data)
+    function update_cookie($table, $id, $data)
     {
-        $this->db->where('id', $id);
+        $this->db->where('cookie_id', $id);
         $this->db->update($table, $data);
     }
     
-    function delete($table, $id)
+    function delete_cookie($table, $id)
     {
-        $this->db->where('id', $id);
+        $this->db->where('cookie_id', $id);
         $this->db->delete($table);
     }
 }
