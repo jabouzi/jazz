@@ -50,7 +50,7 @@ class Login extends MX_Controller
             if ($remember_me)
             {
                 $hash = $this->encryption->generateRandomString(26);
-                $this->delete_cookie("")
+                $this->delete_cookie("");
                 var_dump($_COOKIE["tonic_cms"]);
                 $this->set_cookie($username.'||'.$hash);
                 var_dump($username.'||'.$hash, $hash, $_COOKIE);
