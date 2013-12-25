@@ -49,7 +49,7 @@ class Login extends MX_Controller
                 );
 
                 $this->input->set_cookie($cookie);
-                var_dump(cookie('tonic_cms', TRUE));
+                var_dump($this->input->cookie('tonic_cms', TRUE));
             }
             //var_dump($this->session->userdata('user_email'));
             //var_dump($this->session->all_userdata());
