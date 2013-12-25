@@ -118,10 +118,10 @@ class Login extends MX_Controller
         $cookie = array(
             'name'   => 'tonic_cms',
             'value'  => $value,
-            'expire' => -1
+            'expire' => (time() - 60000)
         );
         var_dump($cookie);
-        var_dump(date('Y-m-d', -1));
+        var_dump(date('Y-m-d',  - 60000));
         $this->input->set_cookie($cookie);
     }
 }
