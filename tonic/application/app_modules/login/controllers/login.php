@@ -72,7 +72,7 @@ class Login extends MX_Controller
                 $hash = $this->encryption->generateRandomString(26);
                 $this->set_cookie($username, $hash);
             }
-            //redirect('dashboard');
+            redirect('dashboard');
         }        
     }
     
