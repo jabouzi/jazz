@@ -11,7 +11,7 @@ class Login extends MX_Controller
     {
         if ($this->session->userdata('user_email'))
         {
-            modules::run('dashboard/show');
+            redirect('dashboard/show');
         }
         else
         {
