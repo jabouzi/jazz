@@ -58,12 +58,12 @@ class Login extends MX_Controller
                 'validated' => true
                 );
             $this->session->set_userdata($user_data);
-
+            
+            $this->delete_cookie('tonic_cms');
             $remember_me = $this->input->post('remember_me');
             if ($remember_me)
             {
                 $hash = $this->encryption->generateRandomString(26);
-                $this->delete_cookie('tonic_cms');
                 $this->set_cookie($username.'||'.$hash);
                 $this->mdl_login->insert('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
             }
