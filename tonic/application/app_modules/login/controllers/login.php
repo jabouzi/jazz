@@ -54,7 +54,7 @@ class Login extends MX_Controller
                 $this->set_cookie($username.'||'.$hash);
                 $this->mdl_login->insert('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
                 $cookie = $this->get_cookie();
-                var_dump($cookie);
+                var_dump($cookie, $hash);
             }
             //var_dump($this->session->userdata('user_email'));
             //var_dump($this->session->all_userdata());
@@ -65,7 +65,9 @@ class Login extends MX_Controller
     {
         $this->load->library('encryption');
         $this->load->model('mdl_login');
-        $cookie = $this->get_cookie();
+        $cookie = explode('||',$this->get_cookie());
+        $username = $cookie[0];
+        $hash = $cookie[1];
         $result = $this->mdl_login->validate_cookie($username, $hash);
         if(!$result)
         {
@@ -101,7 +103,8 @@ class Login extends MX_Controller
         $cookie = array(
             'name'   => 'tonic_cms',
             'value'  => $value,
-            'expire' => (time() + 31536000)
+            'expire' => (time() + 31536000),
+            'secure' => TRUE
         );
         $this->input->set_cookie($cookie);
     }
