@@ -112,7 +112,7 @@ class Login extends MX_Controller
             'value'  => $value,
             'expire' => (time() + 31536000)
         );
-        setcookie($cookie);
+        setcookie('tonic_cms', $value, (time() + 31536000), '/', $_SERVER['HTTP_HOST']);
     }
     
     function get_cookie()
