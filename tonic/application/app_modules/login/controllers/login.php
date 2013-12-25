@@ -53,7 +53,7 @@ class Login extends MX_Controller
                 $this->delete_cookie("");
                 var_dump($_COOKIE);
                 echo '<hr>';
-                $this->set_cookie($username.'||'.$hash);
+                //$this->set_cookie($username.'||'.$hash);
                 var_dump($username.'||'.$hash, $hash, $_COOKIE);
                 //setcookie("lang", $lang_value, 0, '/', 'defi7chanceux.ca');
                 //$cookie = $this->get_cookie();
