@@ -22,7 +22,7 @@ class Dashboard extends MX_Controller
     
     function show()
     {
-        $view_data['page_title'] = 'Dasboard';
+        $view_data['page_title'] = 'Dashboard';
         echo modules::run('template', $view_data);
     }
     
