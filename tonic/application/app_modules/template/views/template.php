@@ -61,7 +61,7 @@
 	
 	<section id="secondary_bar">
 		<div class="user">
-			<p><?php echo $this->session->userdata('user_firstname'); ?> <?php echo $this->session->userdata('user_lastname'); ?>  <?php anchor('login/logout', 'Logout') ?></p>
+			<p><?php echo $this->session->userdata('user_firstname'); ?> <?php echo $this->session->userdata('user_lastname'); ?>  <?php echo anchor('login/logout', 'Logout') ?></p>
 			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 		</div>
 		<div class="breadcrumbs_container">
