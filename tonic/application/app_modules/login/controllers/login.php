@@ -50,8 +50,7 @@ class Login extends MX_Controller
             {
                 $hash = $this->encryption->generateRandomString(26);
                 $cookie = $this->get_cookie();
-                var_dump($cookie);
-                $this->delete_cookie($cookie['value']);
+                $this->delete_cookie($cookie);
                 $this->set_cookie($username.'||'.$hash);
                 $this->mdl_login->insert('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
                 $cookie = $this->get_cookie();
@@ -104,8 +103,7 @@ class Login extends MX_Controller
             'value'  => $value,
             'expire' => (time() + 31536000)
         );
-        var_dump($cookie);
-        var_dump($this->input->set_cookie($cookie));
+        $this->input->set_cookie($cookie);
     }
     
     function get_cookie()
@@ -120,7 +118,6 @@ class Login extends MX_Controller
             'value'  => $value,
             'expire' => (time() - 100)
         );
-        var_dump($cookie);
-        var_dump($this->input->set_cookie($cookie));
+        $this->input->set_cookie($cookie);
     }
 }
