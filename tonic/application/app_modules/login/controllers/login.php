@@ -9,7 +9,14 @@ class Login extends MX_Controller
     
     function index()
     {
-        $this->autologin();
+        if ($this->session->userdata('user_email'))
+        {
+            $this->show();
+        }
+        else
+        {
+            $this->autologin();
+        }
     }
     
     function show($message = null)
