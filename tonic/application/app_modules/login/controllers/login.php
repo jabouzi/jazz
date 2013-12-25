@@ -12,9 +12,8 @@ class Login extends MX_Controller
         $this->load->helper('language');
         $this->load->helper('form');
         $this->lang->load('login');
-        $view_data['languages'] = $this->lang->languages;
-        echo site_url().$this->lang->switch_uri('en');
-        echo anchor(site_url().$this->lang->switch_uri(),'Login');
+        $view_data['languages'] = $this->lang->languages; 
+        echo anchor(site_url().$this->lang->switch_uri('en'),'Login');
         $this->load->view('login', $view_data);
     }    
 }
