@@ -32,9 +32,11 @@ class Login extends MX_Controller
         $password = $this->encryption->getEncrypt($this->security->xss_clean($this->input->post('password')), 'clétonic');
         $result = $this->login_model->validate($username, $password);
         if(!$result){
-            $this->index();
+            //$this->index();
+            echo 'Login failed';
         }else{
-            redirect('home');
+            //redirect('home');
+            'Login success';
         }        
     }
 }
