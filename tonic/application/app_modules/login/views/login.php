@@ -14,6 +14,7 @@
   <section class="container">
     <div class="login">
       <h1><?php echo lang('login.title'); ?></h1>
+      <p><?php echo lang($message); ?></p>
       <form method="post" action="<?php echo site_url('login/process'); ?>">
         <p><input type="text" name="email" value="" placeholder="<?php echo lang('login.email'); ?>"></p>
         <p><input type="password" name="password" value="" placeholder="<?php echo lang('login.password'); ?>"></p>

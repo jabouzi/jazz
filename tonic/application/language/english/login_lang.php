@@ -7,3 +7,4 @@ $lang['login.lang'] = "Language";
 $lang['login.remember'] = "Remember me on this computer";
 $lang['login.forget'] = "Forgot your password?";
 $lang['login.reset'] = "Click here to reset it";
+$lang['login.failed'] = "Email or/and passeord are invalid";

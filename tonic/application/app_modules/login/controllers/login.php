@@ -7,7 +7,7 @@ class Login extends MX_Controller
         parent::__construct();
     }
     
-    function index()
+    function index($message = null)
     {
         $this->load->helper('language');
         $this->load->helper('form');
@@ -19,6 +19,7 @@ class Login extends MX_Controller
         }
         $view_data['lang'] = site_url().$this->lang->switch_uri($this->lang->lang());
         $view_data['redirect'] = 'onChange="window.document.location.href=this.options[this.selectedIndex].value;"';
+        $view_data['message'] = $message;
         $this->load->view('login', $view_data);
     }
     
@@ -30,13 +31,12 @@ class Login extends MX_Controller
         $password = $this->encryption->getEncrypt($this->security->xss_clean($this->input->post('password')), 'clétonic');
         $result = $this->mdl_login->validate($username, $password);
         if(!$result){
-            //$this->index();
-            echo 'Login failed';
+            $this->index('login.failed');
         }else{
             //redirect('home');
             echo 'Login success';
-            var_dump($this->session->userdata('user_email'));
-            var_dump($this->session->all_userdata());
+            //var_dump($this->session->userdata('user_email'));
+            //var_dump($this->session->all_userdata());
         }        
     }
 }
