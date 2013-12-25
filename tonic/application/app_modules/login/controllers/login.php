@@ -41,9 +41,7 @@ class Login extends MX_Controller
                 $cookie = array(
                     'name'   => 'tonic_cms',
                     'value'  => '1',
-                    'expire' => '86500',
-                    'domain' => '.'.$_SERVER['HTTP_HOST'],
-                    'secure' => False
+                    'expire' => '86500'
                 );
                 var_dump($cookie);
                 var_dump($this->input->set_cookie($cookie));
