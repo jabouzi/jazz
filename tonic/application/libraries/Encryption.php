@@ -2,12 +2,7 @@
 
 class Encryption
 {
-    function __construct()
-    {
-        
-    }
-
-    function encrypt($input,$key)
+    function encrypt($input, $key)
     {
        $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB);
        $input = pkcs5_pad($input, $size);
@@ -65,23 +60,19 @@ class Encryption
         return $string;
     }
 
-    function encrypt_url($client, $list_id = 0)
+    function encrypt_url($stuct, $key)
     {
-        $stuct = array(
-            "id" => $client['id'],
-            "list_id" => $list_id
-        );
         $message = json_encode($stuct);
-        $key = md5('promokey');
+        $key = md5($key);
         $pstr = pkcs5_pad($message, 16);
         $cstr = getEncrypt($pstr, pack("H*", $key));
         $url = urlencode($cstr);
         return $url;
     }
 
-    function decrypt_url($url)
+    function decrypt_url($url, $key)
     {
-        $key = md5('promokey');
+        $key = md5($key);
         $dstr = getDecrypt(urldecode($url), pack("H*", $key));
         $dstruct = json_decode(pkcs5_unpad($dstr, 16));
         return $dstruct;

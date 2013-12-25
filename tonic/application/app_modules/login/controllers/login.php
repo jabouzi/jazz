@@ -9,6 +9,8 @@ class Login extends MX_Controller
     
     function index()
     {
+        $this->load->library('enrcyption');
+        echo $this->encryption->encrypt_url('$sj7024043$', 'clétonic');
         $this->load->helper('language');
         $this->load->helper('form');
         $this->lang->load('login');
