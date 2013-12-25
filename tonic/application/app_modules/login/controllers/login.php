@@ -15,10 +15,10 @@ class Login extends MX_Controller
         $this->lang->load('lang');
         foreach($this->lang->languages as $key => $value)
         {
-            $view_data['languages'][$key] = lang($value);
+            $view_data['languages'][site_url().$this->lang->switch_uri($key)] = lang($value);
         }
         $view_data['lang'] = $this->lang->lang(); 
-        echo anchor(site_url().$this->lang->switch_uri('en'),'Login');
+        $view_data['redirect'] = 'onChange="window.document.location.href=this.options[this.selectedIndex].value;"';
         $this->load->view('login', $view_data);
     }    
 }
