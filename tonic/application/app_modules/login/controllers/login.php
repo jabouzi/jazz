@@ -34,9 +34,9 @@ class Login extends MX_Controller
             $this->index('login.failed');
         }else{
             //redirect('home');
-            echo 'Login success';
+            //echo 'Login success';
             $remember_me = $this->input->post('remember_me');
-            var_dump($remember_me);
+            if ($remember_me) echo 'YES';
             //var_dump($this->session->userdata('user_email'));
             //var_dump($this->session->all_userdata());
         }        
