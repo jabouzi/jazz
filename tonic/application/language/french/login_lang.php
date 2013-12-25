@@ -5,5 +5,5 @@ $lang['login.email'] = "Courriel";
 $lang['login.password'] = "Mot de passe";
 $lang['login.lang'] = "Langue";
 $lang['login.remember'] = "Se rappeler de moi sur cet ordinateur";
-$lang['login.forget'] = "Mot de passe oubié ?";
+$lang['login.forget'] = "Mot de passe oublié ?";
 $lang['login.reset'] = "Cliquer ici pour un nouveau passe";
