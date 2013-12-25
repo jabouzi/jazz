@@ -5,7 +5,7 @@ class Encryption
     function encrypt($input, $key)
     {
        $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB);
-       $input = pkcs5_pad($input, $size);
+       $input = $this->pkcs5_pad($input, $size);
        $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', MCRYPT_MODE_ECB, '');
        $iv = mcrypt_create_iv (mcrypt_enc_get_iv_size($td), MCRYPT_RAND);
        mcrypt_generic_init($td, $key, $iv);
@@ -64,8 +64,8 @@ class Encryption
     {
         $message = json_encode($stuct);
         $key = md5($key);
-        $pstr = pkcs5_pad($message, 16);
-        $cstr = getEncrypt($pstr, pack("H*", $key));
+        $pstr = $this->pkcs5_pad($message, 16);
+        $cstr = $this->getEncrypt($pstr, pack("H*", $key));
         $url = urlencode($cstr);
         return $url;
     }
@@ -73,8 +73,8 @@ class Encryption
     function decrypt_url($url, $key)
     {
         $key = md5($key);
-        $dstr = getDecrypt(urldecode($url), pack("H*", $key));
-        $dstruct = json_decode(pkcs5_unpad($dstr, 16));
+        $dstr = $this->getDecrypt(urldecode($url), pack("H*", $key));
+        $dstruct = json_decode($this->pkcs5_unpad($dstr, 16));
         return $dstruct;
     }
 
