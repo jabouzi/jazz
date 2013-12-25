@@ -51,7 +51,7 @@ class Login extends MX_Controller
             {
                 $hash = $this->encryption->generateRandomString(26);
                 setcookie("tonic_cms", "",  time() - 60000);
-                var_dump($_COOKIE);
+                var_dump($_COOKIE["tonic_cms"]);
                 //setcookie("lang", $lang_value, 0, '/', 'defi7chanceux.ca');
                 //$cookie = $this->get_cookie();
                 //var_dump($cookie, $hash);
