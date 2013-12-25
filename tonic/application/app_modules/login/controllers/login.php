@@ -150,7 +150,7 @@ class Login extends MX_Controller
             'domain' => $_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
-        var_dump(set_cookie($cookie));
+        set_cookie($cookie);
         $this->mdl_login->delete_cookie($hash);
     }
 }
