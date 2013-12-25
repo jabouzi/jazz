@@ -29,27 +29,68 @@ class Login extends MX_Controller
         $this->load->model('mdl_login');
         $username = $this->security->xss_clean($this->input->post('email'));
         $password = $this->encryption->getEncrypt($this->security->xss_clean($this->input->post('password')), 'clétonic');
-        $result = $this->mdl_login->validate($username, $password);
-        if(!$result){
+        $result = $this->mdl_login->validate_user($username, $password);
+        if(!$result)
+        {
             $this->index('login.failed');
-        }else{
-            //redirect('home');
-            //echo 'Login success';
+        }
+        else
+        {            
+            $user_data = array(
+                'user_id' => $result->user_id,
+                'user_firstname' => $result->user_firstname,
+                'user_lastname' => $result->user_lastname,
+                'user_email' => $result->user_email,
+                'validated' => true
+                );
+            $this->session->set_userdata($user_data);
+
             $remember_me = $this->input->post('remember_me');
             if ($remember_me)
             {
-                $this->delete_cookie($username);
-                //$this->set_cookie($username);
-                var_dump($this->get_cookie());
-                var_dump($this->encryption->generateRandomString(26));
-                
+                $hash = $this->encryption->generateRandomString(26);
+                $cookie = $this->get_cookie();
+                $this->delete_cookie($cookie['value']);
+                $this->set_cookie($username.'||'.$hash);
+                $this->mdl_login->insert('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
+                var_dump($this->get_cookie());                
             }
             //var_dump($this->session->userdata('user_email'));
             //var_dump($this->session->all_userdata());
         }        
     }
+    
+    function autologin()
+    {
+        $this->load->library('encryption');
+        $this->load->model('mdl_login');
+        $cookie = $this->get_cookie();
+        $result = $this->mdl_login->validate_cookie($username, $hash);
+        if(!$result)
+        {
+            redirect('login');
+        }
+        else
+        {    
+            $hash = $this->encryption->generateRandomString(26);
+            $this->mdl_login->delete('tonic_cookies', $result->cookie_id);
+            $this->mdl_login->insert('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
+            $result = $this->mdl_login->get_where_custom('user_email', $username, 'tonic_users')->row();
+            $user_data = array(
+                'user_id' => $result->user_id,
+                'user_firstname' => $result->user_firstname,
+                'user_lastname' => $result->user_lastname,
+                'user_email' => $result->user_email,
+                'validated' => true
+                );
+            $this->session->set_userdata($user_data);            
+            $this->delete_cookie($cookie['value']);
+            $this->set_cookie($username.'||'.$hash);
+        }
+    }
 
-    function logout(){
+    function logout()
+    {
         $this->session->sess_destroy();
         redirect('login');
     }

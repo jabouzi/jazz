@@ -8,32 +8,57 @@ class Mdl_login extends CI_Model
         parent::__construct();
     }
     
-    function get_table()
-    {
-        $table = "tonic_users";
-        return $table;
-    }
-    
-    public function validate($username, $password)
+    function validate_user($username, $password)
     {
         $this->db->where('user_email', $username);
         $this->db->where('user_password', $password);
         
-        $query = $this->db->get($this->get_table());
+        $query = $this->db->get('tonic_users');
         if($query->num_rows == 1)
         {
-            $row = $query->row();
-            $user_data = array(
-                    'user_id' => $row->user_id,
-                    'user_firstname' => $row->user_firstname,
-                    'user_lastname' => $row->user_lastname,
-                    'user_email' => $row->user_email,
-                    'validated' => true
-                    );
-            $this->session->set_userdata($user_data);
-            return true;
+            $row = $query->row();            
+            return $row;
         }
 
         return false;
+    }
+    
+    function validate_cookie($username, $hash)
+    {
+        $this->db->where('cookie_email', $username);
+        $this->db->where('cookie_hash', $hash);
+        
+        $query = $this->db->get('tonic_cookies');
+        if($query->num_rows == 1)
+        {
+            $row = $query->row();            
+            return $row;
+        }
+
+        return false;
+    }
+    
+    function get_where_custom($table, $col, $value)
+    {
+        $this->db->where($col, $value);
+        $query = $this->db->get($table);
+        return $query;
+    }
+    
+    function insert($table, $data)
+    {
+        $this->db->insert($table, $data);
+    }
+    
+    function update($table, $id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update($table, $data);
+    }
+    
+    function delete($table, $id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete($table);
     }
 }
