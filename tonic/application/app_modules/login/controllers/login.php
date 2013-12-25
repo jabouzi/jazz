@@ -58,14 +58,19 @@ class Login extends MX_Controller
                 'validated' => true
                 );
             $this->session->set_userdata($user_data);
+            $cookie = $this->get_cookie();
+            if ($cookie)
+            {
+                $username = $cookie[0];
+                $old_hash = $cookie[1];
+                $this->delete_cookie($username, $old_hash);
+            }
             
-            $this->delete_cookie('tonic_cms');
             $remember_me = $this->input->post('remember_me');
             if ($remember_me)
             {
                 $hash = $this->encryption->generateRandomString(26);
-                $this->set_cookie($username.'||'.$hash);
-                $this->mdl_login->insert('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
+                $this->set_cookie($username, $hash);
             }
             redirect('dashboard');
         }        
@@ -76,10 +81,14 @@ class Login extends MX_Controller
         $this->load->helper('cookie');
         $this->load->library('encryption');
         $this->load->model('mdl_login');
-        $cookie = explode('||',$this->get_cookie());
-        $username = $cookie[0];
-        $hash = $cookie[1];
-        $result = $this->mdl_login->validate_cookie($username, $hash);
+        $cookie = $this->get_cookie();
+        if ($cookie)
+        {
+            $username = $cookie[0];
+            $old_hash = $cookie[1];
+        }
+        $this->delete_cookie($username, $old_hash);
+        $result = $this->mdl_login->validate_cookie($username, $old_hash);
         if(!$result)
         {
             redirect('login/show');
@@ -87,8 +96,6 @@ class Login extends MX_Controller
         else
         {    
             $hash = $this->encryption->generateRandomString(26);
-            $this->mdl_login->delete_cookie('tonic_cookies', $result->cookie_id);
-            $this->mdl_login->insert_cookie('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
             $result = $this->mdl_login->get_where_custom('tonic_users', 'user_email', $username)->row();
             $user_data = array(
                 'user_id' => $result->user_id,
@@ -98,8 +105,7 @@ class Login extends MX_Controller
                 'validated' => true
                 );
             $this->session->set_userdata($user_data);            
-            $this->delete_cookie($cookie['value']);
-            $this->set_cookie($username.'||'.$hash);
+            $this->set_cookie($username, $hash);
             redirect('dashboard');
         }
     }
@@ -110,32 +116,41 @@ class Login extends MX_Controller
         redirect('login');
     }
     
-    function set_cookie($value)
+    function get_cookie()
+    {
+        $cookie = get_cookie('tonic_cms');
+        if ($cookie)
+        {
+            $cookie_data = explode('||',get_cookie('tonic_cms'));
+            return $cookie_data;
+        }
+        
+        return false;
+    }
+    
+    function set_cookie($value, $hash)
     {
         $cookie = array(
             'name'   => 'tonic_cms',
-            'value'  => $value,
+            'value'  => $value.'||'.$hash,
             'expire' => (time() + 31536000),
             'domain' => $_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
         set_cookie($cookie);
+        $this->mdl_login->insert_cookie(array('cookie_email' => $value, 'cookie_hash' => $hash));
     }
-    
-    function get_cookie()
-    {
-        return get_cookie('tonic_cms');
-    }
-    
-    function delete_cookie($value)
+
+    function delete_cookie($value, $hash)
     {
         $cookie = array(
             'name'   => 'tonic_cms',
-            'value'  => $value,
+            'value'  => $value.'||'.$hash,
             'expire' => (time() - 60000),
             'domain' => $_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
         delete_cookie('tonic_cms');
+        $this->mdl_login->delete_cookie($hash);
     }
 }
