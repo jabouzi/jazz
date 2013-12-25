@@ -19,8 +19,8 @@
         <p><input type="password" name="password" value="" placeholder="Password"></p>
         <p class="remember_me">
           <label>
-            <?php echo form_dropdown('lang', $languages); ?>
             Language
+            <?php echo form_dropdown('lang', $languages); ?>
           </label>
         </p>
         <p class="remember_me">
