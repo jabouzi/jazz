@@ -36,7 +36,21 @@ class Login extends MX_Controller
             //redirect('home');
             //echo 'Login success';
             $remember_me = $this->input->post('remember_me');
-            if ($remember_me) echo 'YES';
+            if ($remember_me)
+            {
+                $cookie = array(
+                    'name'   => 'tonic_cms',
+                    'value'  => '1',
+                    'expire' => '86500',
+                    'domain' => site_url(),
+                    'path'   => '/',
+                    'prefix' => 'tonic_',
+                    'secure' => TRUE
+                );
+
+                $this->input->set_cookie($cookie);
+                var_dump(cookie('tonic_cms', TRUE));
+            }
             //var_dump($this->session->userdata('user_email'));
             //var_dump($this->session->all_userdata());
         }        
