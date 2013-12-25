@@ -43,8 +43,6 @@ class Login extends MX_Controller
                     'value'  => '1',
                     'expire' => '86500',
                     'domain' => '.'.$_SERVER['HTTP_HOST'],
-                    'path'   => '/',
-                    'prefix' => 'tonic_',
                     'secure' => TRUE
                 );
                 var_dump($cookie);
