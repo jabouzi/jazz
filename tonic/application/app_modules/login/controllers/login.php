@@ -47,7 +47,7 @@ class Login extends MX_Controller
                     'prefix' => 'tonic_',
                     'secure' => TRUE
                 );
-
+                var_dump($cookie);
                 var_dump($this->input->set_cookie($cookie));
                 var_dump($this->input->cookie('tonic_cms', TRUE));
             }
