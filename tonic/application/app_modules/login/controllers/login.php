@@ -38,6 +38,7 @@ class Login extends MX_Controller
             $remember_me = $this->input->post('remember_me');
             if ($remember_me)
             {
+                $this->input->delete_cookie('tonic_cms');
                 $cookie = array(
                     'name'   => 'tonic_cms',
                     'value'  => $username,
