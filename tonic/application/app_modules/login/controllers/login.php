@@ -35,6 +35,7 @@ class Login extends MX_Controller
         }else{
             //redirect('home');
             echo 'Login success';
+            var_dump($this->session->all_userdata());
         }        
     }
 }
