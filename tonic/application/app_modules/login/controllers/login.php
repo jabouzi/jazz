@@ -72,7 +72,7 @@ class Login extends MX_Controller
                 $hash = $this->encryption->generateRandomString(26);
                 $this->set_cookie($username, $hash);
             }
-            redirect('dashboard');
+            //redirect('dashboard');
         }        
     }
     
@@ -143,14 +143,14 @@ class Login extends MX_Controller
 
     function delete_cookie($value, $hash)
     {
-        $cookie = array(
-            'name'   => 'tonic_cms',
-            'value'  => $value.'||'.$hash,
-            'expire' => (time() - 60000),
-            'domain' => $_SERVER['HTTP_HOST'],
-            'path'   => '/',
-        );
-        delete_cookie('tonic_cms');
+        //$cookie = array(
+            //'name'   => 'tonic_cms',
+            //'value'  => $value.'||'.$hash,
+            //'expire' => (time() - 60000),
+            //'domain' => $_SERVER['HTTP_HOST'],
+            //'path'   => '/',
+        //);
+        var_dump(delete_cookie('tonic_cms'));
         $this->mdl_login->delete_cookie($hash);
     }
 }
