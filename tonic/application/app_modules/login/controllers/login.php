@@ -27,6 +27,7 @@ class Login extends MX_Controller
     {
         $this->load->library('encryption');
         $this->load->model('mdl_login');
+        $this->load->helper('cookie');
         $username = $this->security->xss_clean($this->input->post('email'));
         $password = $this->encryption->getEncrypt($this->security->xss_clean($this->input->post('password')), 'clétonic');
         $result = $this->mdl_login->validate_user($username, $password);
@@ -106,12 +107,12 @@ class Login extends MX_Controller
             'value'  => $value,
             'expire' => (time() + 31536000)
         );
-        $this->input->set_cookie($cookie);
+        $this->cookie->set_cookie($cookie);
     }
     
     function get_cookie()
     {
-        return $this->input->cookie('tonic_cms', TRUE);
+        return $this->cookie->get_cookie('tonic_cms');
     }
     
     function delete_cookie($value)
@@ -123,6 +124,6 @@ class Login extends MX_Controller
         );
         var_dump($cookie);
         var_dump(date('Y-m-d',(time()  - 60000)));
-        $this->input->set_cookie($cookie);
+        $this->cookie->delete_cookie('tonic_cms');
     }
 }
