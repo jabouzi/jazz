@@ -10,7 +10,7 @@ class Coureilleur
     private $mailing_list;
     private $user_key;
     
-    function __construct($username, $password, $client_id, $api_key)
+    public function build($username, $password, $client_id, $api_key)
     {
         $this->set_username($username);
         $this->set_passwrod($password);
