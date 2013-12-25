@@ -1,4 +1,4 @@
-<?php
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  
 $lang['login.title'] = "Se connecter au CMS";
 $lang['login.email'] = "Courriel";

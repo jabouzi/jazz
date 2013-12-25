@@ -2,7 +2,6 @@
 
 class Login extends MX_Controller
 {
-    
     function __construct()
     {
         parent::__construct();
@@ -15,6 +14,5 @@ class Login extends MX_Controller
         $this->lang->load('login');
         $view_data['languages'] = $this->lang->languages;
         $this->load->view('login', $view_data);
-    }
-    
+    }    
 }
