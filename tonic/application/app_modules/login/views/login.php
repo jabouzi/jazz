@@ -15,8 +15,8 @@
     <div class="login">
       <h1><?php echo lang('login.title'); ?></h1>
       <form method="post" action="index.html">
-        <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
-        <p><input type="password" name="password" value="" placeholder="Password"></p>
+        <p><input type="text" name="login" value="" placeholder="<?php echo lang('login.email'); ?>"></p>
+        <p><input type="password" name="password" value="" placeholder="<?php echo lang('login.password'); ?>"></p>
         <p><?php echo lang('login.lang'); ?>
             <?php echo form_dropdown('lang', $languages); ?></p>
         <p class="remember_me">
