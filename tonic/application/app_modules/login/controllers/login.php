@@ -34,7 +34,7 @@ class Login extends MX_Controller
             echo 'Login failed';
         }else{
             //redirect('home');
-            'Login success';
+            echo 'Login success';
         }        
     }
 }
