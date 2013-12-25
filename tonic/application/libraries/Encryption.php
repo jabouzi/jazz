@@ -83,8 +83,4 @@ class Encryption
         $string = sha1(uniqid(rand(),true));
         return substr($string,0,$length);
     }
-        
-}
-
-
 }
