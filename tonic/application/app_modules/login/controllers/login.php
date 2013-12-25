@@ -35,8 +35,15 @@ class Login extends MX_Controller
         }else{
             //redirect('home');
             echo 'Login success';
+            $remember_me = $this->input->post('remember_me');
+            var_dump($remember_me);
             //var_dump($this->session->userdata('user_email'));
             //var_dump($this->session->all_userdata());
         }        
+    }
+    
+    function logout(){
+        $this->session->sess_destroy();
+        redirect('login');
     }
 }

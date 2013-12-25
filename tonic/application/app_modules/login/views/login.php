@@ -24,7 +24,7 @@
         </p>
         <p class="remember_me">
           <label>
-            <input type="checkbox" name="remember_me" id="remember_me">
+            <input type="checkbox" name="remember_me" id="remember_me" value="1">
             <?php echo lang('login.remember'); ?>
           </label>
         </p>
