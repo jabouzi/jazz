@@ -10,7 +10,8 @@ class Login extends MX_Controller
     function index()
     {
         $this->load->helper('cookie');
-        var_dump($this->get_cookie());
+        $this->delete_cookie();
+        var_dump($this->get_cookie('',''));
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
