@@ -77,5 +77,14 @@ class Encryption
         $dstruct = json_decode($this->pkcs5_unpad($dstr, 16));
         return $dstruct;
     }
+    
+    function generateRandomString($length = 8) 
+    {
+        $string = sha1(uniqid(rand(),true));
+        return substr($string,0,$length);
+    }
+        
+}
+
 
 }

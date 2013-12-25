@@ -41,6 +41,7 @@ class Login extends MX_Controller
                 $this->delete_cookie($username);
                 //$this->set_cookie($username);
                 var_dump($this->get_cookie());
+                var_dump($this->encryption->generateRandomString());
                 
             }
             //var_dump($this->session->userdata('user_email'));
