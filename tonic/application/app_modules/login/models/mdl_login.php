@@ -38,27 +38,21 @@ class Mdl_login extends CI_Model
         return false;
     }
     
+    function insert_cookie($data)
+    {
+        $this->db->insert('tonic_cookies', $data);
+    }
+    
+    function delete_cookie($hash)
+    {
+        $this->db->where('cookie_hash', $hash);
+        $this->db->delete('tonic_cookies');
+    }
+    
     function get_where_custom($table, $col, $value)
     {
         $this->db->where($col, $value);
         $query = $this->db->get($table);
         return $query;
-    }
-    
-    function insert_cookie($table, $data)
-    {
-        $this->db->insert($table, $data);
-    }
-    
-    function update_cookie($table, $id, $data)
-    {
-        $this->db->where('cookie_id', $id);
-        $this->db->update($table, $data);
-    }
-    
-    function delete_cookie($table, $id)
-    {
-        $this->db->where('cookie_id', $id);
-        $this->db->delete($table);
     }
 }
