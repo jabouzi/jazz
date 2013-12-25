@@ -38,15 +38,10 @@ class Login extends MX_Controller
             $remember_me = $this->input->post('remember_me');
             if ($remember_me)
             {
-                $this->input->delete_cookie('tonic_cms');
-                $cookie = array(
-                    'name'   => 'tonic_cms',
-                    'value'  => $username,
-                    'expire' => '86500'
-                );
-                var_dump($cookie);
-                var_dump($this->input->set_cookie($cookie));
-                var_dump($this->input->cookie('tonic_cms', TRUE));
+                $this->delete_cookie($username);
+                $this->set_cookie($username);
+                var_dump($this->get_cookie());
+                
             }
             //var_dump($this->session->userdata('user_email'));
             //var_dump($this->session->all_userdata());
@@ -56,5 +51,32 @@ class Login extends MX_Controller
     function logout(){
         $this->session->sess_destroy();
         redirect('login');
+    }
+    
+    function set_cookie($value)
+    {
+        $cookie = array(
+            'name'   => 'tonic_cms',
+            'value'  => $value,
+            'expire' => (time() + 31536000)
+        );
+        var_dump($cookie);
+        var_dump($this->input->set_cookie($cookie));
+    }
+    
+    function get_cookie()
+    {
+        return $this->input->cookie('tonic_cms', TRUE);
+    }
+    
+    function delete_cookie($value)
+    {
+        $cookie = array(
+            'name'   => 'tonic_cms',
+            'value'  => $value,
+            'expire' => (time() - 100)
+        );
+        var_dump($cookie);
+        var_dump($this->input->set_cookie($cookie));
     }
 }
