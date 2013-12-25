@@ -107,12 +107,12 @@ class Login extends MX_Controller
             'value'  => $value,
             'expire' => (time() + 31536000)
         );
-        $this->cookie->set_cookie($cookie);
+        set_cookie($cookie);
     }
     
     function get_cookie()
     {
-        return $this->cookie->get_cookie('tonic_cms');
+        return get_cookie('tonic_cms');
     }
     
     function delete_cookie($value)
@@ -124,6 +124,6 @@ class Login extends MX_Controller
         );
         var_dump($cookie);
         var_dump(date('Y-m-d',(time()  - 60000)));
-        $this->cookie->delete_cookie('tonic_cms');
+        delete_cookie('tonic_cms');
     }
 }
