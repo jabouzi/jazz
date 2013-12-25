@@ -40,7 +40,7 @@ class Login extends MX_Controller
             {
                 $cookie = array(
                     'name'   => 'tonic_cms',
-                    'value'  => '1',
+                    'value'  => $username,
                     'expire' => '86500'
                 );
                 var_dump($cookie);
