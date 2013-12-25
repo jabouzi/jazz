@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Apptest extends MX_Controller
+class Dashboard extends MX_Controller
 {
     
     function __construct()
@@ -8,11 +8,9 @@ class Apptest extends MX_Controller
         parent::__construct();
     }
     
-    function print_test()
+    function index()
     {
-        //$view_data['text'] = 'THIS IS A PRINT TEST<br />';
-        //$this->load->view('apptest', $view_data);
-        $view_data['page_title'] = 'App test';
+        $view_data['page_title'] = 'Dasboard';
         echo modules::run('template', $view_data);
 
     }
@@ -31,16 +29,4 @@ class Apptest extends MX_Controller
         echo '<br />';
         echo anchor('login','Login');
     }
-    
-    function _test()
-    {
-        echo 123;
-    }
-    
-    function test()
-    {
-        echo 123;
-    }
-    
-    
 }
