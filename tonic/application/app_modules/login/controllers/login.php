@@ -7,7 +7,12 @@ class Login extends MX_Controller
         parent::__construct();
     }
     
-    function index($message = null)
+    function index()
+    {
+        $this->autologin();
+    }
+    
+    function show($message = null)
     {
         $this->load->helper('language');
         $this->load->helper('form');
@@ -33,7 +38,7 @@ class Login extends MX_Controller
         $result = $this->mdl_login->validate_user($username, $password);
         if(!$result)
         {
-            $this->index('login.failed');
+            $this->show('login.failed');
         }
         else
         {            
@@ -55,13 +60,12 @@ class Login extends MX_Controller
                 $this->mdl_login->insert('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
             }
             redirect('dashboard');
-            //var_dump($this->session->userdata('user_email'));
-            //var_dump($this->session->all_userdata());
         }        
     }
     
     function autologin()
     {
+        $this->load->helper('cookie');
         $this->load->library('encryption');
         $this->load->model('mdl_login');
         $cookie = explode('||',$this->get_cookie());
@@ -70,7 +74,7 @@ class Login extends MX_Controller
         $result = $this->mdl_login->validate_cookie($username, $hash);
         if(!$result)
         {
-            redirect('login');
+            redirect('login/show');
         }
         else
         {    
