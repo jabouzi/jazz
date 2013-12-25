@@ -78,7 +78,7 @@ class Encryption
         return $dstruct;
     }
     
-    function generateRandomString($length = 8) 
+    function generateRandomString() 
     {
         $string = sha1(uniqid(rand(),true));
         return substr($string,0,$length);
