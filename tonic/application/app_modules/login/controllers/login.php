@@ -50,11 +50,11 @@ class Login extends MX_Controller
             {
                 $hash = $this->encryption->generateRandomString(26);
                 $cookie = $this->get_cookie();
+                var_dump($cookie, $hash);
                 $this->delete_cookie($cookie);
                 $this->set_cookie($username.'||'.$hash);
                 $this->mdl_login->insert('tonic_cookies', array('cookie_email' => $username, 'cookie_hash' => $hash));
-                $cookie = $this->get_cookie();
-                var_dump($cookie, $hash);
+                var_dump($this->get_cookie());                
             }
             //var_dump($this->session->userdata('user_email'));
             //var_dump($this->session->all_userdata());
