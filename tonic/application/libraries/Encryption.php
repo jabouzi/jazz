@@ -60,7 +60,7 @@ class Encryption
         return $string;
     }
 
-    function encrypt_url($stuct, $key)
+    function encrypt_str($stuct, $key)
     {
         $message = json_encode($stuct);
         $key = md5($key);
@@ -70,7 +70,7 @@ class Encryption
         return $url;
     }
 
-    function decrypt_url($url, $key)
+    function decrypt_str($url, $key)
     {
         $key = md5($key);
         $dstr = $this->getDecrypt(urldecode($url), pack("H*", $key));
