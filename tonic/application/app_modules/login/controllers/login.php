@@ -28,7 +28,7 @@ class Login extends MX_Controller
         $this->load->model('mdl_login');
         $username = $this->security->xss_clean($this->input->post('email'));
         $password = $this->encryption->getEncrypt($this->security->xss_clean($this->input->post('password')), 'clétonic');
-        $result = $this->login_model->validate($username, $password);
+        $result = $this->mdl_login->validate($username, $password);
         if(!$result){
             //$this->index();
             echo 'Login failed';
