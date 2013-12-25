@@ -16,8 +16,8 @@ class Mdl_login extends CI_Model
     
     public function validate($username, $password)
     {
-        $this->db->where('email', $username);
-        $this->db->where('password', $password);
+        $this->db->where('user_email', $username);
+        $this->db->where('user_password', $password);
         
         $query = $this->db->get($this->get_table());
         if($query->num_rows == 1)
