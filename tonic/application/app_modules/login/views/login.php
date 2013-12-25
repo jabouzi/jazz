@@ -30,7 +30,7 @@
     </div>
 
     <div class="login-help">
-      <p><?php echo lang('login.forget'); ?> <a href="index.html"><?php echo lang('login.forget'); ?></a>.</p>
+      <p><?php echo lang('login.forget'); ?> <a href="index.html"><?php echo lang('login.reset'); ?></a>.</p>
     </div>
   </section>
 </body>
