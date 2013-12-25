@@ -91,7 +91,7 @@ class Login extends MX_Controller
         $result = $this->mdl_login->validate_cookie($username, $old_hash);
         if(!$result)
         {
-            redirect('login/show');
+            echo $this('login/show');
         }
         else
         {    
