@@ -17,12 +17,8 @@
       <form method="post" action="index.html">
         <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
         <p><input type="password" name="password" value="" placeholder="Password"></p>
-        <p class="remember_me">
-          <label>
-            Language
-            <?php echo form_dropdown('lang', $languages); ?>
-          </label>
-        </p>
+        <p>Language
+            <?php echo form_dropdown('lang', $languages); ?></p>
         <p class="remember_me">
           <label>
             <input type="checkbox" name="remember_me" id="remember_me">
