@@ -148,9 +148,9 @@ class Login extends MX_Controller
             'domain' => '.'.$_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
-        setcookie($cookie['name'], $cookie['value'], $cookie['expire'], $cookie['path'], $cookie['domain']);
+        //setcookie($cookie['name'], $cookie['value'], $cookie['expire'], $cookie['path'], $cookie['domain']);
         //$_COOKIE['tonic_cms'] = $value.'||'.$hash;
-        //set_cookie($cookie);
+        set_cookie($cookie);
         $this->mdl_login->insert_cookie(array('cookie_email' => $value, 'cookie_hash' => $hash));
     }
 
