@@ -9,8 +9,8 @@ class Login extends MX_Controller
     
     function index()
     {
-        $this->load->helper('cookie');
-        var_dump($this->getcookie());
+        //$this->load->helper('cookie');
+        //var_dump($this->getcookie());
         //var_dump($_COOKIE);
         if ($this->session->userdata('user_email'))
         {
@@ -121,7 +121,7 @@ class Login extends MX_Controller
     function logout()
     {
         $this->session->sess_destroy();
-        redirect('login');
+        $this->show();
     }
     
     function getcookie()
@@ -144,7 +144,7 @@ class Login extends MX_Controller
         $cookie = array(
             'name'   => 'tonic_cms',
             'value'  => $value.'||'.$hash,
-            'expire' => 525600,
+            'expire' => 31536000,
             'domain' => '.'.$_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
@@ -159,7 +159,6 @@ class Login extends MX_Controller
         $cookie = array(
             'name'   => 'tonic_cms',
             'value'  => $value.'||'.$hash,
-            'expire' => '-525600',
             'domain' => '.'.$_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
