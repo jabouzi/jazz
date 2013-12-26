@@ -163,7 +163,7 @@ class Login extends MX_Controller
             'path'   => '/',
         );
         //set_cookie($cookie);
-        delete_cookie($cookie['name'], $cookie['domain'], $cookie['path'], );
+        delete_cookie($cookie['name'], $cookie['domain'], $cookie['path']);
         //setcookie('tonik_cms', null, -1, '/');
         //setcookie($cookie['name'], $cookie['value'], $cookie['expire'], $cookie['path'], $cookie['domain']);
         //unset($_COOKIE['tonic_cms']);
