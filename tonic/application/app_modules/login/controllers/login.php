@@ -145,7 +145,7 @@ class Login extends MX_Controller
             'name'   => 'tonic_cms',
             'value'  => $value.'||'.$hash,
             'expire' => '525600',
-            'domain' => $_SERVER['HTTP_HOST'],
+            'domain' => '.'.$_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
         setcookie($cookie['name'], $cookie['value'], $cookie['expire'], $cookie['path'], $cookie['domain']);
@@ -160,7 +160,7 @@ class Login extends MX_Controller
             'name'   => 'tonic_cms',
             'value'  => $value.'||'.$hash,
             'expire' => '-525600',
-            'domain' => $_SERVER['HTTP_HOST'],
+            'domain' => '.'.$_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
         //set_cookie($cookie);
