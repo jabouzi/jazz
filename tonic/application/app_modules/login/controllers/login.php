@@ -11,6 +11,7 @@ class Login extends MX_Controller
     {
         var_dump(date('Y-m-d H:i:s', (time() + 31536000)));
         var_dump(date('Y-m-d H:i:s', (time() - 31536000)));
+        var_dump(getcookie());
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
@@ -35,6 +36,7 @@ class Login extends MX_Controller
         $view_data['lang'] = site_url().$this->lang->switch_uri($this->lang->lang());
         $view_data['redirect'] = 'onChange="window.document.location.href=this.options[this.selectedIndex].value;"';
         $view_data['message'] = $message;
+        $view_data['checked'] = true;
         $this->load->view('login', $view_data);
     }
     
