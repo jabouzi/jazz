@@ -155,7 +155,7 @@ class Login extends MX_Controller
         //set_cookie($cookie);
         delete_cookie('tonik_cms');
         setcookie('tonik_cms', null, -1, '/');
-        unset($_COOKIE['tonic_cms'];
+        unset($_COOKIE['tonic_cms']);
         $this->mdl_login->delete_cookie($hash);
     }
 }
