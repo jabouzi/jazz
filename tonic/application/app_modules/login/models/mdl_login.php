@@ -49,17 +49,16 @@ class Mdl_login extends CI_Model
         $this->db->delete('tonic_cookies');
     }
     
-    function update_cookie($hash, $data)
-    {
-        var_dump($hash);
-        $this->db->where('cookie_hash_', $hash);
-        var_dump($this->db->update('tonic_cookies', $data));
-    }
-    
     function get_where_custom($table, $col, $value)
     {
         $this->db->where($col, $value);
         $query = $this->db->get($table);
+        return $query;
+    }
+    
+    function custom_query($mysql_query)
+    {
+        $query = $this->db->query($mysql_query);
         return $query;
     }
 }
