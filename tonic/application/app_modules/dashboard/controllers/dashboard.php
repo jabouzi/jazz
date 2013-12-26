@@ -16,7 +16,7 @@ class Dashboard extends MX_Controller
         }
         else
         {
-            redirect('login/autologin');
+            redirect('login');
         }
     }
     
