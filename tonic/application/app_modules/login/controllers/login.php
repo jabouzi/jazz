@@ -94,6 +94,8 @@ class Login extends MX_Controller
             $result = $this->mdl_login->validate_cookie($username, $old_hash);
         }
         
+        var_dump($result);
+        
         if(!$result)
         {
             $this->show();
@@ -112,15 +114,14 @@ class Login extends MX_Controller
             $this->session->set_userdata($user_data);
             $this->deletecookie($username, $old_hash);
             $this->setcookie($username, $hash);
-            redirect('dashboard');
+            //redirect('dashboard');
         }
     }
 
     function logout()
     {
         $this->session->sess_destroy();
-        var_dump($this->session->userdata('user_email'));
-        redirect('login/autologin');
+        redirect('login');
     }
     
     function getcookie()
