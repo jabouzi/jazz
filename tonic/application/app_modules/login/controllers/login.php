@@ -92,7 +92,7 @@ class Login extends MX_Controller
         {
             $username = $cookie[0];
             $old_hash = $cookie[1];        
-            $this->deletecookie($username, $old_hash);
+            //$this->deletecookie($username, $old_hash);
             $result = $this->mdl_login->validate_cookie($username, $old_hash);
         }
         
