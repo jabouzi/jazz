@@ -120,7 +120,7 @@ class Login extends MX_Controller
     {
         $this->session->sess_destroy();
         var_dump($this->session->userdata('user_email'));
-        //redirect('login');
+        redirect('login/autologin');
     }
     
     function getcookie()
