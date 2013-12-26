@@ -85,28 +85,28 @@ class Login extends MX_Controller
         if ($cookie)
         {
             $username = $cookie[0];
-            $old_hash = $cookie[1];
-        }
-        $this->delete_cookie($username, $old_hash);
-        $result = $this->mdl_login->validate_cookie($username, $old_hash);
-        if(!$result)
-        {
-            $this->show();
-        }
-        else
-        {    
-            $hash = $this->encryption->generateRandomString(26);
-            $result = $this->mdl_login->get_where_custom('tonic_users', 'user_email', $username)->row();
-            $user_data = array(
-                'user_id' => $result->user_id,
-                'user_firstname' => $result->user_firstname,
-                'user_lastname' => $result->user_lastname,
-                'user_email' => $result->user_email,
-                'validated' => true
-                );
-            $this->session->set_userdata($user_data);            
-            $this->set_cookie($username, $hash);
-            redirect('dashboard');
+            $old_hash = $cookie[1];        
+            $this->delete_cookie($username, $old_hash);
+            $result = $this->mdl_login->validate_cookie($username, $old_hash);
+            if(!$result)
+            {
+                $this->show();
+            }
+            else
+            {    
+                $hash = $this->encryption->generateRandomString(26);
+                $result = $this->mdl_login->get_where_custom('tonic_users', 'user_email', $username)->row();
+                $user_data = array(
+                    'user_id' => $result->user_id,
+                    'user_firstname' => $result->user_firstname,
+                    'user_lastname' => $result->user_lastname,
+                    'user_email' => $result->user_email,
+                    'validated' => true
+                    );
+                $this->session->set_userdata($user_data);            
+                $this->set_cookie($username, $hash);
+                redirect('dashboard');
+            }
         }
     }
 
