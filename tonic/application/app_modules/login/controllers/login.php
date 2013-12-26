@@ -12,6 +12,7 @@ class Login extends MX_Controller
         var_dump(date('Y-m-d H:i:s', (time() + 31536000)));
         var_dump(date('Y-m-d H:i:s', (time() - 31536000)));
         var_dump($this->getcookie());
+        var_dump($_COOKIE);
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
