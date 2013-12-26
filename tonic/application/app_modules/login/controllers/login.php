@@ -124,7 +124,7 @@ class Login extends MX_Controller
         if ($cookie)
         {
             $hash = $cookie[1];
-            $cookie_data = array('cookie_user_status' => b'0');
+            $cookie_data = array('cookie_user_status' => 'b0');
             $result = $this->mdl_login->update_cookie($hash, $cookie_data);
         }
         $this->session->sess_destroy();
