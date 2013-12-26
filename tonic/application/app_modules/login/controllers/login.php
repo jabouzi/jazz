@@ -9,6 +9,7 @@ class Login extends MX_Controller
     
     function index($logout = null)
     {
+        $this->load->model('mdl_login');
         $this->load->helper('cookie');
         $this->islogout();
         exit;
