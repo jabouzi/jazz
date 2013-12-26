@@ -21,7 +21,7 @@ class Login extends MX_Controller
     
     function show($message = null)
     {
-        //$this->load->helper('cookie');
+        $this->load->helper('cookie');
         $this->load->helper('language');
         $this->load->helper('form');
         $this->lang->load('login');
@@ -40,7 +40,7 @@ class Login extends MX_Controller
     {
         $this->load->library('encryption');
         $this->load->model('mdl_login');
-        //$this->load->helper('cookie');
+        $this->load->helper('cookie');
         $username = $this->security->xss_clean($this->input->post('email'));
         $password = $this->encryption->getEncrypt($this->security->xss_clean($this->input->post('password')), 'clétonic');
         $result = $this->mdl_login->validate_user($username, $password);
@@ -78,7 +78,7 @@ class Login extends MX_Controller
     
     function autologin()
     {
-        //$this->load->helper('cookie');
+        $this->load->helper('cookie');
         $this->load->library('encryption');
         $this->load->model('mdl_login');
         $result = false;
