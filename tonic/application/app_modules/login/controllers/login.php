@@ -119,7 +119,7 @@ class Login extends MX_Controller
 
     function logout()
     {
-        
+        $this->load->model('mdl_login');
         $cookie = $this->getcookie();
         if ($cookie)
         {
