@@ -122,10 +122,13 @@ class Login extends MX_Controller
     
     function getcookie()
     {
-        $cookie = get_cookie('tonic_cms');
-        if ($cookie)
+        //$cookie = get_cookie('tonic_cms');
+        if (isset($_COOKIE['tonic_cms']))
         {
-            $cookie_data = explode('||',get_cookie('tonic_cms'));
+            $cookie = $_COOKIE['tonic_cms'];
+            //if ($cookie)
+            //{
+            $cookie_data = explode('||',$cookie);
             return $cookie_data;
         }
         
@@ -141,8 +144,9 @@ class Login extends MX_Controller
             'domain' => $_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
-        //setcookie($cookie['name'], $cookie['value'], $cookie['expire'], $cookie['path'], $cookie['domain']);
-        set_cookie($cookie);
+        setcookie($cookie['name'], $cookie['value'], $cookie['expire'], $cookie['path'], $cookie['domain']);
+        $_COOKIE['tonic_cms'] = $value.'||'.$hash;
+        //set_cookie($cookie);
         $this->mdl_login->insert_cookie(array('cookie_email' => $value, 'cookie_hash' => $hash));
     }
 
@@ -155,9 +159,10 @@ class Login extends MX_Controller
             'domain' => $_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
-        set_cookie($cookie);
+        //set_cookie($cookie);
         //delete_cookie('tonik_cms');
         //setcookie('tonik_cms', null, -1, '/');
+        setcookie($cookie['name'], $cookie['value'], $cookie['expire'], $cookie['path'], $cookie['domain']);
         unset($_COOKIE['tonic_cms']);
         $this->mdl_login->delete_cookie($hash);
     }
