@@ -119,7 +119,7 @@ class Login extends MX_Controller
     function logout()
     {
         $this->session->sess_destroy();
-        $this->session->userdata('user_email');
+        var_dump($this->session->userdata('user_email'));
         //redirect('login');
     }
     
