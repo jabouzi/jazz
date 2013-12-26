@@ -21,7 +21,7 @@ class Login extends MX_Controller
     
     function show($message = null)
     {
-        $this->load->helper('cookie');
+        //$this->load->helper('cookie');
         $this->load->helper('language');
         $this->load->helper('form');
         $this->lang->load('login');
@@ -40,7 +40,7 @@ class Login extends MX_Controller
     {
         $this->load->library('encryption');
         $this->load->model('mdl_login');
-        $this->load->helper('cookie');
+        //$this->load->helper('cookie');
         $username = $this->security->xss_clean($this->input->post('email'));
         $password = $this->encryption->getEncrypt($this->security->xss_clean($this->input->post('password')), 'clétonic');
         $result = $this->mdl_login->validate_user($username, $password);
@@ -78,7 +78,7 @@ class Login extends MX_Controller
     
     function autologin()
     {
-        $this->load->helper('cookie');
+        //$this->load->helper('cookie');
         $this->load->library('encryption');
         $this->load->model('mdl_login');
         $result = false;
@@ -139,6 +139,7 @@ class Login extends MX_Controller
             'domain' => $_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
+        //setcookie($cookie['name'], $cookie['value'], $cookie['expire'], $cookie['path'], $cookie['domain']);
         set_cookie($cookie);
         $this->mdl_login->insert_cookie(array('cookie_email' => $value, 'cookie_hash' => $hash));
     }
@@ -148,13 +149,13 @@ class Login extends MX_Controller
         $cookie = array(
             'name'   => 'tonic_cms',
             'value'  => $value.'||'.$hash,
-            'expire' => (time() + 31536000),
+            'expire' => (time() - 31536000),
             'domain' => $_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
-        //set_cookie($cookie);
-        delete_cookie('tonik_cms');
-        setcookie('tonik_cms', null, -1, '/');
+        set_cookie($cookie);
+        //delete_cookie('tonik_cms');
+        //setcookie('tonik_cms', null, -1, '/');
         unset($_COOKIE['tonic_cms']);
         $this->mdl_login->delete_cookie($hash);
     }
