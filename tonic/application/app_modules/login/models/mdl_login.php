@@ -51,7 +51,7 @@ class Mdl_login extends CI_Model
     
     function update_cookie($hash, $data)
     {
-        $this->db->where('hash', $hash);
+        $this->db->where('cookie_hash', $hash);
         $this->db->update('tonic_cookies', $data);
     }
     
