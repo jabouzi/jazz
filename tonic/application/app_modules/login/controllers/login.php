@@ -90,8 +90,7 @@ class Login extends MX_Controller
         if ($cookie)
         {
             $username = $cookie[0];
-            $old_hash = $cookie[1];        
-            $this->deletecookie($username, $old_hash);
+            $old_hash = $cookie[1];
             $result = $this->mdl_login->validate_cookie($username, $old_hash);
         }
         
@@ -110,7 +109,8 @@ class Login extends MX_Controller
                 'user_email' => $result->user_email,
                 'validated' => true
                 );
-            $this->session->set_userdata($user_data);            
+            $this->session->set_userdata($user_data);
+            $this->deletecookie($username, $old_hash);
             $this->setcookie($username, $hash);
             redirect('dashboard');
         }
