@@ -9,6 +9,7 @@ class Login extends MX_Controller
     
     function index()
     {
+        $this->load->helper('cookie');
         var_dump($this->getcookie());
         //var_dump($_COOKIE);
         if ($this->session->userdata('user_email'))
