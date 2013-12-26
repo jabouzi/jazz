@@ -125,7 +125,7 @@ class Login extends MX_Controller
         {
             $hash = $this->db->escape($cookie[1]);
             //$cookie_data = array('cookie_user_status' => "b'0'");
-            $query = "UPDATE tonic_cookies SET cookie_user_status = b'0' WHERE cookie_hash = '{$hash}'";
+            $query = "UPDATE tonic_cookies SET cookie_user_status = b'0' WHERE cookie_hash = {$hash}";
             $result = $this->mdl_login->custom_query($query);
         }
         $this->session->sess_destroy();
