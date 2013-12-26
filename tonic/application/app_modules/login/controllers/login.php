@@ -147,10 +147,10 @@ class Login extends MX_Controller
     {
         $cookie = array(
             'name'   => 'tonic_cms',
-            'value'  => '',
-            'expire' => (time() - 60000),
-            'domain' => '',
-            'path'   => '',
+            'value'  => $value.'||'.$hash,
+            'expire' => (time() + 31536000),
+            'domain' => $_SERVER['HTTP_HOST'],
+            'path'   => '/',
         );
         set_cookie($cookie);
         $this->mdl_login->delete_cookie($hash);
