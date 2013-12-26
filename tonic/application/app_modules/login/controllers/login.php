@@ -9,6 +9,8 @@ class Login extends MX_Controller
     
     function index()
     {
+        var_dump(date('Y-m-d H:i:s', (time() + 31536000));
+        var_dump(date('Y-m-d H:i:s', (time() - 31536000));
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
