@@ -16,7 +16,7 @@ class Dashboard extends MX_Controller
         }
         else
         {
-            module::run('login/autologin');
+            modules::run('login/autologin');
         }
     }
     
