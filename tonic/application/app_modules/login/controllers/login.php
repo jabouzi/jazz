@@ -9,6 +9,9 @@ class Login extends MX_Controller
     
     function index($logout = null)
     {
+        $this->load->helper('cookie');
+        $this->islogout();
+        exit;
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
@@ -124,6 +127,19 @@ class Login extends MX_Controller
         }
         $this->session->sess_destroy();
         $this->show();
+    }
+    
+    function islogout()
+    {
+        $cookie = $this->getcookie();
+        if ($cookie)
+        {
+            $hash = $cookie[1];
+            $result = $this->mdl_login->get_where_custom('tonic_cookies', 'cookie_hash', $hash)->row();
+            var_dump($result);
+        }
+        
+        return false;
     }
     
     function getcookie()
