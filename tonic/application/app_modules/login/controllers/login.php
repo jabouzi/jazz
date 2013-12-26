@@ -120,7 +120,7 @@ class Login extends MX_Controller
         //var_dump($_COOKIE, $_SESSION);
         $this->session->sess_destroy();
         //var_dump($_COOKIE, $_SESSION);
-        //redirect('login');
+        redirect('login');
     }
     
     function getcookie()
