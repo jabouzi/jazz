@@ -144,7 +144,7 @@ class Login extends MX_Controller
         $cookie = array(
             'name'   => 'tonic_cms',
             'value'  => $value.'||'.$hash,
-            'expire' => (time() + 525600),
+            'expire' => '525600',
             'domain' => $_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
@@ -159,7 +159,7 @@ class Login extends MX_Controller
         $cookie = array(
             'name'   => 'tonic_cms',
             'value'  => $value.'||'.$hash,
-            'expire' => (time() - 525600),
+            'expire' => '-525600',
             'domain' => $_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
