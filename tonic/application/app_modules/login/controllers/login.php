@@ -9,23 +9,22 @@ class Login extends MX_Controller
     
     function index($logout = null)
     {
-        $this->load->model('mdl_login');
-        //$this->load->helper('cookie');
-        $this->islogout();
-        exit;
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
         }
-        else
+        else if ($this->islogout())
         {
+            $this->show();
+        }
+        else
+        { 
             $this->autologin();
         }
     }
     
     function show($message = null)
     {
-        //$this->load->helper('cookie');
         $this->load->helper('language');
         $this->load->helper('form');
         $this->lang->load('login');
@@ -45,7 +44,6 @@ class Login extends MX_Controller
     {
         $this->load->library('encryption');
         $this->load->model('mdl_login');
-        //$this->load->helper('cookie');
         $username = $this->security->xss_clean($this->input->post('email'));
         $password = $this->encryption->getEncrypt($this->security->xss_clean($this->input->post('password')), 'clétonic');
         $result = $this->mdl_login->validate_user($username, $password);
@@ -83,7 +81,6 @@ class Login extends MX_Controller
     
     function autologin()
     {
-        //$this->load->helper('cookie');
         $this->load->library('encryption');
         $this->load->model('mdl_login');
         $result = false;
@@ -124,23 +121,22 @@ class Login extends MX_Controller
         if ($cookie)
         {
             $hash = $this->db->escape($cookie[1]);
-            //$cookie_data = array('cookie_user_status' => "b'0'");
-            $query = "UPDATE tonic_cookies SET cookie_user_status = b'0' WHERE cookie_hash = {$hash}";
+            $query = "UPDATE tonic_cookies SET cookie_user_status = b'1' WHERE cookie_hash = {$hash}";
             $result = $this->mdl_login->custom_query($query);
         }
         $this->session->sess_destroy();
-        //$this->show();
+        $this->show();
     }
     
     function islogout()
     {
+        $this->load->model('mdl_login');
         $cookie = $this->getcookie();
         if ($cookie)
         {
             $hash = $cookie[1];
             $result = $this->mdl_login->get_where_custom('tonic_cookies', 'cookie_hash', $hash)->row();
-            var_dump($result);
-            var_dump(ord($result->cookie_user_status));
+            return ord($result->cookie_user_status);
         }
         
         return false;
@@ -172,7 +168,7 @@ class Login extends MX_Controller
         );
         
         set_cookie($cookie);
-        $this->mdl_login->insert_cookie(array('cookie_email' => $value, 'cookie_hash' => $hash, 'cookie_user_status' => b'1'));
+        $this->mdl_login->insert_cookie(array('cookie_email' => $value, 'cookie_hash' => $hash));
     }
 
     function deletecookie($value, $hash)
