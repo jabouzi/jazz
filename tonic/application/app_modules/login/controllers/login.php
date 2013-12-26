@@ -7,11 +7,8 @@ class Login extends MX_Controller
         parent::__construct();
     }
     
-    function index()
+    function index($logout = null)
     {
-        //$this->load->helper('cookie');
-        //var_dump($this->getcookie());
-        //var_dump($_COOKIE);
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
@@ -118,6 +115,13 @@ class Login extends MX_Controller
 
     function logout()
     {
+        $cookie = $this->getcookie();
+        if ($cookie)
+        {
+            $hash = $cookie[1];
+            $cookie_data = array('cookie_user_status' => "b'0'");
+            $result = $this->mdl_login->update_cookie($hash, $cookie_data);
+        }
         $this->session->sess_destroy();
         $this->show();
     }
@@ -125,9 +129,7 @@ class Login extends MX_Controller
     function getcookie()
     {
         $cookie = get_cookie('tonic_cms');
-        //if (isset($_COOKIE['tonic_cms']))
-        //{
-            //$cookie = $_COOKIE['tonic_cms'];
+
         if ($cookie)
         {
             $cookie_data = explode('||',$cookie);
@@ -146,10 +148,9 @@ class Login extends MX_Controller
             'domain' => '.'.$_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
-        //setcookie($cookie['name'], $cookie['value'], $cookie['expire'], $cookie['path'], $cookie['domain']);
-        //$_COOKIE['tonic_cms'] = $value.'||'.$hash;
+        
         set_cookie($cookie);
-        $this->mdl_login->insert_cookie(array('cookie_email' => $value, 'cookie_hash' => $hash));
+        $this->mdl_login->insert_cookie(array('cookie_email' => $value, 'cookie_hash' => $hash, 'cookie_user_status' => b'1'));
     }
 
     function deletecookie($value, $hash)
@@ -160,11 +161,8 @@ class Login extends MX_Controller
             'domain' => '.'.$_SERVER['HTTP_HOST'],
             'path'   => '/',
         );
-        //set_cookie($cookie);
+
         delete_cookie($cookie['name'], $cookie['domain'], $cookie['path']);
-        //setcookie('tonik_cms', null, -1, '/');
-        //setcookie($cookie['name'], $cookie['value'], $cookie['expire'], $cookie['path'], $cookie['domain']);
-        //unset($_COOKIE['tonic_cms']);
         $this->mdl_login->delete_cookie($hash);
     }
 }
