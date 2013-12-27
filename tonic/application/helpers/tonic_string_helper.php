@@ -3,15 +3,15 @@
 function friendly_url($string, $separator = '-')
 {
     setlocale(LC_CTYPE, 'en_US.UTF8');
-    //$text = 'Nevalidní Český text   ééààĉçaa 5588 %&3 ';
-    //$text = preg_replace('/[^\\pL0-9]+/u', '-', $text);
-    $text = iconv("utf-8", "ASCII//TRANSLIT//IGNORE", $text);
-    $text = preg_replace('/\\s+/', $seperator, $text);
-    //$text = preg_replace('/[^-a-z0-9]+/i', '', $text);
-    $text = trim($text, $seperator);
-    $text = strtolower($text);
+    //$string = 'Nevalidní Český text   ééààĉçaa 5588 %&3 ';
+    //$string = preg_replace('/[^\\pL0-9]+/u', '-', $string);
+    $string = iconv("utf-8", "ASCII//TRANSLIT//IGNORE", $string);
+    $string = preg_replace('/\\s+/', $seperator, $string);
+    //$string = preg_replace('/[^-a-z0-9]+/i', '', $string);
+    $string = trim($string, $seperator);
+    $string = strtolower($string);
 
-    return $text;
+    return $string;
 }
 
 function generate_random_string($length = null) 
