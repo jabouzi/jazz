@@ -10,7 +10,7 @@ class Login extends MX_Controller
     function index($logout = null)
     {
         $this->load->helper('string');
-        friendly_url('éalfjs çaêtere é ', $separator = '-') ;
+        echo friendly_url('éalfjs çaêtere é ');
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
