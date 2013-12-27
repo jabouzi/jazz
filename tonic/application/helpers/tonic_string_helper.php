@@ -6,9 +6,9 @@ function friendly_url($string, $separator = '-')
     //$string = 'Nevalidní Český text   ééààĉçaa 5588 %&3 ';
     //$string = preg_replace('/[^\\pL0-9]+/u', '-', $string);
     $string = iconv("utf-8", "ASCII//TRANSLIT//IGNORE", $string);
-    $string = preg_replace('/\\s+/', $seperator, $string);
+    $string = preg_replace('/\\s+/', $separator, $string);
     //$string = preg_replace('/[^-a-z0-9]+/i', '', $string);
-    $string = trim($string, $seperator);
+    $string = trim($string, $separator);
     $string = strtolower($string);
 
     return $string;
