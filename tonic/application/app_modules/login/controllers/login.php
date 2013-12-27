@@ -9,6 +9,8 @@ class Login extends MX_Controller
     
     function index($logout = null)
     {
+        $this->load->helper('string');
+        friendly_url('éalfjs çaêtere é ', $separator = '-') 
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
@@ -42,6 +44,7 @@ class Login extends MX_Controller
     
     function process()
     {
+        $this->load->helper('string');
         $this->load->library('encryption');
         $this->load->model('mdl_login');
         $username = $this->security->xss_clean($this->input->post('email'));
@@ -72,7 +75,7 @@ class Login extends MX_Controller
             $remember_me = $this->input->post('remember_me');
             if ($remember_me)
             {
-                $hash = $this->encryption->generate_random_string(26);
+                $hash = generate_random_string(26);
                 $this->setcookie($username, $hash);
             }
             redirect('dashboard');
@@ -81,7 +84,7 @@ class Login extends MX_Controller
     
     function autologin()
     {
-        $this->load->library('encryption');
+        $this->load->helper('string');
         $this->load->model('mdl_login');
         $result = false;
         $cookie = $this->getcookie();
@@ -98,7 +101,7 @@ class Login extends MX_Controller
         }
         else
         {    
-            $hash = $this->encryption->generate_random_string(26);
+            $hash = generate_random_string(26);
             $result = $this->mdl_login->get_where_custom('tonic_users', 'user_email', $username)->row();
             $user_data = array(
                 'user_id' => $result->user_id,

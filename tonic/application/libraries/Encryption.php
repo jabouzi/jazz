@@ -51,24 +51,4 @@ class Encryption
         $dstruct = json_decode($this->pkcs5_unpad($dstr, 16));
         return $dstruct;
     }
-    
-    function generate_random_string($length = null) 
-    {
-        $string = sha1(uniqid(rand(),true));
-        if ($length) return substr($string,0,$length);
-        return $string;
-    }
-    
-    function ucname($string) 
-    {
-        $string = ucwords(strtolower($string));
-        foreach (array('-', '\'') as $delimiter) 
-        {
-            if (strpos($string, $delimiter)!==false) 
-            {
-                $string =implode($delimiter, array_map('ucfirst', explode($delimiter, $string)));
-            }
-        }
-        return $string;
-    }
 }
