@@ -9,8 +9,8 @@ class Login extends MX_Controller
     
     function index($logout = null)
     {
-        $this->load->helper('string');
-        var_dump(friendly_url('éalfjs çaêtere é '));
+        //$this->load->helper('string');
+        //var_dump(friendly_url('éalfjs çaêtere é '));
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
