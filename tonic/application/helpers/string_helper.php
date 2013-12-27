@@ -2,7 +2,7 @@
 
 function friendly_url($string, $separator = '-')
 {
-    //setlocale(LC_ALL, "en_US.UTF-8");
+    setlocale(LC_ALL, 'en_US.UTF8');
     $url = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $string);
     $url = preg_replace('/[^a-zA-Z0-9 -]/', '', $url);
     $url = trim(strtolower($url));
