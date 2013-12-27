@@ -9,8 +9,8 @@ class Login extends MX_Controller
     
     function index($logout = null)
     {
-        //$this->load->helper('string');
-        //var_dump(friendly_url('éalfjs çaêtere é '));
+        $this->load->helper('tonic_string');
+        var_dump(friendly_url('éalfjs çaêtere é '));
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
@@ -44,7 +44,7 @@ class Login extends MX_Controller
     
     function process()
     {
-        $this->load->helper('string');
+        $this->load->helper('tonic_string');
         $this->load->library('encryption');
         $this->load->model('mdl_login');
         $username = $this->security->xss_clean($this->input->post('email'));
@@ -84,7 +84,7 @@ class Login extends MX_Controller
     
     function autologin()
     {
-        $this->load->helper('string');
+        $this->load->helper('tonic_string');
         $this->load->model('mdl_login');
         $result = false;
         $cookie = $this->getcookie();
