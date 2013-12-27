@@ -9,8 +9,6 @@ class Login extends MX_Controller
     
     function index($logout = null)
     {
-        $this->load->helper('url');
-        echo url_title('éàjabouzi ça va être', '-', TRUE);
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
