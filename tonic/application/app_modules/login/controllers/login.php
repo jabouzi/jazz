@@ -9,6 +9,8 @@ class Login extends MX_Controller
     
     function index($logout = null)
     {
+        $this->load->helper('url');
+        echo url_title('éàjabouzi ça va être', '-', TRUE);
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
@@ -45,7 +47,7 @@ class Login extends MX_Controller
         $this->load->library('encryption');
         $this->load->model('mdl_login');
         $username = $this->security->xss_clean($this->input->post('email'));
-        $password = $this->encryption->getEncrypt($this->security->xss_clean($this->input->post('password')), 'clétonic');
+        $password = $this->encryption->encrypt_str($this->security->xss_clean($this->input->post('password')), 'clétonic');
         $result = $this->mdl_login->validate_user($username, $password);
         if(!$result)
         {
@@ -72,7 +74,7 @@ class Login extends MX_Controller
             $remember_me = $this->input->post('remember_me');
             if ($remember_me)
             {
-                $hash = $this->encryption->generateRandomString(26);
+                $hash = $this->encryption->generate_random_string(26);
                 $this->setcookie($username, $hash);
             }
             redirect('dashboard');
@@ -98,7 +100,7 @@ class Login extends MX_Controller
         }
         else
         {    
-            $hash = $this->encryption->generateRandomString(26);
+            $hash = $this->encryption->generate_random_string(26);
             $result = $this->mdl_login->get_where_custom('tonic_users', 'user_email', $username)->row();
             $user_data = array(
                 'user_id' => $result->user_id,
