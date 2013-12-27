@@ -17,7 +17,7 @@
 	<script type="text/javascript">
 	$(document).ready(function() 
     	{ 
-      	  $(".tablesorter").tablesorter(); 
+            $(".tablesorter").tablesorter(); 
    	 } 
 	);
 	$(document).ready(function() {
