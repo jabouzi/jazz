@@ -2,13 +2,16 @@
 
 function friendly_url($string, $separator = '-')
 {
-    setlocale(LC_ALL, 'en_US.UTF8');
-    $url = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $string);
-    $url = preg_replace('/[^a-zA-Z0-9 -]/', '', $url);
-    $url = trim(strtolower($url));
-    $url = preg_replace('/[s' . $separator . ']+/', $separator, $url);
-    $url = trim(strtolower($url),'-');
-    return $url;
+    setlocale(LC_CTYPE, 'en_US.UTF8');
+    //$text = 'Nevalidní Český text   ééààĉçaa 5588 %&3 ';
+    //$text = preg_replace('/[^\\pL0-9]+/u', '-', $text);
+    $text = iconv("utf-8", "ASCII//TRANSLIT//IGNORE", $text);
+    $text = preg_replace('/\\s+/', $seperator, $text);
+    //$text = preg_replace('/[^-a-z0-9]+/i', '', $text);
+    $text = trim($text, $seperator);
+    $text = strtolower($text);
+
+    return $text;
 }
 
 function generate_random_string($length = null) 
