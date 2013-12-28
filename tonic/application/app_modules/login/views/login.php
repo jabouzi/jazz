@@ -28,7 +28,7 @@
             <?php echo lang('login.remember'); ?>
           </label>
         </p>
-        <p class="submit"><input type="submit" name="commit" value="<?php lang('login.login'); ?>"></p>
+        <p class="submit"><input type="submit" name="commit" value="<?php echo lang('login.login'); ?>"></p>
       </form>
     </div>
 
