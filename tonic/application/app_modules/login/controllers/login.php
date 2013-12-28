@@ -128,7 +128,7 @@ class Login extends MX_Controller
             $result = $this->mdl_login->custom_query($query);
         }
         $this->session->sess_destroy();
-        $this->show();
+        redirect('login');
     }
     
     function islogout()
