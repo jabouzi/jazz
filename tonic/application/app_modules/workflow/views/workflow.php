@@ -1,9 +1,10 @@
 <article class="module width_full">
 	<header><h3>Worklows</h3></header>
+	<form method="post" action="<?php echo site_url('login/process'); ?>">
 		<div class="module_content">
 			<fieldset>
 				<label>Workflow Name</label>
-				<label>Delete</label>
+				<label style="align:right">Delete</label>
 			</fieldset>
 			<?php foreach ($workflows as $id => $name) : ?>
 				<fieldset>
@@ -12,10 +13,11 @@
 				</fieldset>
 			<?php endforeach ?>
 		</div>
-	<footer>
-		<div class="submit_link">
-			<input type="button" value="Save">
-			<input type="button" value="Add">
-		</div>
-	</footer>
+		<footer>
+			<div class="submit_link">
+				<input type="button" value="Save">
+				<input type="button" value="Add">
+			</div>
+		</footer>
+	</form>
 </article><!-- end of post new article -->
