@@ -4,7 +4,19 @@ $(document).ready(function() {
 			validate_from('workflows_form');
 		}
 	});
+	
+	$('#add_workflow').bind({
+		click: function() {
+			validate_from('workflows_form');
+		}
+	});
 });
+
+function add_workflow()
+{
+	$('#workflow_number').val() = parseInt($('#workflow_number').val()) + 1;
+	var $('#module_content').append($('#new_wokflow').val().replace('new_id', 'new_'+$('#workflow_number').val()));
+}
 
 function validate_from(form_id)
 {
