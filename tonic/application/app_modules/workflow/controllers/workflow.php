@@ -18,7 +18,7 @@ class Workflow extends MX_Controller
 	
 	private function show()
 	{
-		$view_data = array();
+		$this->lang->load('dashboard');
 		$this->load->model('mdl_workflow');
 		$results = $this->mdl_workflow->get('workflow_id');
 		foreach($results->result() as $workflow)
