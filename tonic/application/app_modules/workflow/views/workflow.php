@@ -1,35 +1,16 @@
 <article class="module width_full">
-	<header><h3>Worklow</h3></header>
+	<header><h3>Worklows</h3></header>
 		<div class="module_content">
+			<?php foreach ($worflows as $id => $name) : ?>
 				<fieldset>
-					<label>Post Title</label>
-					<input type="text">
+					<label>Workflow Name</label>
+					<input type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $name; ?>">
 				</fieldset>
-				<fieldset>
-					<label>Content</label>
-					<textarea rows="12"></textarea>
-				</fieldset>
-				<fieldset style="width:48%; float:left; margin-right: 3%;"> <!-- to make two field float next to one another, adjust values accordingly -->
-					<label>Category</label>
-					<select style="width:92%;">
-						<option>Articles</option>
-						<option>Tutorials</option>
-						<option>Freebies</option>
-					</select>
-				</fieldset>
-				<fieldset style="width:48%; float:left;"> <!-- to make two field float next to one another, adjust values accordingly -->
-					<label>Tags</label>
-					<input type="text" style="width:92%;">
-				</fieldset><div class="clear"></div>
+			<?php endforeach ?>
 		</div>
 	<footer>
 		<div class="submit_link">
-			<select>
-				<option>Draft</option>
-				<option>Published</option>
-			</select>
-			<input type="submit" value="Publish" class="alt_btn">
-			<input type="submit" value="Reset">
+			<input type="button" value="Save">
 		</div>
 	</footer>
 </article><!-- end of post new article -->
