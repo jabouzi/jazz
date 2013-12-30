@@ -1,7 +1,7 @@
 <article class="module width_full">
 	<header><h3>Worklows</h3></header>
 		<div class="module_content">
-			<?php foreach ($worflows as $id => $name) : ?>
+			<?php foreach ($workflows as $id => $name) : ?>
 				<fieldset>
 					<label>Workflow Name</label>
 					<input type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $name; ?>">
