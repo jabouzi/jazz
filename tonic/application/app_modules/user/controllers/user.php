@@ -9,10 +9,10 @@ class User extends MX_Controller
 	
 	function index()
 	{
-		$this->get_users();
+		$this->show();
 	}
 	
-	function get_users()
+	function show()
 	{
 		
 	}
