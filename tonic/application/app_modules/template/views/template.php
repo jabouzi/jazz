@@ -99,7 +99,7 @@
 	
 	<section id="main" class="column">
 		
-		<h4 style="display:nome" class="alert_info">Welcome to the free MediaLoot admin panel template, this could be an informative message.</h4>
+		<h4 style="display:none" class="alert_info">Welcome to the free MediaLoot admin panel template, this could be an informative message.</h4>
         <h4 class="hidden alert_warning"></h4>		
 		<h4 class="hidden alert_error"></h4>		
 		<h4 class="hidden alert_success"></h4>
