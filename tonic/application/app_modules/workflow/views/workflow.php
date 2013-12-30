@@ -4,7 +4,7 @@
 		<div class="module_content">
 			<fieldset>
 				<label>Workflow Name</label>
-				<label style="align:right">Delete</label>
+				<label>Delete</label>
 			</fieldset>
 			<?php foreach ($workflows as $id => $name) : ?>
 				<fieldset>
