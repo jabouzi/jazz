@@ -31,3 +31,4 @@ class User extends MX_Controller
 	{
 		
 	}
+}
