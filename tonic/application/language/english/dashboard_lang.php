@@ -18,6 +18,7 @@ $lang['permission.title'] = "Permissions";
 $lang['permission.name'] = "Permission Name";
 $lang['permission.order'] = "Permission Order";
 $lang['permission.error'] = "Permission name and order cannot be empty";
+$lang['permission.action'] = "Permission Actions";
 $lang['permission.create'] = "Create";
 $lang['permission.delete'] = "Delete";
 $lang['permission.update'] = "Update";

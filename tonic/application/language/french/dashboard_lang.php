@@ -18,6 +18,7 @@ $lang['permission.title'] = "Permissions";
 $lang['permission.name'] = "Nom de la permission";
 $lang['permission.order'] = "Ordre du flux de travail";
 $lang['permission.error'] = "Le nom et l'ordre de la permission ne peuvent pas être vide";
+$lang['permission.action'] = "Actions de la permission";
 $lang['permission.create'] = "Créer";
 $lang['permission.delete'] = "Supprimer";
 $lang['permission.update'] = "Mettre à jour";
