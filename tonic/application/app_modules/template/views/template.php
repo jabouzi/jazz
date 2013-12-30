@@ -105,7 +105,7 @@
 		
 		<h4 class="alert_info">Welcome to the free MediaLoot admin panel template, this could be an informative message.</h4>
 		
-		<?php echo $analytics_preview; ?>
+		<?php echo $analytic_preview; ?>
 		
 		<?php echo $structure_preview; ?>
 		
