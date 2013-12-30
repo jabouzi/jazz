@@ -16,8 +16,8 @@
 		<h1><?php echo lang('login.title'); ?></h1>
 		<p><?php echo lang($message); ?></p>
 		<form method="post" action="<?php echo site_url('login/process'); ?>">
-			<p><input type="text" name="email" value="" placeholder="<?php echo lang('login.email'); ?>"></p>
-			<p><input type="password" name="password" value="" placeholder="<?php echo lang('login.password'); ?>"></p>
+			<p><input type="text" name="email" value="<?php echo $this->input->post('email'); ?>" placeholder="<?php echo lang('login.email'); ?>"></p>
+			<p><input type="password" name="password" value="<?php echo $this->input->post('password'); ?>" placeholder="<?php echo lang('login.password'); ?>"></p>
 			<p>
 				<?php echo lang('login.lang'); ?>
 				<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
