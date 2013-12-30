@@ -4,7 +4,7 @@
 		<div class="module_content" id="workflow_list">
 			<fieldset>
 				<label><?php echo lang('workflow.name'); ?></label>
-				<label><?php echo lang('admin.order'); ?></label>
+				<label><?php echo lang('workflow.order'); ?></label>
 				<label><?php echo lang('admin.delete'); ?></label>
 			</fieldset>
 			<?php foreach ($workflows as $id => $workflow) : ?>
