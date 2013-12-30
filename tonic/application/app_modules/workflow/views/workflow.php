@@ -24,7 +24,7 @@
 	<input type="hidden" id="workflow_number" value="0">
 	<div style="display:none" id="new_wokflow">
 		<fieldset>
-			<input type="text" id="new_id" name="" value="">
+			<input type="text" name="new[]" value="">
 		</fieldset>
 	</div>
 </article><!-- end of post new article -->
