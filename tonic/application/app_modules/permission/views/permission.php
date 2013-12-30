@@ -10,7 +10,7 @@
 			<?php foreach ($permissions as $id => $permission) : ?>
 				<fieldset>
 					<input style="width:60%; padding-left: 0;" type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $permission['name']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('permission.name'); ?>">
-					<?php// echo form_multiselect('actions', $actions, $permission['actions']); ?>
+					
 					<select name="shirts" multiple="multiple">
 						<option value="small" selected="selected">Small Shirt</option>
 						<option value="med">Medium Shirt</option>
