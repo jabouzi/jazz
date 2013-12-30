@@ -21,10 +21,10 @@
 		</footer>
 	</form>
 	<input type="hidden" id="error_message" value="<?php echo lang('workflow.error'); ?>">
-	<div style="display:none" id="wokflow_add">
+	<input type="hidden" id="workflow_number" value="0">
+	<div style="display:none" id="new_wokflow">
 		<fieldset>
-			<input type="text" id="" name="" value="">
-			<input type="checkbox" id="" name="" value="">
+			<input type="text" id="new_id" name="" value="">
 		</fieldset>
 	</div>
 </article><!-- end of post new article -->
