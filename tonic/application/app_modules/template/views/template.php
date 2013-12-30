@@ -70,7 +70,6 @@
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
-		<hr/>
 		<h3>Content</h3>
 		<ul class="toggle">
 			<li class="icn_new_article"><a href="#">New Article</a></li>
