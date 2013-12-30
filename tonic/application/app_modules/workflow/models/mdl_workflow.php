@@ -57,7 +57,7 @@ class Mdl_workflow extends CI_Model
 	function delete($id)
 	{
 		$table = 'tonic_workflows';
-		$this->db->where('id', $id);
+		$this->db->where('workflow_id', $id);
 		$this->db->delete($table);
 	}
 	
