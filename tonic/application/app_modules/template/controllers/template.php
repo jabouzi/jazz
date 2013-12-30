@@ -10,6 +10,7 @@ class Template extends MX_Controller
 	
 	function index($view_data = array())
 	{
+		$this->load->helper('language');
 		$this->lang->load('dashboard');
 		var_dump(lang('dashboard.title1'));
 		if ($this->session->userdata('user_email'))
