@@ -3,8 +3,8 @@
 	<form id="workflows_form" method="post" action="<?php echo site_url('workflow/process'); ?>">
 		<div class="module_content" id="workflow_list">
 			<fieldset>
-				<label><?php echo lang('workflow.name'); ?></label>
-				<label><?php echo lang('workflow.order'); ?></label>
+				<label style="width:40%; padding-left: 0;" ><?php echo lang('workflow.name'); ?></label>
+				<label style="width:26%; padding-left: 0;"><?php echo lang('workflow.order'); ?></label>
 				<label><?php echo lang('admin.delete'); ?></label>
 			</fieldset>
 			<?php foreach ($workflows as $id => $workflow) : ?>
