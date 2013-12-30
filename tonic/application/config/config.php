@@ -369,8 +369,8 @@ $config['proxy_ips'] = '';
 
 
 $config['modules_locations'] = array(
-    APPPATH.'modules/' => '../modules/',
-    APPPATH.'app_modules/' => '../app_modules/',
+	APPPATH.'modules/' => '../modules/',
+	APPPATH.'app_modules/' => '../app_modules/',
 );
 
 $config['app_key'] = str_rot13($_SERVER['HTTP_HOST']);
