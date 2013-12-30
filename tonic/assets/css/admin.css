@@ -881,3 +881,14 @@ color: #32510F;
 padding: 10px 0;
 text-indent: 40px;
 font-size: 14px;}
+
+.error_form_msg.error_msg  {
+ padding-left:0px; display:block; margin-top:5px
+} 
+.error_msg{
+  color: #FF0000;
+  display: inline;
+  font-family: amblelight_condensed;
+  font-size: 13px;
+  padding-left: 0;
+}
