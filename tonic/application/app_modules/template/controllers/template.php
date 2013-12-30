@@ -12,6 +12,7 @@ class Template extends MX_Controller
 	{
 		if ($this->session->userdata('user_email'))
 		{
+			$this->load->helper('form');
 			$this->lang->load('lang');
 			foreach($this->lang->languages as $key => $value)
 			{
