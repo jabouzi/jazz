@@ -14,12 +14,12 @@ class Workflow extends MX_Controller
 	
 	function show()
 	{
+		$workflows =array();
 		$this->load->model('mdl_workflow');
-		$workflows = $this->mdl_workflow->get('workflow_id');
-		foreach($workflows->result() as $workflow)
+		$results = $this->mdl_workflow->get('workflow_id');
+		foreach($results->result() as $workflow)
 		{
-			var_dump($workflow->workflow_id);
-			var_dump($workflow->workflow_name);
+			$workflows[$workflow->workflow_id] = $workflow->workflow_name;
 		}
 		var_dump($workflows);
 	}
