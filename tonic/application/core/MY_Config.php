@@ -26,4 +26,6 @@ class MY_Config extends MX_Config {
 		
 }
 
+$config['app_key'] = str_rot13($_SERVER['HTTP_HOST']);
+
 /* End of file */
