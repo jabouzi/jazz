@@ -30,12 +30,19 @@ class Workflow extends MX_Controller
 	
 	function process()
 	{
-		var_dump($this->input->post());
-		exit;
 		foreach($this->input->post() as $id => $value)
 		{
-			$data = array('workflow_name_'.$this->lang->lang() => $value);
-			$this->mdl_workflow->update($id, $data);
+			if (is_numeric($id))
+			{
+				$data = array('workflow_name_'.$this->lang->lang() => $value);
+				$this->mdl_workflow->update($id, $data);
+			}
+		}
+		
+		foreach ($this->input->post('new') as $new)
+		{
+			$data = array('workflow_name_'.$this->lang->lang() => $new);
+			$this->mdl_workflow->insert($data);
 		}
 		
 		redirect('workflow');
