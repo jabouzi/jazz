@@ -8,8 +8,8 @@
 			</fieldset>
 			<?php foreach ($workflows as $id => $name) : ?>
 				<fieldset>
-					<input type="text" id="<?php echo $id; ?>" value="<?php echo $name; ?>">
-					<input type="checkbox" id="delete[<?php echo $id; ?>]" value="">
+					<input type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $name; ?>">
+					<input type="checkbox" id="delete[<?php echo $id; ?>]" name="delete[<?php echo $id; ?>]" value="">
 				</fieldset>
 			<?php endforeach ?>
 		</div>
@@ -22,8 +22,8 @@
 	</form>
 	<div style="display:none" id="wokflow_add">
 		<fieldset>
-			<input type="text" id="" value="">
-			<input type="checkbox" id="" value="">
+			<input type="text" id="" name="" value="">
+			<input type="checkbox" id="" name="" value="">
 		</fieldset>
 	</div>
 </article><!-- end of post new article -->
