@@ -17,6 +17,7 @@
 	<script type="text/javascript" src="/tonic/assets/js/jquery.equalHeight.js"></script>
 	<script type="text/javascript" src="/tonic/assets/js/jquery.multiselect.min.js"></script>
 	<script type="text/javascript" src="/tonic/assets/js/tonic.js"></script>
+	<script type="text/javascript" src="/tonic/assets/css/tonic.js"></script>    
 	<script type="text/javascript">
 	$(document).ready(function() 
 		{ 
