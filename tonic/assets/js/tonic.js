@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 function add_workflow()
 {
-	$('#workflow_number').val() = parseInt($('#workflow_number').val()) + 1;
+	$('#workflow_number').val(parseInt($('#workflow_number').val()) + 1);
 	$('#module_content').append($('#new_wokflow').val().replace('new_id', 'new_'+$('#workflow_number').val()));
 }
 
