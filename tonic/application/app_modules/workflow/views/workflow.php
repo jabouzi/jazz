@@ -20,7 +20,7 @@
 			</div>
 		</footer>
 	</form>
-	<input type="text" id="error_message" value="<?php echo lang('workflow.error'); ?>">
+	<input type="hidden" id="error_message" value="<?php echo lang('workflow.error'); ?>">
 	<div style="display:none" id="wokflow_add">
 		<fieldset>
 			<input type="text" id="" name="" value="">
