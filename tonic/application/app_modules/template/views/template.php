@@ -84,8 +84,8 @@
 		</ul>
 		<h3>Admin</h3>
 		<ul class="toggle">
-			<li class="icn_settings"><a href="#">Options</a></li>
-			<li class="icn_security"><a href="#">Security</a></li>
+			<li class="icn_settings"><a href="#">Workflow</a></li>
+			<li class="icn_security"><a href="#">Permissions</a></li>
 			<li class="icn_jump_back"><?php echo anchor('login/logout', 'Logout') ?></li>
 		</ul>
 		
