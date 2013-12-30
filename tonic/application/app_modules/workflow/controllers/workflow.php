@@ -32,7 +32,7 @@ class Workflow extends MX_Controller
 	{
 		foreach($this->input->post() as $id => $value)
 		{
-			$data = array('workflow_name_'.$this->lang->lang() => $value));
+			$data = array('workflow_name_'.$this->lang->lang() => $value);
 			$this->mdl_workflow->update($id, $data);
 		}
 		
