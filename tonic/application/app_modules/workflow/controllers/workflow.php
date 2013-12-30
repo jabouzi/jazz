@@ -46,15 +46,15 @@ class Workflow extends MX_Controller
 		redirect('workflow');
 	}
 	
-	function add_workflow($data)
+	function add_workflow($new_data)
 	{
-		$data = array('workflow_name_'.$this->lang->lang() => $new);
+		$data = array('workflow_name_'.$this->lang->lang() => $new_data);
 		$this->mdl_workflow->insert($data);
 	}
 	
-	function update_workflow($id, $data)
+	function update_workflow($id, $update_data)
 	{
-		$data = array('workflow_name_'.$this->lang->lang() => $value);
+		$data = array('workflow_name_'.$this->lang->lang() => $update_data);
 		$this->mdl_workflow->update($id, $data);
 	}
 	
