@@ -13,6 +13,7 @@
 	<footer>
 		<div class="submit_link">
 			<input type="button" value="Save">
+			<input type="button" value="Add">
 		</div>
 	</footer>
 </article><!-- end of post new article -->
