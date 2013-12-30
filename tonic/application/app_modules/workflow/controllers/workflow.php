@@ -43,6 +43,11 @@ class Workflow extends MX_Controller
 			$this->add_workflow($new);
 		}
 		
+		foreach($this->input->post('delete') as $id => $value)
+		{
+			$this->delete_workflow($id);
+		}
+		
 		redirect('workflow');
 	}
 	
