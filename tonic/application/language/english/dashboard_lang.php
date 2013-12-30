@@ -13,3 +13,8 @@ $lang['workflow.title'] = "Workflow";
 $lang['workflow.name'] = "Workflow Name";
 $lang['workflow.order'] = "Workflow Order";
 $lang['workflow.error'] = "Workflow name and order cannot be empty";
+
+$lang['permission.title'] = "Permissions";
+$lang['permission.name'] = "Permission Name";
+$lang['permission.order'] = "Permission Order";
+$lang['permission.error'] = "Permission name and order cannot be empty";
