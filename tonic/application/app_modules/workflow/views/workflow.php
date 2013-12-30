@@ -15,9 +15,15 @@
 		</div>
 		<footer>
 			<div class="submit_link">
-				<input type="button" value="Save">
+				<input type="submit" value="Save">
 				<input type="button" value="Add">
 			</div>
 		</footer>
 	</form>
+	<div style="display:none" id="wokflow_add">
+		<fieldset>
+			<input type="text" id="" value="">
+			<input type="checkbox" id="" value="">
+		</fieldset>
+	</div>
 </article><!-- end of post new article -->
