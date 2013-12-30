@@ -1,6 +1,6 @@
 <article class="module width_full">
 	<header><h3>Worklows</h3></header>
-	<form method="post" action="<?php echo site_url('workflow/process'); ?>">
+	<form name="workflow" method="post" action="<?php echo site_url('workflow/process'); ?>">
 		<div class="module_content">
 			<fieldset>
 				<label>Workflow Name</label>
@@ -15,8 +15,8 @@
 		</div>
 		<footer>
 			<div class="submit_link">
-				<input type="submit" value="Save">
-				<input type="button" value="Add">
+				<input type="button" id="save_workflow" value="Save">
+				<input type="button" id="add_workflow" value="Add">
 			</div>
 		</footer>
 	</form>
