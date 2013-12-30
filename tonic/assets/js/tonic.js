@@ -10,8 +10,6 @@ $(document).ready(function() {
 			add_workflow();
 		}
 	});
-	
-    $("select").multiselect(); 
 });
 
 function add_workflow()
