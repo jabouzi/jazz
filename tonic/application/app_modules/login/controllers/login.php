@@ -10,6 +10,7 @@ class Login extends MX_Controller
     function index($logout = null)
     {
         var_dump($this->config->item('app_key'));
+        var_dump($this->encryption->encrypt_str('7024043', $this->config->item('app_key')););
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
@@ -47,7 +48,7 @@ class Login extends MX_Controller
         $this->load->library('encryption');
         $this->load->model('mdl_login');
         $username = $this->security->xss_clean($this->input->post('email'));
-        $password = $this->encryption->encrypt_str($this->security->xss_clean($this->input->post('password')), 'clétonic');
+        $password = $this->encryption->encrypt_str($this->security->xss_clean($this->input->post('password')), $this->config->item('app_key'));
         $result = $this->mdl_login->validate_user($username, $password);
         if(!$result)
         {
