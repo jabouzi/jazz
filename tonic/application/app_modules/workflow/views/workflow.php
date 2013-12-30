@@ -3,10 +3,12 @@
 		<div class="module_content">
 			<fieldset>
 				<label>Workflow Name</label>
+				<label>Delete</label>
 			</fieldset>
 			<?php foreach ($workflows as $id => $name) : ?>
 				<fieldset>
-					<input type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $name; ?>">
+					<input type="text" id="id_<?php echo $id; ?>" value="<?php echo $name; ?>">
+					<input type="checkbox" id="delete_<?php echo $id; ?>" value="">
 				</fieldset>
 			<?php endforeach ?>
 		</div>
