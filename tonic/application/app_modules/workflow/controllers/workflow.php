@@ -30,6 +30,8 @@ class Workflow extends MX_Controller
 	
 	function process()
 	{
+		var_dump($this->input->post());
+		exit;
 		foreach($this->input->post() as $id => $value)
 		{
 			$data = array('workflow_name_'.$this->lang->lang() => $value);
