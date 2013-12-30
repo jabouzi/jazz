@@ -34,15 +34,13 @@ class Workflow extends MX_Controller
 		{
 			if (is_numeric($id))
 			{
-				$data = array('workflow_name_'.$this->lang->lang() => $value);
-				$this->mdl_workflow->update($id, $data);
+				$this->update_workflow($id, $value);
 			}
 		}
 		
 		foreach ($this->input->post('new') as $new)
 		{
-			$data = array('workflow_name_'.$this->lang->lang() => $new);
-			$this->mdl_workflow->insert($data);
+			$this->add_workflow($new);
 		}
 		
 		redirect('workflow');
@@ -50,16 +48,18 @@ class Workflow extends MX_Controller
 	
 	function add_workflow($data)
 	{
-		
+		$data = array('workflow_name_'.$this->lang->lang() => $new);
+		$this->mdl_workflow->insert($data);
 	}
 	
-	function update_workflow($id)
+	function update_workflow($id, $data)
 	{
-		
+		$data = array('workflow_name_'.$this->lang->lang() => $value);
+		$this->mdl_workflow->update($id, $data);
 	}
 	
 	function delete_workflow($id)
 	{
-		
+		$this->mdl_workflow->delete($id);
 	}
 }
