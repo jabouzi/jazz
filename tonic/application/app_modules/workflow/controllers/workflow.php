@@ -9,7 +9,7 @@ class Workflow extends MX_Controller
 	
 	function index()
 	{
-		$view_data['widget_workflow'] = $this->show();
+		$view_data['admin_workflow'] = $this->show();
 		echo modules::run('template', $view_data);
 		
 	}
