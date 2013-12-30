@@ -16,7 +16,7 @@ class Workflow extends MX_Controller
 	{
 		$this->load->model('mdl_workflow');
 		$workflows = $this->mdl_workflow->get('workflow_id');
-		foreach($workflows->row() as $workflow)
+		foreach($workflows->result() as $workflow)
 		{
 			var_dump($workflow->workflow_id);
 			var_dump($workflow->workflow_name);
