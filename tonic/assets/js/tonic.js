@@ -1,16 +1,16 @@
 $(document).ready(function() {
-	$( "#save_workflow" ).bind({
+	$('#save_workflow').bind({
 		click: function() {
-			validate_from(form_name)
+			validate_from('workflows_form');
 		}
 	});
 });
 
-function validate_from(form_name)
+function validate_from(form_id)
 {
     var required = 0;
     $('.error_elem_msg').remove();
-    $("#" + form_name).find('[data-validate]').each(function() {
+    $("#" + form_id).find('[data-validate]').each(function() {
         required += validate_element($(this));
     });
     if (required)
@@ -20,7 +20,7 @@ function validate_from(form_name)
     }
     else
     {
-        $("#" + form_name).submit();
+        $("#" + form_id).submit();
     }
 }
 

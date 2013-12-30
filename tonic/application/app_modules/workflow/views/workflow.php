@@ -1,6 +1,6 @@
 <article class="module width_full">
 	<header><h3>Worklows</h3></header>
-	<form name="workflow" method="post" action="<?php echo site_url('workflow/process'); ?>">
+	<form id="workflows_form" method="post" action="<?php echo site_url('workflow/process'); ?>">
 		<div class="module_content">
 			<fieldset>
 				<label>Workflow Name</label>
