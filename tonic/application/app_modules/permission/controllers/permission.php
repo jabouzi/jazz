@@ -24,6 +24,7 @@ class Permission extends MX_Controller
 		foreach($results->result() as $permission)
 		{
 			$view_data['permissions'][$permission->permission_id] = array('name' => $permission->{'permission_name_'.$this->lang->lang()}, 'actions' => explode('|',$permission->permission_actions));
+			$view_data['actions'] = $this->get_permission_actions_list();
 		}
 		return $this->load->view('permission', $view_data, true);
 	}
@@ -66,5 +67,18 @@ class Permission extends MX_Controller
 	function delete_permission($id)
 	{
 		$this->mdl_permission->delete($id);
+	}
+	
+	private function get_permission_actions_list()
+	{
+		$actions = array();
+		$actions['create'] = lang('permission.create');
+		$actions['delete'] = lang('permission.delete');
+		$actions['update'] = lang('permission.update');
+		$actions['view'] = lang('permission.view');
+		$actions['publish'] = lang('permission.publish');
+		$actions['archive']  = lang('permission.archive');
+		
+		return $actions;
 	}
 }
