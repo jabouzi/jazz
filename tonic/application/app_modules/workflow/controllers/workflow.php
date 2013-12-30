@@ -24,7 +24,7 @@ class Workflow extends MX_Controller
 		{
 			$view_data['workflows'][$workflow->workflow_id] = $workflow->workflow_name;
 		}
-		$this->load->view('workflow', $view_data);
+		return $this->load->view('workflow', $view_data, true);
 	}
 	
 	function add_workflow($data)
