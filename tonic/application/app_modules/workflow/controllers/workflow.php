@@ -9,19 +9,21 @@ class Workflow extends MX_Controller
 	
 	function index()
 	{
-		$this->show();
+		$view_data['widget_workflow'] = $this->show();
+		echo modules::run('template', $view_data);
+		
 	}
 	
-	function show()
+	private function show()
 	{
-		$workflows =array();
+		$view_data = array();
 		$this->load->model('mdl_workflow');
 		$results = $this->mdl_workflow->get('workflow_id');
 		foreach($results->result() as $workflow)
 		{
-			$workflows[$workflow->workflow_id] = $workflow->workflow_name;
+			$view_data['workflows'][$workflow->workflow_id] = $workflow->workflow_name;
 		}
-		var_dump($workflows);
+		$this->load->view('workflow', $view_data);
 	}
 	
 	function add_workflow($data)
