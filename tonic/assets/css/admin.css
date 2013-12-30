@@ -882,10 +882,6 @@ padding: 10px 0;
 text-indent: 40px;
 font-size: 14px;}
 
-.hidden {
-display: none;
-}
-
 .error_form_msg.error_msg  {
  padding-left:0px; display:block; margin-top:5px
 } 
