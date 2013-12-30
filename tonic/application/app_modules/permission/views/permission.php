@@ -11,7 +11,7 @@
 				<fieldset>
 					<input style="width:60%; padding-left: 0;" type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $permission['name']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('permission.name'); ?>">
 					
-					<select name="shirts" multiple="multiple">
+					<select style="width:15%;" name="shirts" multiple="multiple">
 						<option value="small" selected="selected">Small Shirt</option>
 						<option value="med">Medium Shirt</option>
 						<option value="large" selected="selected">Large Shirt</option>
