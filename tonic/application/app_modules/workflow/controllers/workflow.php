@@ -9,10 +9,10 @@ class Workflow extends MX_Controller
 	
 	function index()
 	{
-		$this->get_workflows();
+		$this->show();
 	}
 	
-	function get_workflows()
+	function show()
 	{
 		
 	}

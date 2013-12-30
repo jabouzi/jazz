@@ -9,10 +9,10 @@ class Webpage extends MX_Controller
 	
 	function index()
 	{
-		$this->get_webpages();
+		$this->show();
 	}
 	
-	function get_webpages()
+	function show()
 	{
 		
 	}

@@ -9,10 +9,10 @@ class Permission extends MX_Controller
 	
 	function index()
 	{
-		$this->get_permissions();
+		$this->show();
 	}
 	
-	function get_permissions()
+	function show()
 	{
 		
 	}
