@@ -9,7 +9,7 @@ $(document).ready(function() {
 function validate_from(form_id)
 {
     var required = 0;
-    $('.error_elem_msg').remove();
+    $('.alert_error').html('');
     $("#" + form_id).find('[data-validate]').each(function() {
         required += validate_element($(this));
     });
