@@ -9,7 +9,7 @@
 			<?php foreach ($workflows as $id => $name) : ?>
 				<fieldset>
 					<input type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $name; ?>">
-					<input type="checkbox" id="delete[<?php echo $id; ?>]" name="delete[<?php echo $id; ?>]" value="">
+					<input type="checkbox" id="delete[<?php echo $id; ?>]" name="delete[<?php echo $id; ?>]" value="1">
 				</fieldset>
 			<?php endforeach ?>
 		</div>
