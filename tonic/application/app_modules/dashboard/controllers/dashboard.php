@@ -10,14 +10,14 @@ class Dashboard extends MX_Controller
 	
 	function index()
 	{
-		if ($this->session->userdata('user_email'))
-		{
+		//if ($this->session->userdata('user_email'))
+		//{
 			$this->show();
-		}
-		else
-		{
-			redirect('login');
-		}
+		//}
+		//else
+		//{
+			//redirect('login');
+		//}
 	}
 	
 	function show()
