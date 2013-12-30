@@ -30,29 +30,29 @@ function validate_element(element)
     var required = 0;
     if (element.attr('data-type') == 'email')
     {
-        if (!isValidEmailAddress(element)) {  add_after(element); required++; }
+        if (!isValidEmailAddress(element)) {  $(this).addClass('error-input'); required++; }
         else if ($("#" + element.attr('id') + '_confirmation').length > 0 && $("#" + element.attr('id') + '_confirmation').val() != element.val()) 
-        { add_after(element); required++; }
+        { $(this).addClass('error-input'); required++; }
     }        
     else if (element.attr('data-type') == 'date')
     {
-        if (!isValideDate(element)) {  add_after(element); required++; }
+        if (!isValideDate(element)) {  $(this).addClass('error-input'); required++; }
     }
     else if (element.attr('data-type') == 'postalcode')
     {
-        if (!isValidPostalCode(element)) {  add_after(element); required++; }
+        if (!isValidPostalCode(element)) {  $(this).addClass('error-input'); required++; }
     }
     else if (element.attr('data-type') == 'checkbox')
     {
-        if (!element.is(':checked')) {  add_after(element); required++; }
+        if (!element.is(':checked')) {  $(this).addClass('error-input'); required++; }
     }
     else if (element.attr('data-type') == 'option')
     {
-        if (element.val() == '') {  add_after(element); required++; }
+        if (element.val() == '') {  $(this).addClass('error-input'); required++; }
     }
     else if (element.attr('data-type') == 'phone')
     {
-        if (!isValidPhone(element)) {  add_after(element); required++; }
+        if (!isValidPhone(element)) {  $(this).addClass('error-input'); required++; }
     }
     else if (element.attr('data-validate') == 'required') 
     {
@@ -60,7 +60,7 @@ function validate_element(element)
         {
             if (element.is(":visible"))
             {
-                { add_after(element); required++; }
+                { $(this).addClass('error-input'); required++; }
             }
         }
     }
@@ -120,29 +120,6 @@ function isValidNumber(element)
 {
     var number = element.val();
     return !isNaN(parseFloat(number)) && isFinite(number);
-}
-
-function generate_rid()
-{
-    var d = new Date();
-    var n = d.getTime();
-    var rid = Math.floor((Math.random() * n) + 1);
-    return rid;
-}
-
-function add_after(elem)
-{
-    var text = $('#required').val();
-    if ($(elem).val() == '') text = $('#required').val();
-    if (elem.attr('data-validate') == 'validate') text = $('#invalid').val();
-    if (elem.attr('data-pos') == '2') elem.parent().siblings("label").append('<span class="error_msg error_elem_msg"> (REQUIS) </span>');
-    else 
-		 elem.prev("label").append('<span class="error_msg error_elem_msg"> (REQUIS) </span>');
-}
-
-function textarea_to_end(ta_element)
-{
-    return ((ta_element.scrollTop + ta_element.offsetHeight) > ta_element.scrollHeight);
 }
 
 function blinkit(classname)
