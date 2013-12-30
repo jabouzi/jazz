@@ -23,3 +23,4 @@ class Analytic extends MX_Controller
 		$view_data = array();
 		$this->load->view('analytic_preview', $view_data);
 	}
+}
