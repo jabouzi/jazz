@@ -24,7 +24,7 @@ class Workflow extends MX_Controller
 		foreach($results->result() as $workflow)
 		{
 			var_dump($workflow);
-			$view_data['workflows'][$workflow->workflow_id] = $workflow->{workflow_name.'_'.$this->lang->lang()};
+			$view_data['workflows'][$workflow->workflow_id] = $workflow->{'workflow_name_'.$this->lang->lang()};
 		}
 		return $this->load->view('workflow', $view_data, true);
 	}
