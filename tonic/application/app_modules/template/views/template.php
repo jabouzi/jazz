@@ -65,7 +65,7 @@
 			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 		</div>
 		<div class="breadcrumbs_container">
-			<article class="breadcrumbs"><a href="index.html">Website Admin</a> <div class="breadcrumb_divider"></div> <a class="current">Dashboard</a></article>
+			<article class="breadcrumbs"><a href="/">Website Admin</a> <div class="breadcrumb_divider"></div> <a class="current">Dashboard</a></article>
 		</div>
 	</section><!-- end of secondary bar -->
 	
@@ -85,7 +85,7 @@
 		<h3>Admin</h3>
 		<ul class="toggle">
 			<li class="icn_settings"><a href="#">Workflow</a></li>
-			<li class="icn_security"><a href="#">Permissions</a></li>
+			<li class="icn_security"><a href="#">Permission</a></li>
 			<li class="icn_jump_back"><?php echo anchor('login/logout', 'Logout') ?></li>
 		</ul>
 		
