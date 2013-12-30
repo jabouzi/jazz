@@ -10,7 +10,14 @@ class Template extends MX_Controller
     
     function index($view_data = array())
     {
-        $this->load->view('template', $view_data);
+		if ($this->session->userdata('user_email'))
+		{
+			$this->load->view('template', $view_data);
+		}
+		else
+		{
+			redirect('login');
+		}        
     }
     
 }
