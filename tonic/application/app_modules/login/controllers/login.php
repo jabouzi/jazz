@@ -25,7 +25,6 @@ class Login extends MX_Controller
 	{
 		$this ->islogin();
 		
-		$this->load->helper('language');
 		$this->load->helper('form');
 		$this->load->helper('cookie');
 		$this->lang->load('login');

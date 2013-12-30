@@ -12,7 +12,6 @@ class Template extends MX_Controller
 	{
 		$this->load->helper('language');
 		$this->lang->load('dashboard');
-		var_dump(lang('dashboard.title1'));
 		if ($this->session->userdata('user_email'))
 		{
 			$this->load->view('template', $view_data);
