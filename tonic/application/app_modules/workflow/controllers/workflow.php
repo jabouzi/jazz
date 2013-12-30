@@ -9,6 +9,8 @@ class Workflow extends MX_Controller
 	
 	function index()
 	{
+		var_dump($this->session->userdata('user_email'));
+		exit();
 		modules::run('login/islogin');
 		
 		$view_data['page_title'] = 'Workflows';
