@@ -1,7 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 $lang['admin.delete'] = "Supprimer";
-$lang['admin.save'] = "Sauvgarder";
+$lang['admin.save'] = "Sauvegarder";
 $lang['admin.add'] = "Ajouter";
 
 $lang['dashboard.title1'] = "Panneau d'administration";
