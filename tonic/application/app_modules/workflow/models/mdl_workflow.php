@@ -41,20 +41,20 @@ class Mdl_workflow extends CI_Model
 		return $query;
 	}
 	
-	function _insert($data)
+	function insert($data)
 	{
 		$table = 'tonic_workflows';
 		$this->db->insert($table, $data);
 	}
 	
-	function _update($id, $data)
+	function update($id, $data)
 	{
 		$table = 'tonic_workflows';
-		$this->db->where('id', $id);
+		$this->db->where('workflow_id', $id);
 		$this->db->update($table, $data);
 	}
 	
-	function _delete($id)
+	function delete($id)
 	{
 		$table = 'tonic_workflows';
 		$this->db->where('id', $id);
@@ -88,7 +88,7 @@ class Mdl_workflow extends CI_Model
 		return $id;
 	}
 	
-	function _custom_query($mysql_query)
+	function custom_query($mysql_query)
 	{
 		$query = $this->db->query($mysql_query);
 		return $query;

@@ -5,6 +5,7 @@ class Workflow extends MX_Controller
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->model('mdl_workflow');
 	}
 	
 	function index()
@@ -19,7 +20,6 @@ class Workflow extends MX_Controller
 	private function show()
 	{
 		$this->lang->load('dashboard');
-		$this->load->model('mdl_workflow');
 		$results = $this->mdl_workflow->get('workflow_id');
 		foreach($results->result() as $workflow)
 		{
@@ -30,7 +30,13 @@ class Workflow extends MX_Controller
 	
 	function process()
 	{
-		var_dump($this->input->post());
+		foreach($this->input->post() as $id => $value)
+		{
+			$data = array('workflow_name_'.$this->lang->lang() => $value));
+			$this->mdl_workflow->update($id, $data);
+		}
+		
+		redirect('workflow');
 	}
 	
 	function add_workflow($data)
