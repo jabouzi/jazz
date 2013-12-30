@@ -15,7 +15,7 @@ class Dashboard extends MX_Controller
 	
 	function show()
 	{
-		$this->load->lang('dashboard');
+		$this->lang->load('dashboard');
 		$view_data['page_title'] = 'Dashboard';
 		$view_data['admin_widgets']['analytic_preview'] = modules::run('analytic/preview');
 		$view_data['admin_widgets']['structure_preview'] = modules::run('structure/preview');
