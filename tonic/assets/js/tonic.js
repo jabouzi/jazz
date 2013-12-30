@@ -15,6 +15,7 @@ function validate_from(form_id)
     });
     if (required)
     {
+		$('.alert_error').html('cjeck erros');
         $('.alert_error').show();  
         blinkit('alert_error');
     }
