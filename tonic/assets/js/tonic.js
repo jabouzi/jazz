@@ -15,8 +15,8 @@ function validate_from(form_id)
     });
     if (required)
     {
-        $('.error_form_msg').show();  
-        blinkit('error_form_msg');
+        $('.alert_error').show();  
+        blinkit('alert_error');
     }
     else
     {
