@@ -12,8 +12,8 @@ class Template extends MX_Controller
 	{
 		if ($this->session->userdata('user_email'))
 		{
-			$view_data['analytic_preview'] = modules::run('analytic/preview');
-			$view_data['structure_preview'] = modules::run('structure/preview');
+			$view_data['admin']['analytic_preview'] = modules::run('analytic/preview');
+			$view_data['admin']['structure_preview'] = modules::run('structure/preview');
 			$this->load->view('template', $view_data);
 		}
 		else

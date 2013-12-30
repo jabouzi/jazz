@@ -99,10 +99,16 @@
 	<section id="main" class="column">
 		
 		<h4 class="alert_info">Welcome to the free MediaLoot admin panel template, this could be an informative message.</h4>
+        
+        <?php 
+        foreach($admin as $widget => $content)
+        {
+            echo $content;
+        }
+		?>
+		<?php// echo $analytic_preview; ?>
 		
-		<?php echo $analytic_preview; ?>
-		
-		<?php echo $structure_preview; ?>
+		<?php// echo $structure_preview; ?>
 		
 		<div class="clear"></div>
 		
