@@ -15,8 +15,8 @@ $(document).ready(function() {
 function add_workflow()
 {
 	$('#workflow_number').val(parseInt($('#workflow_number').val()) + 1);
-	console.log($('#new_wokflow').val());
-	$('#workflow_list').append($('#new_wokflow').val().replace('new_id', 'new_'+$('#workflow_number').val()));
+	console.log($('#new_wokflow').html());
+	$('#workflow_list').append($('#new_wokflow').html().replace('new_id', 'new_'+$('#workflow_number').val()));
 }
 
 function validate_from(form_id)
