@@ -23,7 +23,7 @@ class Permission extends MX_Controller
 		$results = $this->mdl_permission->get('permission_id');
 		foreach($results->result() as $permission)
 		{
-			$view_data['permissions'][$permission->permission_id] = array('name' => $permission->{'permission_name_'.$this->lang->lang()}, 'order' => $permission->permission_order);
+			$view_data['permissions'][$permission->permission_id] = array('name' => $permission->{'permission_name_'.$this->lang->lang()}, 'actions' => explode('|',$permission->permission_actions));
 		}
 		return $this->load->view('permission', $view_data, true);
 	}

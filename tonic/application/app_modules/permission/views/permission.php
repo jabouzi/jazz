@@ -10,7 +10,6 @@
 			<?php foreach ($permissions as $id => $permission) : ?>
 				<fieldset>
 					<input style="width:60%; padding-left: 0;" type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $permission['name']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('permission.name'); ?>">
-					<input style="width:15%; padding-left: 0;" type="text" id="order[<?php echo $id; ?>]" name="order[<?php echo $id; ?>]" value="<?php echo $permission['order']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('permission.order'); ?>">
 					<input type="checkbox" id="delete[<?php echo $id; ?>]" name="delete[<?php echo $id; ?>]" value="1">
 				</fieldset>
 			<?php endforeach ?>
