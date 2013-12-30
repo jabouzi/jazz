@@ -4,11 +4,13 @@
 		<div class="module_content" id="workflow_list">
 			<fieldset>
 				<label><?php echo lang('workflow.name'); ?></label>
+				<label><?php echo lang('admin.order'); ?></label>
 				<label><?php echo lang('admin.delete'); ?></label>
 			</fieldset>
 			<?php foreach ($workflows as $id => $name) : ?>
 				<fieldset>
 					<input type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $name; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('workflow.name'); ?>">
+					<input type="text" id="level[<?php echo $id; ?>]" name="level[<?php echo $id; ?>]" value="<?php echo $name; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('workflow.order'); ?>">
 					<input type="checkbox" id="delete[<?php echo $id; ?>]" name="delete[<?php echo $id; ?>]" value="1">
 				</fieldset>
 			<?php endforeach ?>

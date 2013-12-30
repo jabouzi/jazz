@@ -11,5 +11,6 @@ $lang['dashboard.viewsite'] = "Voir le site";
 
 $lang['workflow.title'] = "Flux de travail";
 $lang['workflow.name'] = "Nom du flux de travail";
+$lang['workflow.order'] = "Ordre du flux de travail";
 $lang['workflow.error'] = "Le nom du flux ne peut pas être vide";
 
