@@ -87,13 +87,6 @@
 			<li class="icn_view_users"><a href="#">View Users</a></li>
 			<li class="icn_profile"><a href="#">Your Profile</a></li>
 		</ul>
-		<h3>Media</h3>
-		<ul class="toggle">
-			<li class="icn_folder"><a href="#">File Manager</a></li>
-			<li class="icn_photo"><a href="#">Gallery</a></li>
-			<li class="icn_audio"><a href="#">Audio</a></li>
-			<li class="icn_video"><a href="#">Video</a></li>
-		</ul>
 		<h3>Admin</h3>
 		<ul class="toggle">
 			<li class="icn_settings"><a href="#">Options</a></li>
@@ -255,29 +248,7 @@
 		
 		</article><!-- end of content manager article -->
 		
-		<article class="module width_quarter">
-			<header><h3>Messages</h3></header>
-			<div class="message_list">
-				<div class="module_content">
-					<div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-					<p><strong>John Doe</strong></p></div>
-					<div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-					<p><strong>John Doe</strong></p></div>
-					<div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-					<p><strong>John Doe</strong></p></div>
-					<div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-					<p><strong>John Doe</strong></p></div>
-					<div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-					<p><strong>John Doe</strong></p></div>
-				</div>
-			</div>
-			<footer>
-				<form class="post_message">
-					<input type="text" value="Message" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
-					<input type="submit" class="btn_post_message" value=""/>
-				</form>
-			</footer>
-		</article><!-- end of messages article -->
+		
 		
 		<div class="clear"></div>
 		
