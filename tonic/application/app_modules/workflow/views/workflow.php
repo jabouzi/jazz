@@ -3,14 +3,14 @@
 	<form id="workflows_form" method="post" action="<?php echo site_url('workflow/process'); ?>">
 		<div class="module_content" id="workflow_list">
 			<fieldset>
-				<label style="width:40%; padding-left: 0;" ><?php echo lang('workflow.name'); ?></label>
-				<label style="width:26%; padding-left: 0;"><?php echo lang('workflow.order'); ?></label>
+				<label style="width:60%; padding-left: 0;" ><?php echo lang('workflow.name'); ?></label>
+				<label style="width:5%; padding-left: 0;"><?php echo lang('workflow.order'); ?></label>
 				<label><?php echo lang('admin.delete'); ?></label>
 			</fieldset>
 			<?php foreach ($workflows as $id => $workflow) : ?>
 				<fieldset>
-					<input style="width:40%; padding-left: 0;" type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $workflow['name']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('workflow.name'); ?>">
-					<input style="width:26%; padding-left: 0;" type="text" id="order[<?php echo $id; ?>]" name="order[<?php echo $id; ?>]" value="<?php echo $workflow['order']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('workflow.order'); ?>">
+					<input style="width:60%; padding-left: 0;" type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $workflow['name']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('workflow.name'); ?>">
+					<input style="width:5%; padding-left: 0;" type="text" id="order[<?php echo $id; ?>]" name="order[<?php echo $id; ?>]" value="<?php echo $workflow['order']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('workflow.order'); ?>">
 					<input type="checkbox" id="delete[<?php echo $id; ?>]" name="delete[<?php echo $id; ?>]" value="1">
 				</fieldset>
 			<?php endforeach ?>
