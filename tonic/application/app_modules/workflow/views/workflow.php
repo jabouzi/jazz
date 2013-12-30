@@ -8,7 +8,7 @@
 			</fieldset>
 			<?php foreach ($workflows as $id => $name) : ?>
 				<fieldset>
-					<input class="error-input" type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $name; ?>" data-validate="required" data-type="text" data-pos="1" title="Workflow Name">
+					<input type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $name; ?>" data-validate="required" data-type="text" data-pos="1" title="Workflow Name">
 					<input type="checkbox" id="delete[<?php echo $id; ?>]" name="delete[<?php echo $id; ?>]" value="1">
 				</fieldset>
 			<?php endforeach ?>
@@ -17,10 +17,10 @@
 			<div class="submit_link">
 				<input type="button" id="save_workflow" value="Save">
 				<input type="button" id="add_workflow" value="Add">
-				<span class="error_msg error_form_msg" style="display:none">required_fields</span>
 			</div>
 		</footer>
 	</form>
+	<input type="text" id="error_message" value="">
 	<div style="display:none" id="wokflow_add">
 		<fieldset>
 			<input type="text" id="" name="" value="">
