@@ -30,17 +30,19 @@ class Workflow extends MX_Controller
 	
 	function process()
 	{   
-		var_dump($this->input->post());exit;
 		foreach($this->input->post() as $id => $value)
 		{
 			if (is_numeric($id))
 			{
-				$this->update_workflow($id, $value);
+				$orders = $this->input->post('order');
+				$data = array('workflow_name_'.$this->lang->lang() => $value, 'workflow_order' => $orders[$id]);
+				$this->update_workflow($id, $data);
 			}
 		}
 		
 		foreach ($this->input->post('new') as $new)
 		{
+			$data = array('workflow_name_'.$this->lang->lang() => $new);
 			$this->add_workflow($new);
 		}
 		
@@ -52,15 +54,15 @@ class Workflow extends MX_Controller
 		redirect('workflow');
 	}
 	
-	function add_workflow($new_data)
+	function add_workflow($data)
 	{
-		$data = array('workflow_name_'.$this->lang->lang() => $new_data);
+		
 		$this->mdl_workflow->insert($data);
 	}
 	
-	function update_workflow($id, $update_data)
+	function update_workflow($id, $data)
 	{
-		$data = array('workflow_name_'.$this->lang->lang() => $update_data);
+		
 		$this->mdl_workflow->update($id, $data);
 	}
 	
