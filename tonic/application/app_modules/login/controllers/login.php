@@ -9,9 +9,6 @@ class Login extends MX_Controller
     
     function index($logout = null)
     {
-        $this->load->library('encryption');
-        var_dump($this->config->item('app_key'));
-        var_dump($this->encryption->encrypt_str('7024043', $this->config->item('app_key')));
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
@@ -30,6 +27,7 @@ class Login extends MX_Controller
     {
         $this->load->helper('language');
         $this->load->helper('form');
+        $this->load->helper('cookie');
         $this->lang->load('login');
         $this->lang->load('lang');
         foreach($this->lang->languages as $key => $value)
