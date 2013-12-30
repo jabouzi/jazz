@@ -31,3 +31,4 @@ class Wysiwyg extends MX_Controller
 	{
 		
 	}
+}

@@ -31,3 +31,4 @@ class Permission extends MX_Controller
 	{
 		
 	}
+}

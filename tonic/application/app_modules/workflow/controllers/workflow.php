@@ -33,3 +33,4 @@ class Workflow extends MX_Controller
 	{
 		
 	}
+}
