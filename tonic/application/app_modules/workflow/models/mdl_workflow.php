@@ -13,6 +13,7 @@ class Mdl_workflow extends CI_Model
 		$table = 'tonic_workflows';
 		$this->db->order_by($order_by);
 		$query = $this->db->get($table);
+		var_dump($this->db->last_query());
 		return $query;
 	}
 	
