@@ -65,7 +65,7 @@
 			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 		</div>
 		<div class="breadcrumbs_container">
-			<article class="breadcrumbs"><a href="/tonic">Website Admin</a> <div class="breadcrumb_divider"></div> <a class="current">Dashboard</a></article>
+			<article class="breadcrumbs"><a href="/tonic">Website Admin</a> <div class="breadcrumb_divider"></div> <a class="current"><?php echo $page_title; ?></a></article>
 		</div>
 	</section><!-- end of secondary bar -->
 	
