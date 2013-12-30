@@ -101,15 +101,12 @@
 		<h4 class="alert_info">Welcome to the free MediaLoot admin panel template, this could be an informative message.</h4>
         
         <?php 
-        foreach($admin as $widget => $content)
+        foreach($admin_widgets as $widget => $content)
         {
             echo $content;
         }
 		?>
-		
-		
-		
-		
+
 		<div class="clear"></div>
 		
 		<article class="module width_full">
