@@ -9,11 +9,9 @@ class Login extends MX_Controller
 	
 	function index($logout = null)
 	{
-		if ($this->session->userdata('user_email'))
-		{
-			redirect('dashboard');
-		}
-		else if ($this->islogout())
+		$this->islogin();
+		
+		if ($this->islogout())
 		{
 			$this->show();
 		}
@@ -25,6 +23,8 @@ class Login extends MX_Controller
 	
 	function show($message = null)
 	{
+		$this ->islogin();
+		
 		$this->load->helper('language');
 		$this->load->helper('form');
 		$this->load->helper('cookie');
@@ -44,10 +44,7 @@ class Login extends MX_Controller
 	
 	function process()
 	{
-		if ($this->session->userdata('user_email'))
-		{
-			redirect('dashboard');
-		}
+		$this->islogin();
 
 		$this->load->helper('tonic_string');
 		$this->load->library('encryption');
@@ -136,6 +133,14 @@ class Login extends MX_Controller
 		redirect('login');
 	}
 	
+	function islogin()
+	{
+		if ($this->session->userdata('user_email'))
+		{
+			redirect('dashboard');
+		}
+	}
+	
 	function islogout()
 	{
 		$this->load->model('mdl_login');
@@ -150,8 +155,8 @@ class Login extends MX_Controller
 		return false;
 	}
 	
-	function getcookie()
-	{
+	private function getcookie()
+	{		
 		$this->load->helper('cookie');
 		$cookie = get_cookie('tonic_cms');
 
@@ -164,7 +169,7 @@ class Login extends MX_Controller
 		return false;
 	}
 	
-	function setcookie($value, $hash)
+	private function setcookie($value, $hash)
 	{
 		$this->load->helper('cookie');
 		$cookie = array(
@@ -179,7 +184,7 @@ class Login extends MX_Controller
 		$this->mdl_login->insert_cookie(array('cookie_email' => $value, 'cookie_hash' => $hash));
 	}
 
-	function deletecookie($value, $hash)
+	private function deletecookie($value, $hash)
 	{
 		$this->load->helper('cookie');
 		$cookie = array(
