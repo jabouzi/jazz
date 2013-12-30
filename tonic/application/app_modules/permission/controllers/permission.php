@@ -19,6 +19,7 @@ class Permission extends MX_Controller
 	
 	private function show()
 	{
+		$this->load->helper('form');
 		$this->lang->load('dashboard');
 		$results = $this->mdl_permission->get('permission_id');
 		foreach($results->result() as $permission)
