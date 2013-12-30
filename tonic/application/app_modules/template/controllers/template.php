@@ -19,5 +19,4 @@ class Template extends MX_Controller
 			redirect('login');
 		}        
     }
-    
 }

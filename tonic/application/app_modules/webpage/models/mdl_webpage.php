@@ -10,7 +10,7 @@ class Mdl_webpage extends CI_Model
 	
 	function get_table()
 	{
-		$table = "tablename";
+		$table = "tonic_webpages";
 		return $table;
 	}
 	
