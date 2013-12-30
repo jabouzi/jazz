@@ -28,7 +28,7 @@ class Mdl_workflow extends CI_Model
 	function get_where($id)
 	{
 		$table = 'tonic_workflows';
-		$this->db->where('id', $id);
+		$this->db->where('workflow_id', $id);
 		$query = $this->db->get($table);
 		return $query;
 	}
@@ -81,7 +81,7 @@ class Mdl_workflow extends CI_Model
 	function get_max()
 	{
 		$table = 'tonic_workflows';
-		$this->db->select_max('id');
+		$this->db->select_max('workflow_id');
 		$query = $this->db->get($table);
 		$row   = $query->row();
 		$id	= $row->id;
