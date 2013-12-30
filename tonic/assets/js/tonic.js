@@ -9,7 +9,9 @@ $(document).ready(function() {
 		click: function() {
 			add_workflow();
 		}
-	});
+	});	
+	
+	kendo.bind($("#testView"), testVM);
 });
 
 function add_workflow()
@@ -148,3 +150,15 @@ function effectFadeIn(classname, speed) {
 function effectFadeOut(classname, speed) {
     $("." + classname).fadeIn(speed);
 }
+
+var testVM = kendo.observable({
+    testItems: [1,3],
+    testItemSource: new kendo.data.DataSource({
+        data: [
+            { Id: 1, Name: "Test 1" },
+            { Id: 2, Name: "Test 2" },
+            { Id: 3, Name: "Test 3" },
+            { Id: 4, Name: "Test 4" }
+        ]
+    }),
+});
