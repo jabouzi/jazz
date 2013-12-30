@@ -7,7 +7,7 @@ $(document).ready(function() {
 	
 	$('#add_workflow').bind({
 		click: function() {
-			validate_from('workflows_form');
+			add_workflow();
 		}
 	});
 });
