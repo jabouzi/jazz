@@ -23,7 +23,7 @@ class Workflow extends MX_Controller
 		$results = $this->mdl_workflow->get('workflow_id');
 		foreach($results->result() as $workflow)
 		{
-			$view_data['workflows'][$workflow->workflow_id] = $workflow->{'workflow_name_'.$this->lang->lang()};
+			$view_data['workflows'][$workflow->workflow_id] = array('name' => $workflow->{'workflow_name_'.$this->lang->lang()}, 'order' => $workflow->workflow_order);
 		}
 		return $this->load->view('workflow', $view_data, true);
 	}
