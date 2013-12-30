@@ -135,7 +135,6 @@ class Login extends MX_Controller
 	
 	function islogin()
 	{
-		var_dump($this->session->userdata('user_email'));exit;
 		if ($this->session->userdata('user_email'))
 		{
 			redirect('dashboard');
