@@ -15,11 +15,11 @@ class Structure extends MX_Controller
 	function show()
 	{
 		$view_data = array();
-		$this->load->view('structure', $view_data);
+		return $this->load->view('structure', $view_data, true);
 	}
 	
 	function preview()
 	{
 		$view_data = array();
-		$this->load->view('structure_preview', $view_data);
+		return $this->load->view('structure_preview', $view_data, true);
 	}
