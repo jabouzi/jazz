@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login extends MX_Controller
+class Permission extends MX_Controller
 {
 	function __construct()
 	{
@@ -9,12 +9,25 @@ class Login extends MX_Controller
 	
 	function index()
 	{
-		if ($this->session->userdata('user_email'))
-		{
-			$this->get_permissions();
-		}
-		else
-		{
-			redirect('login');
-		}
+		$this->get_permissions();
+	}
+	
+	function get_permissions()
+	{
+		
+	}
+	
+	function add_permission($data)
+	{
+		
+	}
+	
+	function update_permission($id)
+	{
+		
+	}
+	
+	function delete_permission($id)
+	{
+		
 	}
