@@ -12,29 +12,30 @@
 </head>
 <body>
   <section class="container">
-    <div class="login">
-      <h1><?php echo lang('login.title'); ?></h1>
-      <p><?php echo lang($message); ?></p>
-      <form method="post" action="<?php echo site_url('login/process'); ?>">
-        <p><input type="text" name="email" value="" placeholder="<?php echo lang('login.email'); ?>"></p>
-        <p><input type="password" name="password" value="" placeholder="<?php echo lang('login.password'); ?>"></p>
-        <p>
-            <?php echo lang('login.lang'); ?>
-            <?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
-        </p>
-        <p class="remember_me">
-          <label>
-            <input type="checkbox" name="remember_me" id="remember_me" <?php if (get_cookie('tonic_cms')) echo 'checked'; ?> >
-            <?php echo lang('login.remember'); ?>
-          </label>
-        </p>
-        <p class="submit"><input type="submit" name="commit" value="<?php echo lang('login.login'); ?>"></p>
-      </form>
-    </div>
+	<div class="login">
+	  <h1><?php echo lang('login.title'); ?></h1>
+	  <p><?php echo lang($message); ?></p>
+	  <form method="post" action="<?php echo site_url('login/process'); ?>">
+		<p><input type="text" name="email" value="" placeholder="<?php echo lang('login.email'); ?>"></p>
+		<p><input type="password" name="password" value="" placeholder="<?php echo lang('login.password'); ?>"></p>
+		<p>
+			<?php echo lang('login.lang'); ?>
+			<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
+		</p>
+		<p class="remember_me">
+		  <label>
+			<input type="checkbox" name="remember_me" id="remember_me" <?php if (get_cookie('tonic_cms')) echo 'checked'; ?> >
+			<?php echo lang('login.remember'); ?>
+		  </label>
+		</p>
+		<p class="submit"><input type="submit" name="commit" value="<?php echo lang('login.login'); ?>"></p>
+	  </form>
+	</div>
 
-    <div class="login-help">
-      <p><?php echo lang('login.forget'); ?> <a href="index.html"><?php echo lang('login.reset'); ?></a>.</p>
-    </div>
+	<div class="login-help">
+	  <p><?php echo lang('login.forget'); ?> <a href="index.html"><?php echo lang('login.reset'); ?></a>.</p>
+	</div>
   </section>
 </body>
 </html>
+	
