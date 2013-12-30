@@ -11,4 +11,4 @@ $lang['dashboard.viewsite'] = "View site";
 
 $lang['workflow.title'] = "Workflow";
 $lang['workflow.name'] = "Workflow name";
-
+$lang['workflow.error'] = "Workflow name cannot be empty";
