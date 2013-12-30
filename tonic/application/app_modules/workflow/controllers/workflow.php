@@ -9,6 +9,8 @@ class Workflow extends MX_Controller
 	
 	function index()
 	{
+		modules::run('login/islogin');
+		
 		$view_data['page_title'] = 'Workflows';
 		$view_data['admin_widgets']['workflows'] = $this->show();
 		echo modules::run('template', $view_data);
@@ -17,6 +19,8 @@ class Workflow extends MX_Controller
 	
 	private function show()
 	{
+		modules::run('login/islogin');
+		
 		$view_data = array();
 		$this->load->model('mdl_workflow');
 		$results = $this->mdl_workflow->get('workflow_id');
@@ -25,6 +29,12 @@ class Workflow extends MX_Controller
 			$view_data['workflows'][$workflow->workflow_id] = $workflow->workflow_name;
 		}
 		return $this->load->view('workflow', $view_data, true);
+	}
+	
+	function process()
+	{
+		modules::run('login/islogin');
+		var_dump($this->input->post());
 	}
 	
 	function add_workflow($data)
