@@ -2,7 +2,7 @@
 	<header><h3>Worklows</h3></header>
 		<div class="module_content">
 			<fieldset>
-					<label>Workflow Name</label>
+				<label>Workflow Name</label>
 			</fieldset>
 			<?php foreach ($workflows as $id => $name) : ?>
 				<fieldset>
