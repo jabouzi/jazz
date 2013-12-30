@@ -10,7 +10,7 @@ class Dashboard extends MX_Controller
 	
 	function index()
 	{
-        $this->show();
+		$this->show();
 	}
 	
 	function show()

@@ -84,7 +84,7 @@
 		</ul>
 		<h3>Admin</h3>
 		<ul class="toggle">
-			<li class="icn_settings"><a href="#">Workflow</a></li>
+			<li class="icn_settings"><?php echo anchor('workflow', 'Workflow') ?></li>
 			<li class="icn_security"><a href="#">Permission</a></li>
 			<li class="icn_jump_back"><?php echo anchor('login/logout', 'Logout') ?></li>
 		</ul>
@@ -99,12 +99,12 @@
 	<section id="main" class="column">
 		
 		<h4 class="alert_info">Welcome to the free MediaLoot admin panel template, this could be an informative message.</h4>
-        
-        <?php 
-        foreach($admin_widgets as $widget => $content)
-        {
-            echo $content;
-        }
+		
+		<?php 
+		foreach($admin_widgets as $widget => $content)
+		{
+			echo $content;
+		}
 		?>
 
 		<div class="clear"></div>
