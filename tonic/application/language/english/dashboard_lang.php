@@ -7,8 +7,9 @@ $lang['admin.add'] = "Add";
 $lang['dashboard.title1'] = "Admin Panel";
 $lang['dashboard.title2'] = "Website Admin";
 $lang['dashboard.title3'] = "Dashboard";
-$lang['dashboard.viewsite'] = "View site";
+$lang['dashboard.viewsite'] = "View Site";
 
 $lang['workflow.title'] = "Workflow";
-$lang['workflow.name'] = "Workflow name";
+$lang['workflow.name'] = "Workflow Name";
+$lang['workflow.order'] = "Workflow Ordre";
 $lang['workflow.error'] = "Workflow name cannot be empty";
