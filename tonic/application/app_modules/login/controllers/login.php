@@ -9,6 +9,7 @@ class Login extends MX_Controller
     
     function index($logout = null)
     {
+        $this->load->library('encryption');
         var_dump($this->config->item('app_key'));
         var_dump($this->encryption->encrypt_str('7024043', $this->config->item('app_key')));
         if ($this->session->userdata('user_email'))
