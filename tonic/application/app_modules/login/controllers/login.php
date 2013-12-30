@@ -44,6 +44,11 @@ class Login extends MX_Controller
 	
 	function process()
 	{
+		if ($this->session->userdata('user_email'))
+		{
+			redirect('dashboard');
+		}
+
 		$this->load->helper('tonic_string');
 		$this->load->library('encryption');
 		$this->load->model('mdl_login');
@@ -79,7 +84,7 @@ class Login extends MX_Controller
 				$this->setcookie($username, $hash);
 			}
 			redirect('dashboard');
-		}		
+		}
 	}
 	
 	function autologin()
