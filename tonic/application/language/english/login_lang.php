@@ -8,4 +8,4 @@ $lang['login.remember'] = "Remember me on this computer";
 $lang['login.forget'] = "Forgot your password?";
 $lang['login.login'] = "Login";
 $lang['login.reset'] = "Click here to reset it";
-$lang['login.failed'] = "Email or/and passeord are invalid";
+$lang['login.failed'] = "Authentification failded.";

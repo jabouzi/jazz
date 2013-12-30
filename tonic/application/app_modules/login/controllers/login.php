@@ -9,6 +9,7 @@ class Login extends MX_Controller
     
     function index($logout = null)
     {
+        echo $this->config->item('app_key');
         if ($this->session->userdata('user_email'))
         {
             redirect('dashboard');
