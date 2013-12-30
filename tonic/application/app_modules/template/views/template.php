@@ -87,8 +87,8 @@
 		</ul>
 		<h3>Admin</h3>
 		<ul class="toggle">
-			<li class="icn_settings"><?php echo anchor('workflow', 'Workflow') ?></li>
-			<li class="icn_security"><a href="#">Permission</a></li>
+			<li class="icn_settings"><?php echo anchor('workflow', lang('workflow.title')) ?></li>
+			<li class="icn_security"><?php echo anchor('permission', lang('permission.title')) ?></li>
 		</ul>
 		
 		<footer>
