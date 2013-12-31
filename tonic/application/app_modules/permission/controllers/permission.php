@@ -10,8 +10,7 @@ class Permission extends MX_Controller
 	
 	function index()
 	{
-		echo 1;
-		//$this->get_permission_actions_list();
+		$this->get_permission_actions_list();
 		$view_data['page_title'] = lang('permission.title');
 		$view_data['admin_widgets']['permissions'] = $this->show();
 		echo modules::run('template', $view_data);
@@ -25,7 +24,7 @@ class Permission extends MX_Controller
 		foreach($results->result() as $permission)
 		{
 			$view_data['permissions'][$permission->permission_id] = array('name' => $permission->{'permission_name_'.$this->lang->lang()}, 'actions' => explode('|',$permission->permission_actions));
-			$view_data['actions'] = $this->get_permission_actions_list();
+			//$view_data['actions'] = $this->get_permission_actions_list();
 		}
 		return $this->load->view('permission', $view_data, true);
 	}
@@ -72,7 +71,8 @@ class Permission extends MX_Controller
 	
 	private function get_permission_actions_list()
 	{
-		var_dump($this->config->item('modules_locations'));
+		$modules_paths = array_keys($this->config->item('modules_locations'));
+		var_dump($modules_paths);
 		//$modules = array_merge(directory_map('./mydirectory/', 1), directory_map('./mydirectory/', 1));
 		//
 		//return $actions;
