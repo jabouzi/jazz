@@ -82,7 +82,7 @@ class Permission extends MX_Controller
 		
 		
 		foreach($modules_paths as $module_path)
-		{	$module_path['modules'];
+		{	$module_path;
 			foreach($module_path['modules'] as $module)
 			{
 				//var_dump();
