@@ -28,7 +28,7 @@ class Mdl_permission extends CI_Model
 	function get_where($id)
 	{
 		$table = 'tonic_permissions';
-		$this->db->where('permission_id', $id);
+		$this->db->where('permission_id >', $id);
 		$query = $this->db->get($table);
 		return $query;
 	}
