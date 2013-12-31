@@ -61,7 +61,6 @@ class Workflow extends MX_Controller
 	
 	function update_workflow($id, $data)
 	{
-		
 		$this->mdl_workflow->update($id, $data);
 	}
 	

@@ -90,6 +90,7 @@
 		<ul class="toggle">
 			<li class="icn_settings"><?php echo anchor('workflow', lang('workflow.title')) ?></li>
 			<li class="icn_security"><?php echo anchor('permission', lang('permission.title')) ?></li>
+			<li class="icn_folder"><a href="#">User Modules</a></li>
 		</ul>
 		
 		<footer>
