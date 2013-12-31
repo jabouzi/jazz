@@ -11,7 +11,7 @@ class Permission extends MX_Controller
 	
 	function index()
 	{
-		$this->get_permission_actions_list();
+		var_dump($this->get_permission_actions_list());
 		$view_data['page_title'] = lang('permission.title');
 		$view_data['admin_widgets']['permissions'] = $this->show();
 		echo modules::run('template', $view_data);
@@ -72,38 +72,13 @@ class Permission extends MX_Controller
 	
 	private function get_permission_actions_list()
 	{
-		//var_dump($this->configs->get_modules_list());
-		var_dump($this->configs->get_module_configs('permission'));
-		var_dump($this->configs->get_module_config('permission', 'permissions'));
-		//$this->load->helper('directory');
-		//$this->load->helper('file');
-		//$modules_paths = array_keys($this->config->item('modules_locations'));
-		//$allmodules = array();
-		//foreach($modules_paths as $key => $path)
-		//{
-			//$allmodules[$path] = array_diff(directory_map($path, 1), ['index.html']);
-		//}
-		//
-		//$list = array();
-		//foreach($allmodules as $modules)
-		//{
-			//$list = array_merge($list, $modules);
-		//}
-		//
-		//var_dump($list);
-				
-		//foreach($allmodules as $path => $modules)
-		//{
-			//foreach($modules as $module)
-			//{
-				//$module_config[$module] = json_decode(read_file($path.$module.'/config.json'));
-			//}			
-		//}
-		//var_dump($modules_paths);
-		//var_dump($modules);
-		//var_dump($module_config);
-		//
-		//
-		//return $actions;
+		$permissions = array();
+		$modules_list = $this->configs->get_modules_list();
+		foreach($modules_list as $module)
+		{
+			$permissions = $this->configs->get_module_config($module, 'permissions');
+		}		
+		
+		return $permissions;
 	}
 }

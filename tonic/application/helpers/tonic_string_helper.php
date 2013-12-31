@@ -30,3 +30,9 @@ function ucname($string)
 	}
 	return $string;
 }
+
+function to_boolean($str)
+{
+	if (strtolower($str) == 'false') return false;
+	return true;
+}
