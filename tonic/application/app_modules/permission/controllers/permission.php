@@ -74,9 +74,9 @@ class Permission extends MX_Controller
 		$this->load->helper('directory');
 		$modules_paths = array_keys($this->config->item('modules_locations'));
 		$modules = array();
-		foreach($modules_paths as $path)
+		foreach($modules_paths as $key => $path)
 		{
-			$modules_paths['modules'][] = array_diff(array_merge($modules, directory_map($path, 1)), ['index.html']);
+			$modules_paths['modules'][$key] = array_diff(array_merge($modules, directory_map($path, 1)), ['index.html']);
 		}
 		
 		
