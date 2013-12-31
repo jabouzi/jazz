@@ -12,7 +12,6 @@ class Configs
 		$this->api->load->helper('file');
 		$this->api->load->helper('array');
 		$this->modules_list = $this->_get_modules();
-		var_dump($this->_get_modules_configs());
 	}
 	
 	function get_modules_list()
@@ -28,6 +27,9 @@ class Configs
 	
 	function get_module_configs($module)
 	{
+		$configs = $this->_get_modules_configs();
+		var_dump(is_array($configs));
+		var_dump($configs['permission']);
 		return element($this->_get_modules_configs(), $module);
 	}
 	
