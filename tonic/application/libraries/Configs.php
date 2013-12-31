@@ -11,13 +11,13 @@ class Configs
 		$this->api->load->helper('directory');
 		$this->api->load->helper('file');
 		$this->api->load->helper('array');
-		$modules_list = $this->_get_modules();
+		$this->modules_list = $this->_get_modules();
 	}
 	
 	function get_modules_list()
 	{
 		$allmodules = array();
-		foreach($modules_list as $modules)
+		foreach($this->modules_list as $modules)
 		{
 			$allmodules = array_merge($allmodules, $modules);
 		}
@@ -49,7 +49,7 @@ class Configs
 	
 	function _get_modules_configs()
 	{
-		foreach($modules_list as $path => $modules)
+		foreach($this->modules_list as $path => $modules)
 		{
 			foreach($modules as $module)
 			{
