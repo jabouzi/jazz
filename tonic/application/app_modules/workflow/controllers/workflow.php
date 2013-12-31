@@ -43,7 +43,7 @@ class Workflow extends MX_Controller
 		foreach ($this->input->post('new') as $new)
 		{
 			$data = array('workflow_name_'.$this->lang->lang() => $new);
-			$this->add_workflow($new);
+			$this->add_workflow($data);
 		}
 		
 		foreach($this->input->post('delete') as $id => $value)
@@ -56,7 +56,6 @@ class Workflow extends MX_Controller
 	
 	function add_workflow($data)
 	{
-		var_dump($data);
 		$this->mdl_workflow->insert($data);
 	}
 	
