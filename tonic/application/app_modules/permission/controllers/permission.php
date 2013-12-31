@@ -89,7 +89,7 @@ class Permission extends MX_Controller
 				$module_config['module'] = read_file($module_path.$module.'/config.json');
 			}			
 		}
-		//var_dump($modules_paths);
+		var_dump($modules_paths);
 		var_dump($module_config);
 		//
 		//
