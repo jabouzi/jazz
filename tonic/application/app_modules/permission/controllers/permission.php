@@ -71,12 +71,7 @@ class Permission extends MX_Controller
 	private function get_permission_actions_list()
 	{
 		$actions = array();
-		$actions['create'] = lang('permission.create');
-		$actions['delete'] = lang('permission.delete');
-		$actions['update'] = lang('permission.update');
-		$actions['view'] = lang('permission.view');
-		$actions['publish'] = lang('permission.publish');
-		$actions['archive']  = lang('permission.archive');
+		
 		
 		return $actions;
 	}
