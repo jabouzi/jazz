@@ -33,7 +33,6 @@ class Permission extends MX_Controller
 	
 	function process()
 	{
-		var_dump($this->input->post());exit;
 		foreach($this->input->post() as $id => $value)
 		{
 			if (is_numeric($id))
