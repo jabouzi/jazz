@@ -10,6 +10,40 @@ $(document).ready(function() {
 			add_workflow();
 		}
 	});
+	
+	var build = function(select, tr) {
+		select.multiselect();
+		
+		if (select.length === 0) {
+			return 'Select not present anymore.';
+		}
+		
+		if (select.css('display') !== 'none') {
+			return 'Select still visible (expected <code>display: none;</code>).';
+		}
+		
+		if ($('button.multiselect', tr).length === 0) {
+			return 'Multiselect button not present.';
+		}
+		
+		if ($('option', select).length !== 5) {
+			return 'Not all options present anymore.';
+		}
+		
+		if ($('ul.multiselect-container', tr).length === 0) {
+			return 'Unordered list <code>.multiselect-container</code> not present.';
+		}
+		
+		if ($('ul.multiselect-container li', tr).length !== 5) {
+			return 'No list item for each option present.';
+		}
+		
+		if ($('ul.multiselect-container li a', tr).length !== 5) {
+			return 'Not all list items come with an anchor inside.';
+		}
+		
+		return false;
+	}($('#test-build-select'));
 });
 
 function add_workflow()
