@@ -43,7 +43,7 @@ $(document).ready(function() {
 		}
 		
 		return false;
-	}($('."permissions-multi-select'));
+	}($('.permissions-multi-select'));
 });
 
 function add_workflow()
