@@ -25,7 +25,7 @@ class Permission extends MX_Controller
 		$view_data['attributes'] = "class='permissions-multi-select'";
 		foreach($results->result() as $permission)
 		{
-			$view_data['permissions'][$permission->permission_id] = array('name' => $permission->{'permission_name_'.$this->lang->lang()}, 'actions' => explode('|',$permission->permission_actions));
+			$view_data['permissions'][$permission->permission_id] = array('name' => $permission->{'permission_name_'.$this->lang->lang()}, 'actions' => unserialize($permission->permission_actions));
 		}
 
 		return $this->load->view('permission', $view_data, true);
@@ -38,7 +38,7 @@ class Permission extends MX_Controller
 			if (is_numeric($id))
 			{
 				$actions = $this->input->post('actions');
-				$data = array('permission_name_'.$this->lang->lang() => $value, 'permission_actions' => implode('|', $actions[$id]));
+				$data = array('permission_name_'.$this->lang->lang() => $value, 'permission_actions' =>serialize($actions[$id]));
 				$this->update_permission($id, $data);
 			}
 		}
