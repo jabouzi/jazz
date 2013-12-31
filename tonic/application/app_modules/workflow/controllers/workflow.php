@@ -10,7 +10,6 @@ class Workflow extends MX_Controller
 	
 	function index()
 	{
-		$this->lang->load('dashboard');
 		$view_data['page_title'] = lang('workflow.title');
 		$view_data['admin_widgets']['workflows'] = $this->show();
 		echo modules::run('template', $view_data);
@@ -19,7 +18,6 @@ class Workflow extends MX_Controller
 	
 	private function show()
 	{
-		$this->lang->load('dashboard');
 		$results = $this->mdl_workflow->get('workflow_id');
 		foreach($results->result() as $workflow)
 		{
