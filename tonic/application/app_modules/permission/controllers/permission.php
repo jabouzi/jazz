@@ -11,7 +11,7 @@ class Permission extends MX_Controller
 	
 	function index()
 	{
-		var_dump($this->get_permission_actions_list());
+		$this->_get_permission_actions_list();
 		$view_data['page_title'] = lang('permission.title');
 		$view_data['admin_widgets']['permissions'] = $this->show();
 		echo modules::run('template', $view_data);
@@ -70,15 +70,17 @@ class Permission extends MX_Controller
 		$this->mdl_permission->delete($id);
 	}
 	
-	private function get_permission_actions_list()
+	function _get_permission_actions_list()
 	{
 		$permissions = array();
 		$modules_list = $this->configs->get_modules_list();
 		foreach($modules_list as $module)
 		{
+			var_dump($module)
 			$permissions = $this->configs->get_module_config($module, 'permissions');
 		}		
 		
+		var_dump($permissions);
 		return $permissions;
 	}
 }
