@@ -14,9 +14,10 @@ class Configs
 	
 	function get_modules_list()
 	{
+		$allmodules = array();
 		foreach($this->_get_modules() as $modules)
 		{
-			$allmodules = array_merge($list, $modules);
+			$allmodules = array_merge($allmodules, $modules);
 		}
 		
 		return $allmodules;
