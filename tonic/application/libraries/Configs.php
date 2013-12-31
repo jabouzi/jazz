@@ -2,16 +2,19 @@
 
 class Configs
 {
+	private $api;
+	
 	function __construct()
 	{
-		$this->load->helper('directory');
-		$this->load->helper('file');
-		$this->load->helper('array');
+		$this->api = & get_instance();
+		$this->api->load->helper('directory');
+		$this->api->load->helper('file');
+		$this->api->load->helper('array');
 	}
 	
 	function get_modules_list()
 	{
-		foreach($this->_get_modules() as $modules)
+		foreach($this->api->_get_modules() as $modules)
 		{
 			$allmodules = array_merge($list, $modules);
 		}
@@ -31,7 +34,7 @@ class Configs
 
 	function _get_modules()
 	{
-		$modules_paths = array_keys($this->config->item('modules_locations'));
+		$modules_paths = array_keys($this->api->config->item('modules_locations'));
 		$allmodules = array();
 		foreach($modules_paths as $key => $path)
 		{
