@@ -1,6 +1,7 @@
 {
-	"name_en":"module.title",
+	"name_en":"structure.title",
 	"version":"0.1",
-	"permissions":["module.add","module.delete","module.update"],
-	"delete":"true"
+	"permissions":["structure.add","structure.delete","structure.update"],
+	"delete":"true",
+	"update":"true"
 }

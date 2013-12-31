@@ -42,3 +42,31 @@ $lang['permission.update'] = "Update Permission";
 $lang['permission.view'] = "View";
 $lang['permission.publish'] = "Publish";
 $lang['permission.archive'] = "Archive";
+
+$lang['template.title'] = "Templates";
+
+$lang['user.title'] = "Users";
+$lang['user.add'] = "Add User";
+$lang['user.delete'] = "Delete User";
+$lang['user.update'] = "Update User";
+
+$lang['webpage.title'] = "Webpages";
+$lang['webpage.add'] = "Add Webpage";
+$lang['webpage.delete'] = "Delete Webpage";
+$lang['webpage.update'] = "Update Webpage";
+
+$lang['wysisyg.title'] = "Wysisyg";
+$lang['wysisyg.add'] = "Add Wysisyg";
+$lang['wysisyg.delete'] = "Delete Wysisyg";
+$lang['wysisyg.update'] = "Update Wysisyg";
+
+$lang['analytic.title'] = "Analytic";
+$lang['analytic.add'] = "Add Analytic";
+$lang['analytic.delete'] = "Delete Analytic";
+$lang['analytic.update'] = "Update Analytic";
+
+$lang['structure.title'] = "Structure";
+$lang['structure.add'] = "Add Structure";
+$lang['structure.delete'] = "Delete Structure";
+$lang['structure.update'] = "Update Structure";
+

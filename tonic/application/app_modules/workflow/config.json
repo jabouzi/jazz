@@ -1,6 +1,7 @@
 {
-	"name_en":"module.title",
+	"name_en":"workflow.title",
 	"version":"0.1",
-	"permissions":["module.add","module.delete","module.update"],
-	"delete":"true"
+	"permissions":["workflow.add","workflow.delete","workflow.update"],
+	"delete":"false",
+	"update":"true"
 }
