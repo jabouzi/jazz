@@ -43,7 +43,7 @@ $(document).ready(function() {
 		}
 		
 		return false;
-	}($('#test-build-select'));
+	}($('.test-build-select'));
 });
 
 function add_workflow()
