@@ -76,8 +76,7 @@ class Permission extends MX_Controller
 		$modules_list = $this->configs->get_modules_list();
 		foreach($modules_list as $module)
 		{
-			var_dump($module);
-			$permissions = $this->configs->get_module_config($module, 'permissions');
+			$permissions = array_merge($permissions, $this->configs->get_module_config($module, 'permissions'));
 		}		
 		
 		var_dump($permissions);
