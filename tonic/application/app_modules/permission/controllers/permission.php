@@ -6,7 +6,7 @@ class Permission extends MX_Controller
 	{
 		parent::__construct();
 		$this->load->model('mdl_permission');
-		$this->load->librairy('configs');
+		$this->load->library('configs');
 	}
 	
 	function index()
