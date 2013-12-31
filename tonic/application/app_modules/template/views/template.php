@@ -6,7 +6,7 @@
 	<title><?php echo $page_title; ?> - <?php echo lang('dashboard.title1'); ?></title>
 	
 	<link rel="stylesheet" href="/tonic/assets/css/admin.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/tonic/assets/ss/bootstrap-3.0.0.min.css" type="text/css">
+    <link rel="stylesheet" href="/tonic/assets/css/bootstrap-3.0.0.min.css" type="text/css">
     <link rel="stylesheet" href="/tonic/assets/css/bootstrap-multiselect.css" type="text/css">
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
