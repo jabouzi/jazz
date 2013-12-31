@@ -73,6 +73,7 @@ class Permission extends MX_Controller
 	private function get_permission_actions_list()
 	{
 		var_dump($this->configs->get_modules_list());
+		var_dump($this->configs->get_module_configs('permission'));
 		//$this->load->helper('directory');
 		//$this->load->helper('file');
 		//$modules_paths = array_keys($this->config->item('modules_locations'));

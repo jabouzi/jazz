@@ -3,6 +3,7 @@
 class Configs
 {
 	private $api;
+	private $modules_list;
 	
 	function __construct()
 	{
@@ -10,12 +11,13 @@ class Configs
 		$this->api->load->helper('directory');
 		$this->api->load->helper('file');
 		$this->api->load->helper('array');
+		$modules_list = $this->_get_modules();
 	}
 	
 	function get_modules_list()
 	{
 		$allmodules = array();
-		foreach($this->_get_modules() as $modules)
+		foreach($modules_list as $modules)
 		{
 			$allmodules = array_merge($allmodules, $modules);
 		}
@@ -23,14 +25,14 @@ class Configs
 		return $allmodules;
 	}
 	
-	function get_module_configs()
+	function get_module_configs($module)
 	{
-		
+		return element($this->_get_modules_configs(), $module);
 	}
 	
-	function get_module_config($config)
+	function get_module_config($module, $config)
 	{
-		
+		return element($config, $this->get_module_configs($module));
 	}
 
 	function _get_modules()
@@ -47,7 +49,7 @@ class Configs
 	
 	function _get_modules_configs()
 	{
-		foreach($allmodules as $path => $modules)
+		foreach($modules_list as $path => $modules)
 		{
 			foreach($modules as $module)
 			{
