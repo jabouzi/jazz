@@ -1,6 +1,6 @@
 {
-	"name_en":"module.title",
+	"name_en":"dashboard.title",
 	"version":"0.1",
-	"permissions":["module.add","module.delete","module.update"],
-	"delete":"true"
+	"permissions":[],
+	"delete":"false"
 }
