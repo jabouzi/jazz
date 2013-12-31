@@ -38,13 +38,16 @@ class Permission extends MX_Controller
 		{
 			if (is_numeric($id))
 			{
-				$this->update_permission($id, $value);
+				$actions = $this->input->post('actions');
+				$data = array('permission_name_'.$this->lang->lang() => $value, 'permission_actions' => implode('|', $actions[$id]));
+				$this->update_permission($id, $data);
 			}
 		}
 		
 		foreach ($this->input->post('new') as $new)
 		{
-			$this->add_permission($new);
+			$data = array('permission_name_'.$this->lang->lang() => $new);
+			$this->add_permission($data);
 		}
 		
 		foreach($this->input->post('delete') as $id => $value)
@@ -55,15 +58,13 @@ class Permission extends MX_Controller
 		redirect('permission');
 	}
 	
-	function add_permission($new_data)
+	function add_permission($data)
 	{
-		$data = array('permission_name_'.$this->lang->lang() => $new_data);
 		$this->mdl_permission->insert($data);
 	}
 	
-	function update_permission($id, $update_data)
+	function update_permission($id, $data)
 	{
-		$data = array('permission_name_'.$this->lang->lang() => $update_data);
 		$this->mdl_permission->update($id, $data);
 	}
 	
