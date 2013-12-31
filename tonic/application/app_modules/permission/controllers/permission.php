@@ -74,19 +74,19 @@ class Permission extends MX_Controller
 		$this->load->helper('directory');
 		$this->load->helper('file');
 		$modules_paths = array_keys($this->config->item('modules_locations'));
-		$modules = array();
+		$allmodules = array();
 		foreach($modules_paths as $key => $path)
 		{
-			$modules[$path] = array_diff(directory_map($path, 1), ['index.html']);
+			$allmodules[$path] = array_diff(directory_map($path, 1), ['index.html']);
 		}
 		
 		
-		foreach($modules_paths as $module_path)
-		{	$module_path;
-			foreach($module_path['modules'] as $module)
+		foreach($allmodules as $path => $modules)
+		{
+			foreach($modules as $module)
 			{
 				//var_dump();
-				$module_config['module'] = read_file($module_path.$module.'/config.json');
+				$module_config['module'] = read_file($path.$module.'/config.json');
 			}			
 		}
 		var_dump($modules_paths);
