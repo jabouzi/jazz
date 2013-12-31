@@ -24,7 +24,8 @@ class Permission extends MX_Controller
 		foreach($results->result() as $permission)
 		{
 			$view_data['permissions'][$permission->permission_id] = array('name' => $permission->{'permission_name_'.$this->lang->lang()}, 'actions' => explode('|',$permission->permission_actions));
-			$view_data['actions'] = $this->get_permission_actions_list();
+			$view_data['actions'] = $this->_get_permission_actions_list();
+			var_dump($view_data['actions']);
 		}
 		return $this->load->view('permission', $view_data, true);
 	}
