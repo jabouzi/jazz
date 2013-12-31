@@ -76,7 +76,7 @@ class Permission extends MX_Controller
 		$modules = array();
 		foreach($modules_paths as $path)
 		{
-			$modules_paths['modules'][] = array_diff(array_merge($modules, directory_map($path, 1)), ['index.html']);
+			$modules_paths['modules'] = array_diff(array_merge($modules, directory_map($path, 1)), ['index.html']);
 		}
 		
 		
