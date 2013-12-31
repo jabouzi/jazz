@@ -31,7 +31,7 @@
 	</form>
 	<input type="hidden" id="error_message" value="<?php echo lang('workflow.error'); ?>">
 	<input type="hidden" id="workflow_number" value="0">
-	<div style="display:none" id="new_wokflow">
+	<div style="display:none" id="new_workflow">
 		<td><input type="text" name="new[]" value="">
 	</div>
 </article><!-- end of workflow manager article -->
