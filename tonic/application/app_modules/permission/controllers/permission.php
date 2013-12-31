@@ -83,17 +83,16 @@ class Permission extends MX_Controller
 		var_dump(array_merge($allmodules));
 		
 		
-		foreach($allmodules as $path => $modules)
-		{
-			foreach($modules as $module)
-			{
-				//var_dump();
-				$module_config[$module] = json_decode(read_file($path.$module.'/config.json'));
-			}			
-		}
-		var_dump($modules_paths);
-		var_dump($modules);
-		var_dump($module_config);
+		//foreach($allmodules as $path => $modules)
+		//{
+			//foreach($modules as $module)
+			//{
+				//$module_config[$module] = json_decode(read_file($path.$module.'/config.json'));
+			//}			
+		//}
+		//var_dump($modules_paths);
+		//var_dump($modules);
+		//var_dump($module_config);
 		//
 		//
 		//return $actions;
