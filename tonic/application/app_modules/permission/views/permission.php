@@ -7,7 +7,7 @@
 			<thead> 
 				<tr> 
 					<th><?php echo lang('permission.name'); ?></th> 
-					<th><?php echo lang('permission.order'); ?></th> 
+					<th><?php echo lang('permission.action'); ?></th> 
 					<th><?php echo lang('permission.delete'); ?></th> 
 				</tr> 
 			</thead> 
