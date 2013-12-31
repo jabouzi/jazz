@@ -19,7 +19,7 @@ class Permission extends MX_Controller
 	private function show()
 	{
 		$this->load->helper('form');
-		$results = $this->mdl_permission->get('permission_id');
+		$results = $this->mdl_permission->get_where(1);
 		foreach($results->result() as $permission)
 		{
 			$view_data['permissions'][$permission->permission_id] = array('name' => $permission->{'permission_name_'.$this->lang->lang()}, 'actions' => explode('|',$permission->permission_actions));
