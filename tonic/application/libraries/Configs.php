@@ -27,15 +27,12 @@ class Configs
 	
 	function get_module_configs($module)
 	{
-		$configs = $this->_get_modules_configs();
-		var_dump(is_array($configs));
-		var_dump($configs['permission']);
-		return element($this->_get_modules_configs(), $module);
+		return element($module, $this->_get_modules_configs());
 	}
 	
 	function get_module_config($module, $config)
 	{
-		return $this->get_module_configs->$module->$config;
+		return element($module, $this->_get_modules_configs())->$config;
 	}
 
 	function _get_modules()
