@@ -33,7 +33,7 @@ class Configs
 	
 	function get_module_config($module, $config)
 	{
-		return $this->get_module_configs$module->$config;
+		return $this->get_module_configs->$module->$config;
 	}
 
 	function _get_modules()
