@@ -64,7 +64,7 @@
 	<section id="secondary_bar">
 		<div class="user">
 			<p><?php echo $this->session->userdata('user_firstname'); ?> <?php echo $this->session->userdata('user_lastname'); ?>
-			- <?php echo form_dropdown('lang', $languages, $lang, $redirect); ?></p>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?></p>
 			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 		</div>
 		<div class="breadcrumbs_container">
