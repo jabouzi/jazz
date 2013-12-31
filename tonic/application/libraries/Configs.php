@@ -28,7 +28,7 @@ class Configs
 	
 	function get_module_configs($module)
 	{
-		return $this->_get_modules_configs()->permission;
+		return element($this->_get_modules_configs(), $module);
 	}
 	
 	function get_module_config($module, $config)
