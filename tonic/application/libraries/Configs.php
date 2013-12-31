@@ -14,7 +14,7 @@ class Configs
 	
 	function get_modules_list()
 	{
-		foreach($this->api->_get_modules() as $modules)
+		foreach($this->_get_modules() as $modules)
 		{
 			$allmodules = array_merge($list, $modules);
 		}
