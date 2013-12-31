@@ -50,7 +50,7 @@ class Configs
 				$module_config[$module] = json_decode(read_file($path.$module.'/config.json'));
 			}
 		}
+		
+		return $module_config;
 	}
-	
-	return $module_config;
 }
