@@ -22,7 +22,7 @@ class Permission extends MX_Controller
 		$this->load->helper('form');
 		$results = $this->mdl_permission->get_where(1);
 		$view_data['actions'] = $this->_get_permission_actions_list();
-		$view_data['attributes'] = "'class'='permissions-multi-select'";
+		$view_data['attributes'] = "class='permissions-multi-select'";
 		foreach($results->result() as $permission)
 		{
 			$view_data['permissions'][$permission->permission_id] = array('name' => $permission->{'permission_name_'.$this->lang->lang()}, 'actions' => explode('|',$permission->permission_actions));
