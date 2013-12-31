@@ -15,13 +15,13 @@
 				<?php foreach ($permissions as $id => $permission) : ?>
 					<tr>
 						<td><input type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $permission['name']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('permission.name'); ?>"></td>
-						<select style="width:15%;" name="shirts" multiple="multiple">
+						<td><select style="width:15%;" name="shirts" multiple="multiple">
 							<option value="small" selected="selected">Small Shirt</option>
 							<option value="med">Medium Shirt</option>
 							<option value="large" selected="selected">Large Shirt</option>
 							<option value="xlarge">Extra Large Shirt</option>
-						</select>
-						<td><input type="checkbox" id="delete[<?php echo $id; ?>]" name="delete[<?php echo $id; ?>]" value="1">
+						</select></td>
+						<td><input type="checkbox" id="delete[<?php echo $id; ?>]" name="delete[<?php echo $id; ?>]" value="1"></td>
 					</tr>
 				<?php endforeach ?>
 			</tbody> 
