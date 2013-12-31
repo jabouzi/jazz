@@ -72,8 +72,14 @@ class Permission extends MX_Controller
 	private function get_permission_actions_list()
 	{
 		$modules_paths = array_keys($this->config->item('modules_locations'));
-		var_dump($modules_paths);
-		//$modules = array_merge(directory_map('./mydirectory/', 1), directory_map('./mydirectory/', 1));
+		$modules = array();
+		foreach($modules_paths as $path)
+		{
+			$modules = array_merge($modules, directory_map($path, 1));
+		}
+		
+		var_dump($modules);
+		//
 		//
 		//return $actions;
 	}
