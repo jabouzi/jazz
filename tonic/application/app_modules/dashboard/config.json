@@ -2,5 +2,6 @@
 	"name_en":"dashboard.title",
 	"version":"0.1",
 	"permissions":[],
-	"delete":"false"
+	"delete":"false",
+	"update":"true"
 }

@@ -1,6 +1,7 @@
 {
-	"name_en":"module.title",
+	"name_en":"analytic.title",
 	"version":"0.1",
-	"permissions":["module.add","module.delete","module.update"],
-	"delete":"true"
+	"permissions":["analytic.add","analytic.delete","analytic.update"],
+	"delete":"true",
+	"update":"true"
 }

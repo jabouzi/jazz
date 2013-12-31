@@ -1,6 +1,7 @@
 {
-	"name_en":"module.title",
+	"name_en":"wysisyg.title",
 	"version":"0.1",
-	"permissions":["module.add","module.delete","module.update"],
-	"delete":"true"
+	"permissions":["wysisyg.add","wysisyg.delete","wysisyg.update"],
+	"delete":"false",
+	"update":"true"
 }
