@@ -12,6 +12,7 @@ $lang['dashboard.viewsite'] = "View Site";
 $lang['workflow.title'] = "Workflow";
 $lang['workflow.name'] = "Workflow Name";
 $lang['workflow.order'] = "Workflow Order";
+$lang['workflow.delete'] = "Delete Workflow";
 $lang['workflow.error'] = "Workflow name and order cannot be empty";
 
 $lang['permission.title'] = "Permissions";
