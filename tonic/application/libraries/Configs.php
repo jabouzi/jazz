@@ -12,7 +12,6 @@ class Configs
 		$this->api->load->helper('file');
 		$this->api->load->helper('array');
 		$this->modules_list = $this->_get_modules();
-		var_dump($this->_get_modules_configs());
 	}
 	
 	function get_modules_list()
