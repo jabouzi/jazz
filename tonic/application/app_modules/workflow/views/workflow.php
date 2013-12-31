@@ -33,7 +33,7 @@
 	<input type="hidden" id="workflow_number" value="0">
 	<div style="display:none" id="new_wokflow">
 		<tr>
-			<input type="text" name="new[]" value="">
+			<td><input type="text" name="new[]" value=""></td>
 		</tr>
 	</div>
 </article><!-- end of workflow manager article -->
