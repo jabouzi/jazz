@@ -34,6 +34,7 @@
 	<div style="display:none" id="new_wokflow">
 		<tr>
 			<td><input type="text" name="new[]" value=""></td>
+			<td><input type="text" name="new[]" value=""></td>
 		</tr>
 	</div>
 </article><!-- end of workflow manager article -->
