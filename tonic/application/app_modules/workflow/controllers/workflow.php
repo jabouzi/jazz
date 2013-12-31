@@ -56,7 +56,7 @@ class Workflow extends MX_Controller
 	
 	function add_workflow($data)
 	{
-		
+		var_dump($data);
 		$this->mdl_workflow->insert($data);
 	}
 	
