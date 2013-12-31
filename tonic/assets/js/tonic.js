@@ -5,9 +5,21 @@ $(document).ready(function() {
 		}
 	});
 	
+	$('#save_permission').bind({
+		click: function() {
+			validate_from('permissions_form');
+		}
+	});
+	
 	$('#add_workflow').bind({
 		click: function() {
 			add_workflow();
+		}
+	});
+	
+	$('#add_permission').bind({
+		click: function() {
+			add_permission();
 		}
 	});
 	
@@ -49,8 +61,15 @@ $(document).ready(function() {
 function add_workflow()
 {
 	$('#workflow_number').val(parseInt($('#workflow_number').val()) + 1);
-	console.log($('#new_wokflow').html());
+	console.log($('#new_workflow').html());
 	$('#workflow_list').append('<tr><td>'+$('#new_wokflow').html()+'</td></tr>');
+}
+
+function add_permission()
+{
+	$('#permission_number').val(parseInt($('#permission_number').val()) + 1);
+	console.log($('#new_permission').html());
+	$('#permission_list').append('<tr><td>'+$('#new_wokflow').html()+'</td></tr>');
 }
 
 function validate_from(form_id)
