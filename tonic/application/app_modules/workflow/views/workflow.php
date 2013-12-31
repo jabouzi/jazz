@@ -11,7 +11,7 @@
 					<th><?php echo lang('workflow.delete'); ?></th> 
 				</tr> 
 			</thead> 
-			<tbody>
+			<tbody id="workflow_list">
 				<?php foreach ($workflows as $id => $workflow) : ?>
 					<tr>
 						<td><input type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $workflow['name']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('workflow.name'); ?>"></td>
