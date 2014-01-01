@@ -1,40 +1,37 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Login Form</title>
-  <link rel="stylesheet" href="/tonic/assets/css/login.css">
-  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-</head>
-<body>
-  <section class="container">
-    <div class="login">
-      <h1><?php echo lang('login.title'); ?></h1>
-      <p><?php echo lang($message); ?></p>
-      <form method="post" action="<?php echo site_url('login/process'); ?>">
-        <p><input type="text" name="email" value="" placeholder="<?php echo lang('login.email'); ?>"></p>
-        <p><input type="password" name="password" value="" placeholder="<?php echo lang('login.password'); ?>"></p>
-        <p>
-            <?php echo lang('login.lang'); ?>
-            <?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
-        </p>
-        <p class="remember_me">
-          <label>
-            <input type="checkbox" name="remember_me" id="remember_me" <?php if (get_cookie('tonic_cms')) echo 'checked'; ?> >
-            <?php echo lang('login.remember'); ?>
-          </label>
-        </p>
-        <p class="submit"><input type="submit" name="commit" value="<?php echo lang('login.login'); ?>"></p>
-      </form>
-    </div>
-
-    <div class="login-help">
-      <p><?php echo lang('login.forget'); ?> <a href="index.html"><?php echo lang('login.reset'); ?></a>.</p>
-    </div>
-  </section>
-</body>
-</html>
+<article class="module width_full">
+	<header><h3 class="tabs_involved"><?php echo lang('workflow.title'); ?></h3>
+	</header>
+	<form id="workflows_form" method="post" action="<?php echo site_url('workflow/process'); ?>">
+		<div class="tab_container">
+			<table class="tablesorter" cellspacing="0"> 
+			<thead> 
+				<tr> 
+					<th><?php echo lang('workflow.name'); ?></th> 
+					<th><?php echo lang('workflow.order'); ?></th> 
+					<th><?php echo lang('workflow.delete'); ?></th> 
+				</tr> 
+			</thead> 
+			<tbody id="workflow_list">
+				<?php foreach ($workflows as $id => $workflow) : ?>
+					<tr>
+						<td><input type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $workflow['name']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('workflow.name'); ?>"></td>
+						<td><input type="text" id="order[<?php echo $id; ?>]" name="order[<?php echo $id; ?>]" value="<?php echo $workflow['order']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('workflow.order'); ?>"></td>
+						<td><input type="checkbox" id="delete[<?php echo $id; ?>]" name="delete[<?php echo $id; ?>]" value="1"></td>
+					</tr>
+				<?php endforeach ?>
+			</tbody> 
+			</table>
+		</div><!-- end of .tab_container -->
+		<footer>
+			<div class="submit_link">
+				<input type="button" id="save_workflow" value="<?php echo lang('admin.save'); ?>">
+				<input type="button" id="add_workflow" value="<?php echo lang('admin.add'); ?>">
+			</div>
+		</footer>
+	</form>
+	<input type="hidden" id="error_message" value="<?php echo lang('workflow.error'); ?>">
+	<input type="hidden" id="workflow_number" value="0">
+	<div style="display:none" id="new_workflow">
+		<td><input type="text" name="new[]" value="">
+	</div>
+</article><!-- end of workflow manager article -->
