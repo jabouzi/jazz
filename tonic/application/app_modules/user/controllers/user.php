@@ -45,7 +45,8 @@ class User extends MX_Controller
 	{
 		$view_data['user'] = $user_data;
 		$view_data['status'] = array(0 => lang('user.status0'), 1 => lang('user.status1'));
-		var_dump(modules::run('permission/get_permissions', 1));
+		//var_dump(modules::run('permission/get_permissions', 1));
+		echo 1;
 		return $this->load->view($view.'.php', $view_data, true);
 	}
 	
