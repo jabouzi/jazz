@@ -20,7 +20,7 @@ class Permission extends MX_Controller
 	private function show()
 	{
 		$this->load->helper('form');
-		$results = $this->mdl_permission->get_where(1);
+		$results = $this->mdl_permission->get_where($this->session->userdata('user_agent'));
 		$view_data['actions'] = $this->_get_permission_actions_list();
 		$view_data['attributes'] = "class='permissions-multi-select'";
 		foreach($results->result() as $permission)
@@ -62,7 +62,7 @@ class Permission extends MX_Controller
 		$results = $this->mdl_permission->get_where($permission);
 		foreach($results->result() as $permission)
 		{
-			$permissions[] = $permission->{'permission_name_'.$this->lang->lang()};
+			$permissions[$permission->permission_id] = $permission->{'permission_name_'.$this->lang->lang()};
 		}
 		
 		return $permissions;
