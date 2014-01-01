@@ -57,6 +57,17 @@ class Permission extends MX_Controller
 		redirect('permission');
 	}
 	
+	function get_permissions($permission)
+	{
+		$results = $this->mdl_permission->get_where($permission);
+		foreach($results->result() as $permission)
+		{
+			$permissions[] = $permission->{'permission_name_'.$this->lang->lang()};
+		}
+		
+		return $permissions;
+	}
+	
 	function add_permission($data)
 	{
 		$this->mdl_permission->insert($data);
