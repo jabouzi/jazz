@@ -8,6 +8,7 @@
 				<tr> 
 					<th><?php echo lang('user.firstname'); ?></th>
 					<th><?php echo lang('user.lastname'); ?></th>
+					<th><?php echo lang('user.email'); ?></th>
 					<th><?php echo lang('user.status'); ?></th>
 					<th><?php echo lang('admin.action'); ?></th>
 				</tr> 
@@ -17,8 +18,9 @@
 					<tr>
 						<td><?php echo $item->user_firstname ?></td>
 						<td><?php echo $item->user_lastname ?></td>
+						<td><?php echo $item->user_email ?></td>
 						<td><?php echo $item->user_status ?></td>
-						<td><input type="image" src="images/icn_edit.png" title="<?php echo lang('user.edit'); ?>"><input type="image" src="images/icn_trash.png" title="<?php echo lang('user.delete'); ?>"></td>
+						<td><input type="image" src="/tonic/assets/images/icn_edit.png" title="<?php echo lang('user.edit'); ?>"><input type="image" src="/tonic/assets/images/icn_trash.png" title="<?php echo lang('user.delete'); ?>"></td>
 					</tr>
 				<?php endforeach ?>
 			</tbody> 
