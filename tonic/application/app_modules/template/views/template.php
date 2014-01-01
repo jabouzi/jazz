@@ -85,10 +85,10 @@
 		</ul>
 		<h3>Users</h3>
 		<ul class="toggle">
-			<li class="icn_add_user"><a href="#">Add New User</a></li>
-			<li class="icn_view_users"><a href="#">View Users</a></li>
-			<li class="icn_profile"><a href="#">Your Profile</a></li>
-            <li class="icn_jump_back"><?php echo anchor('login/logout', 'Logout') ?></li>
+			<li class="icn_add_user"><?php echo anchor('user/newuser', lang('user.new')) ?></li>
+			<li class="icn_view_users"><?php echo anchor('user/users', lang('user.users')) ?></li>
+			<li class="icn_profile"><?php echo anchor('user', lang('user.profile')) ?></li>
+            <li class="icn_jump_back"><?php echo anchor('login/logout', lang('login.logout')) ?></li>
 		</ul>
 		<h3>Admin</h3>
 		<ul class="toggle">
