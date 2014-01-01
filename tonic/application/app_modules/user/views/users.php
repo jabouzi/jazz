@@ -21,7 +21,7 @@
 						<td><?php echo $item->user_email ?></td>
 						<td><?php echo $item->user_status ?></td>
 						<td>
-							<a href="edituser/<?php echo $item->user_id; ?>"><input type="image" src="/tonic/assets/images/icn_edit.png" title="<?php echo lang('user.edit'); ?>"></a>
+							<?php echo anchor('user/newuser', '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('user.edit').'">'); ?>
 							<input type="image" src="/tonic/assets/images/icn_trash.png" title="<?php echo lang('user.delete'); ?>">
 						</td>
 					</tr>
