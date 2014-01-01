@@ -5,12 +5,12 @@ class User extends MX_Controller
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->model('mdl_user');
 	}
 	
 	function index()
 	{
 		$view_data['page_title'] = lang('user.profile');
-		$this->load->model('mdl_user');
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
 		$view_data['admin_widgets']['user'] = $this->show('profile', $user_profile->row());
 		echo modules::run('template', $view_data);
@@ -63,7 +63,6 @@ class User extends MX_Controller
 	function save_user_activity($db_result)
 	{
 		$this->load->library('user_agent');
-		$this->load->model('mdl_user');
 		$activity_data = array(
 			'user_id' => $db_result->user_id,
 			'ip_address' => $this->session->userdata('ip_address'), 
