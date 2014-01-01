@@ -9,6 +9,7 @@ class User extends MX_Controller
 	
 	function index()
 	{
+		$this->load->library('user_agent');
 		$query = $this->db->get('ci_sessions');
 
 		$user = array(); /* array to store the user data we fetch */
@@ -23,7 +24,7 @@ class User extends MX_Controller
 				var_dump(date('Y-m-d H:i:s', $row->last_activity));
 			}
 		}
-		var_dump($user_sessions);
+		var_dump($user_sessions, $this->agent->browser());
 		$this->show();
 	}
 	
