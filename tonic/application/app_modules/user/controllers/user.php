@@ -18,8 +18,8 @@ class User extends MX_Controller
 			$udata = unserialize($row->user_data);
 
 			/* put data in array using username as key */
-			$user[$udata['user_name']][] = $udata['user_role']; 
-			var_dump($user);
+			//$user[$udata['user_name']][] = $udata['user_role']; 
+			var_dump($udata);
 		}
 		$this->show();
 	}
