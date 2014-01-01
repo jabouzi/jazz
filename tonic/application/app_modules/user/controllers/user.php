@@ -19,7 +19,8 @@ class User extends MX_Controller
 	function users()
 	{
 		$view_data['page_title'] = lang('user.users');
-		$view_data['admin_widgets']['user'] = $this->show('users');
+		$users = $this->mdl_user->get();
+		$view_data['admin_widgets']['user'] = $this->show('users', $users->row());
 		echo modules::run('template', $view_data);
 	}
 	
@@ -30,16 +31,17 @@ class User extends MX_Controller
 		echo modules::run('template', $view_data);
 	}
 	
-	function edituser()
+	function edituser($id)
 	{
 		$view_data['page_title'] = lang('user.edit');
-		$view_data['admin_widgets']['user'] = $this->show('edituser');
+		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
+		$view_data['admin_widgets']['user'] = $this->show('profile', $id);
+		$view_data['admin_widgets']['user'] = $this->show('edituser', $user_profile->row());
 		echo modules::run('template', $view_data);
 	}
 	
 	function show($view, $user_data)
 	{
-		var_dump($user_data);
 		$view_data['user'] = $user_data;
 		return $this->load->view($view.'.php', $view_data, true);
 	}
