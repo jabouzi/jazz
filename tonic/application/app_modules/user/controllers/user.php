@@ -20,7 +20,7 @@ class User extends MX_Controller
 			{
 			/* put data in array using username as key */
 				$user_sessions[] = array($row->ip_address, $row->user_agent); 
-				var_dump(date('Y-m-d H:i:s'), $row->last_activity));
+				var_dump(date('Y-m-d H:i:s', $row->last_activity));
 			}
 		}
 		var_dump($user_sessions);
