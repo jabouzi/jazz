@@ -11,9 +11,8 @@ class User extends MX_Controller
 	function index()
 	{
 		$view_data['page_title'] = lang('user.profile');
-		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id')->row());
-		$user_profile['status'] = array(0 => lang('user.status0'), 1 => lang('user.status1'));
-		$view_data['admin_widgets']['user'] = $this->show('profile', $user_profile);
+		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
+		$view_data['admin_widgets']['user'] = $this->show('profile', $user_profile->row());
 		echo modules::run('template', $view_data);
 	}
 	
@@ -45,6 +44,7 @@ class User extends MX_Controller
 	function show($view, $user_data)
 	{
 		$view_data['user'] = $user_data;
+		$view_data['status'] = array(0 => lang('user.status0'), 1 => lang('user.status1'));
 		return $this->load->view($view.'.php', $view_data, true);
 	}
 	
