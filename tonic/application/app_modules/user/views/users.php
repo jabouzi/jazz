@@ -13,7 +13,7 @@
 				</tr> 
 			</thead> 
 			<tbody id="workflow_list">
-				<?php foreach ($user as $item) : ?>
+				<?php foreach ($user->row() as $item) : ?>
 					<tr>
 						<td><?php echo $item->user_firstname ?></td>
 						<td><?php echo $item->user_lastname ?></td>
