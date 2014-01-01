@@ -24,10 +24,7 @@
 			</fieldset>
 			<fieldset style="width:48%; float:left;">
 				<label><?php echo lang('user.status'); ?></label>
-				<select>
-					<option>Draft</option>
-					<option>Published</option>
-				</select>
+				<?php echo form_dropdown('user_status', $status, ord($user->user_status), 'style="width:92%;"'); ?>
 			</fieldset>
 			<div class="clear"></div>
 		</div>
