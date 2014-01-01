@@ -30,7 +30,6 @@ class Mdl_user extends CI_Model
 		$table = "tonic_users";
 		$this->db->where('user_id', $id);
 		$query = $this->db->get($table);
-		var_dump($this->db->last_query());
 		return $query;
 	}
 	
