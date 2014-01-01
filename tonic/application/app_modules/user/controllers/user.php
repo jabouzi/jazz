@@ -9,7 +9,9 @@ class User extends MX_Controller
 	
 	function index()
 	{
-		$this->show();
+		$view_data['page_title'] = lang('user.profile');
+		$view_data['admin_widgets']['user'] = $this->show('profile');
+		echo modules::run('template', $view_data);
 	}
 	
 	function users()
@@ -23,9 +25,9 @@ class User extends MX_Controller
 		
 	}
 	
-	function show()
+	function show($view)
 	{
-		
+		return $this->load->view($view.'.php', true);
 	}
 	
 	function save_session_data($db_result)
