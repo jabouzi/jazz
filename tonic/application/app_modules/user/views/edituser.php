@@ -1,5 +1,5 @@
 <article class="module width_full">
-	<header><h3><?php echo lang('user.new'); ?></h3></header>
+	<header><h3><?php echo lang('user.edit'); ?></h3></header>
 	<form id="user_profile" method="post" action="<?php echo site_url('user/process_profile'); ?>">
 		<div class="module_content">
 			<fieldset>
