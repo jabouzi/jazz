@@ -42,7 +42,6 @@ class User extends MX_Controller
 	
 	function show($view, $user_data)
 	{
-		var_dump(intval($user_data->user_status));
 		$view_data['user'] = $user_data;
 		return $this->load->view($view.'.php', $view_data, true);
 	}

@@ -63,6 +63,8 @@ $lang['user.permissions'] = "Permissions";
 $lang['user.status'] = "Statut";
 $lang['user.newpassword'] = "Nouveau mot de passe";
 $lang['user.oldpassword'] = "Mot de passe actuel";
+$lang['user.status0'] = "Non active";
+$lang['user.status1'] = "Active";
 
 $lang['webpage.title'] = "Pages web";
 $lang['webpage.add'] = "Ajouter une pages web";
