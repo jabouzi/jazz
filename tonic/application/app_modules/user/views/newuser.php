@@ -22,14 +22,14 @@
 				<label><?php echo lang('user.password'); ?></label>
 				<input type="password" name="user_user.newpassword" id="user_user.newpassword" value="" data-validate="required" data-type="password" title="<?php echo lang('user.user.newpassword'); ?>">
 			</fieldset>
-			<fieldset>
+			<fieldset style="width:48%; float:left; margin-right: 3%;">
 				<label><?php echo lang('user.permissions'); ?></label>
-				<select>
+				<select style="width:92%;">
 					<option>Draft</option>
 					<option>Published</option>
 				</select>
 			</fieldset>
-			<fieldset>
+			<fieldset style="width:48%; float:left;">
 				<label><?php echo lang('user.status'); ?></label>
 				<select>
 					<option>Draft</option>
