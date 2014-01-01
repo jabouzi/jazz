@@ -6,6 +6,7 @@ $lang['french'] = "Français";
 $lang['admin.delete'] = "Supprimer";
 $lang['admin.save'] = "Sauvegarder";
 $lang['admin.add'] = "Ajouter";
+$lang['admin.action'] = "Action";
 
 $lang['login.title'] = "Se connecter au CMS";
 $lang['login.email'] = "Courriel";
