@@ -4,15 +4,15 @@
 		<div class="module_content">
 			<fieldset>
 				<label><?php echo lang('user.firstname'); ?></label>
-				<input type="text" name="user_firstname" id="user_firstname" value="<?php echo $user->firstname; ?>" data-validate="required" data-type="text" title="<?php echo lang('user.firstname'); ?>">
+				<input type="text" name="user_firstname" id="user_firstname" value="<?php echo $user->user_firstname; ?>" data-validate="required" data-type="text" title="<?php echo lang('user.firstname'); ?>">
 			</fieldset>
 			<fieldset>
 				<label><?php echo lang('user.lastname'); ?></label>
-				<input type="text" name="user_lastname" id="user_lastname" value="<?php echo $user->lastname; ?>" data-validate="required" data-type="text" title="<?php echo lang('user.lastname'); ?>">
+				<input type="text" name="user_lastname" id="user_lastname" value="<?php echo $user->user_lastname; ?>" data-validate="required" data-type="text" title="<?php echo lang('user.lastname'); ?>">
 			</fieldset>
 			<fieldset>
 				<label><?php echo lang('user.email'); ?></label>
-				<input type="text" name="user_email" id="user_email" value="<?php echo $user->email; ?>" data-validate="required" data-type="email" title="<?php echo lang('user.email'); ?>">
+				<input type="text" name="user_email" id="user_email" value="<?php echo $user->user_email; ?>" data-validate="required" data-type="email" title="<?php echo lang('user.email'); ?>">
 			</fieldset>
 			<div class="clear"></div>
 		</div>
