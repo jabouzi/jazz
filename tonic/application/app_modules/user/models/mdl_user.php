@@ -51,6 +51,8 @@ class Mdl_user extends CI_Model
 	{
 		$table = "tonic_users_activities";
 		$this->db->insert($table, $data);
+		var_dump($this->db->last_query());
+		exit;
 	}
 	
 	function _update($id, $data)
