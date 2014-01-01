@@ -18,10 +18,6 @@
 				<label><?php echo lang('user.password'); ?></label>
 				<input type="password" name="user_newpassword" id="user_newpassword" value="" data-validate="required" data-type="password" title="<?php echo lang('user.newpassword'); ?>">
 			</fieldset>
-			<fieldset>
-				<label><?php echo lang('user.password'); ?></label>
-				<input type="password" name="user_user.newpassword" id="user_user.newpassword" value="" data-validate="required" data-type="password" title="<?php echo lang('user.user.newpassword'); ?>">
-			</fieldset>
 			<fieldset style="width:48%; float:left; margin-right: 3%;">
 				<label><?php echo lang('user.permissions'); ?></label>
 				<select style="width:92%;">
