@@ -13,11 +13,11 @@
 				</tr> 
 			</thead> 
 			<tbody id="workflow_list">
-				<?php foreach ($users as $user) : ?>
+				<?php foreach ($user as $item) : ?>
 					<tr>
-						<td><?php echo $user->user_firstname ?></td>
-						<td><?php echo $user->user_lastname ?></td>
-						<td><?php echo $user->user_status ?></td>
+						<td><?php echo $item->user_firstname ?></td>
+						<td><?php echo $item->user_lastname ?></td>
+						<td><?php echo $item->user_status ?></td>
 						<td><input type="image" src="images/icn_edit.png" title="<?php echo lang('user.edit'); ?>"><input type="image" src="images/icn_trash.png" title="<?php echo lang('user.delete'); ?>"></td>
 					</tr>
 				<?php endforeach ?>
