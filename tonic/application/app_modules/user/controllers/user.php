@@ -15,12 +15,14 @@ class User extends MX_Controller
 
 		foreach ($query->result() as $row)
 		{
-			$udata = unserialize($row->user_data);
-
+			$user_data = unserialize($row->user_data);
+			if ($user_data['user_email'] == $this->session->userdata('user_email'))
+			{
 			/* put data in array using username as key */
-			//$user[$udata['user_name']][] = $udata['user_role']; 
-			var_dump($udata);
+				$user_sessions[$user_data['user_name']][] = array($row->ip_address, $row->user_agent); 
+			}
 		}
+		var_dump($user_sessions);
 		$this->show();
 	}
 	
