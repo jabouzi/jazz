@@ -53,6 +53,7 @@ $lang['user.update'] = "Update User";
 $lang['user.users'] = "Users list";
 $lang['user.profile'] = "My Profile";
 $lang['user.new'] = "New User";
+$lang['user.edit'] = "Edit User";
 $lang['user.firstname'] = "Firstname";
 $lang['user.lastname'] = "Lastname";
 $lang['user.email'] = "Email";
