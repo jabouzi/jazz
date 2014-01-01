@@ -68,7 +68,6 @@ class User extends MX_Controller
 			'browser' => $this->agent->browser(), 
 			'session_id' => $this->session->userdata('ip_address'), 
 			'activity_date' => date('Y-m-d H:i:s', $this->session->userdata('last_activity')));
-		var_dump($activity_data);
 		$this->mdl_user->insert_activity($activity_data);
 	}
 	
