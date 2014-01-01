@@ -24,7 +24,7 @@ class User extends MX_Controller
 				var_dump(date('Y-m-d H:i:s', $row->last_activity));
 			}
 		}
-		var_dump($user_sessions, $this->agent->browser(), $this->session->userdata('session_id'));
+		var_dump($user_sessions, $this->agent->browser(), $this->session->userdata('session_id'), $this->session->userdata('ip_address'););
 		$this->show();
 	}
 	
