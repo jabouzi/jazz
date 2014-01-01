@@ -27,6 +27,7 @@ class Login extends MX_Controller
 		
 		$this->load->helper('form');
 		$this->load->helper('cookie');
+		
 		foreach($this->lang->languages as $key => $value)
 		{
 			$view_data['languages'][site_url().$this->lang->switch_uri($key)] = lang($value);
@@ -46,6 +47,7 @@ class Login extends MX_Controller
 		$this->load->helper('tonic_string');
 		$this->load->library('encryption');
 		$this->load->model('mdl_login');
+		
 		$username = $this->security->xss_clean($this->input->post('email'));
 		$password = $this->encryption->encrypt_str($this->security->xss_clean($this->input->post('password')), $this->config->item('app_key'));
 		$result = $this->mdl_login->validate_user($username, $password);
@@ -54,15 +56,9 @@ class Login extends MX_Controller
 			$this->show('login.failed');
 		}
 		else
-		{			
-			$user_data = array(
-				'user_id' => $result->user_id,
-				'user_firstname' => $result->user_firstname,
-				'user_lastname' => $result->user_lastname,
-				'user_email' => $result->user_email,
-				'validated' => true
-				);
-			$this->session->set_userdata($user_data);
+		{
+			modules::run('user/save_session_data', $result);
+			modules::run('user/save_user_activity', $result);
 			$cookie = $this->getcookie();
 			if ($cookie)
 			{
@@ -85,6 +81,7 @@ class Login extends MX_Controller
 	{
 		$this->load->helper('tonic_string');
 		$this->load->model('mdl_login');
+		
 		$result = false;
 		$cookie = $this->getcookie();
 		if ($cookie)
@@ -102,14 +99,8 @@ class Login extends MX_Controller
 		{	
 			$hash = generate_random_string(26);
 			$result = $this->mdl_login->get_where_custom('tonic_users', 'user_email', $username)->row();
-			$user_data = array(
-				'user_id' => $result->user_id,
-				'user_firstname' => $result->user_firstname,
-				'user_lastname' => $result->user_lastname,
-				'user_email' => $result->user_email,
-				'validated' => true
-				);
-			$this->session->set_userdata($user_data);
+			modules::run('user/save_session_data', $result);
+			modules::run('user/save_user_activity', $result);
 			$this->deletecookie($username, $old_hash);
 			$this->setcookie($username, $hash);
 			redirect('dashboard');
@@ -119,6 +110,7 @@ class Login extends MX_Controller
 	function logout()
 	{
 		$this->load->model('mdl_login');
+		
 		$cookie = $this->getcookie();
 		if ($cookie)
 		{
@@ -141,6 +133,7 @@ class Login extends MX_Controller
 	function islogout()
 	{
 		$this->load->model('mdl_login');
+		
 		$cookie = $this->getcookie();
 		if ($cookie)
 		{
@@ -169,6 +162,7 @@ class Login extends MX_Controller
 	private function setcookie($value, $hash)
 	{
 		$this->load->helper('cookie');
+		
 		$cookie = array(
 			'name'   => 'tonic_cms',
 			'value'  => $value.'||'.$hash,
@@ -184,6 +178,7 @@ class Login extends MX_Controller
 	private function deletecookie($value, $hash)
 	{
 		$this->load->helper('cookie');
+		
 		$cookie = array(
 			'name'   => 'tonic_cms',
 			'value'  => $value.'||'.$hash,
