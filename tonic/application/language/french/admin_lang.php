@@ -59,6 +59,8 @@ $lang['user.email'] = "Courriel";
 $lang['user.password'] = "Mot de passe";
 $lang['user.permissions'] = "Permissions";
 $lang['user.status'] = "Statut";
+$lang['user.newpassword'] = "Nouveau mot de passe";
+$lang['user.oldpassword'] = "Mot de passe actuel";
 
 $lang['webpage.title'] = "Pages web";
 $lang['webpage.add'] = "Ajouter une pages web";
