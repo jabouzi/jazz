@@ -55,7 +55,7 @@ class Permission extends MX_Controller
 			$this->delete_permission($id);
 		}
 		
-		redirect('permission');
+		//redirect('permission');
 	}
 	
 	function add_permission($data)
