@@ -20,7 +20,7 @@ class User extends MX_Controller
 	{
 		$view_data['page_title'] = lang('user.users');
 		$users = $this->mdl_user->get();
-		$view_data['admin_widgets']['user'] = $this->show('users', $users->row());
+		$view_data['admin_widgets']['user'] = $this->show('users', $users);
 		echo modules::run('template', $view_data);
 	}
 	
