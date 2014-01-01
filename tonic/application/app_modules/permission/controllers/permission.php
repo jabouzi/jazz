@@ -38,7 +38,6 @@ class Permission extends MX_Controller
 			if (is_numeric($id))
 			{
 				$actions = $this->input->post('actions');
-				var_dump(serialize($actions[$id]));
 				$data = array('permission_name_'.$this->lang->lang() => $value, 'permission_actions' => serialize($actions[$id]));
 				$this->update_permission($id, $data);
 			}
@@ -55,7 +54,7 @@ class Permission extends MX_Controller
 			$this->delete_permission($id);
 		}
 		
-		//redirect('permission');
+		redirect('permission');
 	}
 	
 	function add_permission($data)
