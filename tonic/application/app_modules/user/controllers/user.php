@@ -43,6 +43,34 @@ class User extends MX_Controller
 		
 	}
 	
+	function save_session_data($db_result)
+	{
+		$this->load->library('user_agent');
+		$user_data = array(
+			'user_id' => $db_result->user_id,
+			'user_firstname' => $db_result->user_firstname,
+			'user_lastname' => $db_result->user_lastname,
+			'user_email' => $db_result->user_email,
+			'browser' => $this->agent->browser(),
+			'validated' => true
+			);
+		$this->session->set_userdata($user_data);
+	}
+	
+	function save_user_activity($db_result)
+	{
+		$this->load->library('user_agent');
+		$this->load->model('mdl_user');	
+		$activity_data = array(
+			'user_id' => $db_result->user_id,
+			'ip_address' => $this->session->userdata('ip_address'), 
+			'user_agent' => $this->session->userdata('user_agent'), 
+			'browser' => $this->agent->browser(), 
+			'session_id' => $this->session->userdata('ip_address'), 
+			'activity_date' => date('Y-m-d H:i:s', $this->session->userdata('last_activity')));
+		$this->mdl_user->insert_activity($activity_data);
+	}
+	
 	function add_user($data)
 	{
 		
