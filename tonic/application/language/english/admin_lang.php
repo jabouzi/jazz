@@ -14,6 +14,7 @@ $lang['login.lang'] = "Language";
 $lang['login.remember'] = "Remember me on this computer";
 $lang['login.forget'] = "Forgot your password?";
 $lang['login.login'] = "Login";
+$lang['login.logout'] = "Logout";
 $lang['login.reset'] = "Click here to reset it";
 $lang['login.failed'] = "Authentification failded.";
 
@@ -49,6 +50,9 @@ $lang['user.title'] = "Users";
 $lang['user.add'] = "Add User";
 $lang['user.delete'] = "Delete User";
 $lang['user.update'] = "Update User";
+$lang['user.users'] = "Users list";
+$lang['user.profile'] = "My Profile";
+$lang['user.new'] = "New User";
 
 $lang['webpage.title'] = "Webpages";
 $lang['webpage.add'] = "Add Webpage";

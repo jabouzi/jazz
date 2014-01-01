@@ -24,6 +24,16 @@ class User extends MX_Controller
 		$this->show();
 	}
 	
+	function users()
+	{
+		
+	}
+	
+	function newuser()
+	{
+		
+	}
+	
 	function show()
 	{
 		

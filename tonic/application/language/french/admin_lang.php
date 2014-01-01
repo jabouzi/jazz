@@ -13,7 +13,8 @@ $lang['login.password'] = "Mot de passe";
 $lang['login.lang'] = "Langue";
 $lang['login.remember'] = "Se rappeler de moi sur cet ordinateur";
 $lang['login.forget'] = "Mot de passe oublié ?";
-$lang['login.login'] = "So connecter";
+$lang['login.login'] = "Se connecter";
+$lang['login.logout'] = "Se déconnecter";
 $lang['login.reset'] = "Cliquer ici pour un nouveau passe";
 $lang['login.failed'] = "L'Authentification a échouée.";
 
@@ -49,6 +50,9 @@ $lang['user.title'] = "Usagers";
 $lang['user.add'] = "Ajouter un usager";
 $lang['user.delete'] = "Supprimer un usager";
 $lang['user.update'] = "Mettre à jour un usager";
+$lang['user.users'] = "List des usagers";
+$lang['user.profile'] = "Mon profile";
+$lang['user.new'] = "Nouvel usager";
 
 $lang['webpage.title'] = "Pages web";
 $lang['webpage.add'] = "Ajouter une pages web";
