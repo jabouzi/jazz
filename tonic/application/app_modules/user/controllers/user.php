@@ -37,6 +37,7 @@ class User extends MX_Controller
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
 		$view_data['admin_widgets']['user'] = $this->show('profile', $id);
 		$view_data['admin_widgets']['user'] = $this->show('edituser', $user_profile->row());
+		$view_data['status'] = array(0 => lang('user.status0'), 1 => lang('user.status1'));
 		echo modules::run('template', $view_data);
 	}
 	
