@@ -10,19 +10,31 @@ class User extends MX_Controller
 	function index()
 	{
 		$view_data['page_title'] = lang('user.profile');
+		$this->load->model('mdl_user');
+		$user_profile = $this->mdl_user->get_where($id);
 		$view_data['admin_widgets']['user'] = $this->show('profile');
 		echo modules::run('template', $view_data);
 	}
 	
 	function users()
 	{
-		$this->load->model('mdl_user');
-		$user_profile = $this->mdl_user->get_where($id);
+		$view_data['page_title'] = lang('user.users');
+		$view_data['admin_widgets']['user'] = $this->show('users');
+		echo modules::run('template', $view_data);
 	}
 	
 	function newuser()
 	{
-		
+		$view_data['page_title'] = lang('user.new');
+		$view_data['admin_widgets']['user'] = $this->show('newuser');
+		echo modules::run('template', $view_data);
+	}
+	
+	function edituser()
+	{
+		$view_data['page_title'] = lang('user.edit');
+		$view_data['admin_widgets']['user'] = $this->show('edituser');
+		echo modules::run('template', $view_data);
 	}
 	
 	function show($view)
