@@ -9,28 +9,13 @@ class User extends MX_Controller
 	
 	function index()
 	{
-		$this->load->library('user_agent');
-		$query = $this->db->get('ci_sessions');
-
-		$user = array(); /* array to store the user data we fetch */
-
-		foreach ($query->result() as $row)
-		{
-			$user_data = unserialize($row->user_data);
-			if ($user_data['user_email'] == $this->session->userdata('user_email'))
-			{
-			/* put data in array using username as key */
-				$user_sessions[] = array($row->ip_address, $row->user_agent); 
-				var_dump(date('Y-m-d H:i:s', $row->last_activity));
-			}
-		}
-		var_dump($user_sessions, $this->agent->browser(), $this->session->userdata('session_id'), $this->session->userdata('ip_address'));
 		$this->show();
 	}
 	
 	function users()
 	{
-		
+		$this->load->model('mdl_user');
+		$user_profile = $this->mdl_user->get_where($id);
 	}
 	
 	function newuser()
@@ -60,7 +45,7 @@ class User extends MX_Controller
 	function save_user_activity($db_result)
 	{
 		$this->load->library('user_agent');
-		$this->load->model('mdl_user');	
+		$this->load->model('mdl_user');
 		$activity_data = array(
 			'user_id' => $db_result->user_id,
 			'ip_address' => $this->session->userdata('ip_address'), 
