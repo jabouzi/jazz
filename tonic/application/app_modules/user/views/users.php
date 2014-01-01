@@ -1,5 +1,5 @@
 <article class="module width_full">
-	<header><h3 class="tabs_involved"><?php echo lang('workflow.title'); ?></h3>
+	<header><h3 class="tabs_involved"><?php echo lang('user.users'); ?></h3>
 	</header>
 	<form id="workflows_form" method="post" action="<?php echo site_url('workflow/process'); ?>">
 		<div class="tab_container">
