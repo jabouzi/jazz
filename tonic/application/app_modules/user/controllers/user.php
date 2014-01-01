@@ -27,7 +27,7 @@ class User extends MX_Controller
 	function newuser()
 	{
 		$view_data['page_title'] = lang('user.new');
-		$view_data['admin_widgets']['user'] = $this->show('newuser');
+		$view_data['admin_widgets']['user'] = $this->show('newuser', array());
 		echo modules::run('template', $view_data);
 	}
 	
