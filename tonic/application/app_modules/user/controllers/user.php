@@ -9,7 +9,7 @@ class User extends MX_Controller
 	
 	function index()
 	{
-		$query = $this->db->select('user_data')->get('ci_sessions');
+		$query = $this->db->get('ci_sessions');
 
 		$user = array(); /* array to store the user data we fetch */
 
