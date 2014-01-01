@@ -1,6 +1,6 @@
 <article class="module width_full">
 	<header><h3><?php echo lang('user.edit'); ?></h3></header>
-	<form id="user_profile" method="post" action="<?php echo site_url('user/process_profile'); ?>">
+	<form id="user_profile" method="post" action="<?php echo site_url('user/process_edituser'); ?>">
 		<div class="module_content">
 			<fieldset>
 				<label><?php echo lang('user.firstname'); ?></label>

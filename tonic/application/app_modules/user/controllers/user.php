@@ -42,6 +42,7 @@ class User extends MX_Controller
 	
 	function show($view, $user_data)
 	{
+		var_dump($user_data);
 		$view_data['user'] = $user_data;
 		return $this->load->view($view.'.php', $view_data, true);
 	}
@@ -71,6 +72,16 @@ class User extends MX_Controller
 			'session_id' => $this->session->userdata('session_id'), 
 			'activity_date' => date('Y-m-d H:i:s', $this->session->userdata('last_activity')));
 		$this->mdl_user->insert_activity($activity_data);
+	}
+	
+	function process_edituser()
+	{
+		
+	}
+	
+	function process_newuser()
+	{
+		
 	}
 	
 	function process_profile()
