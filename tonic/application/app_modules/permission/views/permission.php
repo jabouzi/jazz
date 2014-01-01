@@ -14,7 +14,7 @@
 			<tbody id="permission_list">
 				<?php foreach ($permissions as $id => $permission) : ?>
 					<tr>
-						<td><input type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $permission['name']; ?>" data-validate="required" data-type="text" data-pos="1" title="<?php echo lang('permission.name'); ?>"></td>
+						<td><input type="text" id="<?php echo $id; ?>" name="<?php echo $id; ?>" value="<?php echo $permission['name']; ?>" data-validate="required" data-type="text" title="<?php echo lang('permission.name'); ?>"></td>
 						<td><?php echo form_multiselect('actions['.$id.'][]', $actions, $permission['actions'], $attributes); ?></td>
 						<td><input type="checkbox" id="delete[<?php echo $id; ?>]" name="delete[<?php echo $id; ?>]" value="1"></td>
 					</tr>

@@ -53,6 +53,12 @@ $lang['user.update'] = "Mettre à jour un usager";
 $lang['user.users'] = "List des usagers";
 $lang['user.profile'] = "Mon profile";
 $lang['user.new'] = "Nouvel usager";
+$lang['user.firstname'] = "Nom de famille";
+$lang['user.lastname'] = "Prénom";
+$lang['user.email'] = "Courriel";
+$lang['user.password'] = "Mot de passe";
+$lang['user.permissions'] = "Permissions";
+$lang['user.status'] = "Statut";
 
 $lang['webpage.title'] = "Pages web";
 $lang['webpage.add'] = "Ajouter une pages web";
