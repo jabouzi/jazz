@@ -20,7 +20,7 @@
 			</fieldset>
 			<fieldset style="width:48%; float:left; margin-right: 3%;">
 				<label><?php echo lang('user.permissions'); ?></label>
-				<?php echo form_dropdown('user_status', $status, ord($item->user_status), 'style="width:92%;"'); ?>
+				<?php echo form_dropdown('user_status', $status, ord($user->user_status), 'style="width:92%;"'); ?>
 			</fieldset>
 			<fieldset style="width:48%; float:left;">
 				<label><?php echo lang('user.status'); ?></label>
