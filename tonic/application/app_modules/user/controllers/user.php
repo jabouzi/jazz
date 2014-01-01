@@ -12,7 +12,7 @@ class User extends MX_Controller
 		$view_data['page_title'] = lang('user.profile');
 		$this->load->model('mdl_user');
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
-		var_dump($user_profile);
+		var_dump($user_profile->row());
 		$view_data['admin_widgets']['user'] = $this->show('profile', $user_profile->row());
 		echo modules::run('template', $view_data);
 	}
