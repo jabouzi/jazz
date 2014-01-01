@@ -16,7 +16,7 @@
 			</fieldset>
 			<fieldset>
 				<label><?php echo lang('user.password'); ?></label>
-				<input type="password" name="user_newpassword" id="user_newpassword" value="" data-validate="required" data-type="password" title="<?php echo lang('user.newpassword'); ?>">
+				<input type="password" name="user_password" id="user_password" value="" data-validate="required" data-type="password" title="<?php echo lang('user.password'); ?>">
 			</fieldset>
 			<fieldset style="width:48%; float:left; margin-right: 3%;">
 				<label><?php echo lang('user.permissions'); ?></label>

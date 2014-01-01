@@ -8,7 +8,7 @@ class Mdl_user extends CI_Model
 		parent::__construct();
 	}
 	
-	function get($order_by)
+	function get($order_by = 'user_id')
 	{
 		$table = "tonic_users";
 		$this->db->order_by($order_by);
