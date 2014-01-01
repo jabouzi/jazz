@@ -58,6 +58,16 @@ class User extends MX_Controller
 		$this->mdl_user->insert_activity($activity_data);
 	}
 	
+	function process_profile()
+	{
+		
+	}
+	
+	function process_password()
+	{
+		
+	}
+	
 	function add_user($data)
 	{
 		
