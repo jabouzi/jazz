@@ -36,7 +36,6 @@ class User extends MX_Controller
 		$this->load->helper('form');
 		$view_data['page_title'] = lang('user.edit');
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
-		$view_data['admin_widgets']['user'] = $this->show('profile', $id);
 		$view_data['admin_widgets']['user'] = $this->show('edituser', $user_profile->row());
 		echo modules::run('template', $view_data);
 	}
@@ -45,8 +44,7 @@ class User extends MX_Controller
 	{
 		$view_data['user'] = $user_data;
 		$view_data['status'] = array(0 => lang('user.status0'), 1 => lang('user.status1'));
-		//var_dump(modules::run('permission/get_permissions', 1));
-		echo 1;
+		$view_data['permissions'] = modules::run('permission/get_permissions', $this->session->userdata('user_permission'));
 		return $this->load->view($view.'.php', $view_data, true);
 	}
 	
@@ -58,6 +56,7 @@ class User extends MX_Controller
 			'user_firstname' => $db_result->user_firstname,
 			'user_lastname' => $db_result->user_lastname,
 			'user_email' => $db_result->user_email,
+			'user_permission' => $db_result->user_permission,
 			'browser' => $this->agent->browser(),
 			'validated' => true
 			);
