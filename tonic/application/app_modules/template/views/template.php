@@ -120,12 +120,6 @@
 
 		<div class="clear"></div>
 		
-		<article class="module width_full">
-			<header><h3>Modules</h3></header>
-			<div class="module_content">
-					
-			</div>			
-		</article><!-- end of modules -->
 </body>
 
 </html>
