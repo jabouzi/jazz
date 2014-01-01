@@ -20,7 +20,10 @@
 						<td><?php echo $item->user_lastname ?></td>
 						<td><?php echo $item->user_email ?></td>
 						<td><?php echo $item->user_status ?></td>
-						<td><input type="image" src="/tonic/assets/images/icn_edit.png" title="<?php echo lang('user.edit'); ?>"><input type="image" src="/tonic/assets/images/icn_trash.png" title="<?php echo lang('user.delete'); ?>"></td>
+						<td>
+							<a href="/users/edituser/<?php echo $item->user_id; ?>"><input type="image" src="/tonic/assets/images/icn_edit.png" title="<?php echo lang('user.edit'); ?>"></a>
+							<input type="image" src="/tonic/assets/images/icn_trash.png" title="<?php echo lang('user.delete'); ?>">
+						</td>
 					</tr>
 				<?php endforeach ?>
 			</tbody> 
