@@ -81,7 +81,8 @@ function validate_from(form_id)
     {
 		if ($('#user_email').length > 0)
 		{
-			$.get( "/tonic/user/email_exists/"+$('#user_email').val(), function( response ) {
+			console.log(encodeURIComponent($('#user_email').val()));
+			$.get( "/tonic/user/email_exists/"+encodeURIComponent($('#user_email').val()), function( response ) {
 				console.log(response);
 				//if (!parseInt(response)) $("#" + form_id).submit();
 				//else $('.alert_error').html(response);
