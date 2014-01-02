@@ -30,7 +30,7 @@
 		</div>
 		<footer>
 			<div class="submit_link">
-				<input type="button" id="save_user_profile" value="<?php echo lang('admin.save'); ?>">
+				<input type="button" id="save_user_profile" value="<?php echo lang('admin.save'); ?>" class="alt_btn">
 			</div>
 		</footer>
 	</form>
