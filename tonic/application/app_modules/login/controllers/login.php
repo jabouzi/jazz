@@ -55,7 +55,7 @@ class Login extends MX_Controller
 		{
 			$this->show('login.failed');
 		}
-		else if(!ord($result->user_status))
+		else if(ord($result->user_status))
 		{
 			$this->show('user.nonactive');
 		}
