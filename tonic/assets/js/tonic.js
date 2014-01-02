@@ -55,14 +55,12 @@ $(document).ready(function() {
 function add_workflow()
 {
 	$('#workflow_number').val(parseInt($('#workflow_number').val()) + 1);
-	console.log($('#new_workflow').html());
 	$('#workflow_list').append('<tr><td>'+$('#new_wokflow').html()+'</td></tr>');
 }
 
 function add_permission()
 {
 	$('#permission_number').val(parseInt($('#permission_number').val()) + 1);
-	console.log($('#new_permission').html());
 	$('#permission_list').append('<tr><td>'+$('#new_wokflow').html()+'</td></tr>');
 }
 
@@ -81,7 +79,18 @@ function validate_from(form_id)
     }
     else
     {
-        $("#" + form_id).submit();
+		if ($('#user_email').length > 0)
+		{
+			$.post( "user/email_exists/"+$('#user_email').val(), function( response ) {
+				if (!parseInt(response)) $("#" + form_id).submit();
+				else $('.alert_error').html(response);
+			});
+		}
+		else
+		{
+			$("#" + form_id).submit();
+		}
+        
     }
 }
 

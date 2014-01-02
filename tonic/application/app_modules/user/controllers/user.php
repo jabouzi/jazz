@@ -78,12 +78,6 @@ class User extends MX_Controller
 	
 	function process_edituser()
 	{
-		if ($this->input->post('user_email'))
-		{
-			$this->session->set_userdata('warning_message', lang('user.exists'));
-			redirect('user/edituser/'.$this->input->post('user_id'));
-		}
-		
 		$this->load->library('encryption');
 		$user_id = $this->input->post('user_id');
 		$user_data = array(
@@ -99,12 +93,6 @@ class User extends MX_Controller
 	
 	function process_newuser()
 	{
-		if ($this->input->post('user_email'))
-		{
-			$this->session->set_userdata('warning_message', lang('user.exists'));
-			redirect('user/newuser');
-		}
-		
 		$this->load->library('encryption');
 		$user_data = array(
 			'user_firstname' => $this->input->post('user_firstname'), 
@@ -119,12 +107,6 @@ class User extends MX_Controller
 	
 	function process_profile()
 	{
-		if ($this->input->post('user_email'))
-		{
-			$this->session->set_userdata('warning_message', lang('user.exists'));
-			redirect('user');
-		}
-		
 		$user_id = $this->input->post('user_id');
 		$user_data = array('user_firstname' => $this->input->post('user_firstname'), 'user_lastname' => $this->input->post('user_lastname'), 'user_email' => $this->input->post('user_email'));
 		$this->update_profile($user_id, $user_data);
@@ -161,8 +143,12 @@ class User extends MX_Controller
 		
 	}
 	
-	private function email_exists($email)
+	function email_exists($email)
 	{
-		return $this->mdl_user->count_where('user_email', $email);
+		if ($this->input->is_ajax_request())
+		{
+			if ($this->mdl_user->count_where('user_email', $email)) echo lang('user.exists');
+			else echo 0;
+		}
 	}
 }
