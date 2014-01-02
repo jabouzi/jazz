@@ -10,7 +10,6 @@ class User extends MX_Controller
 	
 	function index()
 	{
-		var_dump($this->email_exists('jabouzi@gmail.com2'));
 		$view_data['page_title'] = lang('user.profile');
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
 		$view_data['admin_widgets']['user'] = $this->show('profile', $user_profile->row());
@@ -79,6 +78,12 @@ class User extends MX_Controller
 	
 	function process_edituser()
 	{
+		if ($this->input->post('user_email'))
+		{
+			$this->session->set_userdata('warning_message', lang('user.exists'));
+			redirect('user/edituser/'.$this->input->post('user_id'));
+		}
+		
 		$this->load->library('encryption');
 		$user_id = $this->input->post('user_id');
 		$user_data = array(
@@ -94,6 +99,12 @@ class User extends MX_Controller
 	
 	function process_newuser()
 	{
+		if ($this->input->post('user_email'))
+		{
+			$this->session->set_userdata('warning_message', lang('user.exists'));
+			redirect('user/newuser');
+		}
+		
 		$this->load->library('encryption');
 		$user_data = array(
 			'user_firstname' => $this->input->post('user_firstname'), 
@@ -108,6 +119,12 @@ class User extends MX_Controller
 	
 	function process_profile()
 	{
+		if ($this->input->post('user_email'))
+		{
+			$this->session->set_userdata('warning_message', lang('user.exists'));
+			redirect('user');
+		}
+		
 		$user_id = $this->input->post('user_id');
 		$user_data = array('user_firstname' => $this->input->post('user_firstname'), 'user_lastname' => $this->input->post('user_lastname'), 'user_email' => $this->input->post('user_email'));
 		$this->update_profile($user_id, $user_data);
