@@ -85,7 +85,7 @@ class User extends MX_Controller
 			'user_lastname' => $this->input->post('user_lastname'), 
 			'user_email' => $this->input->post('user_email'),
 			'user_permission' => $this->input->post('user_permission'),
-			'user_status' => "b'".($this->input->post('user_status')."'")
+			'user_status' => (int)($this->input->post('user_status'))
 		);
 		if (trim($this->input->post('user_password')) != '') echo $this->encryption->encrypt_str($this->input->post('user_password'), $this->config->item('app_key'));
 		$this->update_user($user_id, $user_data);
@@ -117,7 +117,7 @@ class User extends MX_Controller
 	{
 		$this->mdl_user->update($user_id, $user_data);
 		$this->session->set_userdata('success_message', lang('user.success'));
-		//redirect('user/edituser/'.$user_id);
+		redirect('user/edituser/'.$user_id);
 	}
 	
 	function update_profile($user_id, $user_data)
