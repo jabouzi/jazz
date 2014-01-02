@@ -142,4 +142,9 @@ class User extends MX_Controller
 	{
 		
 	}
+	
+	private function email_exists($email)
+	{
+		
+	}
 }

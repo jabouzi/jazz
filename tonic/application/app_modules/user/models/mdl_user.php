@@ -45,6 +45,9 @@ class Mdl_user extends CI_Model
 	{
 		$table = "tonic_users";
 		$this->db->insert($table, $data);
+		var_dump($this->db->last_query());
+		var_dump($this->db->insert_id());
+		exit;
 		return $this->db->insert_id();
 	}
 	
