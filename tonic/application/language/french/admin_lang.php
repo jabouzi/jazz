@@ -7,7 +7,7 @@ $lang['admin.delete'] = "Supprimer";
 $lang['admin.save'] = "Sauvegarder";
 $lang['admin.add'] = "Ajouter";
 $lang['admin.action'] = "Action";
-$lang['admin.error'] = " ne peut être vide et doît être valide";
+$lang['admin.error'] = " ne peut être vide et doit être valide";
 
 $lang['login.title'] = "Se connecter au CMS";
 $lang['login.email'] = "Courriel";

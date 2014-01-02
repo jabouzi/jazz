@@ -90,7 +90,7 @@ function validate_element(element)
     var required = 0;
     if (element.attr('data-type') == 'email')
     {
-        if (!isValidEmailAddress(element)) {  $(this).addClass('error-input'); required++; append_message(this); }
+        if (!isValidEmailAddress(element)) {  $(this).addClass('error-input'); required++; append_message(element); }
         else if ($("#" + element.attr('id') + '_confirmation').length > 0 && $("#" + element.attr('id') + '_confirmation').val() != element.val()) 
         { $(this).addClass('error-input'); required++; append_message(this); }
     }        
