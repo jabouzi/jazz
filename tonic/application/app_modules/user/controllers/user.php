@@ -88,7 +88,7 @@ class User extends MX_Controller
 			'user_permission' => $this->input->post('user_permission'),
 			'user_status' => decbin($this->input->post('user_status'))
 		);
-		//if (!empty($this->input->post('user_password'))) 
+		if (trim($this->input->post('user_password')) != '') 
 		echo $this->encryption->encrypt_str($this->input->post('user_password'), $this->config->item('app_key'));
 		$this->update_user($user_id, $user_data);
 	}
