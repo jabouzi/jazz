@@ -5,12 +5,6 @@ $(document).ready(function() {
 		}
 	});
 	
-	//$('#save_permission').bind({
-		//click: function() {
-			//validate_from('permissions_form');
-		//}
-	//});
-	
 	$('#add_workflow').bind({
 		click: function() {
 			add_workflow();
