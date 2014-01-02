@@ -47,7 +47,7 @@
 			<div class="submit_link">
 				<input type="button" id="save_user_password" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 				<input type="hidden" id="error_message" value="<?php echo lang('admin.error'); ?>">
-				<input type="hidden" id="email_exists_url" value="<?php echo site_url('user/emails_exists'); ?>">
+				<input type="hidden" id="email_exists_url" value="<?php echo site_url('user/email_exists'); ?>">
 			</div>
 		</footer>
 	</form>
