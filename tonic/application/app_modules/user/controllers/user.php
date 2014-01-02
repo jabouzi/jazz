@@ -33,7 +33,7 @@ class User extends MX_Controller
 		$this->session->unset_userdata('success_message');
 	}
 	
-	function edituser($id, $save = null)
+	function edituser($id)
 	{
 		$view_data['page_title'] = lang('user.edit');
 		$user_profile = $this->mdl_user->get_where($id);
@@ -42,7 +42,7 @@ class User extends MX_Controller
 		$this->session->unset_userdata('success_message');
 	}
 	
-	private function show($view, $user_data, $message = null)
+	private function show($view, $user_data)
 	{
 		$this->load->helper('form');
 		$view_data['user'] = $user_data;
