@@ -66,6 +66,7 @@ $lang['user.oldpassword'] = "Mot de passe actuel";
 $lang['user.status0'] = "Non active";
 $lang['user.status1'] = "Active";
 $lang['user.nonactive'] = "Ce compte est désctivé";
+$lang['user.success'] = "Sauvegarde réussit avec succès";
 
 $lang['webpage.title'] = "Pages web";
 $lang['webpage.add'] = "Ajouter une pages web";

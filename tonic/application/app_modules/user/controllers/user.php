@@ -10,11 +10,7 @@ class User extends MX_Controller
 	
 	function index($save = null)
 	{
-		$view_data['alerts'][] = array('alert_type' => "alert_info", 'alert_message' => '');
-		$view_data['alerts'][] = array('alert_type' => "alert_warning", 'alert_message' => '');
-		$view_data['alerts'][] = array('alert_type' => "alert_error", 'alert_message' => '');
-		$view_data['alerts'][] = array('alert_type' => "alert_success", 'alert_message' => '');
-		
+		$view_data['info_message'] = lang('user.success');		
 		$view_data['page_title'] = lang('user.profile');
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
 		$view_data['admin_widgets']['user'] = $this->show('profile', $user_profile->row());
@@ -84,6 +80,9 @@ class User extends MX_Controller
 	function process_edituser()
 	{
 		var_dump($this->input->post());
+		$user_id = $this->input->post('user_id');
+		$user_data = array('user_firstname' => $this->input->post('user_firstname'), 'user_lastname' => $this->input->post('user_lastname'), 'user_email' => $this->input->post('user_email'));
+		$this->update_user($user_id, $user_data);
 	}
 	
 	function process_newuser()
@@ -101,17 +100,19 @@ class User extends MX_Controller
 		var_dump($this->input->post());
 	}
 	
-	function add_user($data)
+	function add_user($user_data)
 	{
-		
+		$this->mdl_user->insert($user_data);
+		redirect('user/1');
 	}
 	
-	function update_user($id)
+	function update_user($user_id, $user_data)
 	{
-		
+		$this->mdl_user->update($user_id, $user_data);
+		redirect('user/1');
 	}
 	
-	function delete_user($id)
+	function delete_user($user_id)
 	{
 		
 	}

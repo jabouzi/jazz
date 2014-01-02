@@ -53,14 +53,14 @@ class Mdl_user extends CI_Model
 		$this->db->insert($table, $data);
 	}
 	
-	function _update($id, $data)
+	function update($id, $data)
 	{
 		$table = "tonic_users";
-		$this->db->where('id', $id);
+		$this->db->where('user_id', $id);
 		$this->db->update($table, $data);
 	}
 	
-	function _delete($id)
+	function delete($id)
 	{
 		$table = "tonic_users";
 		$this->db->where('id', $id);
