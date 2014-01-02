@@ -13,6 +13,13 @@ class Template extends MX_Controller
 		if ($this->session->userdata('user_email'))
 		{
 			$this->load->helper('form');
+			$this->load->helper('array');
+			
+			if (!element($view_data['info_message'])) $view_data['info_message'] = null;
+			if (!element($view_data['warning_message'])) $view_data['warning_message'] = null;
+			if (!element($view_data['error_message'])) $view_data['error_message'] = null;
+			if (!element($view_data['success_message'])) $view_data['success_message'] = null;
+			
 			foreach($this->lang->languages as $key => $value)
 			{
 				$view_data['languages'][site_url().$this->lang->switch_uri($key)] = lang($value);
