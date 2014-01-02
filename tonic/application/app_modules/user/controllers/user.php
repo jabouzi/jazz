@@ -102,7 +102,7 @@ class User extends MX_Controller
 			'user_status' => (int)($this->input->post('user_status')),
 			'user_password' => $this->encryption->encrypt_str($this->input->post('user_password'), $this->config->item('app_key'))
 		);
-		$this->update_user($user_id, $user_data);
+		$this->add_user($user_data);
 	}
 	
 	function process_profile()
