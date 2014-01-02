@@ -79,9 +79,16 @@ class User extends MX_Controller
 	
 	function process_edituser()
 	{
-		var_dump($this->input->post());exit;
+		$this->load->library('encryption');
 		$user_id = $this->input->post('user_id');
-		$user_data = array('user_firstname' => $this->input->post('user_firstname'), 'user_lastname' => $this->input->post('user_lastname'), 'user_email' => $this->input->post('user_email'));
+		$user_data = array(
+			'user_firstname' => $this->input->post('user_firstname'), 
+			'user_lastname' => $this->input->post('user_lastname'), 
+			'user_email' => $this->input->post('user_email');
+			'user_permission' => $this->input->post('user_permission'),
+			'user_status' => decbin($this->input->post('user_status'))
+		);
+		if (!empty($this->input->post('user_password'))) $user_data['user_password'] = $this->encryption->encrypt_str($this->input->post('user_password'), $this->config->item('app_key'));
 		$this->update_user($user_id, $user_data);
 	}
 	
