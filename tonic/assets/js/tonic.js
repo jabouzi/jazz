@@ -199,6 +199,6 @@ function effectFadeOut(classname, speed) {
 
 function append_message(element)
 {
-	console.log(element)
+	console.log($(element));
 	$('#error_message').val($(element).attr('title') + ', ' + $('#error_message').val());
 }
