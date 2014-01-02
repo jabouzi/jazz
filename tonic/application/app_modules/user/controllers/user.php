@@ -10,6 +10,8 @@ class User extends MX_Controller
 	
 	function index($save = null)
 	{
+		$this->load->library('user_agent');
+		var_dump($this->agent->referrer());
 		if ($save) $view_data['info_message'] = lang('user.success');		
 		$view_data['page_title'] = lang('user.profile');
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
