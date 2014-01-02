@@ -1,15 +1,15 @@
 $(document).ready(function() {
-	$('#save_workflow').bind({
+	$('.submit_form').bind({
 		click: function() {
-			validate_from('workflows_form');
+			validate_from($(this).closest('form').attr('id'));
 		}
 	});
 	
-	$('#save_permission').bind({
-		click: function() {
-			validate_from('permissions_form');
-		}
-	});
+	//$('#save_permission').bind({
+		//click: function() {
+			//validate_from('permissions_form');
+		//}
+	//});
 	
 	$('#add_workflow').bind({
 		click: function() {
