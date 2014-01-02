@@ -19,7 +19,6 @@ class User extends MX_Controller
 	function users()
 	{
 		$view_data['page_title'] = lang('user.users');
-		//$users = $this->mdl_user->get();
 		$users = $this->mdl_user->get_where_custom('user_permission > ', $this->session->userdata('user_permission'));
 		$view_data['admin_widgets']['user'] = $this->show('users', $users);
 		echo modules::run('template', $view_data);
