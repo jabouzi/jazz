@@ -108,7 +108,7 @@ class User extends MX_Controller
 	
 	function process_profile()
 	{
-		if ($this->input->post('user_id') == $this->session->user_data('user_id'))
+		if ($this->input->post('user_id') == $this->session->userdata('user_id'))
 		{
 			$user_id = $this->input->post('user_id');
 			$user_data = array('user_firstname' => $this->input->post('user_firstname'), 'user_lastname' => $this->input->post('user_lastname'), 'user_email' => $this->input->post('user_email'));
@@ -165,7 +165,7 @@ class User extends MX_Controller
 	{
 		if ($this->input->is_ajax_request())
 		{
-			if ($user_id == $this->session->user_data('user_id'))
+			if ($user_id == $this->session->userdata('user_id'))
 			{
 				$this->load->library('encryption');
 				if ($this->mdl_user->count_where(array('user_password' => $this->encryption->encrypt_str($this->input->post('user_oldpassword'), $this->config->item('app_key')), 'user_id != ' => $user_id))) echo 1;
