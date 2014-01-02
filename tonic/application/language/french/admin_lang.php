@@ -32,13 +32,11 @@ $lang['workflow.order'] = "Ordre du flux de travail";
 $lang['workflow.add'] = "Ajouter un flux";
 $lang['workflow.update'] = "Mettre à jour un flux";
 $lang['workflow.delete'] = "Supprimer un flux";
-$lang['workflow.error'] = "Le nom et l'ordre du flux ne peuvent pas être vide";
 $lang['workflow.success'] = "Flux sauvegardé avec succès";
 
 $lang['permission.title'] = "Permissions";
 $lang['permission.name'] = "Nom de la permission";
 $lang['permission.order'] = "Ordre de permission";
-$lang['permission.error'] = "Le nom de la permission ne peut pas être vide";
 $lang['permission.action'] = "Actions de la permission";
 $lang['permission.add'] = "Ajouter une permission";
 $lang['permission.delete'] = "Supprimer une permission";

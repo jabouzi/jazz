@@ -31,7 +31,7 @@
 		<footer>
 			<div class="submit_link">
 				<input type="button" id="save_user_profile" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
-				<input type="hidden" id="error_message" value="<?php echo lang('user.newerror'); ?>">
+				<input type="hidden" id="error_message" value="<?php echo lang('admin.error'); ?>">
 			</div>
 		</footer>
 	</form>
