@@ -146,6 +146,6 @@ class User extends MX_Controller
 	
 	private function email_exists($email)
 	{
-		return $this->db->count_where('user_email', $email);
+		return $this->mdl_user->count_where('user_email', $email);
 	}
 }
