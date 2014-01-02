@@ -82,9 +82,9 @@ function validate_from(form_id)
 		if ($('#user_email').length > 0)
 		{
 			$.post( $('#email_exists_url').val()+'/'+encodeURIComponent($('#user_email').val()), function( response ) {
-				console.log(response);
-				//if (!parseInt(response)) $("#" + form_id).submit();
-				//else $('.alert_error').html(response);
+				console.log(parseInt(response));
+				if (!parseInt(response) == 0) $("#" + form_id).submit();
+				else $('.alert_error').html(response);
 			});
 		}
 		else
