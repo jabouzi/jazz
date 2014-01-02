@@ -33,6 +33,7 @@
 				<input type="button" id="save_user_profile" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 				<input type="hidden" name="user_id" value="<?php echo $user->user_id; ?>">
 				<input type="hidden" id="error_message" value="<?php echo lang('admin.error'); ?>">
+				<input type="hidden" id="email_exists_url" value="<?php echo site_url('user/emails_exists'); ?>">
 			</div>
 		</footer>
 	</form>
