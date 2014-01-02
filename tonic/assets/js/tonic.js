@@ -86,9 +86,9 @@ function validate_from(form_id)
 				if (!parseInt(response) == 0) $("#" + form_id).submit();
 				else
 				{
-					$('.alert_error').html(response);
-					$('.alert_error').show();  
-					blinkit('alert_error');
+					$('.alert_warning').html(response);
+					$('.alert_warning').show();  
+					blinkit('alert_warning');
 				}
 			});
 		}
