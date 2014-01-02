@@ -88,8 +88,7 @@ class User extends MX_Controller
 			'user_permission' => $this->input->post('user_permission'),
 			'user_status' => decbin($this->input->post('user_status'))
 		);
-		if (trim($this->input->post('user_password')) == '') 
-		echo $this->encryption->encrypt_str($this->input->post('user_password'), $this->config->item('app_key'));
+		if (trim($this->input->post('user_password')) != '') echo $this->encryption->encrypt_str($this->input->post('user_password'), $this->config->item('app_key'));
 		$this->update_user($user_id, $user_data);
 	}
 	
@@ -119,7 +118,7 @@ class User extends MX_Controller
 	{
 		$this->mdl_user->update($user_id, $user_data);
 		$this->session->set_userdata('success_message', lang('user.success'));
-		//redirect('user');
+		redirect('user');
 	}
 	
 	function delete_user($user_id)
