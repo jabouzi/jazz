@@ -14,7 +14,7 @@ class User extends MX_Controller
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
 		$view_data['admin_widgets']['user'] = $this->show('profile', $user_profile->row());
 		echo modules::run('template', $view_data);
-		$this->session->unset_userdata('success_message');
+		//$this->session->unset_userdata('success_message');
 	}
 	
 	function users()
@@ -30,7 +30,7 @@ class User extends MX_Controller
 		$view_data['page_title'] = lang('user.new');
 		$view_data['admin_widgets']['user'] = $this->show('newuser', array());
 		echo modules::run('template', $view_data);
-		$this->session->unset_userdata('success_message');
+		//$this->session->unset_userdata('success_message');
 	}
 	
 	function edituser($id)
