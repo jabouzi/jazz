@@ -81,7 +81,9 @@ function validate_from(form_id)
     {
 		if ($('#user_email').length > 0)
 		{
-			$.post( $('#email_exists_url').val()+'/'+encodeURIComponent($('#user_email').val()), function( response ) {
+			if ($('#user_id').length == 0) var user_id = 0;
+			else var user_id = $('#user_id').val();
+			$.post( $('#email_exists_url').val()+'/'+encodeURIComponent($('#user_email').val())+'/'+user_id, function( response ) {
 				if (response == '0') $("#" + form_id).submit();
 				else
 				{
