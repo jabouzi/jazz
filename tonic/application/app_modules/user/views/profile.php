@@ -21,6 +21,7 @@
 				<input type="button" id="save_user_profile" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 				<input type="hidden" name="user_id" id="user_id" value="<?php echo $user->user_id; ?>">
 				<input type="hidden" id="error_message" value="<?php echo lang('admin.error'); ?>">
+				<input type="hidden" id="email_exists_url" value="<?php echo site_url('user/email_exists'); ?>">
 			</div>
 		</footer>
 	</form>
@@ -31,23 +32,23 @@
 		<div class="module_content">
 			<fieldset>
 				<label><?php echo lang('user.oldpassword'); ?></label>
-				<input type="password" name="user_oldpassword" id="user_oldpassword" value="" data-validate="required" data-type="password" title="<?php echo lang('user.oldpassword'); ?>">
+				<input type="password" name="user_oldpassword" id="user_oldpassword" value="" data-validate="required" data-type="text" title="<?php echo lang('user.oldpassword'); ?>">
 			</fieldset>
 			<fieldset>
 				<label><?php echo lang('user.newpassword'); ?></label>
-				<input type="password" name="user_newpassword" id="user_newpassword" value="" data-validate="required" data-type="password" title="<?php echo lang('user.newpassword'); ?>">
+				<input type="password" name="user_newpassword" id="user_newpassword" value="" data-validate="required" data-type="text" title="<?php echo lang('user.newpassword'); ?>">
 			</fieldset>
 			<fieldset>
 				<label><?php echo lang('user.newpassword'); ?></label>
-				<input type="password" name="user_user.newpassword" id="user_user.newpassword" value="" data-validate="required" data-type="password" title="<?php echo lang('user.user.newpassword'); ?>">
+				<input type="password" name="user_confirm_newpassword" id="user_confirm_newpassword" value="" data-validate="required" data-type="text" title="<?php echo lang('user.user.newpassword'); ?>">
 			</fieldset>
 			<div class="clear"></div>
 		</div>
 		<footer>
 			<div class="submit_link">
-				<input type="button" id="save_user_password" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
+				<input type="button" id="save_user_password" value="<?php echo lang('admin.save'); ?>" class="alt_btn">
 				<input type="hidden" id="error_message" value="<?php echo lang('admin.error'); ?>">
-				<input type="hidden" id="email_exists_url" value="<?php echo site_url('user/email_exists'); ?>">
+				<input type="hidden" id="good_password_url" value="<?php echo site_url('user/good_password'); ?>">
 			</div>
 		</footer>
 	</form>

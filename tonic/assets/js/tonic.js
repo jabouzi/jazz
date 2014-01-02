@@ -7,6 +7,12 @@ $(document).ready(function() {
 	
 	$('#add_workflow').bind({
 		click: function() {
+			validate_password($(this).closest('form').attr('id'));
+		}
+	});
+	
+	$('#add_workflow').bind({
+		click: function() {
 			add_workflow();
 		}
 	});
@@ -142,6 +148,22 @@ function validate_element(element)
     }
     
     return required;
+}
+
+function validate_password(form_id)
+{
+	$.post( $('#good_password_url').val()+'/'+$('#user_oldpassword').val()+'/'+$('#user_id').val(), function( response ) {
+		if (response == '1')
+		{
+			if ($('#user_newpassword').val() == $('#user_cofirm_newpassword').val())	$("#" + form_id).submit();
+		}
+		else
+		{
+			$('.alert_warning').html(response);
+			$('.alert_warning').show();  
+			blinkit('alert_warning');
+		}
+	});
 }
 
 function isValidEmailAddress(element) 
