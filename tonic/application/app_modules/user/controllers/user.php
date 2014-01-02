@@ -30,6 +30,7 @@ class User extends MX_Controller
 		$view_data['page_title'] = lang('user.new');
 		$view_data['admin_widgets']['user'] = $this->show('newuser', array());
 		echo modules::run('template', $view_data);
+		$this->session->unset_userdata('success_message');
 	}
 	
 	function edituser($id, $save = null)
@@ -38,6 +39,7 @@ class User extends MX_Controller
 		$user_profile = $this->mdl_user->get_where($id);
 		$view_data['admin_widgets']['user'] = $this->show('edituser', $user_profile->row());
 		echo modules::run('template', $view_data);
+		$this->session->unset_userdata('success_message');
 	}
 	
 	private function show($view, $user_data, $message = null)
@@ -101,7 +103,7 @@ class User extends MX_Controller
 	{
 		$user_id = $this->input->post('user_id');
 		$user_data = array('user_firstname' => $this->input->post('user_firstname'), 'user_lastname' => $this->input->post('user_lastname'), 'user_email' => $this->input->post('user_email'));
-		$this->update_user($user_id, $user_data);
+		$this->update_profile($user_id, $user_data);
 	}
 	
 	function process_password()
@@ -115,6 +117,13 @@ class User extends MX_Controller
 	}
 	
 	function update_user($user_id, $user_data)
+	{
+		$this->mdl_user->update($user_id, $user_data);
+		$this->session->set_userdata('success_message', lang('user.success'));
+		redirect('user/edituser/'.$user_id);
+	}
+	
+	function update_profile($user_id, $user_data)
 	{
 		$this->mdl_user->update($user_id, $user_data);
 		$this->session->set_userdata('success_message', lang('user.success'));
