@@ -21,7 +21,7 @@ class Permission extends MX_Controller
 	{
 		$this->load->helper('form');
 		$results = $this->mdl_permission->get_where($this->session->userdata('user_permission'));
-		$view_data['actions'] = $this->_get_permission_actions_list();
+		$view_data['actions'] = $this->get_permission_actions_list();
 		$view_data['attributes'] = "class='permissions-multi-select'";
 		foreach($results->result() as $permission)
 		{
@@ -83,7 +83,7 @@ class Permission extends MX_Controller
 		$this->mdl_permission->delete($id);
 	}
 	
-	function __get_permission_actions_list()
+	private function get_permission_actions_list()
 	{
 		$permissions = array();
 		$modules_list = $this->configs->get_modules_list();

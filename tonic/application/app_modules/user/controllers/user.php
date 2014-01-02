@@ -39,7 +39,7 @@ class User extends MX_Controller
 		echo modules::run('template', $view_data);
 	}
 	
-	function show($view, $user_data)
+	private function show($view, $user_data)
 	{
 		$this->load->helper('form');
 		$view_data['user'] = $user_data;
