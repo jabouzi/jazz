@@ -82,7 +82,7 @@ function validate_from(form_id)
 		if ($('#user_email').length > 0)
 		{
 			//console.log(encodeURIComponent($('#user_email').val()));
-			$.post( "/tonic/fr/user/email_exists/jabouzi@gmail.com", function( response ) {
+			$.post( "/tonic/fr/user/email_exists/jabouzi%40gmail.com", function( response ) {
 				console.log(response);
 				//if (!parseInt(response)) $("#" + form_id).submit();
 				//else $('.alert_error').html(response);
