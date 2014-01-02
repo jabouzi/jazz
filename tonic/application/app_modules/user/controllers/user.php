@@ -10,6 +10,11 @@ class User extends MX_Controller
 	
 	function index($save = null)
 	{
+		$view_data['alerts'][] = array('alert_type' => "alert_info", 'alert_message' => '');
+		$view_data['alerts'][] = array('alert_type' => "alert_warning", 'alert_message' => '');
+		$view_data['alerts'][] = array('alert_type' => "alert_error", 'alert_message' => '');
+		$view_data['alerts'][] = array('alert_type' => "alert_success", 'alert_message' => '');
+		
 		$view_data['page_title'] = lang('user.profile');
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
 		$view_data['admin_widgets']['user'] = $this->show('profile', $user_profile->row());
@@ -78,22 +83,22 @@ class User extends MX_Controller
 	
 	function process_edituser()
 	{
-		
+		var_dump(($this->input->post);
 	}
 	
 	function process_newuser()
 	{
-		
+		var_dump(($this->input->post);
 	}
 	
 	function process_profile()
 	{
-		
+		var_dump(($this->input->post);
 	}
 	
 	function process_password()
 	{
-		
+		var_dump(($this->input->post);
 	}
 	
 	function add_user($data)

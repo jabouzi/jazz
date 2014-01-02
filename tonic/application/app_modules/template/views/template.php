@@ -106,10 +106,21 @@
 	
 	<section id="main" class="column">
 		
-		<h4 style="display:none" class="alert_info">Welcome to the free MediaLoot admin panel template, this could be an informative message.</h4>
-        <h4 style="display:none" class="alert_warning"></h4>		
-		<h4 style="display:none" class="alert_error"></h4>		
-		<h4 style="display:none" class="alert_success"></h4>
+    <?php 
+        $display_info = 'style="display:none"';
+        $display_warning = 'style="display:none"';
+        $display_error = 'style="display:none"';
+        $display_success = 'style="display:none"';
+        if ($info_message) $display_info = '';
+        if ($warning_message) $display_warning = '';
+        if ($error_message) $display_error = '';
+        if ($success_message) $display_success = ''; 
+    ?>
+        
+		<h4 <?php echo $display_info; ?> class="alert_info"><?php echo $info_message; ?></h4>
+        <h4 <?php echo $display_warning; ?> class="alert_warning"><?php echo $warning_message; ?></h4>
+		<h4 <?php echo $display_error; ?> class="alert_error"><?php echo $error_message; ?></h4>
+		<h4 <?php echo $display_success; ?> class="alert_success"><?php echo $success_message; ?></h4>
 		
 		<?php 
 		foreach($admin_widgets as $widget => $content)
