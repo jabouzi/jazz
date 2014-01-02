@@ -32,6 +32,7 @@ $lang['workflow.add'] = "Add Workflow";
 $lang['workflow.update'] = "Update Workflow";
 $lang['workflow.delete'] = "Delete Workflow";
 $lang['workflow.error'] = "Workflow name and order cannot be empty";
+$lang['workflow.success'] = "Workflow saved successfully";
 
 $lang['permission.title'] = "Permissions";
 $lang['permission.name'] = "Permission Name";
@@ -44,6 +45,7 @@ $lang['permission.update'] = "Update Permission";
 $lang['permission.view'] = "View";
 $lang['permission.publish'] = "Publish";
 $lang['permission.archive'] = "Archive";
+$lang['permission.success'] = "Permission saved successfully";
 
 $lang['template.title'] = "Templates";
 
@@ -66,7 +68,7 @@ $lang['user.oldpassword'] = "Current Password";
 $lang['user.status0'] = "Non active";
 $lang['user.status1'] = "Active";
 $lang['user.nonactive'] = "This account is non active";
-$lang['user.success'] = "Save made with success";
+$lang['user.success'] = "User saved successfully";
 
 $lang['webpage.title'] = "Webpages";
 $lang['webpage.add'] = "Add Webpage";
