@@ -39,7 +39,7 @@ class User extends MX_Controller
 		$user_profile = $this->mdl_user->get_where($id);
 		$view_data['admin_widgets']['user'] = $this->show('edituser', $user_profile->row());
 		echo modules::run('template', $view_data);
-		$this->session->unset_userdata('success_message');
+		//$this->session->unset_userdata('success_message');
 	}
 	
 	private function show($view, $user_data)
