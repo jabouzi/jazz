@@ -148,7 +148,7 @@ class User extends MX_Controller
 		//if ($this->input->is_ajax_request())
 		//{
 			if ($this->mdl_user->count_where('user_email', $email)) echo lang('user.exists');
-			else echo 0;
+			else echo $email;
 		//}
 	}
 }
