@@ -63,7 +63,7 @@ class Mdl_user extends CI_Model
 	function delete($id)
 	{
 		$table = "tonic_users";
-		$this->db->where('id', $id);
+		$this->db->where('user_id', $id);
 		$this->db->delete($table);
 	}
 	
