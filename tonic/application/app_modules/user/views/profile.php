@@ -40,7 +40,7 @@
 			</fieldset>
 			<fieldset>
 				<label><?php echo lang('user.newpassword'); ?></label>
-				<input type="password" name="user_confirm_newpassword" id="user_confirm_newpassword" value="" data-validate="required" data-type="text" title="<?php echo lang('user.user.newpassword'); ?>">
+				<input type="password" name="user_confirm_newpassword" id="user_confirm_newpassword" value="" data-validate="required" data-type="text" title="<?php echo lang('user.newpassword'); ?>">
 			</fieldset>
 			<div class="clear"></div>
 		</div>
