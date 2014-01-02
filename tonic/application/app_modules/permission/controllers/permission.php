@@ -83,7 +83,7 @@ class Permission extends MX_Controller
 		$this->mdl_permission->delete($id);
 	}
 	
-	private function _get_permission_actions_list()
+	function __get_permission_actions_list()
 	{
 		$permissions = array();
 		$modules_list = $this->configs->get_modules_list();
