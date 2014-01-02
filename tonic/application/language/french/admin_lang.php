@@ -69,6 +69,7 @@ $lang['user.status1'] = "Active";
 $lang['user.nonactive'] = "Ce compte est désctivé";
 $lang['user.success'] = "Usager sauvegardé avec succès";
 $lang['user.exists'] = "Le courriel existe déjà";
+$lang['user.error'] = "Une erreur est survenue";
 
 $lang['webpage.title'] = "Pages web";
 $lang['webpage.add'] = "Ajouter une pages web";

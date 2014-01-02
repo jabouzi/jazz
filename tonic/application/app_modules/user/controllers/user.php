@@ -100,16 +100,25 @@ class User extends MX_Controller
 			'user_email' => $this->input->post('user_email'),
 			'user_permission' => $this->input->post('user_permission'),
 			'user_status' => (int)($this->input->post('user_status')),
-			'user_password' => $this->encryption->encrypt_str($this->input->post('user_password'), $this->config->item('app_key'))
+			'user_password' => $this->encryption->encrypt_str($this->input->post('user_password'), $this->config->item('app_key')),
+			'user_created' => date('Y-m-d H:i:s')
 		);
 		$this->add_user($user_data);
 	}
 	
 	function process_profile()
 	{
-		$user_id = $this->input->post('user_id');
-		$user_data = array('user_firstname' => $this->input->post('user_firstname'), 'user_lastname' => $this->input->post('user_lastname'), 'user_email' => $this->input->post('user_email'));
-		$this->update_profile($user_id, $user_data);
+		if ($this->input->post('user_id') == $this->session->user_data('user_id'))
+		{
+			$user_id = $this->input->post('user_id');
+			$user_data = array('user_firstname' => $this->input->post('user_firstname'), 'user_lastname' => $this->input->post('user_lastname'), 'user_email' => $this->input->post('user_email'));
+			$this->update_profile($user_id, $user_data);
+		}
+		else
+		{
+			$this->session->set_userdata('warning_message', lang('user.error'));
+			redirect('user/edituser/'.$this->input->post('user_id'));
+		}
 	}
 	
 	function process_password()
@@ -149,6 +158,19 @@ class User extends MX_Controller
 		{
 			if ($this->mdl_user->count_where(array('user_email' => urldecode($email), 'user_id != ' => $user_id))) echo lang('user.exists');
 			else echo 0;
+		}
+	}
+	
+	function good_password($password, $user_id)
+	{
+		if ($this->input->is_ajax_request())
+		{
+			if ($user_id == $this->session->user_data('user_id'))
+			{
+				$this->load->library('encryption');
+				if ($this->mdl_user->count_where(array('user_password' => $this->encryption->encrypt_str($this->input->post('user_oldpassword'), $this->config->item('app_key')), 'user_id != ' => $user_id))) echo 1;
+				else echo lang('user.error');
+			}
 		}
 	}
 }
