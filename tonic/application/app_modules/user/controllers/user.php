@@ -35,7 +35,7 @@ class User extends MX_Controller
 	function edituser($id, $save = null)
 	{
 		$view_data['page_title'] = lang('user.edit');
-		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
+		$user_profile = $this->mdl_user->get_where($id);
 		$view_data['admin_widgets']['user'] = $this->show('edituser', $user_profile->row());
 		echo modules::run('template', $view_data);
 	}
