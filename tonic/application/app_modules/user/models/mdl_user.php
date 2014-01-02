@@ -72,6 +72,7 @@ class Mdl_user extends CI_Model
 		$table = "tonic_users";
 		$query = $this->db->get_where($table, $where);
 		$num_rows = $query->num_rows();
+		echo $this->db->last_query();
 		return $num_rows;
 	}
 	
