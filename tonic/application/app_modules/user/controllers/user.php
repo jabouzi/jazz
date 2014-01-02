@@ -8,13 +8,13 @@ class User extends MX_Controller
 		$this->load->model('mdl_user');
 	}
 	
-	function index($save = null)
+	function index()
 	{
-		if ($save) $view_data['info_message'] = lang('user.success');		
 		$view_data['page_title'] = lang('user.profile');
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
 		$view_data['admin_widgets']['user'] = $this->show('profile', $user_profile->row());
 		echo modules::run('template', $view_data);
+		$this->session->unset_userdata('success_message');
 	}
 	
 	function users()
@@ -109,7 +109,8 @@ class User extends MX_Controller
 	function update_user($user_id, $user_data)
 	{
 		$this->mdl_user->update($user_id, $user_data);
-		redirect('user/index/1');
+		$this->session->set_userdata('success_message', lang('user.success'));
+		redirect('user');
 	}
 	
 	function delete_user($user_id)
