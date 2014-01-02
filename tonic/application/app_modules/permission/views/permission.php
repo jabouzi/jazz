@@ -24,7 +24,7 @@
 		</div><!-- end of .tab_container -->
 		<footer>
 			<div class="submit_link">
-				<input type="button" id="save_permission" value="<?php echo lang('admin.save'); ?>">
+				<input type="button" id="save_permission" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 				<input type="button" id="add_permission" value="<?php echo lang('admin.add'); ?>">
 			</div>
 		</footer>
