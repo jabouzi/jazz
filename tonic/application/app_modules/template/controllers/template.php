@@ -31,6 +31,9 @@ class Template extends MX_Controller
 			$view_data['lang'] = site_url().$this->lang->switch_uri($this->lang->lang());
 			$view_data['redirect'] = 'onChange="window.document.location.href=this.options[this.selectedIndex].value;"';
 			$this->load->view('template', $view_data);
+			$this->session->unset_userdata('warning_message');
+			$this->session->unset_userdata('info_message');
+			$this->session->unset_userdata('error_message');
 			$this->session->unset_userdata('success_message');
 		}
 		else
