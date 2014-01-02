@@ -18,7 +18,7 @@
 		</div>
 		<footer>
 			<div class="submit_link">
-				<input type="button" id="save_user_profile" value="<?php echo lang('admin.save'); ?>" class="alt_btn">
+				<input type="button" id="save_user_profile" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 			</div>
 		</footer>
 	</form>
@@ -43,7 +43,7 @@
 		</div>
 		<footer>
 			<div class="submit_link">
-				<input type="button" id="save_user_password" value="<?php echo lang('admin.save'); ?>" class="alt_btn">
+				<input type="button" id="save_user_password" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 			</div>
 		</footer>
 	</form>
