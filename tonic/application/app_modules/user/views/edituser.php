@@ -16,7 +16,7 @@
 			</fieldset>
 			<fieldset>
 				<label><?php echo lang('user.password'); ?></label>
-				<input type="password" name="user_password" id="user_password" value="" data-validate="required" data-type="password" title="<?php echo lang('user.password'); ?>">
+				<input type="password" name="user_password" id="user_password" value="" title="<?php echo lang('user.password'); ?>">
 			</fieldset>
 			<fieldset style="width:48%; float:left; margin-right: 3%;">
 				<label><?php echo lang('user.permissions'); ?></label>
@@ -32,6 +32,7 @@
 			<div class="submit_link">
 				<input type="button" id="save_user_profile" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 				<input type="hidden" name="user_id" value="<?php echo $user->user_id; ?>">
+				<input type="hidden" id="error_message" value="<?php echo lang('admin.error'); ?>">
 			</div>
 		</footer>
 	</form>

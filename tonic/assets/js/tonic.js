@@ -90,29 +90,29 @@ function validate_element(element)
     var required = 0;
     if (element.attr('data-type') == 'email')
     {
-        if (!isValidEmailAddress(element)) {  $(this).addClass('error-input'); required++; }
+        if (!isValidEmailAddress(element)) {  $(this).addClass('error-input'); required++; append_message(this); }
         else if ($("#" + element.attr('id') + '_confirmation').length > 0 && $("#" + element.attr('id') + '_confirmation').val() != element.val()) 
-        { $(this).addClass('error-input'); required++; }
+        { $(this).addClass('error-input'); required++; append_message(this); }
     }        
     else if (element.attr('data-type') == 'date')
     {
-        if (!isValideDate(element)) {  $(this).addClass('error-input'); required++; }
+        if (!isValideDate(element)) {  $(this).addClass('error-input'); required++; append_message(this); }
     }
     else if (element.attr('data-type') == 'postalcode')
     {
-        if (!isValidPostalCode(element)) {  $(this).addClass('error-input'); required++; }
+        if (!isValidPostalCode(element)) {  $(this).addClass('error-input'); required++; append_message(this); }
     }
     else if (element.attr('data-type') == 'checkbox')
     {
-        if (!element.is(':checked')) {  $(this).addClass('error-input'); required++; }
+        if (!element.is(':checked')) {  $(this).addClass('error-input'); required++; append_message(this); }
     }
     else if (element.attr('data-type') == 'option')
     {
-        if (element.val() == '') {  $(this).addClass('error-input'); required++; }
+        if (element.val() == '') {  $(this).addClass('error-input'); required++; append_message(this); }
     }
     else if (element.attr('data-type') == 'phone')
     {
-        if (!isValidPhone(element)) {  $(this).addClass('error-input'); required++; }
+        if (!isValidPhone(element)) {  $(this).addClass('error-input'); required++; append_message(this); }
     }
     else if (element.attr('data-validate') == 'required') 
     {
@@ -120,7 +120,7 @@ function validate_element(element)
         {
             if (element.is(":visible"))
             {
-                { $(this).addClass('error-input'); required++; }
+                { $(this).addClass('error-input'); required++; append_message(this); }
             }
         }
     }
@@ -195,4 +195,9 @@ function effectFadeIn(classname, speed) {
 
 function effectFadeOut(classname, speed) {
     $("." + classname).fadeIn(speed);
+}
+
+function append_message(element)
+{
+	$('#error_message').val(element.attr('title') + ', ' + $('#error_message').val());
 }
