@@ -104,7 +104,7 @@ class User extends MX_Controller
 	function add_user($user_data)
 	{
 		$this->mdl_user->insert($user_data);
-		redirect('user/1');
+		redirect('user/index/1');
 	}
 	
 	function update_user($user_id, $user_data)
