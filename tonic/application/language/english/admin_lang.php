@@ -32,13 +32,11 @@ $lang['workflow.order'] = "Workflow Order";
 $lang['workflow.add'] = "Add Workflow";
 $lang['workflow.update'] = "Update Workflow";
 $lang['workflow.delete'] = "Delete Workflow";
-$lang['workflow.error'] = "Workflow name and order cannot be empty";
 $lang['workflow.success'] = "Workflow saved successfully";
 
 $lang['permission.title'] = "Permissions";
 $lang['permission.name'] = "Permission Name";
 $lang['permission.order'] = "Permission Order";
-$lang['permission.error'] = "Permission name cannot be empty";
 $lang['permission.action'] = "Permission Actions";
 $lang['permission.add'] = "Add permission";
 $lang['permission.delete'] = "Delete permission";

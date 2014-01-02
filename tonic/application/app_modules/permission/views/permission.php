@@ -29,7 +29,7 @@
 			</div>
 		</footer>
 	</form>
-	<input type="hidden" id="error_message" value="<?php echo lang('permission.error'); ?>">
+	<input type="hidden" id="error_message" value="<?php echo lang('admin.error'); ?>">
 	<input type="hidden" id="permission_number" value="0">
 	<div style="display:none" id="new_permission">
 		<td><input type="text" name="new[]" value="">
