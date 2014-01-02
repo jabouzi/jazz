@@ -117,7 +117,7 @@ class User extends MX_Controller
 	{
 		$this->mdl_user->update($user_id, $user_data);
 		$this->session->set_userdata('success_message', lang('user.success'));
-		redirect('user/edituser/'.$user_id);
+		//redirect('user/edituser/'.$user_id);
 	}
 	
 	function update_profile($user_id, $user_data)
