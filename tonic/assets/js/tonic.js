@@ -5,7 +5,7 @@ $(document).ready(function() {
 		}
 	});
 	
-	$('#add_workflow').bind({
+	$('#save_user_password').bind({
 		click: function() {
 			validate_password($(this).closest('form').attr('id'));
 		}
@@ -152,18 +152,32 @@ function validate_element(element)
 
 function validate_password(form_id)
 {
-	$.post( $('#good_password_url').val()+'/'+$('#user_oldpassword').val()+'/'+$('#user_id').val(), function( response ) {
-		if (response == '1')
-		{
-			if ($('#user_newpassword').val() == $('#user_cofirm_newpassword').val())	$("#" + form_id).submit();
-		}
-		else
-		{
-			$('.alert_warning').html(response);
-			$('.alert_warning').show();  
-			blinkit('alert_warning');
-		}
-	});
+	var required = 0;
+    $('.alert_error').html('');
+    $("#" + form_id).find('[data-validate]').each(function() {
+        required += validate_element($(this));
+    });
+    if (required)
+    {
+		$('.alert_error').html($('#error_message').val());
+        $('.alert_error').show();  
+        blinkit('alert_error');
+    }
+    else
+    {
+		$.post( $('#good_password_url').val()+'/'+$('#user_oldpassword').val()+'/'+$('#user_id').val(), function( response ) {
+			if (response == '1')
+			{
+				if ($('#user_newpassword').val() == $('#user_cofirm_newpassword').val())	$("#" + form_id).submit();
+			}
+			else
+			{
+				$('.alert_warning').html(response);
+				$('.alert_warning').show();  
+				blinkit('alert_warning');
+			}
+		});
+	}
 }
 
 function isValidEmailAddress(element) 
