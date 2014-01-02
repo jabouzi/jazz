@@ -96,23 +96,23 @@ function validate_element(element)
     }        
     else if (element.attr('data-type') == 'date')
     {
-        if (!isValideDate(element)) {  $(this).addClass('error-input'); required++; append_message(this); }
+        if (!isValideDate(element)) {  $(this).addClass('error-input'); required++; append_message(element); }
     }
     else if (element.attr('data-type') == 'postalcode')
     {
-        if (!isValidPostalCode(element)) {  $(this).addClass('error-input'); required++; append_message(this); }
+        if (!isValidPostalCode(element)) {  $(this).addClass('error-input'); required++; append_message(element); }
     }
     else if (element.attr('data-type') == 'checkbox')
     {
-        if (!element.is(':checked')) {  $(this).addClass('error-input'); required++; append_message(this); }
+        if (!element.is(':checked')) {  $(this).addClass('error-input'); required++; append_message(element); }
     }
     else if (element.attr('data-type') == 'option')
     {
-        if (element.val() == '') {  $(this).addClass('error-input'); required++; append_message(this); }
+        if (element.val() == '') {  $(this).addClass('error-input'); required++; append_message(element); }
     }
     else if (element.attr('data-type') == 'phone')
     {
-        if (!isValidPhone(element)) {  $(this).addClass('error-input'); required++; append_message(this); }
+        if (!isValidPhone(element)) {  $(this).addClass('error-input'); required++; append_message(element); }
     }
     else if (element.attr('data-validate') == 'required') 
     {
@@ -120,7 +120,7 @@ function validate_element(element)
         {
             if (element.is(":visible"))
             {
-                { $(this).addClass('error-input'); required++; append_message(this); }
+                { $(this).addClass('error-input'); required++; append_message(element); }
             }
         }
     }
@@ -199,6 +199,5 @@ function effectFadeOut(classname, speed) {
 
 function append_message(element)
 {
-	console.log($(element));
-	$('#error_message').val($(element).attr('title') + ', ' + $('#error_message').val());
+	$('#error_message').val(element.attr('title') + ', ' + $('#error_message').val());
 }
