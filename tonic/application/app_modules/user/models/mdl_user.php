@@ -67,7 +67,7 @@ class Mdl_user extends CI_Model
 		$this->db->delete($table);
 	}
 	
-	function count_where($column, $value)
+	function count_where($where)
 	{
 		$table = "tonic_users";
 		$query = $this->db->get_where($table, $where);
