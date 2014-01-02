@@ -93,7 +93,16 @@ class User extends MX_Controller
 	
 	function process_newuser()
 	{
-		var_dump($this->input->post());
+		$this->load->library('encryption');
+		$user_data = array(
+			'user_firstname' => $this->input->post('user_firstname'), 
+			'user_lastname' => $this->input->post('user_lastname'), 
+			'user_email' => $this->input->post('user_email'),
+			'user_permission' => $this->input->post('user_permission'),
+			'user_status' => (int)($this->input->post('user_status')),
+			'user_password' => $this->encryption->encrypt_str($this->input->post('user_password'), $this->config->item('app_key')
+		);
+		$this->update_user($user_id, $user_data);
 	}
 	
 	function process_profile()
@@ -110,7 +119,9 @@ class User extends MX_Controller
 	
 	function add_user($user_data)
 	{
-		$this->mdl_user->insert($user_data);
+		$user_id = $this->mdl_user->insert($user_data);
+		$this->session->set_userdata('success_message', lang('user.success'));
+		redirect('user/edituser/'.$user_id);
 	}
 	
 	function update_user($user_id, $user_data)
