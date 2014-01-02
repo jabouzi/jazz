@@ -70,8 +70,7 @@ class Mdl_user extends CI_Model
 	function count_where($column, $value)
 	{
 		$table = "tonic_users";
-		$this->db->where($column, $value);
-		$query	= $this->db->get($table);
+		$query = $this->db->get_where($table, $where);
 		$num_rows = $query->num_rows();
 		return $num_rows;
 	}
