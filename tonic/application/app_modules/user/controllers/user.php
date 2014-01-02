@@ -19,7 +19,7 @@ class User extends MX_Controller
 	function users()
 	{
 		$view_data['page_title'] = lang('user.users');
-		$users = $this->mdl_user->get_where_custom('user_permission > ', $this->session->userdata('user_permission'));
+		$users = $this->mdl_user->get_where_custom(array('user_permission > ' => $this->session->userdata('user_permission')));
 		$view_data['admin_widgets']['user'] = $this->show('users', $users);
 		echo modules::run('template', $view_data);
 	}
@@ -143,12 +143,21 @@ class User extends MX_Controller
 		
 	}
 	
-	function email_exists($email)
+	function email_exists($email, $user_id = null)
 	{
 		if ($this->input->is_ajax_request())
 		{
-			if ($this->mdl_user->count_where('user_email', urldecode($email))) echo lang('user.exists');
-			else echo 0;
+			if ($user_id)
+			{
+				if ($this->mdl_user->count_where(array('user_email', urldecode($email))) echo lang('user.exists');
+				else echo 0;
+			}
+			else
+			{
+				if ($this->mdl_user->count_where('user_email', urldecode($email))) echo lang('user.exists');
+				else echo 0;
+			}
+			
 		}
 	}
 }

@@ -33,11 +33,10 @@ class Mdl_user extends CI_Model
 		return $query;
 	}
 	
-	function get_where_custom($col, $value)
+	function get_where_custom($where)
 	{
 		$table = "tonic_users";
-		$this->db->where($col, $value);
-		$query = $this->db->get($table);
+		$this->db->get_where($table, $where);
 		return $query;
 	}
 	
@@ -59,7 +58,6 @@ class Mdl_user extends CI_Model
 		$table = "tonic_users";
 		$this->db->where('user_id', $id);
 		$this->db->update($table, $data);
-		var_dump($this->db->last_query());
 	}
 	
 	function delete($id)
