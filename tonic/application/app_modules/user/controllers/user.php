@@ -10,6 +10,7 @@ class User extends MX_Controller
 	
 	function index()
 	{
+		var_dump(email_exists('jabouzi@gmail.com'));
 		$view_data['page_title'] = lang('user.profile');
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
 		$view_data['admin_widgets']['user'] = $this->show('profile', $user_profile->row());
@@ -145,6 +146,6 @@ class User extends MX_Controller
 	
 	private function email_exists($email)
 	{
-		
+		return $this->db->count_where('user_email', $email);
 	}
 }
