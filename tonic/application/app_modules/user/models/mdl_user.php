@@ -58,6 +58,7 @@ class Mdl_user extends CI_Model
 		$table = "tonic_users";
 		$this->db->where('user_id', $id);
 		$this->db->update($table, $data);
+		var_dump($this->db->last_query());
 	}
 	
 	function delete($id)
