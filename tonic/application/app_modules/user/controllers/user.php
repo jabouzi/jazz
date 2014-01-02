@@ -143,21 +143,12 @@ class User extends MX_Controller
 		
 	}
 	
-	function email_exists($email, $user_id = null)
+	function email_exists($email, $user_id = 0)
 	{
 		if ($this->input->is_ajax_request())
 		{
-			if ($user_id)
-			{
-				if ($this->mdl_user->count_where(array('user_email', urldecode($email))) echo lang('user.exists');
-				else echo 0;
-			}
-			else
-			{
-				if ($this->mdl_user->count_where('user_email', urldecode($email))) echo lang('user.exists');
-				else echo 0;
-			}
-			
+			if ($this->mdl_user->count_where(array('user_email', urldecode($email)))) echo lang('user.exists');
+			else echo 0;
 		}
 	}
 }
