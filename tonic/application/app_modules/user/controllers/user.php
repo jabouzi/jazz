@@ -33,7 +33,7 @@ class User extends MX_Controller
 	
 	function edituser($id)
 	{
-		modules::run('permission/_get_permission_actions_list');
+		var_dump(modules::run('permission/_get_permission_actions_list'));
 		$view_data['page_title'] = lang('user.edit');
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
 		$view_data['admin_widgets']['user'] = $this->show('edituser', $user_profile->row());
