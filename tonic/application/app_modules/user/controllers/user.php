@@ -83,22 +83,22 @@ class User extends MX_Controller
 	
 	function process_edituser()
 	{
-		var_dump(($this->input->post);
+		var_dump($this->input->post);
 	}
 	
 	function process_newuser()
 	{
-		var_dump(($this->input->post);
+		var_dump($this->input->post);
 	}
 	
 	function process_profile()
 	{
-		var_dump(($this->input->post);
+		var_dump($this->input->post);
 	}
 	
 	function process_password()
 	{
-		var_dump(($this->input->post);
+		var_dump($this->input->post);
 	}
 	
 	function add_user($data)
