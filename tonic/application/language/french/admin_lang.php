@@ -32,6 +32,7 @@ $lang['workflow.add'] = "Ajouter un flux";
 $lang['workflow.update'] = "Mettre à jour un flux";
 $lang['workflow.delete'] = "Supprimer un flux";
 $lang['workflow.error'] = "Le nom et l'ordre du flux ne peuvent pas être vide";
+$lang['workflow.success'] = "Flux sauvegardé avec succès";
 
 $lang['permission.title'] = "Permissions";
 $lang['permission.name'] = "Nom de la permission";
@@ -44,6 +45,7 @@ $lang['permission.update'] = "Mettre à jour une permission";
 $lang['permission.view'] = "Voir";
 $lang['permission.publish'] = "Publier";
 $lang['permission.archive'] = "Archiver";
+$lang['permission.success'] = "Permission sauvegardée avec succès";
 
 $lang['template.title'] = "Templates";
 
@@ -66,7 +68,7 @@ $lang['user.oldpassword'] = "Mot de passe actuel";
 $lang['user.status0'] = "Non active";
 $lang['user.status1'] = "Active";
 $lang['user.nonactive'] = "Ce compte est désctivé";
-$lang['user.success'] = "Sauvegarde réussit avec succès";
+$lang['user.success'] = "Usager sauvegardé avec succès";
 
 $lang['webpage.title'] = "Pages web";
 $lang['webpage.add'] = "Ajouter une pages web";
