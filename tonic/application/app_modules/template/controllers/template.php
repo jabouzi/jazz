@@ -30,7 +30,7 @@ class Template extends MX_Controller
 			}
 			$view_data['lang'] = site_url().$this->lang->switch_uri($this->lang->lang());
 			$view_data['redirect'] = 'onChange="window.document.location.href=this.options[this.selectedIndex].value;"';
-			$this->load->view('template', $view_data);
+			@$this->load->view('template', $view_data);
 		}
 		else
 		{
