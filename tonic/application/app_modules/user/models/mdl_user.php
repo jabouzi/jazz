@@ -36,7 +36,7 @@ class Mdl_user extends CI_Model
 	function get_where_custom($where)
 	{
 		$table = "tonic_users";
-		$this->db->get_where($table, $where);
+		$query = $this->db->get_where($table, $where);
 		return $query;
 	}
 	
