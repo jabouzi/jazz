@@ -8,7 +8,7 @@ class User extends MX_Controller
 		$this->load->model('mdl_user');
 	}
 	
-	function index()
+	function index($save = null)
 	{
 		$view_data['page_title'] = lang('user.profile');
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
@@ -31,7 +31,7 @@ class User extends MX_Controller
 		echo modules::run('template', $view_data);
 	}
 	
-	function edituser($id)
+	function edituser($id, $save = null)
 	{
 		$view_data['page_title'] = lang('user.edit');
 		$user_profile = $this->mdl_user->get_where($this->session->userdata('user_id'));
@@ -39,7 +39,7 @@ class User extends MX_Controller
 		echo modules::run('template', $view_data);
 	}
 	
-	private function show($view, $user_data)
+	private function show($view, $user_data, $message = null)
 	{
 		$this->load->helper('form');
 		$view_data['user'] = $user_data;
