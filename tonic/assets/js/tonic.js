@@ -81,16 +81,14 @@ function validate_from(form_id)
     {
 		if ($('#user_email').length > 0)
 		{
-			//console.log(encodeURIComponent($('#user_email').val()));
-			$.post( "/tonic/fr/user/email_exists/jabouzi%40gmail.com", function( response ) {
-				console.log(response);
-				//if (!parseInt(response)) $("#" + form_id).submit();
-				//else $('.alert_error').html(response);
+			$.post( $('#email_exists_url').val()+'/'+encodeURIComponent($('#user_email').val()), function( response ) {
+				if (!parseInt(response)) $("#" + form_id).submit();
+				else $('.alert_error').html(response);
 			});
 		}
 		else
 		{
-			//$("#" + form_id).submit();
+			$("#" + form_id).submit();
 		}
         
     }
