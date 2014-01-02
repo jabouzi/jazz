@@ -84,7 +84,7 @@ class User extends MX_Controller
 		$user_data = array(
 			'user_firstname' => $this->input->post('user_firstname'), 
 			'user_lastname' => $this->input->post('user_lastname'), 
-			'user_email' => $this->input->post('user_email');
+			'user_email' => $this->input->post('user_email'),
 			'user_permission' => $this->input->post('user_permission'),
 			'user_status' => decbin($this->input->post('user_status'))
 		);
