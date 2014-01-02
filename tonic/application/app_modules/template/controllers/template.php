@@ -15,10 +15,10 @@ class Template extends MX_Controller
 			$this->load->helper('form');
 			$this->load->helper('array');
 			
-			if (!element($view_data['info_message'])) $view_data['info_message'] = null;
-			if (!element($view_data['warning_message'])) $view_data['warning_message'] = null;
-			if (!element($view_data['error_message'])) $view_data['error_message'] = null;
-			if (!element($view_data['success_message'])) $view_data['success_message'] = null;
+			if (!element('info_message', $view_data])) $view_data['info_message'] = null;
+			if (!element('warning_message', $view_data)) $view_data['warning_message'] = null;
+			if (!element('error_message', $view_data)) $view_data['error_message'] = null;
+			if (!element('success_message', $view_data)) $view_data['success_message'] = null;
 			
 			foreach($this->lang->languages as $key => $value)
 			{
