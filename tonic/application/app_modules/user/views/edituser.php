@@ -31,6 +31,7 @@
 		<footer>
 			<div class="submit_link">
 				<input type="button" id="save_user_profile" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
+				<input type="hidden" name="user_id" value="<?php echo $user->user_id; ?>">
 			</div>
 		</footer>
 	</form>
