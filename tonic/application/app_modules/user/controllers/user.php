@@ -79,7 +79,6 @@ class User extends MX_Controller
 	
 	function process_edituser()
 	{
-		var_dump($this->input->post());
 		$user_id = $this->input->post('user_id');
 		$user_data = array('user_firstname' => $this->input->post('user_firstname'), 'user_lastname' => $this->input->post('user_lastname'), 'user_email' => $this->input->post('user_email'));
 		$this->update_user($user_id, $user_data);
@@ -92,7 +91,9 @@ class User extends MX_Controller
 	
 	function process_profile()
 	{
-		var_dump($this->input->post());
+		$user_id = $this->input->post('user_id');
+		$user_data = array('user_firstname' => $this->input->post('user_firstname'), 'user_lastname' => $this->input->post('user_lastname'), 'user_email' => $this->input->post('user_email'));
+		$this->update_user($user_id, $user_data);
 	}
 	
 	function process_password()
