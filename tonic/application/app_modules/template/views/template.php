@@ -129,7 +129,8 @@
 		?>
 
 		<div class="clear"></div>
-		
+		<input type="hidden" id="hide_text" value="<?php echo lang('admin.hide'); ?>">
+		<input type="hidden" id="show_text" value="<?php echo lang('admin.show'); ?>">
 </body>
 
 </html>

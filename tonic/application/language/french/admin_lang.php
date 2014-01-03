@@ -7,6 +7,7 @@ $lang['admin.delete'] = "Supprimer";
 $lang['admin.save'] = "Sauvegarder";
 $lang['admin.add'] = "Ajouter";
 $lang['admin.action'] = "Action";
+$lang['admin.show'] = "Afficher";
 $lang['admin.hide'] = "Cacher";
 $lang['admin.error'] = " ne peut être vide et doit être valide";
 

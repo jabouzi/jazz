@@ -7,7 +7,8 @@ $lang['admin.delete'] = "Supprimer";
 $lang['admin.save'] = "Save";
 $lang['admin.add'] = "Add";
 $lang['admin.action'] = "Action";
-$lang['admin.hide'] = "hide";
+$lang['admin.show'] = "Show";
+$lang['admin.hide'] = "Hide";
 $lang['admin.error'] = " cannot be empty and must be valid";
 
 $lang['login.title'] = "Login to CMS";
