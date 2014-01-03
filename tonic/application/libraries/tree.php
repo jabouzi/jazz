@@ -76,7 +76,7 @@ class Tree
 		return $this->root->add_child($node);   
 	}
 	
-	function insertchild($type, $data, $node)
+	function insert_child($type, $data, $node)
 	{
 		$childdepth = $node->get_depth() + 1;
 		$child = new Node();
@@ -89,7 +89,7 @@ class Tree
 		return $node->add_child($child); 
 	}	
 	
-	function getnodes_by_depth($depth, $node)
+	function get_nodes_by_depth($depth, $node)
 	{
 		if ($depth == $node->getd_epth())
 		{
@@ -99,7 +99,7 @@ class Tree
 		{
 			foreach($node->get_children() as $child)
 			{
-				$this->getnodes_by_depth($depth, $child); 
+				$this->get_nodes_by_depth($depth, $child); 
 			}
 		}
 	}
