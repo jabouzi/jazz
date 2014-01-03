@@ -133,7 +133,7 @@ class User extends MX_Controller
 		else
 		{
 			$this->session->set_userdata('warning_message', lang('user.error'));
-			redirect('user/edituser/'.$this->input->post('user_id'));
+			redirect('user/profile/');
 		}
 	}
 	
