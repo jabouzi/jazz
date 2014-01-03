@@ -27,4 +27,4 @@
 		</tbody> 
 		</table>
 	</div><!-- end of .tab_container -->
-</article><!-- end of workflow manager article -->
+</article><!-- end of article -->
