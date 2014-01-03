@@ -26,9 +26,10 @@ class Tree
 	} 
 	
 	function add_root($type,$data)
-	{
-		$this->node->set_node($type, $data, 0);
-		$this->root = $this->node;
+	{ 
+		$node = new Node();
+		$node->set_node($type, $data, 0);
+		$this->root = $node;
 		$this->increment_count();
 	}
 	
@@ -69,15 +70,17 @@ class Tree
 	
 	function insert_root_child($type, $data)
 	{
-		$this->node->set_node($type, $data, 1);
+		$node = new Node();
+		$node->set_node($type, $data, 1);
 		$this->increment_count();
-		return $this->root->add_child($this->node);   
+		return $this->root->add_child($node);   
 	}
 	
-	function insert_child($type, $data, $this->node)
+	function insert_child($type, $data, $node)
 	{
-		$child_depth = $this->node->get_depth() + 1;
-		$child = $this->node->set_node($type, $data, $chil_dDepth);
+		$child_depth = $node->get_depth() + 1;
+		$child = new Node();
+		$child->set_node($type, $data, $chil_dDepth);
 		$this->increment_count();
 		if ($child_depth > $this->get_depth())
 		{
@@ -86,7 +89,7 @@ class Tree
 		return $this->node->add_child($child); 
 	}	
 	
-	function get_nodes_by_depth($depth, $this->node)
+	function get_nodes_by_depth($depth, $node)
 	{
 		if ($depth == $this->node->get_depth())
 		{
@@ -101,7 +104,7 @@ class Tree
 		}
 	}
 	
-	function find_child($data, $type, $this->node)
+	function find_child($data, $type, $node)
 	{
 		if ($this->node->get_child($data, $type))
 		{
