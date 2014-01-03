@@ -10,6 +10,7 @@ class Category extends MX_Controller
 	
 	function index()
 	{
+		echo lang('categroy.title');
 		$view_data['page_title'] = lang('categroy.title');
 		$view_data['admin_widgets']['categories'] = $this->show();
 		echo modules::run('template', $view_data);
