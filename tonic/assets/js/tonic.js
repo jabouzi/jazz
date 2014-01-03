@@ -172,7 +172,6 @@ function validate_password(form_id)
     else
     {
 		$.post( $('#good_password_url').val()+'/'+$('#user_oldpassword').val()+'/'+$('#user_id').val(), function( response ) {
-			console.log(response, $('#user_newpassword').val(), $('#user_confirm_newpassword').val());
 			if (response == '1')
 			{
 				if ($('#user_newpassword').val() == $('#user_confirm_newpassword').val())	$("#" + form_id).submit();
