@@ -175,20 +175,23 @@ function validate_password(form_id)
 		$.post( $('#good_password_url').val()+'/'+$('#user_oldpassword').val()+'/'+$('#user_id').val(), function( response ) {
 			if (response == '1')
 			{
-				if ($('#user_newpassword').val() == '') append_message($('#user_newpassword'))
+				if ($('#user_newpassword').val() == '') 
 				{
+					append_message($('#user_newpassword'))
 					$('.alert_error').html($('#error_message').val());
 					$('.alert_error').show();  
 					blinkit('alert_error');
 				}
-				else if ($('#user_confirm_newpassword').val() == '') append_message($('#user_confirm_newpassword'))
+				else if ($('#user_confirm_newpassword').val() == '') 
 				{
+					append_message($('#user_newpassword'))
 					$('.alert_error').html($('#error_message').val());
 					$('.alert_error').show();  
 					blinkit('alert_error');
 				}
 				else if ($('#user_newpassword').val() != $('#user_confirm_newpassword').val())
 				{
+					append_message($('#user_newpassword'))
 					$('.alert_error').html($('#error_message').val());
 					$('.alert_error').show();  
 					blinkit('alert_error');
