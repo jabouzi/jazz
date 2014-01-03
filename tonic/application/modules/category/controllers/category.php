@@ -18,7 +18,7 @@ class Category extends MX_Controller
 	private function show()
 	{
 		$this->load->helper('form');
-		$results = $this->mdl_category->get_where();
+		$results = $this->mdl_category->get();
 		$view_data['categories'] = $results;
 		return $this->load->view('category', $view_data, true);
 	}
