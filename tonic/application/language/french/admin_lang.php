@@ -7,6 +7,7 @@ $lang['admin.delete'] = "Supprimer";
 $lang['admin.save'] = "Sauvegarder";
 $lang['admin.add'] = "Ajouter";
 $lang['admin.action'] = "Action";
+$lang['admin.hide'] = "Cacher";
 $lang['admin.error'] = " ne peut être vide et doit être valide";
 
 $lang['login.title'] = "Se connecter au CMS";
@@ -52,7 +53,7 @@ $lang['user.title'] = "Usagers";
 $lang['user.add'] = "Ajouter un usager";
 $lang['user.delete'] = "Supprimer un usager";
 $lang['user.update'] = "Mettre à jour un usager";
-$lang['user.users'] = "List des usagers";
+$lang['user.users'] = "Liste des usagers";
 $lang['user.profile'] = "Mon profile";
 $lang['user.new'] = "Nouvel usager";
 $lang['user.edit'] = "Mettre à jour Usager";
