@@ -24,3 +24,7 @@
 		<div class="clear"></div>
 	</div>
 </article><!-- end of stats article -->
+
+<span class="dash_space">
+<nobr>|—</nobr>
+</span>
