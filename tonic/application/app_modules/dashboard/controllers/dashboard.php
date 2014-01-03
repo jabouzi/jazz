@@ -20,17 +20,17 @@ class Dashboard extends MX_Controller
 		$this->tree->insert_child("child3","xFirstGrandChild",$this->tree->get_root()->get_child_at(0)->get_child_at(1));
 		$this->tree->insert_child("child4","xxFirstGrandChild",$this->tree->get_root()->get_child_at(0)->get_child_at(1)->get_child_at(0));
 		$this->tree->insert_child("child4","xxSecondGrandChild",$this->tree->get_root()->get_child_at(0)->get_child_at(1)->get_child_at(0));
-		echo((string)$this->tree->getRoot()->getChild("child","secondChild"));
+		echo ((string)$this->tree->get_root()->get_child("child","secondChild"));
 
-		var_dump($tree->getRoot()->hasChildren());
-		//var_dump($tree->getRoot()->getChildAt(0)->getChildren());
-		var_dump($tree->getRoot()->getChildAt(0)->getChildAt(1)->getChildren());
-		//var_dump($tree->getRoot()->getChildAt(1)->hasChildren());
-		$this->tree->findChild("child3","xFirstGrandChild",$tree->getRoot());
-		var_dump($this->tree->getChildFound());
-		$this->tree->insertChild("child4","xyfirstGrandChild",$tree->getChildFound());
-		$tree->getNodesByDepth(4,$tree->getRoot());
-		var_dump($tree->getChildsByDepth());
+		var_dump($tree->get_root()->has_children());
+		//var_dump($tree->get_root()->get_child_at(0)->get_children());
+		var_dump($tree->get_root()->get_child_at(0)->get_child_at(1)->get_children());
+		//var_dump($tree->get_root()->get_child_at(1)->hasChildren());
+		$this->tree->find_child("child3","xFirstGrandChild",$tree->get_root());
+		var_dump($this->tree->get_Child_found());
+		$this->tree->insertChild("child4","xyfirstGrandChild",$tree->get_Child_found());
+		$tree->get_nodes_by_depth(4,$tree->get_root());
+		var_dump($tree->get_childs_by_depth());
 		$this->show();
 	}
 	
