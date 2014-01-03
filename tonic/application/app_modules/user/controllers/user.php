@@ -37,8 +37,8 @@ class User extends MX_Controller
 		if (!$id) redirect('dashboard');
 		$view_data['page_title'] = lang('user.edit');
 		$user_profile = $this->mdl_user->get_where($id);
-		if ($user_profile->row()->user_permission <= $this->session->userdata('user_permission')) redirect('dashboard');
 		if ($user_profile->row()->user_id == $this->session->userdata('user_id'))  redirect('user');
+		if ($user_profile->row()->user_permission <= $this->session->userdata('user_permission')) redirect('dashboard');
 		$view_data['admin_widgets']['user'] = $this->show('edituser', $user_profile->row());
 		echo modules::run('template', $view_data);
 	}
