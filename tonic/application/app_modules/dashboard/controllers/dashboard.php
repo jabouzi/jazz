@@ -10,6 +10,7 @@ class Dashboard extends MX_Controller
 	
 	function index()
 	{
+		$this->load->library('tree');
 		$this->show();
 	}
 	

@@ -53,4 +53,4 @@
 			</div>
 		</footer>
 	</form>
-</article><!-- end of post new article -->
+</article><!-- end of article -->
