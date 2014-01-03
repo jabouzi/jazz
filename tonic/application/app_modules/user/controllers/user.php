@@ -33,6 +33,7 @@ class User extends MX_Controller
 	
 	function edituser($id = 0)
 	{
+		if (!$id) redirect('dashboard');
 		$view_data['page_title'] = lang('user.edit');
 		$user_profile = $this->mdl_user->get_where($id);
 		$view_data['admin_widgets']['user'] = $this->show('edituser', $user_profile->row());
