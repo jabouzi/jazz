@@ -91,7 +91,7 @@ class Tree
 	
 	function get_nodes_by_depth($depth, $node)
 	{
-		if ($depth == $node->getd_epth())
+		if ($depth == $node->get_depth())
 		{
 			$this->childs_by_depth[] = $node;
 		}
