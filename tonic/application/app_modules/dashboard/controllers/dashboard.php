@@ -32,6 +32,7 @@ class Dashboard extends MX_Controller
 		//$this->tree->get_nodes_by_depth(4,$this->tree->get_root());
 		//var_dump($this->tree->get_childs_by_depth());
 		echo '&#9658;';
+		echo '|—';
 		$this->show();
 	}
 	
