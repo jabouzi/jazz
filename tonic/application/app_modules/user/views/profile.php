@@ -47,7 +47,8 @@
 		<footer>
 			<div class="submit_link">
 				<input type="button" id="save_user_password" value="<?php echo lang('admin.save'); ?>" class="alt_btn">
-				<input type="hidden" id="error_message" value="<?php echo lang('admin.error'); ?>">
+				<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
+				<input type="hidden" id="error_message" value="">
 				<input type="hidden" id="good_password_url" value="<?php echo site_url('user/good_password'); ?>">
 			</div>
 		</footer>

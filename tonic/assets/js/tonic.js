@@ -114,11 +114,12 @@ function validate_from(form_id)
 function validate_element(element)
 {
     var required = 0;
+    $('#error_message').val($('#error_message').val());
     if (element.attr('data-type') == 'email')
     {
-        if (!isValidEmailAddress(element)) {  $(this).addClass('error-input'); required++; append_message(element); }
+        if (!isValidEmailAddress(element)) {  $(this).addClass('error-input'); required++; message = append_message(element); }
         else if ($("#" + element.attr('id') + '_confirmation').length > 0 && $("#" + element.attr('id') + '_confirmation').val() != element.val()) 
-        { $(this).addClass('error-input'); required++; append_message(this); }
+        { $(this).addClass('error-input'); required++; append_message(element); }
     }        
     else if (element.attr('data-type') == 'date')
     {
@@ -253,7 +254,7 @@ function effectFadeOut(classname, speed) {
     $("." + classname).fadeIn(speed);
 }
 
-function append_message(element)
+function append_message(element, message)
 {
 	$('#error_message').val(element.attr('title') + ', ' + $('#error_message').val());
 }
