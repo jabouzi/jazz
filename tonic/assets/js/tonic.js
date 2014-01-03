@@ -264,11 +264,11 @@ function clear_messages()
 {
 	$('#error_message').val('');
 	$('.alert_warning').html('');
-	$('.error_warning').html('');
-	$('.warning_warning').html('');
-	$('.success_warning').html('');
+	$('.alert_error').html('');
+	$('.alert_success').html('');
+	$('.alert_info').html('');
 	$('.alert_warning').hide();
-	$('.error_warning').hide();
-	$('.warning_warning').hide();
-	$('.success_warning').hide();
+	$('.alert_error').hide();
+	$('.alert_success').hide();
+	$('.alert_info').hide();
 }
