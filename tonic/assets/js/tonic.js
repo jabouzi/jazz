@@ -1,24 +1,28 @@
 $(document).ready(function() {
 	$('.submit_form').bind({
 		click: function() {
+			clear_messages();
 			validate_from($(this).closest('form').attr('id'));
 		}
 	});
 	
 	$('#save_user_password').bind({
 		click: function() {
+			clear_messages();
 			validate_password($(this).closest('form').attr('id'));
 		}
 	});
 	
 	$('#add_workflow').bind({
 		click: function() {
+			clear_messages();
 			add_workflow();
 		}
 	});
 	
 	$('#add_permission').bind({
 		click: function() {
+			clear_messages();
 			add_permission();
 		}
 	});
@@ -252,4 +256,16 @@ function effectFadeOut(classname, speed) {
 function append_message(element)
 {
 	$('#error_message').val(element.attr('title') + ', ' + $('#error_message').val());
+}
+
+function clear_messages()
+{
+	$('.alert_warning').html('');
+	$('.error_warning').html('');
+	$('.warning_warning').html('');
+	$('.success_warning').html('');
+	$('.alert_warning').hide();
+	$('.error_warning').hide();
+	$('.warning_warning').hide();
+	$('.success_warning').hide();
 }
