@@ -93,3 +93,7 @@ $lang['structure.add'] = "Add Structure";
 $lang['structure.delete'] = "Delete Structure";
 $lang['structure.update'] = "Update Structure";
 
+$lang['category.title'] = "Category";
+$lang['category.add'] = "Add Category";
+$lang['category.delete'] = "Delete Category";
+$lang['category.update'] = "Update Category";
