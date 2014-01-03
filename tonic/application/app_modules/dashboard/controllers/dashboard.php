@@ -13,13 +13,13 @@ class Dashboard extends MX_Controller
 		$this->load->library('tree');
 		$this->tree->add_root("root", "testRoot");
 		echo ((string)$this->tree->get_root());
-		$this->tree->insertRootChild("child","firstChild");
-		$this->tree->insertRootChild("child","secondChild");
-		$this->tree->insertChild("child2","firstGrandChild",$this->tree->getRoot()->getChildAt(0));
-		$this->tree->insertChild("child2","secondGrandChild",$this->tree->getRoot()->getChildAt(0));
-		$this->tree->insertChild("child3","xFirstGrandChild",$this->tree->getRoot()->getChildAt(0)->getChildAt(1));
-		$this->tree->insertChild("child4","xxFirstGrandChild",$this->tree->getRoot()->getChildAt(0)->getChildAt(1)->getChildAt(0));
-		$this->tree->insertChild("child4","xxSecondGrandChild",$this->tree->getRoot()->getChildAt(0)->getChildAt(1)->getChildAt(0));
+		$this->tree->insert_root_child("child","firstChild");
+		$this->tree->insert_root_child("child","secondChild");
+		$this->tree->insert_child("child2","firstGrandChild",$this->tree->get_root()->get_child_at(0));
+		$this->tree->insert_child("child2","secondGrandChild",$this->tree->get_root()->get_child_at(0));
+		$this->tree->insert_child("child3","xFirstGrandChild",$this->tree->get_root()->get_child_at(0)->get_child_at(1));
+		$this->tree->insert_child("child4","xxFirstGrandChild",$this->tree->get_root()->get_child_at(0)->get_child_at(1)->get_child_at(0));
+		$this->tree->insert_child("child4","xxSecondGrandChild",$this->tree->get_root()->get_child_at(0)->get_child_at(1)->get_child_at(0));
 		$this->show();
 	}
 	
