@@ -123,7 +123,18 @@ class User extends MX_Controller
 	
 	function process_password()
 	{
-		var_dump($this->input->post());
+		if ($this->input->post('user_id') == $this->session->userdata('user_id'))
+		{
+			$this->load->library('encryption');
+			$user_id = $this->input->post('user_id');
+			$user_data = array('user_password' => $this->encryption->encrypt_str($this->input->post('user_newpassword'), $this->config->item('app_key'));
+			$this->update_profile($user_id, $user_data);
+		}
+		else
+		{
+			$this->session->set_userdata('warning_message', lang('user.error'));
+			redirect('user/edituser/'.$this->input->post('user_id'));
+		}
 	}
 	
 	function add_user($user_data)
