@@ -1,7 +1,7 @@
 /* Essentials */
 
 html, div, map, dt, isindex, form, header, aside, section, section, article, footer {  
-    display: block;  
+	display: block;  
 } 
 
 html, body {
@@ -883,5 +883,5 @@ text-indent: 40px;
 font-size: 14px;}
 
 .error-input {
-    border: 1px solid #C3270D;
+	border: 1px solid #C3270D;
 }
