@@ -159,6 +159,7 @@ function validate_element(element)
 function validate_password(form_id)
 {
 	var required = 0;
+	$('#error_message').val($('#error_message').val());
     $("#" + form_id).find('[data-validate]').each(function() {
         required += validate_element($(this));
     });
@@ -174,13 +175,25 @@ function validate_password(form_id)
 		$.post( $('#good_password_url').val()+'/'+$('#user_oldpassword').val()+'/'+$('#user_id').val(), function( response ) {
 			if (response == '1')
 			{
-				if ($('#user_newpassword').val() == $('#user_confirm_newpassword').val())	$("#" + form_id).submit();
-				else 
+				if ($('#user_newpassword').val() == '') append_message($('#user_newpassword'))
 				{
 					$('.alert_error').html($('#error_message').val());
 					$('.alert_error').show();  
 					blinkit('alert_error');
 				}
+				else if ($('#user_confirm_newpassword').val() == '') append_message($('#user_confirm_newpassword'))
+				{
+					$('.alert_error').html($('#error_message').val());
+					$('.alert_error').show();  
+					blinkit('alert_error');
+				}
+				else if ($('#user_newpassword').val() != $('#user_confirm_newpassword').val())
+				{
+					$('.alert_error').html($('#error_message').val());
+					$('.alert_error').show();  
+					blinkit('alert_error');
+				}
+				else if ($('#user_newpassword').val() == $('#user_confirm_newpassword').val())	$("#" + form_id).submit();
 			}
 			else
 			{
@@ -261,7 +274,7 @@ function effectFadeOut(classname, speed) {
     $("." + classname).fadeIn(speed);
 }
 
-function append_message(element, message)
+function append_message(element)
 {
 	$('#error_message').val(element.attr('title') + ', ' + $('#error_message').val());
 }
