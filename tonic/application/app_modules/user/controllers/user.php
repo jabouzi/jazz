@@ -33,9 +33,12 @@ class User extends MX_Controller
 	
 	function edituser($id = 0)
 	{
+		// il ne faut pas accéder au profile d'un usager ou la permission est sup.
 		if (!$id) redirect('dashboard');
 		$view_data['page_title'] = lang('user.edit');
 		$user_profile = $this->mdl_user->get_where($id);
+		if ($user_profile->row()->user_permission <= $this->session->userdata('user_permission')) redirect('dashboard');
+		if ($user_profile->row()->user_id == $this->session->userdata('user_id'))  redirect('user');
 		$view_data['admin_widgets']['user'] = $this->show('edituser', $user_profile->row());
 		echo modules::run('template', $view_data);
 	}
