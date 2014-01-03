@@ -81,6 +81,7 @@ function validate_from(form_id)
     $("#" + form_id).find('[data-validate]').each(function() {
         required += validate_element($(this));
     });
+    
     if (required)
     {
 		$('.alert_error').html($('#error_message').val());
@@ -162,7 +163,6 @@ function validate_password(form_id)
         required += validate_element($(this));
     });
     
-    console.log(required);
     if (required)
     {
 		$('.alert_error').html($('#error_message').val());
