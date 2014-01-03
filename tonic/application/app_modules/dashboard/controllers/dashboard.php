@@ -12,7 +12,7 @@ class Dashboard extends MX_Controller
 	{
 		$this->load->library('tree');
 		$this->tree->add_root("root", "testRoot");
-		var_dump((string)$this->tree->get_root());
+		echo ((string)$this->tree->get_root());
 		$this->show();
 	}
 	
