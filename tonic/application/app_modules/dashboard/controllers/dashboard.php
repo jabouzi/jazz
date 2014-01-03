@@ -24,7 +24,7 @@ class Dashboard extends MX_Controller
 
 		var_dump($this->tree->get_root()->has_children());
 		//var_dump($tree->get_root()->get_child_at(0)->get_children());
-		var_dump(($this->tree->get_root()->get_child_at(0)->get_child_at(1)->get_children());
+		var_dump($this->tree->get_root()->get_child_at(0)->get_child_at(1)->get_children());
 		//var_dump($tree->get_root()->get_child_at(1)->hasChildren());
 		$this->tree->find_child("child3","xFirstGrandChild",$this->tree->get_root());
 		var_dump((string)$this->tree->get_Child_found());
