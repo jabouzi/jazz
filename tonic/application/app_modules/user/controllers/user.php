@@ -31,7 +31,7 @@ class User extends MX_Controller
 		echo modules::run('template', $view_data);
 	}
 	
-	function edituser($id)
+	function edituser($id = 0)
 	{
 		$view_data['page_title'] = lang('user.edit');
 		$user_profile = $this->mdl_user->get_where($id);
@@ -137,28 +137,28 @@ class User extends MX_Controller
 		}
 	}
 	
-	function add_user($user_data)
+	private function add_user($user_data)
 	{
 		$user_id = $this->mdl_user->insert($user_data);
 		$this->session->set_userdata('success_message', lang('user.success'));
 		redirect('user/edituser/'.$user_id);
 	}
 	
-	function update_user($user_id, $user_data)
+	private function update_user($user_id, $user_data)
 	{
 		$this->mdl_user->update($user_id, $user_data);
 		$this->session->set_userdata('success_message', lang('user.success'));
 		redirect('user/edituser/'.$user_id);
 	}
 	
-	function update_profile($user_id, $user_data)
+	private function update_profile($user_id, $user_data)
 	{
 		$this->mdl_user->update($user_id, $user_data);
 		$this->session->set_userdata('success_message', lang('user.success'));
 		redirect('user');
 	}
 	
-	function delete_user($user_id)
+	private function delete_user($user_id)
 	{
 		
 	}
