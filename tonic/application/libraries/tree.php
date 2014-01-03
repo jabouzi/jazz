@@ -78,11 +78,11 @@ class Tree
 	
 	function insert_child($type, $data, $node)
 	{
-		$childdepth = $node->get_depth() + 1;
+		$child_depth = $node->get_depth() + 1;
 		$child = new Node();
-		$child->set_node($type, $data, $childdepth);
+		$child->set_node($type, $data, $child_depth);
 		$this->increment_count();
-		if ($childdepth > $this->get_depth())
+		if ($child_depth > $this->get_depth())
 		{
 			$this->set_depth($child_depth);
 		}
