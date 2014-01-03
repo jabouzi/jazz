@@ -832,7 +832,8 @@ border: 1px solid #77BACE;
 color: #082B33;
 padding: 10px 0;
 text-indent: 40px;
-font-size: 14px;}
+font-size: 14px;
+}
 
 #main h4.alert_warning {
 display: block;
@@ -848,7 +849,8 @@ border: 1px solid #C7A20D;
 color: #796616;
 padding: 10px 0;
 text-indent: 40px;
-font-size: 14px;}
+font-size: 14px;
+}
 
 #main h4.alert_error {
 display: block;
@@ -880,8 +882,14 @@ border: 1px solid #79C20D;
 color: #32510F;
 padding: 10px 0;
 text-indent: 40px;
-font-size: 14px;}
+font-size: 14px;
+}
+
+.dash_space {
+color: #B7B7B7;
+margin-right: 7px;
+}
 
 .error-input {
-	border: 1px solid #C3270D;
+border: 1px solid #C3270D;
 }
