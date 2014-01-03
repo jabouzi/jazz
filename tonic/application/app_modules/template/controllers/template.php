@@ -15,10 +15,6 @@ class Template extends MX_Controller
 			$this->load->helper('form');
 			$this->load->helper('array');
 			
-			//if (!element('info_message', $view_data)) $view_data['info_message'] = null;
-			//if (!element('warning_message', $view_data)) $view_data['warning_message'] = null;
-			//if (!element('error_message', $view_data)) $view_data['error_message'] = null;
-			//if (!element('success_message', $view_data)) $view_data['success_message'] = null;
 			$view_data['info_message'] = $this->session->userdata('info_message');
 			$view_data['warning_message'] = $this->session->userdata('warning_message');
 			$view_data['error_message'] = $this->session->userdata('error_message');
