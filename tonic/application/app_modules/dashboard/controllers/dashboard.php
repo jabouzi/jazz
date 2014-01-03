@@ -13,6 +13,13 @@ class Dashboard extends MX_Controller
 		$this->load->library('tree');
 		$this->tree->add_root("root", "testRoot");
 		echo ((string)$this->tree->get_root());
+		$tree->insertRootChild("child","firstChild");
+		$tree->insertRootChild("child","secondChild");
+		$tree->insertChild("child2","firstGrandChild",$tree->getRoot()->getChildAt(0));
+		$tree->insertChild("child2","secondGrandChild",$tree->getRoot()->getChildAt(0));
+		$tree->insertChild("child3","xFirstGrandChild",$tree->getRoot()->getChildAt(0)->getChildAt(1));
+		$tree->insertChild("child4","xxFirstGrandChild",$tree->getRoot()->getChildAt(0)->getChildAt(1)->getChildAt(0));
+		$tree->insertChild("child4","xxSecondGrandChild",$tree->getRoot()->getChildAt(0)->getChildAt(1)->getChildAt(0));
 		$this->show();
 	}
 	
