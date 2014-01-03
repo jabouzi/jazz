@@ -158,10 +158,11 @@ function validate_element(element)
 function validate_password(form_id)
 {
 	var required = 0;
-    $('.alert_error').html('');
     $("#" + form_id).find('[data-validate]').each(function() {
         required += validate_element($(this));
     });
+    
+    console.log(required);
     if (required)
     {
 		$('.alert_error').html($('#error_message').val());
@@ -262,10 +263,10 @@ function append_message(element, message)
 function clear_messages()
 {
 	$('#error_message').val('');
-	//$('.alert_warning').html('');
-	//$('.error_warning').html('');
-	//$('.warning_warning').html('');
-	//$('.success_warning').html('');
+	$('.alert_warning').html('');
+	$('.error_warning').html('');
+	$('.warning_warning').html('');
+	$('.success_warning').html('');
 	$('.alert_warning').hide();
 	$('.error_warning').hide();
 	$('.warning_warning').hide();
