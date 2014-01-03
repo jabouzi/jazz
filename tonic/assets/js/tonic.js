@@ -260,6 +260,7 @@ function append_message(element)
 
 function clear_messages()
 {
+	$('#error_message').val('');
 	$('.alert_warning').html('');
 	$('.error_warning').html('');
 	$('.warning_warning').html('');
