@@ -168,7 +168,7 @@ class User extends MX_Controller
 			if ($user_id == $this->session->userdata('user_id'))
 			{
 				$this->load->library('encryption');
-				if ($this->mdl_user->count_where(array('user_password' => $this->encryption->encrypt_str($password, $this->config->item('app_key')), 'user_id != ' => $user_id))) echo 1;
+				if ($this->mdl_user->count_where(array('user_password' => $this->encryption->encrypt_str($password, $this->config->item('app_key')), 'user_id' => $user_id))) echo 1;
 				else echo lang('user.error');
 			}
 		}
