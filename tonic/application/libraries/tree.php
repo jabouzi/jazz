@@ -25,7 +25,7 @@ class Tree
 		return (NULL == $this->root);
 	} 
 	
-	function add_root($type,$data)
+	function add_root($type, $data)
 	{ 
 		$node = new Node();
 		$node->set_node($type, $data, 0);
