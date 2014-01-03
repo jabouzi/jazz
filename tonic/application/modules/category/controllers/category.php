@@ -9,12 +9,16 @@ class Category extends MX_Controller
 	
 	function index()
 	{
-		$this->show();
+		$view_data['page_title'] = lang('categroy.title');
+		$view_data['admin_widgets']['categories'] = $this->show();
+		echo modules::run('template', $view_data);
 	}
 	
-	function show()
+	private function show()
 	{
-		$view_data = array();
+		$this->load->helper('form');
+		$results = $this->mdl_permission->get_where();
+		$view_data['categories'] = $results;
 		return $this->load->view('category', $view_data, true);
 	}
 }

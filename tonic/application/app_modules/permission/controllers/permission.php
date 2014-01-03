@@ -14,7 +14,6 @@ class Permission extends MX_Controller
 		$view_data['page_title'] = lang('permission.title');
 		$view_data['admin_widgets']['permissions'] = $this->show();
 		echo modules::run('template', $view_data);
-		
 	}
 	
 	private function show()
@@ -90,7 +89,7 @@ class Permission extends MX_Controller
 		foreach($modules_list as $module)
 		{
 			$permissions = array_merge($permissions, $this->configs->get_module_config($module, 'permissions'));
-		}		
+		}
 		
 		foreach($permissions as $key => $permission)
 		{
