@@ -5,9 +5,9 @@
 	<meta charset="utf-8"/>
 	<title><?php echo $page_title; ?> - <?php echo lang('dashboard.title1'); ?></title>
 	
-    <link rel="stylesheet" href="/tonic/assets/css/bootstrap-3.0.0.min.css" type="text/css">
-    <link rel="stylesheet" href="/tonic/assets/css/bootstrap-multiselect.css" type="text/css">
-    <link rel="stylesheet" href="/tonic/assets/css/admin.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/tonic/assets/css/bootstrap-3.0.0.min.css" type="text/css">
+	<link rel="stylesheet" href="/tonic/assets/css/bootstrap-multiselect.css" type="text/css">
+	<link rel="stylesheet" href="/tonic/assets/css/admin.css" type="text/css" media="screen" />
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -17,8 +17,8 @@
 	<script src="/tonic/assets/js/hideshow.js" type="text/javascript"></script>
 	<script src="/tonic/assets/js/jquery.tablesorter.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="/tonic/assets/js/jquery.equalHeight.js"></script>
-    <script type="text/javascript" src="/tonic/assets/js/bootstrap-3.0.0.min.js"></script>
-    <script type="text/javascript" src="/tonic/assets/js/bootstrap-multiselect.js"></script>
+	<script type="text/javascript" src="/tonic/assets/js/bootstrap-3.0.0.min.js"></script>
+	<script type="text/javascript" src="/tonic/assets/js/bootstrap-multiselect.js"></script>
 	<script type="text/javascript" src="/tonic/assets/js/tonic.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() 
@@ -88,7 +88,7 @@
 			<li class="icn_add_user"><?php echo anchor('user/newuser', lang('user.new')) ?></li>
 			<li class="icn_view_users"><?php echo anchor('user/users', lang('user.users')) ?></li>
 			<li class="icn_profile"><?php echo anchor('user', lang('user.profile')) ?></li>
-            <li class="icn_jump_back"><?php echo anchor('login/logout', lang('login.logout')) ?></li>
+			<li class="icn_jump_back"><?php echo anchor('login/logout', lang('login.logout')) ?></li>
 		</ul>
 		<h3>Admin</h3>
 		<ul class="toggle">
@@ -106,19 +106,19 @@
 	
 	<section id="main" class="column">
 		
-    <?php 
-        $display_info = 'style="display:none"';
-        $display_warning = 'style="display:none"';
-        $display_error = 'style="display:none"';
-        $display_success = 'style="display:none"';
-        if ($info_message) $display_info = '';
-        if ($warning_message) $display_warning = '';
-        if ($error_message) $display_error = '';
-        if ($success_message) $display_success = ''; 
-    ?>
-        
+	<?php 
+		$display_info = 'style="display:none"';
+		$display_warning = 'style="display:none"';
+		$display_error = 'style="display:none"';
+		$display_success = 'style="display:none"';
+		if ($info_message) $display_info = '';
+		if ($warning_message) $display_warning = '';
+		if ($error_message) $display_error = '';
+		if ($success_message) $display_success = ''; 
+	?>
+		
 		<h4 <?php echo $display_info; ?> class="alert_info"><?php echo $info_message; ?></h4>
-        <h4 <?php echo $display_warning; ?> class="alert_warning"><?php echo $warning_message; ?></h4>
+		<h4 <?php echo $display_warning; ?> class="alert_warning"><?php echo $warning_message; ?></h4>
 		<h4 <?php echo $display_error; ?> class="alert_error"><?php echo $error_message; ?></h4>
 		<h4 <?php echo $display_success; ?> class="alert_success"><?php echo $success_message; ?></h4>
 		
