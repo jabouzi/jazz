@@ -127,7 +127,7 @@ class User extends MX_Controller
 		{
 			$this->load->library('encryption');
 			$user_id = $this->input->post('user_id');
-			$user_data = array('user_password' => $this->encryption->encrypt_str($this->input->post('user_newpassword'), $this->config->item('app_key'));
+			$user_data = array('user_password' => $this->encryption->encrypt_str($this->input->post('user_newpassword'), $this->config->item('app_key')));
 			$this->update_profile($user_id, $user_data);
 		}
 		else
