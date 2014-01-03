@@ -262,10 +262,10 @@ function append_message(element, message)
 function clear_messages()
 {
 	$('#error_message').val('');
-	$('.alert_warning').html('');
-	$('.error_warning').html('');
-	$('.warning_warning').html('');
-	$('.success_warning').html('');
+	//$('.alert_warning').html('');
+	//$('.error_warning').html('');
+	//$('.warning_warning').html('');
+	//$('.success_warning').html('');
 	$('.alert_warning').hide();
 	$('.error_warning').hide();
 	$('.warning_warning').hide();
