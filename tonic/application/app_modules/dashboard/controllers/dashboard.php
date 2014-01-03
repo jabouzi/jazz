@@ -31,6 +31,7 @@ class Dashboard extends MX_Controller
 		//$this->tree->insert_child("child4","xyfirstGrandChild",$this->tree->get_Child_found());
 		//$this->tree->get_nodes_by_depth(4,$this->tree->get_root());
 		//var_dump($this->tree->get_childs_by_depth());
+		&#9658;
 		$this->show();
 	}
 	
