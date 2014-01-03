@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  if ( ! defined('basepath')) exit('no direct script access allowed');
 
 class Tree
 {
@@ -13,7 +13,7 @@ class Tree
 	{
 		$this->api = & get_instance();
 		$this->api->load->library('node');
-		$this->root = NULL;
+		$this->root = null;
 		$this->count = 0;
 		$this->set_depth(0);
 		$this->child_found = false;
@@ -22,11 +22,11 @@ class Tree
  
 	public function is_empty()
 	{
-		return (NULL == $this->root);
+		return (null == $this->root);
 	} 
 	
 	function add_root($type, $data)
-	{ 
+	{
 		$node = new Node();
 		$node->set_node($type, $data, 0);
 		$this->root = $node;
@@ -76,43 +76,43 @@ class Tree
 		return $this->root->add_child($node);   
 	}
 	
-	function insert_child($type, $data, $node)
+	function insertchild($type, $data, $node)
 	{
-		$child_depth = $node->get_depth() + 1;
+		$childdepth = $node->get_depth() + 1;
 		$child = new Node();
-		$child->set_node($type, $data, $chil_dDepth);
+		$child->set_node($type, $data, $childdepth);
 		$this->increment_count();
-		if ($child_depth > $this->get_depth())
+		if ($childdepth > $this->get_depth())
 		{
 			$this->set_depth($child_depth);
 		}
-		return $this->node->add_child($child); 
+		return $node->add_child($child); 
 	}	
 	
-	function get_nodes_by_depth($depth, $node)
+	function getnodes_by_depth($depth, $node)
 	{
-		if ($depth == $this->node->get_depth())
+		if ($depth == $node->getd_epth())
 		{
-			$this->childs_by_depth[] = $this->node;
+			$this->childs_by_depth[] = $node;
 		}
 		else
 		{
-			foreach($this->node->get_children() as $child)
+			foreach($node->get_children() as $child)
 			{
-				$this->get_nodes_by_depth($depth,$child); 
+				$this->getnodes_by_depth($depth, $child); 
 			}
 		}
 	}
 	
 	function find_child($data, $type, $node)
 	{
-		if ($this->node->get_child($data, $type))
+		if ($node->get_child($data, $type))
 		{
-			$this->child_found = $this->node->get_child($data, $type);
+			$this->child_found = $node->get_child($data, $type);
 		}
 		else
 		{
-			foreach ($this->node->get_children() as $child)
+			foreach ($node->get_children() as $child)
 			{
 				$this->find_child($data, $type, $child);
 			}
