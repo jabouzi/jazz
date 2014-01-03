@@ -72,4 +72,12 @@ class Node
 		$children = $this->get_children();
 		return $children[$position];
 	}
+	
+	function __toString()
+	{
+		$string = 'type : ' . $this->type . '<br>';
+		$string .= 'data : ' . $this->data . '<br>';
+		$string .= 'depth : ' . $this->depth . '<br>';
+		return $string;
+	}
 }
