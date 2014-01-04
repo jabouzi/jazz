@@ -2,6 +2,7 @@
 
 $lang['english'] = "English";
 $lang['french'] = "Français";
+$lang['spanish'] = "Español";
 
 $lang['admin.delete'] = "Supprimer";
 $lang['admin.save'] = "Save";
@@ -94,6 +95,9 @@ $lang['structure.delete'] = "Delete Structure";
 $lang['structure.update'] = "Update Structure";
 
 $lang['category.title'] = "Categories";
+$lang['category.name'] = "Category Name";
+$lang['category.parent'] = "Parent Category";
+$lang['category.status'] = "Category Status";
 $lang['category.add'] = "Add Category";
 $lang['category.delete'] = "Delete Category";
 $lang['category.update'] = "Update Category";

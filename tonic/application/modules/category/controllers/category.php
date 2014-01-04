@@ -24,6 +24,47 @@ class Category extends MX_Controller
 		return $this->load->view('category', $view_data, true);
 	}
 	
+	function process_newcategory()
+	{
+		
+	}
+	
+	function process_updatecategory()
+	{
+		
+	}
+	
+	function process_deletecategory()
+	{
+		
+	}
+	
+	private function add_category($category_data)
+	{
+		$category_id = $this->mdl_category->insert($category_data);
+		$this->session->set_categorydata('success_message', lang('category.success'));
+		redirect('category/editcategory/'.$category_id);
+	}
+	
+	private function update_category($category_id, $category_data)
+	{
+		$this->mdl_category->update($category_id, $category_data);
+		$this->session->set_categorydata('success_message', lang('category.success'));
+		redirect('category/editcategory/'.$category_id);
+	}
+	
+	private function update_profile($category_id, $category_data)
+	{
+		$this->mdl_category->update($category_id, $category_data);
+		$this->session->set_categorydata('success_message', lang('category.success'));
+		redirect('category');
+	}
+	
+	private function delete_category($category_id)
+	{
+		
+	}
+	
 	private function get_categories_structure()
 	{
 		//$this->load->library('tree');
