@@ -4,10 +4,11 @@ class Configs
 {
 	private $api;
 	private $modules_list;
-	private $language = json_decode(file_get_contents('./lang.json'), true);
+	private $language = array();
 
 	function __construct()
 	{
+		$this->language = json_decode(file_get_contents('./lang.json'), true);
 		$this->api = & get_instance();
 		$this->api->load->helper('directory');
 		$this->api->load->helper('file');
