@@ -4,7 +4,7 @@ class Configs
 {
 	private $api;
 	private $modules_list;
-	private $language = array();
+	public $language = array();
 
 	function __construct()
 	{
