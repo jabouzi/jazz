@@ -13,7 +13,10 @@ class MY_Lang extends MX_Lang {
 	***************************************************/
 
 	// languages
-	public $languages = json_decode(file_get_contents('./lang.json'), true);
+	public $languages = array(
+		'en' => 'english',
+		'fr' => 'french'
+	);
 
 	// special URIs (not localized)
 	var $special = array (
