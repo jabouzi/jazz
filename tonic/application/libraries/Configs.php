@@ -4,6 +4,7 @@ class Configs
 {
 	private $api;
 	private $modules_list;
+	private $language = json_decode(file_get_contents('./lang.json'), true);
 
 	function __construct()
 	{
