@@ -34,7 +34,7 @@ class MY_Lang extends MX_Lang {
 	{
 		parent::__construct();
 		
-		$this->languages = json_decode(file_get_contents(APPPATH.'core/lang.json'), true);
+		$this->languages = json_decode(file_get_contents(APPPATH.'language/lang.json'), true);
 		
 		global $CFG;
 		global $URI;
