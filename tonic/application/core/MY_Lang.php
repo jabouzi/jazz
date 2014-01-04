@@ -13,19 +13,20 @@ class MY_Lang extends MX_Lang {
 	***************************************************/
 
 	// languages
-	var $languages = array(
-		'en' => 'english',
-		'fr' => 'french',
+	$languages = json_decode(file_get_contents('./lang.json'), true);
+	//$languages = array(
+		//'en' => 'english',
+		//'fr' => 'french',
 		//'es' => 'spanish'
-	);
+	//);
 
 	// special URIs (not localized)
-	var $special = array (
+	$special = array (
 		""
 	);
 	
 	// where to redirect if no language in URI
-	var $default_uri = ''; 
+	$default_uri = ''; 
 
 	/**************************************************/
 	
