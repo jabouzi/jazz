@@ -13,15 +13,15 @@ class MY_Lang extends MX_Lang {
 	***************************************************/
 
 	// languages
-	var $languages = array();
+	public $languages = json_decode(file_get_contents('./lang.json'), true);
 
 	// special URIs (not localized)
-	var $special = array (
+	public $special = array (
 		""
 	);
 	
 	// where to redirect if no language in URI
-	var $default_uri = ''; 
+	public $default_uri = ''; 
 
 	/**************************************************/
 	
@@ -34,7 +34,6 @@ class MY_Lang extends MX_Lang {
 		global $URI;
 		global $RTR;
 		
-		$this->languages = json_decode(file_get_contents('./lang.json'), true);	
 		$segment = $URI->segment(1);
 		
 		if (isset($this->languages[$segment]))	// URI with language -> ok
