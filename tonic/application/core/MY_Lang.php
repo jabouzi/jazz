@@ -13,7 +13,7 @@ class MY_Lang extends MX_Lang {
 	***************************************************/
 
 	// languages
-	var $languages = array(
+	public $languages = array(
 		'en' => 'english',
 		'fr' => 'french'
 	);
