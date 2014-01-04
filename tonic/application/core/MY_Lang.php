@@ -16,7 +16,7 @@ class MY_Lang extends MX_Lang {
 	var $languages = array(
 		'en' => 'english',
 		'fr' => 'french',
-		'es' => 'spanish'
+		//'es' => 'spanish'
 	);
 
 	// special URIs (not localized)
