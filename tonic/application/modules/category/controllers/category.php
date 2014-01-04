@@ -6,6 +6,7 @@ class Category extends MX_Controller
 	{
 		parent::__construct();
 		$this->load->model('mdl_category');
+		$this->load->library('tree');
 	}
 	
 	function index()
@@ -21,5 +22,32 @@ class Category extends MX_Controller
 		$results = $this->mdl_category->get();
 		$view_data['categories'] = $results;
 		return $this->load->view('category', $view_data, true);
+	}
+	
+	private function get_categories_structure()
+	{
+		//$this->load->library('tree');
+		$this->tree->add_root("root", "website");
+		//echo ((string)$this->tree->get_root());
+		//$this->tree->insert_root_child("child","firstChild");
+		//$this->tree->insert_root_child("child","secondChild");
+		//$this->tree->insert_child("child2","firstGrandChild",$this->tree->get_root()->get_child_at(0));
+		//$this->tree->insert_child("child2","secondGrandChild",$this->tree->get_root()->get_child_at(0));
+		//$this->tree->insert_child("child3","xFirstGrandChild",$this->tree->get_root()->get_child_at(0)->get_child_at(1));
+		//$this->tree->insert_child("child4","xxFirstGrandChild",$this->tree->get_root()->get_child_at(0)->get_child_at(1)->get_child_at(0));
+		//$this->tree->insert_child("child4","xxSecondGrandChild",$this->tree->get_root()->get_child_at(0)->get_child_at(1)->get_child_at(0));
+		//echo ((string)$this->tree->get_root()->get_child("child","secondChild"));
+
+		//var_dump($this->tree->get_root()->has_children());
+		//var_dump($tree->get_root()->get_child_at(0)->get_children());
+		//var_dump($this->tree->get_root()->get_child_at(0)->get_child_at(1)->get_children());
+		//var_dump($tree->get_root()->get_child_at(1)->hasChildren());
+		//$this->tree->find_child("child3","xFirstGrandChild",$this->tree->get_root());
+		//var_dump((string)$this->tree->get_Child_found());
+		//$this->tree->insert_child("child4","xyfirstGrandChild",$this->tree->get_Child_found());
+		//$this->tree->get_nodes_by_depth(4,$this->tree->get_root());
+		//var_dump($this->tree->get_childs_by_depth());
+		echo '&#9658;';
+		echo '|—';
 	}
 }
