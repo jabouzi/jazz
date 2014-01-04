@@ -13,7 +13,7 @@ class MY_Lang extends MX_Lang {
 	***************************************************/
 
 	// languages
-	$languages = json_decode(file_get_contents('./lang.json'), true);
+	$languages = array();
 	//$languages = array(
 		//'en' => 'english',
 		//'fr' => 'french',
@@ -33,7 +33,9 @@ class MY_Lang extends MX_Lang {
 	
 	function __construct()
 	{
-		parent::__construct();		
+		parent::__construct(
+			$this->languages = json_decode(file_get_contents('./lang.json'), true);		
+		);		
 		
 		global $CFG;
 		global $URI;
