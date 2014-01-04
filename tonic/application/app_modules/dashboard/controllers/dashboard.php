@@ -10,8 +10,6 @@ class Dashboard extends MX_Controller
 	
 	function index()
 	{
-		$this->load->library('configs');
-		var_dump($this->configs->language);
 		$this->show();
 	}
 	
