@@ -13,6 +13,13 @@ $(document).ready(function() {
 		}
 	});
 	
+	$('#add_language').bind({
+		click: function() {
+			clear_messages();
+			add_language();
+		}
+	});
+	
 	$('#add_workflow').bind({
 		click: function() {
 			clear_messages();
@@ -62,16 +69,22 @@ $(document).ready(function() {
 	}($('.permissions-multi-select'));
 });
 
+function add_language()
+{
+	$('#language_number').val(parseInt($('#language_number').val()) + 1);
+	$('#language_list').append('<tr><td>'+$('#new_language').html()+'</td></tr>');
+}
+
 function add_workflow()
 {
 	$('#workflow_number').val(parseInt($('#workflow_number').val()) + 1);
-	$('#workflow_list').append('<tr><td>'+$('#new_wokflow').html()+'</td></tr>');
+	$('#workflow_list').append('<tr><td>'+$('#new_workflow').html()+'</td></tr>');
 }
 
 function add_permission()
 {
 	$('#permission_number').val(parseInt($('#permission_number').val()) + 1);
-	$('#permission_list').append('<tr><td>'+$('#new_wokflow').html()+'</td></tr>');
+	$('#permission_list').append('<tr><td>'+$('#new_permission').html()+'</td></tr>');
 }
 
 function validate_from(form_id)
