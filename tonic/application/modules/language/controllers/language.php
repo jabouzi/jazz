@@ -35,8 +35,11 @@ class Language extends MX_Controller
 		
 		foreach ($this->input->post('new') as $new)
 		{
-			$data = array('language_name' => $new);
-			$this->add_language($data);
+			if (!empty(trim($new)))
+			{
+				$data = array('language_name' => $new);
+				$this->add_language($data);
+			}
 		}
 		
 		foreach($this->input->post('delete') as $id => $value)
