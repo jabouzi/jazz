@@ -95,15 +95,16 @@ $lang['structure.delete'] = "Supprimer une Structure";
 $lang['structure.update'] = "Mettre à jour une Structure";
 
 $lang['category.title'] = "Catégories";
-$lang['category.name'] = "Category Name";
-$lang['category.parent'] = "Parent Category";
-$lang['category.status'] = "Category Status";
+$lang['category.name'] = "Nom de la catégorie";
+$lang['category.parent'] = "Parent de la categorie";
+$lang['category.status'] = "Status de la categorie";
 $lang['category.add'] = "Ajouter une catégorie";
 $lang['category.delete'] = "Supprimer une catégorie";
 $lang['category.update'] = "Mettre à jour une catégorie";
 $lang['category.success'] = "Categorie sauvegardée avec succès";
 
 $lang['language.title'] = "Langages";
+$lang['language.name'] = "Nom de la langue";
 $lang['language.code'] = "Code de la langue";
 $lang['language.default'] = "Langue par défaut";
 $lang['language.add'] = "Ajouter une langue";
