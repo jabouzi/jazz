@@ -29,7 +29,7 @@
 									<td><?php echo form_multiselect('actions['.$permission['id'].'][]', $actions, $permission['actions'], $attributes); ?></td>
 									<td><input type="checkbox" id="delete[<?php echo $permission['id']; ?>]" name="delete[<?php echo $permission['id']; ?>]" value="1"></td>
 								<?php else : ?>
-									<td><?php if (is_array($permission['actions'])) echo implode(',', array_map("lang", $permission['actions'])); ?></td>
+									<td><?php if (is_array($permission['actions'])) echo implode(', ', array_map("lang", $permission['actions'])); ?></td>
 								<?php endif; ?> 
 							</tr>
 						<?php endforeach ?>
