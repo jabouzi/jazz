@@ -101,3 +101,7 @@ $lang['category.status'] = "Category Status";
 $lang['category.add'] = "Ajouter une catégorie";
 $lang['category.delete'] = "Supprimer une catégorie";
 $lang['category.update'] = "Mettre à jour une catégorie";
+
+$lang['language.add'] = "Ajouter une langue";
+$lang['language.delete'] = "Supprimer une langue";
+$lang['language.update'] = "Mettre à jour une langue";
