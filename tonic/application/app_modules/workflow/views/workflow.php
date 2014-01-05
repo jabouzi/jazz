@@ -7,7 +7,7 @@
 		</ul>
 	</header>
 	<form id="workflows_form" method="post" action="<?php echo site_url('workflow/process'); ?>">
-		<?php foreach($workflows_i18n as $code => $workflows) : ?>
+		<?php foreach($admin_languages as $code => $admin_language) : ?>
 			<div id="<?php echo $code; ?>" class="tab_content">
 				<div class="tab_container">
 					<table class="tablesorter" cellspacing="0"> 
@@ -19,7 +19,7 @@
 						</tr> 
 					</thead> 
 					<tbody id="workflow_list">
-						<?php foreach ($workflows as $id => $workflow) : ?>
+						<?php foreach ($workflows[$code] as $id => $workflow) : ?>
 							<tr>
 								<td><input type="text" id="workflow_name[<?php echo $code; ?>][<?php echo $workflow['id']; ?>]" name="<?php echo $id; ?>" value="<?php echo $workflow['name']; ?>" data-validate="required" data-type="text" title="<?php echo lang('workflow.name'); ?>"></td>
 								<td><input type="text" id="order[<?php echo $code; ?>][<?php echo $workflow['id']; ?>]" name="order[<?php echo $id; ?>]" value="<?php echo $workflow['order']; ?>" data-validate="required" data-type="text" title="<?php echo lang('workflow.order'); ?>"></td>

@@ -18,9 +18,8 @@ class Workflow extends MX_Controller
 	
 	private function show()
 	{
-		var_dump($this->lang->languages);
 		$view_data['admin_languages'] = $this->lang->languages;
-		$view_data['workflows_i18n'] = $this->get_workflows();
+		$view_data['workflows'] = $this->get_workflows();
 		return $this->load->view('workflow', $view_data, true);
 	}
 	
@@ -59,7 +58,7 @@ class Workflow extends MX_Controller
 		{
 			$workflows[$result->admin_language_code][] = array('id' => $result->workflow_id, 'order' => $result->workflow_order, 'name' => $result->workflow_name);
 		}
-		var_dump($workflows);
+
 		return $workflows;
 	}
 	
