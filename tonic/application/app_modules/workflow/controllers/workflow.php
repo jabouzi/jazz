@@ -51,7 +51,7 @@ class Workflow extends MX_Controller
 			$workflow = trim(ucfirst(strtolower($workflow)));
 			if ($workflow != '')
 			{
-				$data = array('workflow_name' => $workflow);
+				$data = array('workflow_order' => '0');
 				$workflow_id = $this->add_workflow('tonic_workflows', $data);
 				foreach($this->lang->languages as $code => $lang)
 				{
