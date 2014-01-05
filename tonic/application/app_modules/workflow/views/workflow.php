@@ -35,12 +35,12 @@
 			<div class="submit_link">
 				<input type="button" id="save_workflow" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 				<input type="button" id="add_workflow" value="<?php echo lang('admin.add'); ?>">
+				<input type="hidden" id="active_lang" value="en">
 			</div>
 		</footer>
 	</form>
 	<input type="hidden" id="error_message" value="<?php echo lang('admin.error'); ?>">
 	<input type="hidden" id="workflow_number" value="0">
-	<input type="hidden" id="active_lang" value="en">
 	<div style="display:none" id="new_workflow">
 		<td><input type="text" name="new[]" value="">
 	</div>
