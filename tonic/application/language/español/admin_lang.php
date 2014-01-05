@@ -102,6 +102,8 @@ $lang['category.add'] = "Añadir categoría";
 $lang['category.delete'] = "Eliminar la categoría";
 $lang['category.update'] = "Actualizar la categoría";
 
+$lang['language.title'] = "Idiomas";
+$lang['language.code'] = "Código de idiomas";
 $lang['language.add'] = "Agregar idioma";
 $lang['language.delete'] = "Eliminar la idioma";
 $lang['language.update'] = "Actualización la idioma";

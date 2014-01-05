@@ -102,6 +102,8 @@ $lang['category.add'] = "إضافة الفئة";
 $lang['category.delete'] = "حذف الفئة";
 $lang['category.update'] = "تحديث الفئة";
 
+$lang['language.title'] = "اللغات";
+$lang['language.code'] = "رمز اللغات";
 $lang['language.add'] = "اضافة اللغة";
 $lang['language.delete'] = "حذف اللغة";
 $lang['language.update'] = "تحديث اللغة";
