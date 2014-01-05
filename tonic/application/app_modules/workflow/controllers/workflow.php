@@ -58,7 +58,7 @@ class Workflow extends MX_Controller
 		{
 			$workflows[$result->admin_language_code][] = array('id' => $result->workflow_id, 'order' => $result->workflow_order, 'name' => $result->workflow_name);
 		}
-		
+		var_dump($workflows);
 		return $workflows;
 	}
 	
