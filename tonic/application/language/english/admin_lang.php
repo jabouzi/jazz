@@ -4,7 +4,7 @@ $lang['english'] = "English";
 $lang['french'] = "Français";
 $lang['spanish'] = "Español";
 
-$lang['admin.delete'] = "Supprimer";
+$lang['admin.delete'] = "Delete";
 $lang['admin.save'] = "Save";
 $lang['admin.add'] = "Add";
 $lang['admin.action'] = "Action";
