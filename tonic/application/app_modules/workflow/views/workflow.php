@@ -2,7 +2,7 @@
 	<header><h3 class="tabs_involved"><?php echo lang('workflow.title'); ?></h3>
 		<ul class="tabs">
 			<?php foreach($admin_languages as $code => $admin_language) : ?>
-				<li><a href="#<?php echo $code; ?>"><?php echo $admin_language; ?></a></li>
+				<li><a href="#<?php echo $code; ?>"><?php echo ucfirst(strtolower($admin_language)); ?></a></li>
 			<? endforeach; ?>
 		</ul>
 	</header>
