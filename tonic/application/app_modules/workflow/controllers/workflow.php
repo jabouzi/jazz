@@ -43,10 +43,9 @@ class Workflow extends MX_Controller
 		{
 			$data = array('workflow_order' => $order);
 			$where = array('workflow_id = ' => $id);
-			var_dump($this->input->post('order'), $data, $where);
 			$this->update_workflow('tonic_workflows', $where, $data);
 		}
-		exit;
+
 		foreach ($this->input->post('new') as $workflow)
 		{
 			$workflow = trim(ucfirst(strtolower($workflow)));
