@@ -42,7 +42,7 @@ class Workflow extends MX_Controller
 		foreach ($this->input->post('order') as $id => $order)
 		{
 			$data = array('workflow_order' => $order);
-			$where = array('workflow_id = '.$id);
+			$where = array('workflow_id = ' => $id);
 			$this->update_workflow('tonic_workflows', $where, $data);
 		}
 		
