@@ -1,5 +1,6 @@
 <article class="module width_full">
 	<header><h3 class="tabs_involved"><?php echo lang('language.title'); ?></h3></header>
+	<form id="languages_form" method="post" action="<?php echo site_url('language/process'); ?>">
 	<div class="tab_container">
 		<table class="tablesorter" cellspacing="0"> 
 		<thead> 
