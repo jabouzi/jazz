@@ -22,7 +22,7 @@
 						<?php foreach ($workflows[$code] as $id => $workflow) : ?>
 							<tr>
 								<td><input type="text" id="workflow_name_<?php echo $code; ?>_<?php echo $workflow['id']; ?>" name="workflow_name[<?php echo $code; ?>][<?php echo $workflow['id']; ?>]" value="<?php echo $workflow['name']; ?>" data-validate="required" data-type="text" title="<?php echo lang('workflow.name'); ?>"></td>
-								<td><input type="text" id="order_<?php echo $code; ?>_<?php echo $workflow['id']; ?>" name="order[<?php echo $code; ?>][<?php echo $workflow['id']; ?>]" value="<?php echo $workflow['order']; ?>" data-validate="required" data-type="text" title="<?php echo lang('workflow.order'); ?>"></td>
+								<td><input type="text" id="order_<?php echo $workflow['id']; ?>" name="order[<?php echo $workflow['id']; ?>]" value="<?php echo $workflow['order']; ?>" data-validate="required" data-type="text" title="<?php echo lang('workflow.order'); ?>"></td>
 								<td><input type="checkbox" id="delete_<?php echo $code; ?>_<?php echo $workflow['id']; ?>" name="delete[<?php echo $code; ?>_<?php echo $workflow['id']; ?>]" value="1"></td>
 							</tr>
 						<?php endforeach ?>
