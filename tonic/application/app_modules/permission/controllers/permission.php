@@ -56,7 +56,7 @@ class Permission extends MX_Controller
 	
 	function process()
 	{
-		var_dump($this->input->post()); exit;
+		//var_dump($this->input->post()); exit;
 		foreach($this->input->post('permission_name') as $lang => $permissions)
 		{
 			foreach($permissions as $id => $permission)
