@@ -12,7 +12,7 @@ class Language extends MX_Controller
 	function index()
 	{
 		$view_data['page_title'] = lang('language.title');
-		$view_data['admin_widgets']['categories'] = $this->show();
+		$view_data['admin_widgets']['languages'] = $this->show();
 		echo modules::run('template', $view_data);
 	}
 	
@@ -20,7 +20,7 @@ class Language extends MX_Controller
 	{
 		$this->load->helper('form');
 		$results = $this->mdl_language->get();
-		$view_data['categories'] = $results;
+		$view_data['languages'] = $results;
 		return $this->load->view('language', $view_data, true);
 	}
 	
