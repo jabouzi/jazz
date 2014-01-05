@@ -33,10 +33,10 @@ class Mdl_permission extends CI_Model
 		return $query;
 	}
 	
-	function get_where_custom($col, $value)
+	function get_where_custom($where)
 	{
 		$table = 'tonic_permissions';
-		$this->db->where($col, $value);
+		$this->db->where($where);
 		$query = $this->db->get($table);
 		return $query;
 	}
@@ -61,10 +61,10 @@ class Mdl_permission extends CI_Model
 		$this->db->delete($table);
 	}
 	
-	function count_where($column, $value)
+	function count_where($where)
 	{
 		$table = 'tonic_permissions';
-		$this->db->where($column, $value);
+		$this->db->where($where);
 		$query	= $this->db->get($table);
 		$num_rows = $query->num_rows();
 		return $num_rows;

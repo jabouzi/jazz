@@ -1,17 +1,17 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Category extends MX_Controller
+class Language extends MX_Controller
 {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('mdl_category');
+		$this->load->model('mdl_language');
 		$this->load->library('tree');
 	}
 	
 	function index()
 	{
-		$view_data['page_title'] = lang('category.title');
+		$view_data['page_title'] = lang('language.title');
 		$view_data['admin_widgets']['categories'] = $this->show();
 		echo modules::run('template', $view_data);
 	}
@@ -19,76 +19,49 @@ class Category extends MX_Controller
 	private function show()
 	{
 		$this->load->helper('form');
-		$results = $this->mdl_category->get();
+		$results = $this->mdl_language->get();
 		$view_data['categories'] = $results;
-		return $this->load->view('category', $view_data, true);
+		return $this->load->view('language', $view_data, true);
 	}
 	
-	function process_newcategory()
+	function process_newlanguage()
 	{
 		
 	}
 	
-	function process_updatecategory()
+	function process_updatelanguage()
 	{
 		
 	}
 	
-	function process_deletecategory()
+	function process_deletelanguage()
 	{
 		
 	}
 	
-	private function add_category($category_data)
+	private function add_language($language_data)
 	{
-		$category_id = $this->mdl_category->insert($category_data);
-		$this->session->set_categorydata('success_message', lang('category.success'));
-		redirect('category/editcategory/'.$category_id);
+		$language_id = $this->mdl_language->insert($language_data);
+		$this->session->set_languagedata('success_message', lang('language.success'));
+		redirect('language/editlanguage/'.$language_id);
 	}
 	
-	private function update_category($category_id, $category_data)
+	private function update_language($language_id, $language_data)
 	{
-		$this->mdl_category->update($category_id, $category_data);
-		$this->session->set_categorydata('success_message', lang('category.success'));
-		redirect('category/editcategory/'.$category_id);
+		$this->mdl_language->update($language_id, $language_data);
+		$this->session->set_languagedata('success_message', lang('language.success'));
+		redirect('language/editlanguage/'.$language_id);
 	}
 	
-	private function update_profile($category_id, $category_data)
+	private function update_profile($language_id, $language_data)
 	{
-		$this->mdl_category->update($category_id, $category_data);
-		$this->session->set_categorydata('success_message', lang('category.success'));
-		redirect('category');
+		$this->mdl_language->update($language_id, $language_data);
+		$this->session->set_languagedata('success_message', lang('language.success'));
+		redirect('language');
 	}
 	
-	private function delete_category($category_id)
+	private function delete_language($language_id)
 	{
 		
-	}
-	
-	private function get_categories_structure()
-	{
-		//$this->load->library('tree');
-		$this->tree->add_root("root", "website");
-		//echo ((string)$this->tree->get_root());
-		//$this->tree->insert_root_child("child","firstChild");
-		//$this->tree->insert_root_child("child","secondChild");
-		//$this->tree->insert_child("child2","firstGrandChild",$this->tree->get_root()->get_child_at(0));
-		//$this->tree->insert_child("child2","secondGrandChild",$this->tree->get_root()->get_child_at(0));
-		//$this->tree->insert_child("child3","xFirstGrandChild",$this->tree->get_root()->get_child_at(0)->get_child_at(1));
-		//$this->tree->insert_child("child4","xxFirstGrandChild",$this->tree->get_root()->get_child_at(0)->get_child_at(1)->get_child_at(0));
-		//$this->tree->insert_child("child4","xxSecondGrandChild",$this->tree->get_root()->get_child_at(0)->get_child_at(1)->get_child_at(0));
-		//echo ((string)$this->tree->get_root()->get_child("child","secondChild"));
-
-		//var_dump($this->tree->get_root()->has_children());
-		//var_dump($tree->get_root()->get_child_at(0)->get_children());
-		//var_dump($this->tree->get_root()->get_child_at(0)->get_child_at(1)->get_children());
-		//var_dump($tree->get_root()->get_child_at(1)->hasChildren());
-		//$this->tree->find_child("child3","xFirstGrandChild",$this->tree->get_root());
-		//var_dump((string)$this->tree->get_Child_found());
-		//$this->tree->insert_child("child4","xyfirstGrandChild",$this->tree->get_Child_found());
-		//$this->tree->get_nodes_by_depth(4,$this->tree->get_root());
-		//var_dump($this->tree->get_childs_by_depth());
-		echo '&#9658;';
-		echo '|—';
 	}
 }
