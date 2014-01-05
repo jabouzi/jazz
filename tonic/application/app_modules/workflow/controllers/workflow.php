@@ -24,27 +24,44 @@ class Workflow extends MX_Controller
 	}
 	
 	function process()
-	{   
-		var_dump($this->input->post());exit;
-		foreach($this->input->post() as $id => $value)
+	{
+		foreach($this->input->post('workflow_name') as $lang => $workflows)
 		{
-			if (is_numeric($id))
+			foreach($workflows as $code => $workflow)
 			{
-				$orders = $this->input->post('order');
-				$data = array('workflow_name_'.$this->lang->lang() => $value, 'workflow_order' => $orders[$id]);
-				$this->update_workflow($id, $data);
+				$workflow = trim($workflow);
+				if ($workflow != '')
+				{
+					$data = array('workflow_name' => $workflow);
+					$where = array('workflow_id = '.$id, 'admin_language_code = '.$code);
+					$this->update_workflow('tonic_workflows_i18n', $where, $data);
+				}
 			}
+		}
+		
+		foreach ($this->input->post('order') as $id => $order)
+		{
+			$data = array('workflow_order' => $order);
+			$where = array('workflow_id = '.$id);
+			$this->update_workflow('tonic_workflows', $where, $data);
 		}
 		
 		foreach ($this->input->post('new') as $new)
 		{
-			$data = array('workflow_name_'.$this->lang->lang() => $new);
-			$this->add_workflow($data);
+			
+			$data = array('workflow_name' => $new);
+			$workflow_id = $this->add_workflow('tonic_workflows', $data);
+			foreach($this->lang->languages as $code => $lang)
+			{
+				$data = array('workflow_name' => $new, 'admin_language_code' => $code, 'workflow_id' => $workflow_id);
+				$this->add_workflow('tonic_workflows_i18n', $data);
+			}
 		}
 		
 		foreach($this->input->post('delete') as $id => $value)
 		{
-			$this->delete_workflow($id);
+			$this->delete_workflow('tonic_workflows', $id);
+			$this->delete_workflow('tonic_workflows_i18n', $id);
 		}
 		
 		redirect('workflow');
@@ -62,18 +79,18 @@ class Workflow extends MX_Controller
 		return $workflows;
 	}
 	
-	private function add_workflow($data)
+	private function add_workflow($table, $data)
 	{
-		$this->mdl_workflow->insert($data);
+		$this->mdl_workflow->insert($table, $data);
 	}
 	
-	private function update_workflow($id, $data)
+	private function update_workflow($table, $id, $data)
 	{
-		$this->mdl_workflow->update($id, $data);
+		$this->mdl_workflow->update($table, $id, $data);
 	}
 	
-	private function delete_workflow($id)
+	private function delete_workflow($table, $id)
 	{
-		$this->mdl_workflow->delete($id);
+		$this->mdl_workflow->delete($table, $id);
 	}
 }
