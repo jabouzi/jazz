@@ -11,7 +11,6 @@ class Language extends MX_Controller
 	
 	function index()
 	{
-		$this->get_languages();
 		$view_data['page_title'] = lang('language.title');
 		$view_data['admin_widgets']['languages'] = $this->show();
 		echo modules::run('template', $view_data);

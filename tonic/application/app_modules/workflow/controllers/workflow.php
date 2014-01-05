@@ -10,6 +10,7 @@ class Workflow extends MX_Controller
 	
 	function index()
 	{
+		var_dump($this->lang->languages);
 		$view_data['page_title'] = lang('workflow.title');
 		$view_data['admin_widgets']['workflows'] = $this->show();
 		echo modules::run('template', $view_data);
