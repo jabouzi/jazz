@@ -1,5 +1,5 @@
 {
-	"name_en":"wysisyg.title",
+	"name":"wysisyg.title",
 	"version":"0.1",
 	"permissions":["wysisyg.add","wysisyg.delete","wysisyg.update"],
 	"delete":"false",

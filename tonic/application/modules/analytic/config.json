@@ -1,5 +1,5 @@
 {
-	"name_en":"analytic.title",
+	"name":"analytic.title",
 	"version":"0.1",
 	"permissions":["analytic.add","analytic.delete","analytic.update"],
 	"delete":"true",
