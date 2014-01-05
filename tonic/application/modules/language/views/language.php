@@ -1,5 +1,5 @@
 <article class="module width_full">
-	<header><h3 class="tabs_involved"><?php echo lang('language.languages'); ?></h3></header>
+	<header><h3 class="tabs_involved"><?php echo lang('language.title'); ?></h3></header>
 	<div class="tab_container">
 		<table class="tablesorter" cellspacing="0"> 
 		<thead> 
