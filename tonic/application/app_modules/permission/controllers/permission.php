@@ -71,7 +71,7 @@ class Permission extends MX_Controller
 				
 				$actions = element($id, $this->input->post('actions'));
 				if (is_array($actions)) $data = array('permission_actions' => serialize($actions));
-				else array('permission_actions' => '');
+				else $data = array('permission_actions' => '');
 				$where = array('permission_id = ' => $id);
 				$this->update_permission('tonic_permissions', $where, $data);
 			}
