@@ -11,6 +11,7 @@ class Language extends MX_Controller
 	
 	function index()
 	{
+		$this->get_languages();
 		$view_data['page_title'] = lang('language.title');
 		$view_data['admin_widgets']['languages'] = $this->show();
 		echo modules::run('template', $view_data);
@@ -49,6 +50,12 @@ class Language extends MX_Controller
 		}
 		$this->session->set_userdata('success_message', lang('language.success'));
 		redirect('language');
+	}
+	
+	function get_languages()
+	{
+		$languages = $this->mdl_langauges->get('language_default');
+		var_dump($languages->results());
 	}
 	
 	private function add_language($language_data)
