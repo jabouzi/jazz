@@ -32,7 +32,8 @@
 			</div>
 		</footer>
 	</form>
-	<input type="hidden" id="error_message" value="<?php echo lang('admin.error'); ?>">
+	<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
+	<input type="hidden" id="error_message" value="">
 	<div style="display:none" id="new_language">
 		<td><input type="text" name="new_name[]" value="">
 		<td><input type="text" name="new_code[]" value="">
