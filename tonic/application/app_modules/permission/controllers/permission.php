@@ -97,11 +97,11 @@ class Permission extends MX_Controller
 		
 		foreach($this->input->post('delete') as $id => $value)
 		{
-			$this->delete_workflow('tonic_workflows', $id);
-			$this->delete_workflow('tonic_workflows_i18n', $id);
+			$this->delete_permission('tonic_permissions', $id);
+			$this->delete_permission('tonic_permissions_i18n', $id);
 		}
 		
-		redirect('workflow');
+		redirect('permission');
 	}
 	
 	function get_permissions()
