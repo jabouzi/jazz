@@ -56,7 +56,7 @@ $(document).ready(function() {
 		}
 	});
 	
-	$('.order').keypress()function( event ) {
+	$('.order').keypress()(function( event ) {
 		console.log($(this).val());
 	});
 	
