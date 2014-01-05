@@ -27,36 +27,8 @@ class Permission extends MX_Controller
 		return $this->load->view('permission', $view_data, true);
 	}
 	
-	//function process()
-	//{
-		//var_dump($this->input->post()); exit;
-		//foreach($this->input->post() as $id => $value)
-		//{
-			//if (is_numeric($id))
-			//{
-				//$actions = $this->input->post('actions');
-				//$data = array('permission_name_'.$this->lang->lang() => $value, 'permission_actions' => serialize($actions[$id]));
-				//$this->update_permission($id, $data);
-			//}
-		//}
-		//
-		//foreach ($this->input->post('new') as $new)
-		//{
-			//$data = array('permission_name_'.$this->lang->lang() => $new);
-			//$this->add_permission($data);
-		//}
-		//
-		//foreach($this->input->post('delete') as $id => $value)
-		//{
-			//$this->delete_permission($id);
-		//}
-		//
-		//redirect('permission');
-	//}
-	
 	function process()
 	{
-		//var_dump($this->input->post()); exit;
 		foreach($this->input->post('permission_name') as $lang => $permissions)
 		{
 			foreach($permissions as $id => $permission)
@@ -76,14 +48,6 @@ class Permission extends MX_Controller
 				$this->update_permission('tonic_permissions', $where, $data);
 			}
 		}
-		
-		//foreach ($this->input->post('actions') as $id => $actions)
-		//{
-			//if (is_array($actions)) $data = array('permission_actions' => serialize($actions));
-			//else 
-			//$where = array('permission_id = ' => $id);
-			//$this->update_permission('tonic_permissions', $where, $data);
-		//}
 
 		foreach ($this->input->post('new') as $permission)
 		{
