@@ -51,7 +51,7 @@ $lang['permission.success'] = "إذن حفظ بنجاح";
 
 $lang['template.title'] = "قوالب";
 
-$lang['user.title'] = "لمستخدمين";
+$lang['user.title'] = "المستخدمين";
 $lang['user.add'] = "ضافة مستخدم";
 $lang['user.delete'] = "ذف العضو";
 $lang['user.update'] = "حديث العضو";
