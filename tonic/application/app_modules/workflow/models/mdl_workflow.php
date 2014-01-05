@@ -38,7 +38,6 @@ class Mdl_workflow extends CI_Model
 		$this->db->select('*');
 		$this->db->from('tonic_workflows');
 		$this->db->join('tonic_workflows_i18n', 'tonic_workflows.workflow_id = tonic_workflows_i18n.workflow_id');
-		$this->db->order_by('tonic_workflows_i18n.admin_language_code ASC');
 		$query = $this->db->get();
 		return $query;
 	}

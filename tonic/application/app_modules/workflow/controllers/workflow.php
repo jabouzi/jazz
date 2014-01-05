@@ -18,6 +18,7 @@ class Workflow extends MX_Controller
 	
 	private function show()
 	{
+		var_dump($this->lang->languages);
 		$view_data['admin_languages'] = $this->lang->languages;
 		$view_data['workflows_i18n'] = $this->get_workflows();
 		return $this->load->view('workflow', $view_data, true);
