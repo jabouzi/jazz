@@ -33,8 +33,8 @@ $lang['workflow.title'] = "سير العمل";
 $lang['workflow.name'] = "سم سير العمل";
 $lang['workflow.order'] = "ترتيب سير العمل";
 $lang['workflow.add'] = "إضافة سير العمل";
-$lang['workflow.update'] = "حديث سير العمل";
-$lang['workflow.delete'] = "ذف سير العمل";
+$lang['workflow.update'] = "تحديث سير العمل";
+$lang['workflow.delete'] = "حذف سير العمل";
 $lang['workflow.success'] = "حفظ سير العمل بنجاح";
 
 $lang['permission.title'] = "أذونات";
@@ -42,8 +42,8 @@ $lang['permission.name'] = "سم إذن";
 $lang['permission.order'] = "إذن ترتيب";
 $lang['permission.action'] = "طبيقات إذن";
 $lang['permission.add'] = "إضافة إذن";
-$lang['permission.delete'] = "ذف إذن";
-$lang['permission.update'] = "حديث إذن";
+$lang['permission.delete'] = "حذف إذن";
+$lang['permission.update'] = "تحديث إذن";
 $lang['permission.view'] = "رأي";
 $lang['permission.publish'] = " نشر";
 $lang['permission.archive'] = "أرشيف";
@@ -52,9 +52,9 @@ $lang['permission.success'] = "إذن حفظ بنجاح";
 $lang['template.title'] = "قوالب";
 
 $lang['user.title'] = "المستخدمين";
-$lang['user.add'] = "ضافة مستخدم";
-$lang['user.delete'] = "ذف العضو";
-$lang['user.update'] = "حديث العضو";
+$lang['user.add'] = "اضافة مستخدم";
+$lang['user.delete'] = "حذف العضو";
+$lang['user.update'] = "تحديث العضو";
 $lang['user.users'] = "قائمة المستخدمين";
 $lang['user.profile'] = "ملفي الشخصي";
 $lang['user.new'] = "العضو الجديد";
@@ -75,22 +75,22 @@ $lang['user.exists'] = "لبريد الإلكتروني موجود بالفعل"
 $lang['user.error'] = "دث خطأ";
 
 $lang['webpage.title'] = "فحات الويب";
-$lang['webpage.add'] = "ضافة صفحة ويب";
+$lang['webpage.add'] = "اضافة صفحة ويب";
 $lang['webpage.delete'] = "حذف صفحة ويب";
 $lang['webpage.update'] = "تحديث صفحة ويب";
 
 $lang['wysisyg.title'] = "WYSISYG";
-$lang['wysisyg.add'] = "ضافة WYSISYG";
+$lang['wysisyg.add'] = "اضافة WYSISYG";
 $lang['wysisyg.delete'] = "حذف WYSISYG";
 $lang['wysisyg.update'] = "تحديث WYSISYG";
 
 $lang['analytic.title'] = "تحليلي";
 $lang['analytic.add'] = "إضافة تحليلية";
-$lang['analytic.delete'] = "ذف تحليلية";
-$lang['analytic.update'] = "حديث تحليلية";
+$lang['analytic.delete'] = "حذف تحليلية";
+$lang['analytic.update'] = "تحديث تحليلية";
 
 $lang['structure.title'] = "هيكل";
-$lang['structure.add'] = "ضافة هيكل";
+$lang['structure.add'] = "اضافة هيكل";
 $lang['structure.delete'] = "حذف هيكل";
 $lang['structure.update'] = "تحديث هيكل";
 
@@ -100,4 +100,8 @@ $lang['category.parent'] = "لأم الفئة";
 $lang['category.status'] = "لفئة الحالة";
 $lang['category.add'] = "إضافة الفئة";
 $lang['category.delete'] = "حذف الفئة";
-$lang['category.update'] = "حديث الفئة";
+$lang['category.update'] = "تحديث الفئة";
+
+$lang['language.add'] = "اضافة اللغة";
+$lang['language.delete'] = "حذف اللغة";
+$lang['language.update'] = "تحديث اللغة";
