@@ -10,6 +10,7 @@ class Workflow extends MX_Controller
 	
 	function index()
 	{
+		var_dump($this->get_last_workflow_id());
 		$view_data['page_title'] = lang('workflow.title');
 		$view_data['admin_widgets']['workflows'] = $this->show();
 		echo modules::run('template', $view_data);
@@ -97,5 +98,10 @@ class Workflow extends MX_Controller
 	private function delete_workflow($table, $id)
 	{
 		$this->mdl_workflow->delete($table, $id);
+	}
+	
+	private function get_last_workflow_id()
+	{
+		return $this->mdl_workflow->get_max();
 	}
 }
