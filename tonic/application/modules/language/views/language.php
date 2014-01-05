@@ -11,7 +11,7 @@
 				<th><?php echo lang('language.delete'); ?></th>
 			</tr> 
 		</thead> 
-		<tbody id="workflow_list">
+		<tbody id="language_list">
 			<?php foreach ($languages->result() as $language) : ?>
 				<tr>
 					<td><input type="text" name="language_name[]" id="language_name_<?php echo $language->language_id; ?>" value="<?php echo $language->language_name; ?>" data-validate="required" data-type="text" title="<?php echo lang('language.title'); ?>"></td>
