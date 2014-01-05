@@ -33,6 +33,13 @@ class Mdl_workflow extends CI_Model
 		return $query;
 	}
 	
+	function get_join()
+	{
+		$this->db->select('*');
+		$this->db->from('tonic_workflows');
+		$this->db->join('tonic_workflows_i18n', 'tonic_workflows.workflow_id = tonic_workflows_i18n.workflow_id');
+	}
+	
 	function get_where_custom($where)
 	{
 		$table = 'tonic_workflows';
