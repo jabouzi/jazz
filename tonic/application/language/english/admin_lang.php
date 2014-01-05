@@ -101,11 +101,12 @@ $lang['category.status'] = "Category Status";
 $lang['category.add'] = "Add Category";
 $lang['category.delete'] = "Delete Category";
 $lang['category.update'] = "Update Category";
+$lang['category.success'] = "Category saved successfully";
 
 $lang['language.title'] = "Languages";
 $lang['language.code'] = "Language Code";
 $lang['language.default'] = "Default Language";
-$lang['language.save'] = "Save Language";
 $lang['language.add'] = "Add Language";
 $lang['language.delete'] = "Delete Language";
 $lang['language.update'] = "Update Language";
+$lang['language.success'] = "Language saved successfully";
