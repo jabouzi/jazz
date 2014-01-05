@@ -11,7 +11,6 @@ class Permission extends MX_Controller
 	
 	function index()
 	{
-		var_dump($this->get_permissions());
 		$view_data['page_title'] = lang('permission.title');
 		$view_data['admin_widgets']['permissions'] = $this->show();
 		echo modules::run('template', $view_data);
