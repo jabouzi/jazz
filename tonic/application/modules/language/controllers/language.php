@@ -27,15 +27,12 @@ class Language extends MX_Controller
 	function process()
 	{
 		var_dump($this->input->post());
-		//foreach($this->input->post() as $id => $value)
-		//{
-			//if (is_numeric($id))
-			//{
-				//$actions = $this->input->post('actions');
-				//$data = array('permission_name_'.$this->lang->lang() => $value, 'permission_actions' => serialize($actions[$id]));
-				//$this->update_permission($id, $data);
-			//}
-		//}
+		$this->load->helper('array');
+		foreach($this->input->post('language_name') as $id => $name)
+		{
+			$data = array('language_name' => $name, 'language_code' => element($id, $this->input->post('language_code')), 'language_default' => (int)element($id, $this->input->post('language_default')));
+			$this->update_language($id, $data);
+		}
 		//
 		//foreach ($this->input->post('new') as $new)
 		//{

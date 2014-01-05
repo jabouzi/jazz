@@ -101,6 +101,7 @@ $lang['category.status'] = "لفئة الحالة";
 $lang['category.add'] = "إضافة الفئة";
 $lang['category.delete'] = "حذف الفئة";
 $lang['category.update'] = "تحديث الفئة";
+$lang['category.success'] = "حفظ الفئة بنجاح";
 
 $lang['language.title'] = "اللغات";
 $lang['language.code'] = "رمز اللغات";
@@ -108,3 +109,4 @@ $lang['language.default'] = "اللغة الافتراضية";
 $lang['language.add'] = "اضافة اللغة";
 $lang['language.delete'] = "حذف اللغة";
 $lang['language.update'] = "تحديث اللغة";
+$lang['language.success'] = "حفظ اللغة بنجاح";
