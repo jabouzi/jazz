@@ -55,7 +55,9 @@ class Workflow extends MX_Controller
 				$workflow_id = $this->add_workflow('tonic_workflows', $data);
 				foreach($this->lang->languages as $code => $lang)
 				{
-					$data = array('workflow_name' => $workflow, 'admin_language_code' => $code, 'workflow_id' => $workflow_id);
+					$data = array('admin_language_code' => $code, 'workflow_id' => $workflow_id);
+					$data['workflow_name'] = '';
+					if ($code == $this->input->post('active_lang')) $data['workflow_name'] = $workflow;
 					$this->add_workflow('tonic_workflows_i18n', $data);
 				}
 			}
