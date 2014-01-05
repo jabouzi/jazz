@@ -28,8 +28,17 @@ class Mdl_permission extends CI_Model
 	function get_where($id)
 	{
 		$table = 'tonic_permissions';
-		$this->db->where('permission_id > ', $id);
+		$this->db->where('permission_id', $id);
 		$query = $this->db->get($table);
+		return $query;
+	}
+	
+	function get_join()
+	{
+		$this->db->select('*');
+		$this->db->from('tonic_permissions');
+		$this->db->join('tonic_permissions_i18n', 'tonic_permissions.permission_id = tonic_permissions_i18n.permission_id');
+		$query = $this->db->get();
 		return $query;
 	}
 	
@@ -41,22 +50,20 @@ class Mdl_permission extends CI_Model
 		return $query;
 	}
 	
-	function insert($data)
+	function insert($table, $data)
 	{
-		$table = 'tonic_permissions';
 		$this->db->insert($table, $data);
+		return $this->db->insert_id();
 	}
 	
-	function update($id, $data)
+	function update($table, $where, $data)
 	{
-		$table = 'tonic_permissions';
-		$this->db->where('permission_id', $id);
+		$this->db->where($where);
 		$this->db->update($table, $data);
 	}
 	
-	function delete($id)
+	function delete($table, $id)
 	{
-		$table = 'tonic_permissions';
 		$this->db->where('permission_id', $id);
 		$this->db->delete($table);
 	}
@@ -65,15 +72,15 @@ class Mdl_permission extends CI_Model
 	{
 		$table = 'tonic_permissions';
 		$this->db->where($where);
-		$query	= $this->db->get($table);
+		$query = $this->db->get($table);
 		$num_rows = $query->num_rows();
 		return $num_rows;
 	}
 	
 	function count_all()
 	{
-		$table	= 'tonic_permissions';
-		$query	= $this->db->get($table);
+		$table = 'tonic_permissions';
+		$query = $this->db->get($table);
 		$num_rows = $query->num_rows();
 		return $num_rows;
 	}
@@ -83,8 +90,8 @@ class Mdl_permission extends CI_Model
 		$table = 'tonic_permissions';
 		$this->db->select_max('permission_id');
 		$query = $this->db->get($table);
-		$row   = $query->row();
-		$id	= $row->id;
+		$row = $query->row();
+		$id = $row->permission_id;
 		return $id;
 	}
 	
@@ -94,3 +101,4 @@ class Mdl_permission extends CI_Model
 		return $query;
 	}
 }
+
