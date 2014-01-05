@@ -91,7 +91,7 @@ class Mdl_workflow extends CI_Model
 		$this->db->select_max('workflow_id');
 		$query = $this->db->get($table);
 		$row   = $query->row();
-		$id	= $row->id;
+		$id	= $row->workflow_id;
 		return $id;
 	}
 	
