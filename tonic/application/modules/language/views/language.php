@@ -15,7 +15,7 @@
 				<tr>
 					<td><input type="text" name="language_name[]" id="language_name_<?php echo $language->language_id; ?>" value="<?php echo $language->language_name; ?>"></td>
 					<td><input type="text" name="language_code[]" id="language_code_<?php echo $language->language_id; ?>" value="<?php echo $language->language_code; ?>"></td>
-					<td><input type="radio" name="language_default" value="language_default_<?php echo $language->language_id; ?>" <?php if (ord($item->language_default)) echo 'checked'; ?> ></td>
+					<td><input type="radio" name="language_default" value="language_default_<?php echo $language->language_id; ?>" <?php if (ord($language->language_default)) echo 'checked'; ?> ></td>
 					<td>
 						<input type="image" src="/tonic/assets/images/icn_trash.png" title="<?php echo lang('language.delete'); ?>">
 					</td>
