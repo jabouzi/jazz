@@ -116,20 +116,21 @@ class Permission extends MX_Controller
 		return $permissions;
 	}
 	
-	function add_permission($data)
+	private function add_permission($table, $data)
 	{
-		$this->mdl_permission->insert($data);
+		$this->mdl_permission->insert($table, $data);
 	}
 	
-	function update_permission($id, $data)
+	private function update_permission($table, $id, $data)
 	{
-		$this->mdl_permission->update($id, $data);
+		$this->mdl_permission->update($table, $id, $data);
 	}
 	
-	function delete_permission($id)
+	private function delete_permission($table, $id)
 	{
-		$this->mdl_permission->delete($id);
+		$this->mdl_permission->delete($table, $id);
 	}
+	
 	
 	private function get_permission_actions_list()
 	{
