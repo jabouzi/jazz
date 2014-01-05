@@ -34,16 +34,16 @@
 					</tbody> 
 					</table>
 				</div><!-- end of .tab_container -->
-			</div>
-			<footer>
-				<div class="submit_link">
-					<input type="button" id="save_permission" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
-					<input type="button" id="add_permission" value="<?php echo lang('admin.add'); ?>">
-					<input type="hidden" id="active_lang" name="active_lang" value="en">
-				</div>
-			</footer>
+			</div>			
 			<?php $index++; ?>
 		<?php endforeach; ?>
+		<footer>
+			<div class="submit_link">
+				<input type="button" id="save_permission" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
+				<input type="button" id="add_permission" value="<?php echo lang('admin.add'); ?>">
+				<input type="hidden" id="active_lang" name="active_lang" value="en">
+			</div>
+		</footer>
 	</form>
 	<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
 	<input type="hidden" id="error_message" value="">
