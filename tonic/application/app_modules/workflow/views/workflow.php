@@ -30,12 +30,12 @@
 					</table>
 				</div><!-- end of .tab_container -->
 			</div>
-			<footer>
+		<?php endforeach; ?>
+		<footer>
 			<div class="submit_link">
 				<input type="button" id="save_workflow" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 				<input type="button" id="add_workflow" value="<?php echo lang('admin.add'); ?>">
 			</div>
-		<?php endforeach; ?>
 		</footer>
 	</form>
 	<input type="hidden" id="error_message" value="<?php echo lang('admin.error'); ?>">
