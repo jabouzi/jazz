@@ -58,6 +58,7 @@ $(document).ready(function() {
 	
 	$('.order').keypress(function( event ) {
 		console.log($(this).val());
+		$('.order').val($(this).val());
 	});
 	
 	var build = function(select, tr) {
