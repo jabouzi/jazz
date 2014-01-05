@@ -1,5 +1,5 @@
 {
-	"name_en":"category.title",
+	"name":"category.title",
 	"version":"0.1",
 	"permissions":["category.add","category.delete","category.update"],
 	"delete":"true",

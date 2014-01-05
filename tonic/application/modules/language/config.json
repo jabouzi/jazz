@@ -1,0 +1,7 @@
+{
+	"name":"language.title",
+	"version":"0.1",
+	"permissions":["language.add","language.delete","language.update"],
+	"delete":"false",
+	"update":"true"
+}

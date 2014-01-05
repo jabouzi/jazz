@@ -1,5 +1,5 @@
 {
-	"name_en":"permission.title",
+	"name":"permission.title",
 	"version":"0.1",
 	"permissions":["permission.add","permission.delete","permission.update"],
 	"delete":"false",

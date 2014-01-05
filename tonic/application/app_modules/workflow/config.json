@@ -1,5 +1,5 @@
 {
-	"name_en":"workflow.title",
+	"name":"workflow.title",
 	"version":"0.1",
 	"permissions":["workflow.add","workflow.delete","workflow.update"],
 	"delete":"false",

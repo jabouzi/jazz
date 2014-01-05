@@ -1,5 +1,5 @@
 {
-	"name_en":"webpage.title",
+	"name":"webpage.title",
 	"version":"0.1",
 	"permissions":["webpage.add","webpage.delete","webpage.update"],
 	"delete":"false",
