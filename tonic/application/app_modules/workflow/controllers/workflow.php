@@ -29,7 +29,7 @@ class Workflow extends MX_Controller
 		{
 			foreach($workflows as $id => $workflow)
 			{
-				$workflow = trim($workflow);
+				$workflow = trim(ucfirst(strtolower($workflow)));
 				if ($workflow != '')
 				{
 					$data = array('workflow_name' => $workflow);
@@ -46,15 +46,18 @@ class Workflow extends MX_Controller
 			$this->update_workflow('tonic_workflows', $where, $data);
 		}
 		
-		foreach ($this->input->post('new') as $new)
+		foreach ($this->input->post('new') as $workflow)
 		{
-			
-			$data = array('workflow_name' => $new);
-			$workflow_id = $this->add_workflow('tonic_workflows', $data);
-			foreach($this->lang->languages as $code => $lang)
+			$workflow = trim(ucfirst(strtolower($workflow)));
+			if ($workflow != '')
 			{
-				$data = array('workflow_name' => $new, 'admin_language_code' => $code, 'workflow_id' => $workflow_id);
-				$this->add_workflow('tonic_workflows_i18n', $data);
+				$data = array('workflow_name' => $workflow);
+				$workflow_id = $this->add_workflow('tonic_workflows', $data);
+				foreach($this->lang->languages as $code => $lang)
+				{
+					$data = array('workflow_name' => $workflow, 'admin_language_code' => $code, 'workflow_id' => $workflow_id);
+					$this->add_workflow('tonic_workflows_i18n', $data);
+				}
 			}
 		}
 		
