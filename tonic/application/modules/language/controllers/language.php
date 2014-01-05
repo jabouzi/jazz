@@ -54,7 +54,7 @@ class Language extends MX_Controller
 	
 	function get_languages()
 	{
-		$languages = $this->mdl_langauges->get('language_default');
+		$languages = $this->mdl_languages->get('language_default');
 		var_dump($languages->results());
 	}
 	
