@@ -27,6 +27,7 @@ class Language extends MX_Controller
 	
 	function process()
 	{
+		var_dump($this->input->post());exit;
 		$this->load->helper('array');
 		foreach($this->input->post('language_name') as $id => $name)
 		{
