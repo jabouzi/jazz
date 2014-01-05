@@ -33,7 +33,7 @@ class Workflow extends MX_Controller
 				if ($workflow != '')
 				{
 					$data = array('workflow_name' => $workflow);
-					$where = array('workflow_id = '.$id, 'admin_language_code = '.$lang);
+					$where = array('workflow_id = ' => $id, 'admin_language_code = ' => $lang);
 					var_dump($data, $where);
 					$this->update_workflow('tonic_workflows_i18n', $where, $data);
 				}
