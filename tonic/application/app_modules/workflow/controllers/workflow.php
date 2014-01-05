@@ -11,6 +11,7 @@ class Workflow extends MX_Controller
 	function index()
 	{
 		var_dump($this->lang->languages);
+		var_dump($this->mdl_workflow->get_join());
 		$view_data['page_title'] = lang('workflow.title');
 		$view_data['admin_widgets']['workflows'] = $this->show();
 		echo modules::run('template', $view_data);
@@ -53,17 +54,22 @@ class Workflow extends MX_Controller
 		redirect('workflow');
 	}
 	
-	function add_workflow($data)
+	function get_workflows()
+	{
+		
+	}
+	
+	private function add_workflow($data)
 	{
 		$this->mdl_workflow->insert($data);
 	}
 	
-	function update_workflow($id, $data)
+	private function update_workflow($id, $data)
 	{
 		$this->mdl_workflow->update($id, $data);
 	}
 	
-	function delete_workflow($id)
+	private function delete_workflow($id)
 	{
 		$this->mdl_workflow->delete($id);
 	}
