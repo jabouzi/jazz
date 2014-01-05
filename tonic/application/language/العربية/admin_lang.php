@@ -30,7 +30,7 @@ $lang['dashboard.title'] = "وحة القيادة";
 $lang['dashboard.viewsite'] = "عرض الموقع";
 
 $lang['workflow.title'] = "سير العمل";
-$lang['workflow.name'] = "سم سير العمل";
+$lang['workflow.name'] = "اسم سير العمل";
 $lang['workflow.order'] = "ترتيب سير العمل";
 $lang['workflow.add'] = "إضافة سير العمل";
 $lang['workflow.update'] = "تحديث سير العمل";
@@ -38,7 +38,7 @@ $lang['workflow.delete'] = "حذف سير العمل";
 $lang['workflow.success'] = "حفظ سير العمل بنجاح";
 
 $lang['permission.title'] = "أذونات";
-$lang['permission.name'] = "سم إذن";
+$lang['permission.name'] = "اسم إذن";
 $lang['permission.order'] = "إذن ترتيب";
 $lang['permission.action'] = "طبيقات إذن";
 $lang['permission.add'] = "إضافة إذن";
@@ -95,7 +95,7 @@ $lang['structure.delete'] = "حذف هيكل";
 $lang['structure.update'] = "تحديث هيكل";
 
 $lang['category.title'] = "الفئات";
-$lang['category.name'] = "سم الفئة";
+$lang['category.name'] = "اسم الفئة";
 $lang['category.parent'] = "لأم الفئة";
 $lang['category.status'] = "لفئة الحالة";
 $lang['category.add'] = "إضافة الفئة";
@@ -104,6 +104,7 @@ $lang['category.update'] = "تحديث الفئة";
 $lang['category.success'] = "حفظ الفئة بنجاح";
 
 $lang['language.title'] = "اللغات";
+$lang['language.name'] = "اسم اللغة";
 $lang['language.code'] = "رمز اللغات";
 $lang['language.default'] = "اللغة الافتراضية";
 $lang['language.add'] = "اضافة اللغة";

@@ -104,6 +104,7 @@ $lang['category.update'] = "Update Category";
 $lang['category.success'] = "Category saved successfully";
 
 $lang['language.title'] = "Languages";
+$lang['language.name'] = "Language Name";
 $lang['language.code'] = "Language Code";
 $lang['language.default'] = "Default Language";
 $lang['language.add'] = "Add Language";

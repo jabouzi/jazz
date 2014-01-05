@@ -5,7 +5,7 @@
 		<table class="tablesorter" cellspacing="0"> 
 		<thead> 
 			<tr> 
-				<th><?php echo lang('language.title'); ?></th>
+				<th><?php echo lang('language.name'); ?></th>
 				<th><?php echo lang('language.code'); ?></th>
 				<th><?php echo lang('language.default'); ?></th>
 				<th><?php echo lang('language.delete'); ?></th>
@@ -14,7 +14,7 @@
 		<tbody id="language_list">
 			<?php foreach ($languages->result() as $language) : ?>
 				<tr>
-					<td><input type="text" name="language_name[<?php echo $language->language_id; ?>]" id="language_name_<?php echo $language->language_id; ?>" value="<?php echo $language->language_name; ?>" data-validate="required" data-type="text" title="<?php echo lang('language.title'); ?>"></td>
+					<td><input type="text" name="language_name[<?php echo $language->language_id; ?>]" id="language_name_<?php echo $language->language_id; ?>" value="<?php echo $language->language_name; ?>" data-validate="required" data-type="text" title="<?php echo lang('language.name'); ?>"></td>
 					<td><input type="text" name="language_code[<?php echo $language->language_id; ?>]" id="language_code_<?php echo $language->language_id; ?>" value="<?php echo $language->language_code; ?>" data-validate="required" data-type="text" title="<?php echo lang('language.code'); ?>"></td>
 					<td><input type="radio" name="language_default[<?php echo $language->language_id; ?>]" value="<?php echo ord($language->language_default); ?>" <?php if (ord($language->language_default)) echo 'checked'; ?> ></td>
 					<td>
