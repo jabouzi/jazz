@@ -58,7 +58,7 @@ class Permission extends MX_Controller
 	{
 		$permissions = array();
 		$results = $this->mdl_permission->get_join()->result();
-		foreach($results->result() as $permission)
+		foreach($results as $permission)
 		{
 			$permissions[$result->admin_language_code][] = array('id' => $result->permission_id, 'name' => $result->permission_name, 'actions' => $result->permission_actions);
 		}
