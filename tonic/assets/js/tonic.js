@@ -56,6 +56,10 @@ $(document).ready(function() {
 		}
 	});
 	
+	$('.order').keypress()function( event ) {
+		console.log($(this).val());
+	});
+	
 	var build = function(select, tr) {
 		select.multiselect();
 		
