@@ -10,7 +10,6 @@ class Workflow extends MX_Controller
 	
 	function index()
 	{
-		var_dump($this->get_last_workflow_id());
 		$view_data['page_title'] = lang('workflow.title');
 		$view_data['admin_widgets']['workflows'] = $this->show();
 		echo modules::run('template', $view_data);
@@ -54,9 +53,10 @@ class Workflow extends MX_Controller
 			{
 				$data = array('workflow_order' => '0');
 				$this->add_workflow('tonic_workflows', $data);
+				$workflow_id = $this->get_last_workflow_id();
 				foreach($this->lang->languages as $code => $lang)
 				{
-					$data = array('admin_language_code' => $code, 'workflow_id' => $this->mdl_workflow->get_max());
+					$data = array('admin_language_code' => $code, 'workflow_id' => $workflow_id);
 					$data['workflow_name'] = '';
 					if ($code == $this->input->post('active_lang')) $data['workflow_name'] = $workflow;
 					$this->add_workflow('tonic_workflows_i18n', $data);
