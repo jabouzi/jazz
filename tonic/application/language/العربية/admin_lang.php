@@ -104,6 +104,7 @@ $lang['category.update'] = "تحديث الفئة";
 
 $lang['language.title'] = "اللغات";
 $lang['language.code'] = "رمز اللغات";
+$lang['language.default'] = "اللغة الافتراضية";
 $lang['language.add'] = "اضافة اللغة";
 $lang['language.delete'] = "حذف اللغة";
 $lang['language.update'] = "تحديث اللغة";
