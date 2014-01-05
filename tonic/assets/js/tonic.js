@@ -15,7 +15,7 @@ $(document).ready(function() {
 		$(".tab_content").hide(); //Hide all tab content
 		var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
 		$(activeTab).fadeIn(); //Fade in the active ID content
-		$('#active_lang').val($(this).attr('id');
+		$('#active_lang').val($(this).attr('id'));
 		return false;
 	});
 
