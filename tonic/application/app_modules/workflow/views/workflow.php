@@ -35,7 +35,7 @@
 			<div class="submit_link">
 				<input type="button" id="save_workflow" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 				<input type="button" id="add_workflow" value="<?php echo lang('admin.add'); ?>">
-				<input type="hidden" id="active_lang" value="en">
+				<input type="hidden" id="active_lang" name="active_lang" value="en">
 			</div>
 		</footer>
 	</form>
