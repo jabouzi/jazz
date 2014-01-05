@@ -1,5 +1,10 @@
 <article class="module width_full">
 	<header><h3 class="tabs_involved"><?php echo lang('permission.title'); ?></h3>
+		<ul class="tabs">
+			<?php foreach($admin_languages as $code => $admin_language) : ?>
+				<li><a href="#<?php echo $code; ?>"><?php echo ucfirst(strtolower($admin_language)); ?></a></li>
+			<? endforeach; ?>
+		</ul>
 	</header>
 	<form id="permissions_form" method="post" action="<?php echo site_url('permission/process'); ?>">
 		<div class="tab_container">

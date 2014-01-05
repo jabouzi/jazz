@@ -72,15 +72,15 @@ class Mdl_workflow extends CI_Model
 	{
 		$table = 'tonic_workflows';
 		$this->db->where($where);
-		$query	= $this->db->get($table);
+		$query = $this->db->get($table);
 		$num_rows = $query->num_rows();
 		return $num_rows;
 	}
 	
 	function count_all()
 	{
-		$table	= 'tonic_workflows';
-		$query	= $this->db->get($table);
+		$table = 'tonic_workflows';
+		$query = $this->db->get($table);
 		$num_rows = $query->num_rows();
 		return $num_rows;
 	}
@@ -90,8 +90,8 @@ class Mdl_workflow extends CI_Model
 		$table = 'tonic_workflows';
 		$this->db->select_max('workflow_id');
 		$query = $this->db->get($table);
-		$row   = $query->row();
-		$id	= $row->workflow_id;
+		$row = $query->row();
+		$id = $row->workflow_id;
 		return $id;
 	}
 	

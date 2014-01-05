@@ -11,6 +11,7 @@ class Permission extends MX_Controller
 	
 	function index()
 	{
+		var_dump($this->mdl_permission->get_join()->result());
 		$view_data['page_title'] = lang('permission.title');
 		$view_data['admin_widgets']['permissions'] = $this->show();
 		echo modules::run('template', $view_data);
@@ -19,13 +20,10 @@ class Permission extends MX_Controller
 	private function show()
 	{
 		$this->load->helper('form');
-		$results = $this->mdl_permission->get_where($this->session->userdata('user_permission'));
+		$view_data['admin_languages'] = $this->lang->languages;
+		$view_data['permissions'] = $this->get_workflows();
 		$view_data['actions'] = $this->get_permission_actions_list();
 		$view_data['attributes'] = "class='permissions-multi-select'";
-		foreach($results->result() as $permission)
-		{
-			$view_data['permissions'][$permission->permission_id] = array('name' => $permission->{'permission_name_'.$this->lang->lang()}, 'actions' => unserialize($permission->permission_actions));
-		}
 
 		return $this->load->view('permission', $view_data, true);
 	}
@@ -56,12 +54,13 @@ class Permission extends MX_Controller
 		redirect('permission');
 	}
 	
-	function get_permissions($permission)
+	function get_permissions()
 	{
-		$results = $this->mdl_permission->get_where($permission);
+		$permissions = array();
+		$results = $this->mdl_permission->get_join()->result();
 		foreach($results->result() as $permission)
 		{
-			$permissions[$permission->permission_id] = $permission->{'permission_name_'.$this->lang->lang()};
+			$permissions[$result->admin_language_code][] = array('id' => $result->permission_id, 'name' => $result->permission_name);
 		}
 		
 		return $permissions;
