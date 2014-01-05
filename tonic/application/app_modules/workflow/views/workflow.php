@@ -7,6 +7,7 @@
 		</ul>
 	</header>
 	<form id="workflows_form" method="post" action="<?php echo site_url('workflow/process'); ?>">
+		<?php $index = 0; ?>
 		<?php foreach($admin_languages as $code => $admin_language) : ?>
 			<div id="<?php echo $code; ?>" class="tab_content">
 				<div class="tab_container">
@@ -19,7 +20,6 @@
 						</tr> 
 					</thead> 
 					<tbody id="workflow_list">
-						<?php $index = 0; ?>
 						<?php foreach ($workflows[$code] as $id => $workflow) : ?>
 							<tr>
 								<td><input type="text" id="workflow_name_<?php echo $code; ?>_<?php echo $workflow['id']; ?>" name="workflow_name[<?php echo $code; ?>][<?php echo $workflow['id']; ?>]" value="<?php echo $workflow['name']; ?>" data-validate="required" data-type="text" title="<?php echo lang('workflow.name'); ?>"></td>
@@ -30,12 +30,12 @@
 								<?php endif; ?>
 								<td><input type="checkbox" id="delete_<?php echo $code; ?>_<?php echo $workflow['id']; ?>" name="delete[<?php echo $code; ?>_<?php echo $workflow['id']; ?>]" value="1"></td>
 							</tr>
-							<?php $index++; ?>
 						<?php endforeach ?>
 					</tbody> 
 					</table>
 				</div><!-- end of .tab_container -->
 			</div>
+			<?php $index++; ?>
 		<?php endforeach; ?>
 		<footer>
 			<div class="submit_link">
