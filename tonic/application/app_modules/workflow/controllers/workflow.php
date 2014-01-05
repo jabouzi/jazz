@@ -27,13 +27,13 @@ class Workflow extends MX_Controller
 	{
 		foreach($this->input->post('workflow_name') as $lang => $workflows)
 		{
-			foreach($workflows as $code => $workflow)
+			foreach($workflows as $id => $workflow)
 			{
 				$workflow = trim($workflow);
 				if ($workflow != '')
 				{
 					$data = array('workflow_name' => $workflow);
-					$where = array('workflow_id = '.$id, 'admin_language_code = '.$code);
+					$where = array('workflow_id = '.$id, 'admin_language_code = '.$lang);
 					$this->update_workflow('tonic_workflows_i18n', $where, $data);
 				}
 			}
