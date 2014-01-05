@@ -21,9 +21,9 @@
 					<tbody id="workflow_list">
 						<?php foreach ($workflows as $id => $workflow) : ?>
 							<tr>
-								<td><input type="text" id="<?php echo $workflow['ide']; ?>" name="<?php echo $id; ?>" value="<?php echo $workflow['name']; ?>" data-validate="required" data-type="text" title="<?php echo lang('workflow.name'); ?>"></td>
-								<td><input type="text" id="order[<?php echo $workflow['ide']; ?>]" name="order[<?php echo $id; ?>]" value="<?php echo $workflow['order']; ?>" data-validate="required" data-type="text" title="<?php echo lang('workflow.order'); ?>"></td>
-								<td><input type="checkbox" id="delete[<?php echo $workflow['ide']; ?>]" name="delete[<?php echo $workflow['ide']; ?>]" value="1"></td>
+								<td><input type="text" id="<?php echo $workflow['id']; ?>" name="<?php echo $id; ?>" value="<?php echo $workflow['name']; ?>" data-validate="required" data-type="text" title="<?php echo lang('workflow.name'); ?>"></td>
+								<td><input type="text" id="order[<?php echo $workflow['id']; ?>]" name="order[<?php echo $id; ?>]" value="<?php echo $workflow['order']; ?>" data-validate="required" data-type="text" title="<?php echo lang('workflow.order'); ?>"></td>
+								<td><input type="checkbox" id="delete[<?php echo $workflow['id']; ?>]" name="delete[<?php echo $workflow['ide']; ?>]" value="1"></td>
 							</tr>
 						<?php endforeach ?>
 					</tbody> 
