@@ -68,15 +68,22 @@ class Permission extends MX_Controller
 					$where = array('permission_id = ' => $id, 'admin_language_code = ' => $lang);
 					$this->update_permission('tonic_permissions_i18n', $where, $data);
 				}
+				
+				$actions = element($id, $this->input->post('actions'));
+				if (is_array($actions)) $data = array('permission_actions' => serialize($actions));
+				else array('permission_actions' => '');
+				$where = array('permission_id = ' => $id);
+				$this->update_permission('tonic_permissions', $where, $data);
 			}
 		}
 		
-		foreach ($this->input->post('actions') as $id => $order)
-		{
-			$data = array('permission_actions' => serialize($order));
-			$where = array('permission_id = ' => $id);
-			$this->update_permission('tonic_permissions', $where, $data);
-		}
+		//foreach ($this->input->post('actions') as $id => $actions)
+		//{
+			//if (is_array($actions)) $data = array('permission_actions' => serialize($actions));
+			//else 
+			//$where = array('permission_id = ' => $id);
+			//$this->update_permission('tonic_permissions', $where, $data);
+		//}
 
 		foreach ($this->input->post('new') as $permission)
 		{
