@@ -21,7 +21,7 @@ class Permission extends MX_Controller
 	{
 		$this->load->helper('form');
 		$view_data['admin_languages'] = $this->lang->languages;
-		$view_data['permissions'] = $this->get_workflows();
+		$view_data['permissions'] = $this->get_permissions();
 		$view_data['actions'] = $this->get_permission_actions_list();
 		$view_data['attributes'] = "class='permissions-multi-select'";
 
