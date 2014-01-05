@@ -16,7 +16,7 @@
 						<tr> 
 							<th><?php echo lang('workflow.name'); ?></th> 
 							<th><?php echo lang('workflow.order'); ?></th>
-							<?php if ($index) : ?> 
+							<?php if (!$index) : ?> 
 								<th><?php echo lang('workflow.delete'); ?></th>
 							<?php endif; ?> 
 						</tr> 
