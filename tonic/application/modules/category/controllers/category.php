@@ -67,13 +67,18 @@ class Category extends MX_Controller
 	
 	private function get_categories_structure()
 	{
+		var_dump($this->mdl_category->get_max('category_depth'));
 		$categories = $this->mdl_category->get_join();
 		var_dump($categories->result());
 		//$this->load->library('tree');
 		$this->tree->add_root("root", "website");
 		foreach($categories->result() as $category)
 		{
-			//if ($category->level )
+			if ($category->level == 1) $this->tree->insert_root_child("category1", $category);
+		}
+		else
+		{
+			
 		}
 		//echo ((string)$this->tree->get_root());
 		//$this->tree->insert_root_child("child","firstChild");
