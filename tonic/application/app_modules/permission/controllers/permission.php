@@ -92,7 +92,9 @@ class Permission extends MX_Controller
 	function get_permissions_dropdown()
 	{
 		$permissions = array();
-		//$results = $this->mdl_permission->get_join_where(array('admin_lang_code = ' => $this->lang->lang()))->result();
+		$where = array('tonic_permissions_i18n.admin_lang_code' => $this->lang->lang());
+		var_dump($where);
+		$results = $this->mdl_permission->get_join_where($where)->result();
 		var_dump($results);
 		//foreach($results as $permission)
 		//{
