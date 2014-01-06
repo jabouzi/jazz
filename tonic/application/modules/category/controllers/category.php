@@ -73,7 +73,7 @@ class Category extends MX_Controller
 		$this->tree->add_root("root", "website");
 		foreach($categories->result() as $category)
 		{
-			if ($category->level )
+			//if ($category->level )
 		}
 		//echo ((string)$this->tree->get_root());
 		//$this->tree->insert_root_child("child","firstChild");
