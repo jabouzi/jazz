@@ -93,10 +93,11 @@ class Permission extends MX_Controller
 	{
 		$permissions = array();
 		$results = $this->mdl_permission->get_join_where(array('admin_lang_code = ' => $this->lang->lang()))->result();
-		foreach($results as $permission)
-		{
-			$permissions[] = array('id' => $permission->permission_id, 'name' => $permission->permission_name);
-		}
+		var_dump($results);
+		//foreach($results as $permission)
+		//{
+			//$permissions[] = array('id' => $permission->permission_id, 'name' => $permission->permission_name);
+		//}
 		
 		return $permissions;
 	}
