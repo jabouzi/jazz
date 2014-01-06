@@ -71,12 +71,20 @@ class Category extends MX_Controller
 		$categories = $this->mdl_category->get();
 		var_dump($categories->result());
 		//$this->load->library('tree');
-		$this->tree->add_root("root", "website");
+		$this->tree->add_root("root", "categories");
 		foreach($categories->result() as $category)
 		{
-			if ($category->level == 1) $this->tree->insert_root_child("category1", $category);
+			if ($category->level == 1)
+			{
+				$this->tree->insert_root_child($category­->depth, $category->category_id);
+			}
+			else
+			{
+				$this->tree_insert->insert_child($category­->depth, $category->category_id, $this->tree->find_child(($category->level - 1), $category->parent_id));
+			}
 		}
 		
+		var_dump($this->tree)
 		//echo ((string)$this->tree->get_root());
 		//$this->tree->insert_root_child("child","firstChild");
 		//$this->tree->insert_root_child("child","secondChild");
