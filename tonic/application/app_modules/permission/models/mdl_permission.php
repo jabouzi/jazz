@@ -49,6 +49,7 @@ class Mdl_permission extends CI_Model
 		$this->db->join('tonic_permissions_i18n', 'tonic_permissions.permission_id = tonic_permissions_i18n.permission_id');
 		$this->db->where($where);
 		$query = $this->db->get();
+		var_dump($query);
 		return $query;
 	}
 	
