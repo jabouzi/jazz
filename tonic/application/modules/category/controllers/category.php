@@ -77,7 +77,7 @@ class Category extends MX_Controller
 			var_dump($category);
 			if ($category->category_depth == 1)
 			{
-				$this->tree->insert_root_child($category­->category_depth, $category->category_id);
+				$this->tree->insert_root_child($category­->category_depth, 1);
 			}
 			//else if ($category->category_depth == 1)
 			//{
