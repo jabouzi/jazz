@@ -68,7 +68,7 @@ class Category extends MX_Controller
 	private function get_categories_structure()
 	{
 		var_dump($this->mdl_category->get_max('category_depth'));
-		$categories = $this->mdl_category->get_join();
+		$categories = $this->mdl_category->get();
 		var_dump($categories->result());
 		//$this->load->library('tree');
 		$this->tree->add_root("root", "website");
