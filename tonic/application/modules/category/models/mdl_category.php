@@ -8,9 +8,9 @@ class Mdl_category extends CI_Model
 		parent::__construct();
 	}
 	
-	function get($order_by = 'category_id')
+	function get($order_by)
 	{
-		$table = "tonic_categories";
+		$table = 'tonic_categories';
 		$this->db->order_by($order_by);
 		$query = $this->db->get($table);
 		return $query;
@@ -18,7 +18,7 @@ class Mdl_category extends CI_Model
 	
 	function get_with_limit($limit, $offset, $order_by)
 	{
-		$table = "tonic_categories";
+		$table = 'tonic_categories';
 		$this->db->limit($limit, $offset);
 		$this->db->order_by($order_by);
 		$query = $this->db->get($table);
@@ -27,43 +27,51 @@ class Mdl_category extends CI_Model
 	
 	function get_where($id)
 	{
-		$table = "tonic_categories";
+		$table = 'tonic_categories';
 		$this->db->where('category_id', $id);
 		$query = $this->db->get($table);
 		return $query;
 	}
 	
-	function get_where_custom($col, $value)
+	function get_join()
 	{
-		$table = "tonic_categories";
-		$query = $this->db->get_where($table, $where);
+		$this->db->select('*');
+		$this->db->from('tonic_categories');
+		$this->db->join('tonic_categories_i18n', 'tonic_categories.category_id = tonic_categories_i18n.category_id');
+		$query = $this->db->get();
 		return $query;
 	}
 	
-	function insert($data)
+	function get_where_custom($where)
 	{
-		$table = "tonic_categories";
-		$this->db->insert($table, $data);
+		$table = 'tonic_categories';
+		$this->db->where($where);
+		$query = $this->db->get($table);
+		return $query;
 	}
 	
-	function update($id, $data)
+	function insert($table, $data)
 	{
-		$table = "tonic_categories";
-		$this->db->where('category_id', $id);
+		$this->db->insert($table, $data);
+		return $this->db->insert_id();
+	}
+	
+	function update($table, $where, $data)
+	{
+		$this->db->where($where);
 		$this->db->update($table, $data);
 	}
 	
-	function delete($id)
+	function delete($table, $id)
 	{
-		$table = "tonic_categories";
 		$this->db->where('category_id', $id);
 		$this->db->delete($table);
 	}
 	
-	function count_where($column, $value)
+	function count_where($where)
 	{
-		$table = "tonic_categories";
-		$this->db->where($column, $value);
+		$table = 'tonic_categories';
+		$this->db->where($where);
 		$query = $this->db->get($table);
 		$num_rows = $query->num_rows();
 		return $num_rows;
@@ -71,7 +79,7 @@ class Mdl_category extends CI_Model
 	
 	function count_all()
 	{
-		$table = $this->get_table();
+		$table = 'tonic_categories';
 		$query = $this->db->get($table);
 		$num_rows = $query->num_rows();
 		return $num_rows;
@@ -79,11 +87,11 @@ class Mdl_category extends CI_Model
 	
 	function get_max()
 	{
-		$table = "tonic_categories";
+		$table = 'tonic_categories';
 		$this->db->select_max('category_id');
 		$query = $this->db->get($table);
 		$row = $query->row();
-		$id	= $row->id;
+		$id = $row->category_id;
 		return $id;
 	}
 	
@@ -92,5 +100,4 @@ class Mdl_category extends CI_Model
 		$query = $this->db->query($mysql_query);
 		return $query;
 	}
-	
 }
