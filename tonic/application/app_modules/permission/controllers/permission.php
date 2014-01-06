@@ -96,7 +96,7 @@ class Permission extends MX_Controller
 		$results = $this->mdl_permission->get_where_custom('tonic_permissions_i18n', $where);
 		foreach($results as $permission)
 		{
-			$permissions[] = array('id' => $permission->permission_id, 'name' => $permission->permission_name);
+			$permissions[] = array($permission->permission_id => $permission->permission_name);
 		}
 		
 		return $permissions;
