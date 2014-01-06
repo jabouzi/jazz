@@ -80,7 +80,7 @@ class Category extends MX_Controller
 			}
 			else
 			{
-				$this->tree_insert->insert_child($category­->depth, $category->category_id, $this->tree->find_child(($category->level - 1), $category->parent_id));
+				$this->tree->insert_child($category­->depth, $category->category_id, $this->tree->find_child(($category->level - 1), $category->parent_id));
 			}
 		}
 		
