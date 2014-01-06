@@ -76,10 +76,7 @@ class Category extends MX_Controller
 		{
 			if ($category->level == 1) $this->tree->insert_root_child("category1", $category);
 		}
-		else
-		{
-			
-		}
+		
 		//echo ((string)$this->tree->get_root());
 		//$this->tree->insert_root_child("child","firstChild");
 		//$this->tree->insert_root_child("child","secondChild");
