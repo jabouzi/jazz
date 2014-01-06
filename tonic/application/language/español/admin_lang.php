@@ -1,9 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$lang['english'] = "English";
-$lang['french'] = "Français";
-$lang['spanish'] = "Español";
-
+$lang['admin.title'] = "Administración";
 $lang['admin.delete'] = "Eliminar";
 $lang['admin.save'] = "Guardar";
 $lang['admin.add'] = "Añadir";
@@ -111,3 +108,5 @@ $lang['language.add'] = "Agregar idioma";
 $lang['language.delete'] = "Eliminar la idioma";
 $lang['language.update'] = "Actualización la idioma";
 $lang['language.success'] = "Idioma guardado correctamente";
+
+$lang['content.title'] = "Contenido";

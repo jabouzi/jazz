@@ -4,6 +4,7 @@ $lang['english'] = "English";
 $lang['french'] = "Français";
 $lang['spanish'] = "Español";
 
+$lang['admin.title'] = "Administration";
 $lang['admin.delete'] = "Delete";
 $lang['admin.save'] = "Save";
 $lang['admin.add'] = "Add";
@@ -111,3 +112,5 @@ $lang['language.add'] = "Add Language";
 $lang['language.delete'] = "Delete Language";
 $lang['language.update'] = "Update Language";
 $lang['language.success'] = "Language saved successfully";
+
+$lang['content.title'] = "Content";
