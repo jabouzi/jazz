@@ -19,7 +19,7 @@ class Category extends MX_Controller
 	private function show()
 	{
 		$this->load->helper('form');
-		$results = $this->mdl_category->get();
+		$categories_structure = $this->get_categories_structure();
 		$view_data['categories'] = $results;
 		return $this->load->view('category', $view_data, true);
 	}
@@ -67,8 +67,14 @@ class Category extends MX_Controller
 	
 	private function get_categories_structure()
 	{
+		$categories = $this->mdl_category->get_join();
+		var_dump($categories->result());
 		//$this->load->library('tree');
 		$this->tree->add_root("root", "website");
+		foreach($categories->result() as $category)
+		{
+			if ($category->level )
+		}
 		//echo ((string)$this->tree->get_root());
 		//$this->tree->insert_root_child("child","firstChild");
 		//$this->tree->insert_root_child("child","secondChild");
