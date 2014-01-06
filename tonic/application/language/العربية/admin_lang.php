@@ -109,4 +109,4 @@ $lang['language.delete'] = "حذف اللغة";
 $lang['language.update'] = "تحديث اللغة";
 $lang['language.success'] = "حفظ اللغة بنجاح";
 
-$lang['content.title'] = "محتوى";
+$lang['content.title'] = "المحتوى";
