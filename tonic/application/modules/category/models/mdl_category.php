@@ -42,6 +42,16 @@ class Mdl_category extends CI_Model
 		return $query;
 	}
 	
+	function get_join->where($where)
+	{
+		$this->db->select('*');
+		$this->db->from('tonic_categories');
+		$this->db->join('tonic_categories_i18n', 'tonic_categories.category_id = tonic_categories_i18n.category_id');
+		$this->db->where($where);
+		$query = $this->db->get();
+		return $query;
+	}
+	
 	function get_where_custom($where)
 	{
 		$table = 'tonic_categories';
@@ -85,10 +95,10 @@ class Mdl_category extends CI_Model
 		return $num_rows;
 	}
 	
-	function get_max()
+	function get_max($column)
 	{
 		$table = 'tonic_categories';
-		$this->db->select_max('category_id');
+		$this->db->select_max($column);
 		$query = $this->db->get($table);
 		$row = $query->row();
 		$id = $row->category_id;
