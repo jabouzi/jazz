@@ -78,10 +78,14 @@ class Category extends MX_Controller
 			{
 				$this->tree->insert_root_child($category­->category_depth, $category->category_id);
 			}
-			else
-			{
-				$this->tree->insert_child($category­->category_depth, $category->category_id, $this->tree->find_child(($category->category_level - 1), $category->parent_id));
-			}
+			//else if ($category->category_depth == 1)
+			//{
+				//$this->tree->insert_child($category­->category_depth, $category->category_id, $this->tree->find_child(($category->category_level - 1), $category->parent_id));
+			//}
+			//else
+			//{
+				//$this->tree->insert_child($category­->category_depth, $category->category_id, $this->tree->find_child(($category->category_level - 1), $category->parent_id));
+			//}
 		}
 		
 		var_dump($this->tree);
