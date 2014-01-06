@@ -11,14 +11,14 @@
 			</tr> 
 		</thead> 
 		<tbody id="workflow_list">
-			<?php foreach ($category->result() as $item) : ?>
+			<?php foreach ($categories->result() as $category) : ?>
 				<tr>
-					<td><?php echo $item->category_firstname ?></td>
-					<td><?php echo $item->category_lastname ?></td>
-					<td><?php echo $item->category_email ?></td>
-					<td><?php echo lang('category.status'.ord($item->category_status)); ?></td>
+					<td><?php echo $category->category_firstname ?></td>
+					<td><?php echo $category->category_lastname ?></td>
+					<td><?php echo $category->category_email ?></td>
+					<td><?php echo lang('category.status'.ord($category->category_status)); ?></td>
 					<td>
-						<?php echo anchor('category/editcategory/'.$item->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
+						<?php echo anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
 						<input type="image" src="/tonic/assets/images/icn_trash.png" title="<?php echo lang('category.delete'); ?>">
 					</td>
 				</tr>

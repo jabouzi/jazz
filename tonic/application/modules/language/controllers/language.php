@@ -47,6 +47,7 @@ class Language extends MX_Controller
 		{
 			$this->delete_language($id);
 		}
+		
 		$this->session->set_userdata('success_message', lang('language.success'));
 		redirect('language');
 	}
@@ -54,7 +55,7 @@ class Language extends MX_Controller
 	function get_languages()
 	{
 		$languages = $this->mdl_language->get('language_default DESC, language_name ASC');
-		var_dump($languages->result());
+		return $languages->result();
 	}
 	
 	private function add_language($language_data)
