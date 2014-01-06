@@ -89,17 +89,17 @@ class Permission extends MX_Controller
 		return $permissions;
 	}
 	
-	//function get_permissions_dropdown()
-	//{
-		//$permissions = array();
-		//$results = $this->mdl_permission->get_join_where(array('admin_lang_code = ' => $this->lang->lang())->result();
-		//foreach($results as $permission)
-		//{
-			//$permissions[$permission->admin_language_code][] = array('id' => $permission->permission_id, 'name' => $permission->permission_name, 'actions' => unserialize($permission->permission_actions));
-		//}
-		//
-		//return $permissions;
-	//}
+	function get_permissions_dropdown()
+	{
+		$permissions = array();
+		$results = $this->mdl_permission->get_join_where(array('admin_lang_code = ' => $this->lang->lang()))->result();
+		foreach($results as $permission)
+		{
+			$permissions[] = array('id' => $permission->permission_id, 'name' => $permission->permission_name);
+		}
+		
+		return $permissions;
+	}
 	
 	private function add_permission($table, $data)
 	{
