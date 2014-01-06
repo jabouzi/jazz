@@ -20,7 +20,7 @@ class Category extends MX_Controller
 	{
 		$this->load->helper('form');
 		$categories_structure = $this->get_categories_structure();
-		$view_data['categories'] = $results;
+		$view_data['categories'] = $categories_structure;
 		return $this->load->view('category', $view_data, true);
 	}
 	
