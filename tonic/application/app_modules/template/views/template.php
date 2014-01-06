@@ -47,14 +47,14 @@
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
-		<h3>><?php echo lang('content.title'); ?></h3>
+		<h3><?php echo lang('content.title'); ?></h3>
 		<ul class="toggle">
 			<li class="icn_new_article"><a href="#">New Article</a></li>
 			<li class="icn_edit_article"><a href="#">All structure</a></li>
 			<li class="icn_categories"><?php echo anchor('category', lang('category.title')) ?></li>
 			<li class="icn_tags"><?php echo anchor('language', lang('language.title')) ?></li>
 		</ul>
-		<h3>><?php echo lang('user.title'); ?></h3>
+		<h3><?php echo lang('user.title'); ?></h3>
 		<ul class="toggle">
 			<li class="icn_add_user"><?php echo anchor('user/newuser', lang('user.new')) ?></li>
 			<li class="icn_view_users"><?php echo anchor('user/users', lang('user.users')) ?></li>
