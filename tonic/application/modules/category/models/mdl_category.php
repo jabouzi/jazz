@@ -101,7 +101,7 @@ class Mdl_category extends CI_Model
 		$this->db->select_max($column);
 		$query = $this->db->get($table);
 		$row = $query->row();
-		$id = $row->category_id;
+		$id = $row->{$column};
 		return $id;
 	}
 	
