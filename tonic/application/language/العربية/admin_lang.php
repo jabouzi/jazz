@@ -4,6 +4,7 @@ $lang['english'] = "English";
 $lang['french'] = "Français";
 $lang['spanish'] = "Español";
 
+$lang['admin.title'] = "الإدارة";
 $lang['admin.delete'] = "حذف";
 $lang['admin.save'] = "حفظ";
 $lang['admin.add'] = "إضافة";
@@ -111,3 +112,5 @@ $lang['language.add'] = "اضافة اللغة";
 $lang['language.delete'] = "حذف اللغة";
 $lang['language.update'] = "تحديث اللغة";
 $lang['language.success'] = "حفظ اللغة بنجاح";
+
+$lang['content.title'] = "محتوى";
