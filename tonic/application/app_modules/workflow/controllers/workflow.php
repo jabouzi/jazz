@@ -70,6 +70,7 @@ class Workflow extends MX_Controller
 			$this->delete_workflow('tonic_workflows_i18n', $id);
 		}
 		
+		$this->session->set_userdata('success_message', lang('workflow.success'));
 		redirect('workflow');
 	}
 	

@@ -73,6 +73,7 @@ class Permission extends MX_Controller
 			$this->delete_permission('tonic_permissions_i18n', $id);
 		}
 		
+		$this->session->set_userdata('success_message', lang('permission.success'));
 		redirect('permission');
 	}
 	
