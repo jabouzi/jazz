@@ -84,7 +84,7 @@ class Category extends MX_Controller
 			//}
 			else
 			{
-				$this->tree->insert_child($category->category_depth, $category->category_id, $this->tree->find_child(($category->category_depth - 1), $category->parent_id));
+				$this->tree->insert_child($category->category_depth, $category->category_id, $this->tree->find_child(($category->category_depth - 1), $category->category_parent_id));
 			}
 		}
 		
