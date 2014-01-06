@@ -94,7 +94,7 @@ class Permission extends MX_Controller
 		$permissions = array();
 		$where = array('admin_language_code = ' => $this->lang->lang());
 		$results = $this->mdl_permission->get_where_custom('tonic_permissions_i18n', $where);
-		foreach($results->result as $permission)
+		foreach($results->result() as $permission)
 		{
 			$permissions[$permission->permission_id] = $permission->permission_name;
 		}
