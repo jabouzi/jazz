@@ -30,7 +30,7 @@ class Login extends MX_Controller
 		
 		foreach($this->lang->languages as $key => $value)
 		{
-			$view_data['languages'][site_url().$this->lang->switch_uri($key)] = lang($value);
+			$view_data['languages'][site_url().$this->lang->switch_uri($key)] = ucfirst(strtolower($value));
 		}
 		$view_data['lang'] = site_url().$this->lang->switch_uri($this->lang->lang());
 		$view_data['redirect'] = 'onChange="window.document.location.href=this.options[this.selectedIndex].value;"';
