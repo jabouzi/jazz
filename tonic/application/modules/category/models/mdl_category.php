@@ -8,7 +8,7 @@ class Mdl_category extends CI_Model
 		parent::__construct();
 	}
 	
-	function get($order_by)
+	function get($order_by = 'category_id')
 	{
 		$table = 'tonic_categories';
 		$this->db->order_by($order_by);
