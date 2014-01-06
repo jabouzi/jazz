@@ -42,7 +42,7 @@ class Mdl_category extends CI_Model
 		return $query;
 	}
 	
-	function get_join->where($where)
+	function get_join_where($where)
 	{
 		$this->db->select('*');
 		$this->db->from('tonic_categories');
