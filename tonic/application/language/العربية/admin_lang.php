@@ -1,9 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$lang['english'] = "English";
-$lang['french'] = "Français";
-$lang['spanish'] = "Español";
-
 $lang['admin.title'] = "الإدارة";
 $lang['admin.delete'] = "حذف";
 $lang['admin.save'] = "حفظ";
