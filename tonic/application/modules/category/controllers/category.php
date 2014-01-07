@@ -73,10 +73,11 @@ class Category extends MX_Controller
 		//if($depth > 1000) return ''; // Make sure not to have an endless recursion
 		$tree = '';
 		for($i=0, $ni=count($categories); $i < $ni; $i++){
-			if($categories[$i]->category_parent_id == $parent){
-				$tree .= str_repeat('-', $depth);
-				$tree .= $categories[$i]->category_name . '<br/>';
-				$tree .= $this->generatePageTree($categories, $categories[$i]->category_id, $depth+1);
+		foreach($categories as $category)
+			if($category->category_parent_id == $parent){
+				$tree .= str_repeat('|—', $depth);
+				$tree .= $this->category_format($category);
+				$tree .= $this->generate_categories_tree($categories, $category->category_id, $depth+1);
 			}
 		}
 		return $tree;
@@ -99,18 +100,19 @@ class Category extends MX_Controller
 	
 	private function get_categories_structure()
 	{
+		$categories_structure = array();
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
 		{
 			$categories = $this->mdl_category->get_join_where(array('language_id = ' => $language->language_id))->result();
-			var_dump($categories);
+			$categories_structure[$language->language_code] = $this->generate_categories_tree($categories);
+			//var_dump($categories);
 		}
-		//$categories = $this->mdl_category->get_join_where()->result();
-		//$categories_structure = $this->generate_categories_tree($categories);
-		//echo ($categories_structure);
 		
-		echo '&#9658;';
-		echo '|—';
+		return $categories_structure;
+		
+		//echo '&#9658;';
+		//echo '|—';
 	}
 	
 	private function get_category_name($category_id, $language_id)
