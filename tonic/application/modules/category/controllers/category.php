@@ -21,7 +21,8 @@ class Category extends MX_Controller
 	{
 		$this->load->helper('form');
 		$categories = $this->mdl_category->get_join()->result();
-		$categories_structure = $this->generatePageTree($categories);
+		var_dump($categories);
+		$categories_structure = $this->generate_categories_tree($categories);
 		echo ($categories_structure);
 		$view_data['categories'] = $categories_structure;
 		return $this->load->view('category', $view_data, true);
