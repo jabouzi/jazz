@@ -82,7 +82,10 @@ class Category extends MX_Controller
 			else
 			{
 				$this->tree->get_nodes_by_depth(1,$this->tree->get_root());
-				//$this->tree->get_childs_by_depth();
+				foreach($this->tree->get_childs_by_depth() as $node)
+				{
+					var_dump($node);
+				}
 			}
 			//else if ($category->category_depth == 1)
 			//{
