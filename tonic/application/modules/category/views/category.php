@@ -16,6 +16,7 @@
 						<th><?php echo lang('category.name'); ?></th>
 						<th><?php echo lang('category.parent'); ?></th>
 						<th><?php echo lang('category.status'); ?></th>
+						<th><?php echo lang('admin.action'); ?></th>
 					</tr> 
 				</thead> 
 				<tbody id="workflow_list">
