@@ -75,9 +75,11 @@ class Category extends MX_Controller
 		//for($i=0, $ni=count($categories); $i < $ni; $i++){
 		foreach($categories as $category)
 		{
-			if($category->category_parent_id == $parent){
+			if($category->category_parent_id == $parent)
+			{
 				$tree .= str_repeat('|—', $depth);
-				$tree .= $this->category_format($category);
+				//$tree .= $this->category_format($category);
+				$tree .= $this->category_name;
 				$tree .= $this->generate_categories_tree($categories, $category->category_id, $depth+1);
 			}
 		}
