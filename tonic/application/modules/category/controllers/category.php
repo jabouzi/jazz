@@ -72,15 +72,16 @@ class Category extends MX_Controller
 	{
 		//if($depth > 1000) return ''; // Make sure not to have an endless recursion
 		$tree = '';
-		for($i=0, $ni=count($categories); $i < $ni; $i++){
+		//for($i=0, $ni=count($categories); $i < $ni; $i++){
 		foreach($categories as $category)
+		{
 			if($category->category_parent_id == $parent){
 				$tree .= str_repeat('|—', $depth);
 				$tree .= $this->category_format($category);
 				$tree .= $this->generate_categories_tree($categories, $category->category_id, $depth+1);
 			}
 		}
-		var_dump($tree);
+
 		return $tree;
 	}
 	
