@@ -6,8 +6,6 @@ class Category extends MX_Controller
 	{
 		parent::__construct();
 		$this->load->model('mdl_category');
-		$this->load->library('tree');
-		$this->load->library('node');
 	}
 	
 	function index()
