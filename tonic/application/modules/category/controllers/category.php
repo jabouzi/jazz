@@ -120,11 +120,8 @@ class Category extends MX_Controller
 	
 	private function get_category_name($category_id, $language_id)
 	{
-		$where = array('category_id = ' => $category_id, 'language_id = ', $language_id);
-		var_dump($where); exit;
-		$category = $this->mdl_category->get_where_custom('tonic_categories_i18n', $where);
-		
-		var_dump($category);
+		$where = array('category_id = ' => $category_id, 'language_id = ' => $language_id);
+		$category = $this->mdl_category->get_where_custom('tonic_categories_i18n', $where)->row();
 		
 		return $category->category_name;
 	}
