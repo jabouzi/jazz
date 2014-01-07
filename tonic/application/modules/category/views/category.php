@@ -20,7 +20,7 @@
 					</tr> 
 				</thead> 
 				<tbody id="workflow_list">
-					<?php echo $categories[$code]; ?>
+					<?php echo element($code, $categories); ?>
 				</tbody> 
 				</table>
 			</div><!-- end of .tab_container -->
