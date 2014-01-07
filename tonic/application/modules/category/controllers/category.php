@@ -78,8 +78,8 @@ class Category extends MX_Controller
 			if($category->category_parent_id == $parent)
 			{
 				$tree .= str_repeat('|—', $depth);
-				//$tree .= $this->category_format($category);
-				$tree .= $category->category_name;
+				$tree .= $this->category_format($category);
+				//$tree .= $category->category_name;
 				$tree .= $this->generate_categories_tree($categories, $category->category_id, $depth+1);
 			}
 		}
