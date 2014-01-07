@@ -14,7 +14,7 @@
 				<thead> 
 					<tr> 
 						<th><?php echo lang('category.name'); ?></th>
-	
+						<th><?php echo lang('category.parent'); ?></th>
 					</tr> 
 				</thead> 
 				<tbody id="workflow_list">
