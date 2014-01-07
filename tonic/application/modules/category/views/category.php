@@ -11,7 +11,7 @@
 			</tr> 
 		</thead> 
 		<tbody id="workflow_list">
-			<?php foreach ($categories->result() as $category) : ?>
+			<?/*php foreach ($categories->result() as $category) : ?>
 				<tr>
 					<td><?php echo $category->category_firstname ?></td>
 					<td><?php echo $category->category_lastname ?></td>
@@ -22,7 +22,7 @@
 						<input type="image" src="/tonic/assets/images/icn_trash.png" title="<?php echo lang('category.delete'); ?>">
 					</td>
 				</tr>
-			<?php endforeach ?>
+			<?php endforeach */?>
 		</tbody> 
 		</table>
 	</div><!-- end of .tab_container -->
