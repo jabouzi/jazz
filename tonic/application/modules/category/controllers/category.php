@@ -87,7 +87,7 @@ class Category extends MX_Controller
 	{
 		$format = '<tr>';
 		$format .= '<td>' . $tab . $category->category_name . '</td>';
-		$format .= '<td>' . $this->get_category_name($category->category_parent_id, $category->language_id) . '</td>';
+		$format .= '<td><input type="text" name="order[' . $category->category_id . ']" maxlength="2" size="2" value="' .  $category->category_order . '"></td>';
 		$format .= '<td>' . lang('admin.status'.ord($category->category_status)) . '</td>';
 		$format .= '<td>' . anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">');
 		$format .= '<input type="image" src="/tonic/assets/images/icn_trash.png" title="' . lang('category.delete') . '">';
@@ -113,7 +113,8 @@ class Category extends MX_Controller
 	private function get_category_name($category_id, $language_id)
 	{
 		$where = array('category_id = ' => $category_id, 'language_id = ' => $language_id);
-		$category = $this->mdl_category->get_where_custom('tonic_categories_i18n', $where)->row();
+		$order_by('category_id ASC', 'category_order ASC');
+		$category = $this->mdl_category->get_where_custom('tonic_categories_i18n', $where, $order_by)->row();
 		
 		if (!empty($category)) return $category->category_name;
 		return '';
