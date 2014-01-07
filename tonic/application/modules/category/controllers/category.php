@@ -88,7 +88,7 @@ class Category extends MX_Controller
 			//}
 		}
 		
-		$this->tree->findChild(1,1,$tree->getRoot());
+		$this->tree->findChild(1,1,$tthis->ree->getRoot());
 		var_dump($this->tree->getChildFound());
 		//var_dump($this->tree->find_child(1, 1));
 		//var_dump($this->tree->get_root()->get_children());
