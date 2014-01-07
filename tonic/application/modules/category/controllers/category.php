@@ -74,7 +74,7 @@ class Category extends MX_Controller
 		{
 			if($category->category_parent_id == $parent)
 			{
-				$tab = str_repeat('<span class="dash_space"><nobr>&#9658;</nobr></span>', $depth);
+				$tab = str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $depth);
 				$tree .= $this->category_format($tab, $category);
 				$tree .= $this->generate_categories_tree($categories, $category->category_id, $depth+1);
 			}
@@ -108,9 +108,6 @@ class Category extends MX_Controller
 		}
 		
 		return $categories_structure;
-		
-		//echo '&#9658;';
-		//echo '|—';
 	}
 	
 	private function get_category_name($category_id, $language_id)
