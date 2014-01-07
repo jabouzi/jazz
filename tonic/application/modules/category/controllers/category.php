@@ -19,7 +19,7 @@ class Category extends MX_Controller
 	{
 		$this->load->helper('form');
 		$this->load->helper('array');
-		$view_data['admin_languages'] = $this->lang->languages;
+		$view_data['languages'] = modules::run('languages/get_languages');
 		$view_data['categories'] = $this->get_categories_structure();
 		return $this->load->view('category', $view_data, true);
 	}
