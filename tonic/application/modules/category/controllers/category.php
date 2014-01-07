@@ -73,7 +73,7 @@ class Category extends MX_Controller
 		if($depth > 1000) return ''; // Make sure not to have an endless recursion
 		$tree = '';
 		for($i=0, $ni=count($datas); $i < $ni; $i++){
-			if($datas[$i]->parent_id == $parent){
+			if($datas[$i]->category_parent_id == $parent){
 				$tree .= str_repeat('-', $depth);
 				$tree .= $datas[$i]->category_name . '<br/>';
 				$tree .= generatePageTree($datas, $datas[$i]->category_id, $depth+1);
