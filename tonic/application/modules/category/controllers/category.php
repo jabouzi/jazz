@@ -20,7 +20,7 @@ class Category extends MX_Controller
 	private function show()
 	{
 		$this->load->helper('form');
-		$categories = $this->mdl_category->get();
+		$categories = $this->mdl_category->get()->result();
 		$categories_structure = $this->generatePageTree($categories);
 		var_dump($categories_structure);
 		$view_data['categories'] = $categories_structure;
