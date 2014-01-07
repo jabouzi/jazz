@@ -68,19 +68,33 @@ class Category extends MX_Controller
 		
 	}
 	
-	function generatePageTree($datas, $parent = 0, $depth = 0)
+	private function generate_categories_tree($categories, $parent = 0, $depth = 0)
 	{
 		//if($depth > 1000) return ''; // Make sure not to have an endless recursion
 		$tree = '';
-		for($i=0, $ni=count($datas); $i < $ni; $i++){
-			if($datas[$i]->category_parent_id == $parent){
+		for($i=0, $ni=count($categories); $i < $ni; $i++){
+			if($categories[$i]->category_parent_id == $parent){
 				$tree .= str_repeat('-', $depth);
-				$tree .= $datas[$i]->category_name . '<br/>';
-				$tree .= $this->generatePageTree($datas, $datas[$i]->category_id, $depth+1);
+				$tree .= $categories[$i]->category_name . '<br/>';
+				$tree .= $this->generatePageTree($categories, $categories[$i]->category_id, $depth+1);
 			}
 		}
 		return $tree;
 	}
+	
+	/*private function category_format($category)
+	{
+		$format = '<tr>
+			<td>' . $category->category_name . '</td>
+			<td><?php echo $category->category_lastname ?></td>
+			<td><?php echo $category->category_email ?></td>
+			<td><?php echo lang('category.status'.ord($category->category_status)); ?></td>
+			<td>
+				<?php echo anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
+				<input type="image" src="/tonic/assets/images/icn_trash.png" title="<?php echo lang('category.delete'); ?>">
+			</td>
+		</tr>';
+	}*/
 	
 	private function get_categories_structure()
 	{
