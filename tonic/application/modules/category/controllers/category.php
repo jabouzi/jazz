@@ -82,7 +82,7 @@ class Category extends MX_Controller
 	}
 	
 	private function category_format($tab, $category)
-	{$languages
+	{
 		$format = '<tr>';
 		$format .= '<td>' . $tab . $category->category_name . '</td>';
 		$format .= '<td><input type="text" name="order[' . $category->category_id . ']" maxlength="2" size="2" value="' .  $category->category_order . '"></td>';
