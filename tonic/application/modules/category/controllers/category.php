@@ -76,7 +76,7 @@ class Category extends MX_Controller
 			if($datas[$i]->category_parent_id == $parent){
 				$tree .= str_repeat('-', $depth);
 				$tree .= $datas[$i]->category_name . '<br/>';
-				$tree .= generatePageTree($datas, $datas[$i]->category_id, $depth+1);
+				$tree .= $this->generatePageTree($datas, $datas[$i]->category_id, $depth+1);
 			}
 		}
 		return $tree;
