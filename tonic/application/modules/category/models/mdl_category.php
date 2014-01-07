@@ -25,9 +25,8 @@ class Mdl_category extends CI_Model
 		return $query;
 	}
 	
-	function get_where($id)
+	function get_where($table, $id)
 	{
-		$table = 'tonic_categories';
 		$this->db->where('category_id', $id);
 		$query = $this->db->get($table);
 		return $query;

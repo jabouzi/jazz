@@ -8,6 +8,8 @@ $lang['admin.action'] = " عمل";
 $lang['admin.show'] = "عرض";
 $lang['admin.hide'] = "إخفاء";
 $lang['admin.error'] = "لا يمكن أن تكون فارغة و يجب أن تكون صالحة";
+$lang['admin.status0'] = "غير نشط";
+$lang['admin.status1'] = " نشط";
 
 $lang['login.title'] = "لدخول إلى CMS";
 $lang['login.email'] = "لبريد الإلكتروني";
@@ -64,8 +66,6 @@ $lang['user.permissions'] = "أذونات";
 $lang['user.status'] = "حالة";
 $lang['user.newpassword'] = "كلمة المرور الجديدة";
 $lang['user.oldpassword'] = "كلمة المرور الحالية";
-$lang['user.status0'] = "غير نشط";
-$lang['user.status1'] = " نشط";
 $lang['user.nonactive'] = "هذا الحساب غير نشط";
 $lang['user.success'] = "مستخدم حفظ بنجاح";
 $lang['user.exists'] = "لبريد الإلكتروني موجود بالفعل";

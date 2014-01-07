@@ -23,7 +23,7 @@ class Category extends MX_Controller
 		
 		var_dump($this->get_categories_structure());
 
-		$view_data['categories'] = $categories_structure;
+		//$view_data['categories'] = $categories_structure;
 		return $this->load->view('category', $view_data, true);
 	}
 	
@@ -82,24 +82,24 @@ class Category extends MX_Controller
 		return $tree;
 	}
 	
-	/*private function category_format($category)
+	private function category_format($category)
 	{
 		$format = '<tr>
 			<td>' . $category->category_name . '</td>
-			<td><?php echo $category->category_lastname ?></td>
-			<td><?php echo $category->category_email ?></td>
-			<td><?php echo lang('category.status'.ord($category->category_status)); ?></td>
+			<td>' . get_category_name($category_id, $language_id) . '</td>
+			<td>' . lang('admin.status'.ord($item->category_status)) . '</td>
 			<td>
-				<?php echo anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
-				<input type="image" src="/tonic/assets/images/icn_trash.png" title="<?php echo lang('category.delete'); ?>">
+				' . anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">') .
+				'<input type="image" src="/tonic/assets/images/icn_trash.png" title="' . lang('category.delete') . '>
 			</td>
 		</tr>';
-	}*/
+		
+		return $format;
+	}
 	
 	private function get_categories_structure()
 	{
 		$languages = modules::run('language/get_languages');
-		var_dump($languages);
 		foreach($languages as $language)
 		{
 			$categories = $this->mdl_category->get_join_where(array('language_id = ' => $language->language_id))->result();
@@ -111,5 +111,13 @@ class Category extends MX_Controller
 		
 		echo '&#9658;';
 		echo '|—';
+	}
+	
+	private get_category_name($category_id, $language_id)
+	{
+		$where = array('category_id = ' => $category_id, 'language_id = ', $language_id);
+		$category = $this->mdl_category->get_where_custom('tonic_categories_i18n', )->row();
+		
+		return $row->category_name;
 	}
 }

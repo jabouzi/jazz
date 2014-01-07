@@ -8,6 +8,8 @@ $lang['admin.action'] = "Acción";
 $lang['admin.show'] = "Mostrar";
 $lang['admin.hide'] = "Ocultar";
 $lang['admin.error'] = "No se puede estar vacío y debe ser válido";
+$lang['admin.status0'] = "No activo";
+$lang['admin.status1'] = "Activo";
 
 $lang['login.title'] = "Conexión a CMS";
 $lang['login.email'] = "Enviar";
@@ -64,8 +66,6 @@ $lang['user.permissions'] = "Permisos";
 $lang['user.status'] = "Estado";
 $lang['user.newpassword'] = "Nueva contraseña";
 $lang['user.oldpassword'] = "Contraseña actual";
-$lang['user.status0'] = "No activo";
-$lang['user.status1'] = "Activo";
 $lang['user.nonactive'] = "Esta cuenta es désctivé";
 $lang['user.success'] = "El usuario ha guardado correctamente";
 $lang['user.exists'] = "El correo electrónico ya existe";
