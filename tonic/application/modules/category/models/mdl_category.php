@@ -38,6 +38,7 @@ class Mdl_category extends CI_Model
 		$this->db->select('*');
 		$this->db->from('tonic_categories');
 		$this->db->join('tonic_categories_i18n', 'tonic_categories.category_id = tonic_categories_i18n.category_id');
+		$this->db->join('tonic_languages', 'tonic_categories_i18n.language_id = tonic_languages.language_id');
 		$query = $this->db->get();
 		return $query;
 	}
@@ -47,6 +48,7 @@ class Mdl_category extends CI_Model
 		$this->db->select('*');
 		$this->db->from('tonic_categories');
 		$this->db->join('tonic_categories_i18n', 'tonic_categories.category_id = tonic_categories_i18n.category_id');
+		$this->db->join('tonic_languages', 'tonic_categories_i18n.language_id = tonic_languages.language_id');
 		$this->db->where($where);
 		$query = $this->db->get();
 		return $query;
