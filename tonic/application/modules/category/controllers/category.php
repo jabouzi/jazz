@@ -86,7 +86,7 @@ class Category extends MX_Controller
 	{
 		$format = '<tr>
 			<td>' . $category->category_name . '</td>
-			<td>' . get_category_name($category_id, $language_id) . '</td>
+			<td>' . $this->get_category_name($category_id, $language_id) . '</td>
 			<td>' . lang('admin.status'.ord($item->category_status)) . '</td>
 			<td>
 				' . anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">') .
