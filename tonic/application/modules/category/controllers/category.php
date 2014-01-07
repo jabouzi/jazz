@@ -20,7 +20,8 @@ class Category extends MX_Controller
 	private function show()
 	{
 		$this->load->helper('form');
-		$categories_structure = $this->get_categories_structure();
+		$categories = $this->mdl_category->get();
+		$categories_structure = $this->generatePageTree($categories);
 		$view_data['categories'] = $categories_structure;
 		return $this->load->view('category', $view_data, true);
 	}
@@ -64,6 +65,20 @@ class Category extends MX_Controller
 	private function delete_category($category_id)
 	{
 		
+	}
+	
+	function generatePageTree($datas, $parent = 0, $depth = 0)
+	{
+		if($depth > 1000) return ''; // Make sure not to have an endless recursion
+		$tree = '';
+		for($i=0, $ni=count($datas); $i < $ni; $i++){
+			if($datas[$i]->parent_id == $parent){
+				$tree .= str_repeat('-', $depth);
+				$tree .= $datas[$i]->category_name . '<br/>';
+				$tree .= generatePageTree($datas, $datas[$i]->category_id, $depth+1);
+			}
+		}
+		return $tree;
 	}
 	
 	private function get_categories_structure()
