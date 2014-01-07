@@ -6,7 +6,6 @@ class Language extends MX_Controller
 	{
 		parent::__construct();
 		$this->load->model('mdl_language');
-		$this->load->library('tree');
 	}
 	
 	function index()
