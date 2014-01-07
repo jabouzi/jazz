@@ -80,6 +80,7 @@ class Category extends MX_Controller
 				$tree .= $this->generate_categories_tree($categories, $category->category_id, $depth+1);
 			}
 		}
+		var_dump($tree);
 		return $tree;
 	}
 	
