@@ -19,8 +19,7 @@ class Category extends MX_Controller
 	{
 		$this->load->helper('form');
 		$this->load->helper('array');
-		$view_data['languages'] = modules::run('languages/get_languages');
-		var_dump($view_data['languages']);
+		$view_data['languages'] = modules::run('language/get_languages');
 		$view_data['categories'] = $this->get_categories_structure();
 		return $this->load->view('category', $view_data, true);
 	}
@@ -83,7 +82,7 @@ class Category extends MX_Controller
 	}
 	
 	private function category_format($tab, $category)
-	{
+	{$languages
 		$format = '<tr>';
 		$format .= '<td>' . $tab . $category->category_name . '</td>';
 		$format .= '<td><input type="text" name="order[' . $category->category_id . ']" maxlength="2" size="2" value="' .  $category->category_order . '"></td>';
@@ -100,7 +99,6 @@ class Category extends MX_Controller
 	{
 		$categories_structure = array();
 		$languages = modules::run('language/get_languages');
-		var_dump($languages);
 		foreach($languages as $language)
 		{
 			$categories = $this->mdl_category->get_join_where(array('language_id = ' => $language->language_id))->result();
