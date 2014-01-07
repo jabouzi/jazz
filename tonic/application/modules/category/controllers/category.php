@@ -69,16 +69,13 @@ class Category extends MX_Controller
 	
 	private function generate_categories_tree($categories, $parent = 0, $depth = 0)
 	{
-		//if($depth > 1000) return ''; // Make sure not to have an endless recursion
 		$tree = '';
-		//for($i=0, $ni=count($categories); $i < $ni; $i++){
 		foreach($categories as $category)
 		{
 			if($category->category_parent_id == $parent)
 			{
-				$tab = str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $depth);
+				$tab = str_repeat('<span class="dash_space"><nobr>&#9658;</nobr></span>', $depth);
 				$tree .= $this->category_format($tab, $category);
-				//$tree .= $category->category_name;
 				$tree .= $this->generate_categories_tree($categories, $category->category_id, $depth+1);
 			}
 		}
@@ -108,7 +105,6 @@ class Category extends MX_Controller
 		{
 			$categories = $this->mdl_category->get_join_where(array('language_id = ' => $language->language_id))->result();
 			$categories_structure[$language->language_code] = $this->generate_categories_tree($categories);
-			//var_dump($categories);
 		}
 		
 		return $categories_structure;
