@@ -77,8 +77,8 @@ class Category extends MX_Controller
 		{
 			if($category->category_parent_id == $parent)
 			{
-				$tree .= str_repeat('|—', $depth);
-				$tree .= $this->category_format($category);
+				$tab = str_repeat('|—', $depth);
+				$tree .= $this->category_format($tab, $category);
 				//$tree .= $category->category_name;
 				$tree .= $this->generate_categories_tree($categories, $category->category_id, $depth+1);
 			}
@@ -87,10 +87,10 @@ class Category extends MX_Controller
 		return $tree;
 	}
 	
-	private function category_format($category)
+	private function category_format($tab, $category)
 	{
 		$format = '<tr>';
-		$format .= '<td>' . $category->category_name . '</td>';
+		$format .= '<td>' $tab . $category->category_name . '</td>';
 		//$format .= '<td>' . $this->get_category_name($category->category_parent_id, $category->language_id) . '</td>';
 		$format .= '<td>' . lang('admin.status'.ord($category->category_status)) . '</td>';
 		$format .= '<td>' . anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">');
