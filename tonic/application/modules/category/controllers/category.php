@@ -119,6 +119,7 @@ class Category extends MX_Controller
 	
 	private function get_category_name($category_id, $language_id)
 	{
+		var_dump($category_id, $language_id);
 		$where = array('category_id = ' => $category_id, 'language_id = ' => $language_id);
 		$category = $this->mdl_category->get_where_custom('tonic_categories_i18n', $where)->row();
 		
