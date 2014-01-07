@@ -108,7 +108,7 @@ class Category extends MX_Controller
 		foreach($languages as $language)
 		{
 			$categories = $this->mdl_category->get_join_where(array('language_id = ' => $language->language_id))->result();
-			$categories_structure[$language->language_code][] = $this->generate_categories_tree($categories);
+			$categories_structure[$language->language_code] = $this->generate_categories_tree($categories);
 			//var_dump($categories);
 		}
 		
