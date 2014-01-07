@@ -100,6 +100,7 @@ class Category extends MX_Controller
 	{
 		$categories_structure = array();
 		$languages = modules::run('language/get_languages');
+		var_dump($languages);
 		foreach($languages as $language)
 		{
 			$categories = $this->mdl_category->get_join_where(array('language_id = ' => $language->language_id))->result();
