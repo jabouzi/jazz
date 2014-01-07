@@ -9,7 +9,7 @@
 	<form id="languages_form" method="post" action="<?php echo site_url('language/process'); ?>">
 		<?php $index = 0; ?>
 		<?php foreach($languages as $language) : ?>
-			<div id="<?php echo $code; ?>" class="tab_content">
+			<div id="<?php echo $language->language_code; ?>" class="tab_content">
 				<div class="tab_container">
 					<table class="tablesorter" cellspacing="0"> 
 					<thead> 
