@@ -67,13 +67,14 @@ class Category extends MX_Controller
 	
 	private function get_categories_structure()
 	{
-		var_dump($this->mdl_category->get_max('category_depth'));
+		//var_dump($this->mdl_category->get_max('category_depth'));
 		$categories = $this->mdl_category->get();
-		var_dump($categories->result());
+		//var_dump($categories->result());
 		//$this->load->library('tree');
 		$this->tree->add_root("root", "categories");
 		foreach($categories->result() as $category)
 		{
+			var_dump($category->category_id);
 			if ($category->category_depth == 1)
 			{
 				$this->tree->insert_root_child($category->category_depth, $category->category_id);
@@ -94,8 +95,8 @@ class Category extends MX_Controller
 			//}
 		}
 		
-		$this->tree->find_child(1,1,$this->tree->get_root());
-		var_dump($this->tree->get_child_found());
+		//$this->tree->find_child(1,1,$this->tree->get_root());
+		//var_dump($this->tree->get_child_found());
 		//var_dump($this->tree->find_child(1, 1));
 		//var_dump($this->tree->get_root()->get_children());
 		//echo ((string)$this->tree->get_root());
