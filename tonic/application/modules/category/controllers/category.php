@@ -78,6 +78,7 @@ class Category extends MX_Controller
 			if($category->category_parent_id == $parent)
 			{
 				$tab = str_repeat('|—', $depth);
+				echo $tab . $category->category_name . '<br>';
 				$tree .= $this->category_format($tab, $category);
 				//$tree .= $category->category_name;
 				$tree .= $this->generate_categories_tree($categories, $category->category_id, $depth+1);
