@@ -92,7 +92,7 @@ class Category extends MX_Controller
 		$format .= '<td>' . $tab . $category->category_name . '</td>';
 		$format .= '<td>' . $this->get_category_name($category->category_parent_id, $category->language_id) . '</td>';
 		$format .= '<td>' . lang('admin.status'.ord($category->category_status)) . '</td>';
-		$format .= '<td>' . anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">')
+		$format .= '<td>' . anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">');
 		//$format .= '<input type="image" src="/tonic/assets/images/icn_trash.png" title="' . lang('category.delete') . '>';
 		$format .= '</td>';
 		$format .= '</tr>';
