@@ -103,6 +103,7 @@ class Category extends MX_Controller
 	
 	private function get_categories($structure)
 	{
+		var_dump($structure);
 		$categories = array();
 		$languages = modules::run('language/get_languages');
 		$order_by = 'tonic_categories.category_parent_id ASC, tonic_categories.category_order ASC';
