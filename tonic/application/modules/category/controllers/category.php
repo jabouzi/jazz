@@ -108,10 +108,13 @@ class Category extends MX_Controller
 		$languages = modules::run('language/get_languages');
 		$order_by = 'tonic_categories.category_parent_id ASC, tonic_categories.category_order ASC';
 		foreach($languages as $language)
-		{			
-			$where = array('language_id = ' => $language->language_id);
-			$result = $this->mdl_category->get_join_where($where, $order_by)->result();
-			$categories[$language->language_id] = $result;
+		{	
+			foreach($structure as $id => $struct)
+			{
+				$where = array('tonic_categories.category_id= ' => $id, 'language_id = ' => $language->language_id);
+				$result = $this->mdl_category->get_join_where($where, $order_by)->result();
+				$categories[$language->language_id][] = $result;
+			}
 		}
 		
 		return $categories;
