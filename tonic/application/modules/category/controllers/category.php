@@ -110,7 +110,7 @@ class Category extends MX_Controller
 		{			
 			$where = array('language_id = ' => $language->language_id);
 			$result = $this->mdl_category->get_join_where($where, $order_by)->result();
-			$categories[$language->language_id][] = $result;
+			$categories[$language->language_id] = $result;
 		}
 		
 		return $categories;
