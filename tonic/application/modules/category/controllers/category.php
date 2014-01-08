@@ -20,7 +20,7 @@ class Category extends MX_Controller
 		$this->load->helper('form');
 		$this->load->helper('array');
 		$view_data['languages'] = modules::run('language/get_languages');
-		$view_data['categories'] = $this->mdl_category->get_join();
+		$view_data['categories'] = $this->mdl_category->get_join()->result();
 		var_dump($view_data['categories']);
 		$view_data['structure'] = $this->get_categories_structure();
 		return $this->load->view('category', $view_data, true);
