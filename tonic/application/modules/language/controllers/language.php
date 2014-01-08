@@ -57,6 +57,14 @@ class Language extends MX_Controller
 		return $languages->result();
 	}
 	
+	
+	function get_default_language()
+	{
+		$where = array('language_default = ', (int)'1');
+		$language = $this->mdl_language->get_where_custom($where)->row();		
+		return $language->language_id;
+	}
+	
 	private function add_language($language_data)
 	{
 		$language_id = $this->mdl_language->insert($language_data);

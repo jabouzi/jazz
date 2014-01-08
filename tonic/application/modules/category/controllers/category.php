@@ -17,6 +17,8 @@ class Category extends MX_Controller
 	
 	private function show()
 	{
+		var_dump(modules::run('language/get_default_language'));
+		exit;
 		$this->load->helper('form');
 		$this->load->helper('array');
 		$view_data['languages'] = modules::run('language/get_languages');
@@ -98,21 +100,23 @@ class Category extends MX_Controller
 	
 	private function get_categories_structure()
 	{
-		$categories_structure = array();
-		$languages = modules::run('language/get_languages');
-		foreach($languages as $language)
-		{
-			$categories = $this->mdl_category->get_join_where(array('language_id = ' => $language->language_id))->result();
-			$categories_structure[$language->language_code] = $this->generate_categories_tree($categories);
-		}
-		
-		return $categories_structure;
+		//$categories_structure = array();
+		$order_by = array('category_id ASC', 'category_order ASC');
+		$where = array();
+		$categories = $this->mdl_category->get_where_custom('tonic_categories_i18n', $where);
+		//$languages = modules::run('language/get_languages');
+		//foreach($languages as $language)
+		//{
+			//$categories = $this->mdl_category->get_join_where(array('language_id = ' => $language->language_id))->result();
+			//$categories_structure[$language->language_code] = $this->generate_categories_tree($categories);
+		//}
+		//
+		//return $categories_structure;
 	}
 	
 	private function get_category($category_id)
 	{
 		$where = array('category_id = ' => $category_id);
-		$order_by('category_id ASC', 'category_order ASC');
 		$category = $this->mdl_category->get_join_where($where)->row();
 		
 		return $category->result();
