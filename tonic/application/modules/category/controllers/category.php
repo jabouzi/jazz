@@ -26,6 +26,16 @@ class Category extends MX_Controller
 		return $this->load->view('category', $view_data, true);
 	}
 	
+	function newcategory()
+	{
+		
+	}
+	
+	function editcategory($category_id)
+	{
+		
+	}
+	
 	function process_newcategory()
 	{
 		
