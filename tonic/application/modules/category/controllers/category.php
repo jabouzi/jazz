@@ -89,7 +89,7 @@ class Category extends MX_Controller
 		$where = array('language_id = ' => $default_language);
 		$categories = $this->mdl_category->get_join_where($where, $order_by)->result();
 		$structure = $this->generate_categories_tree($categories);
-		$tree = explode('||', $categories_structure);
+		$tree = explode('||', $structure);
 		foreach($tree as $node)
 		{
 			$categories_structure[] = explode('|', $node);
