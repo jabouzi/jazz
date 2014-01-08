@@ -85,7 +85,7 @@ class Category extends MX_Controller
 	{
 		$categories_structure = array();
 		$default_language = modules::run('language/get_default_language');
-		$order_by = 'tonic_categories.category_id ASC, tonic_categories.category_order ASC';
+		$order_by = 'tonic_categories.category_patent_id ASC, tonic_categories.category_order ASC';
 		$where = array('language_id = ' => $default_language);
 		$categories = $this->mdl_category->get_join_where($where, $order_by)->result();
 		$structure = $this->generate_categories_tree($categories);
@@ -97,7 +97,7 @@ class Category extends MX_Controller
 			$categories_structure[$temp[1]] = $temp[0];
 		}
 		
-		var_dump($tree);
+		//var_dump($tree);
 		return $categories_structure;
 	}
 	
