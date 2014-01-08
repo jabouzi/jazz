@@ -84,7 +84,8 @@ class Category extends MX_Controller
 	private function category_format($tab, $category)
 	{
 		$format = '<tr>';
-		$format .= '<td>' . $tab . $category->category_name . '</td>';
+		if (trim($category->category_name) == '') $format .= '<td>' . $tab . '<input type="text" name="name[' . $category->language_id . '][' . $category->category_id . ']" value=""></td>';
+		else $format .= '<td>' . $tab . $category->category_name . '</td>';
 		$format .= '<td><input type="text" name="order[' . $category->category_id . ']" maxlength="2" size="2" value="' .  $category->category_order . '"></td>';
 		$format .= '<td>' . lang('admin.status'.ord($category->category_status)) . '</td>';
 		$format .= '<td>' . anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">');
