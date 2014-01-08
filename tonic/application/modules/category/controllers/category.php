@@ -93,7 +93,8 @@ class Category extends MX_Controller
 		if (end($tree) == '') array_pop($tree);
 		foreach($tree as $node)
 		{
-			$categories_structure[] = explode('|', $node);
+			$temp = explode('|', $node);
+			$categories_structure[$temp[1]] = $temp[0];
 		}
 		var_dump($categories_structure);
 		return $categories_structure;
