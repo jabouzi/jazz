@@ -81,21 +81,6 @@ class Category extends MX_Controller
 		return $tree;
 	}
 	
-	private function category_format($tab, $category)
-	{
-		$format = '<tr>';
-		if (trim($category->category_name) == '') $format .= '<td>' . $tab . '<input type="text" name="name[' . $category->language_id . '][' . $category->category_id . ']" value=""></td>';
-		else $format .= '<td>' . $tab . $category->category_name . '</td>';
-		$format .= '<td><input type="text" name="order[' . $category->category_id . ']" maxlength="2" size="2" value="' .  $category->category_order . '"></td>';
-		$format .= '<td>' . lang('admin.status'.ord($category->category_status)) . '</td>';
-		$format .= '<td>' . anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">');
-		$format .= '<input type="image" src="/tonic/assets/images/icn_trash.png" title="' . lang('category.delete') . '">';
-		$format .= '</td>';
-		$format .= '</tr>';
-		
-		return $format;
-	}
-	
 	private function get_categories_structure()
 	{
 		$categories_structure = array();
@@ -103,13 +88,14 @@ class Category extends MX_Controller
 		$order_by = 'tonic_categories.category_parent_id ASC, tonic_categories.category_order ASC';
 		$where = array('language_id = ' => $default_language);
 		$categories = $this->mdl_category->get_join_where($where, $order_by)->result();
-		$categories_structure = $this->generate_categories_tree($categories);
-		//var_dump($categories, $categories_structure);
-		$a = explode('||', $categories_structure);
-		foreach($a as $b) var_dump(explode('|', $b));
-		//}
-		//
-		//return $categories_structure;
+		$structure = $this->generate_categories_tree($categories);
+		$tree = explode('||', $categories_structure);
+		foreach($tree as $node)
+		{
+			$categories_structure[] = explode('|', $node);
+		}
+		var_dump($categories_structure);
+		return $categories_structure;
 	}
 	
 	private function get_category($category_id)
