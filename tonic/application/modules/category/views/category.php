@@ -21,7 +21,18 @@
 						</tr> 
 					</thead> 
 					<tbody id="workflow_list">
-						<?php echo element($language->language_code, $categories); ?>
+						<tr>
+							<?php if (trim($category->category_name) == '') : ?>
+							<td><?php echo $tab ; ?><input type="text" name="name[<?php echo $category->language_id ; ?>][<?php echo $category->category_id ; ?>]" value=""></td>
+							<?php else :?>
+							<td><?php echo $tab . $category->category_name ; ?></td>
+							<td><input type="text" name="order[<?php echo $category->category_id ; ?>]" maxlength="2" size="2" value="<?php echo  $category->category_order ; ?>"></td>
+							<td><?php echo lang('admin.status'.ord($category->category_status)) ; ?></td>
+							<td>
+								<?php echo anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
+								<input type="image" src="/tonic/assets/images/icn_trash.png" title="<?php echo lang('category.delete') ; ?>">
+							</td>
+						</tr>
 					</tbody> 
 					</table>
 				</div><!-- end of .tab_container -->
