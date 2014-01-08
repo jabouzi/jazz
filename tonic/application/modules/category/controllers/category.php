@@ -120,6 +120,6 @@ class Category extends MX_Controller
 		$where = array('tonic_categories.category_id = ' => $category_id);
 		$category = $this->mdl_category->get_join_where($where)->row();
 		
-		return $category->result();
+		return $category;
 	}
 }
