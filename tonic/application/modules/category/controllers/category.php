@@ -104,7 +104,7 @@ class Category extends MX_Controller
 	private function get_categories()
 	{
 		$categories = array();
-		$order_by = 'tonic_categories.category_order ASC, tonic_categories.category_parent_id ASC';
+		$order_by = 'tonic_categories.category_parent_id ASC, tonic_categories.category_order ASC';
 		$results = $this->mdl_category->get_join($order_by)->result();
 		var_dump($results);
 		foreach($results as $result)
