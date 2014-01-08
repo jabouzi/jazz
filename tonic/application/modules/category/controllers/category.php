@@ -105,6 +105,7 @@ class Category extends MX_Controller
 	{
 		$categories = array();
 		$results = $this->mdl_category->get_join()->result();
+		var_dump($results);
 		foreach($results as $result)
 		{
 			$categories[$result->language_id][] = $result;
