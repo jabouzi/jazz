@@ -106,6 +106,7 @@ class Category extends MX_Controller
 		//$languages = modules::run('language/get_languages');
 		//foreach($languages as $language)
 		//{
+			var_dump($where, $order_by)
 		$categories = $this->mdl_category->get_join_where($where, $order_by)->result();
 		var_dump($categories);
 		exit;
