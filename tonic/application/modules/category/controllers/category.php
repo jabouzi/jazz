@@ -74,7 +74,7 @@ class Category extends MX_Controller
 			{
 				$tab = str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $depth);
 				$tree .= $tab.$category->category_id;
-				$tree .= $this->generate_categories_tree($categories, $category->category_id, $depth+1);
+				$this->generate_categories_tree($categories, $category->category_id, $depth+1);
 			}
 		}
 
