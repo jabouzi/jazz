@@ -109,13 +109,12 @@ class Category extends MX_Controller
 		return $categories_structure;
 	}
 	
-	private function get_category_name($category_id, $language_id)
+	private function get_category($category_id)
 	{
-		$where = array('category_id = ' => $category_id, 'language_id = ' => $language_id);
+		$where = array('category_id = ' => $category_id);
 		$order_by('category_id ASC', 'category_order ASC');
-		$category = $this->mdl_category->get_where_custom('tonic_categories_i18n', $where, $order_by)->row();
+		$category = $this->mdl_category->get_join_where($where)->row();
 		
-		if (!empty($category)) return $category->category_name;
-		return '';
+		return $category->result();
 	}
 }
