@@ -23,9 +23,10 @@
 					<tbody id="workflow_list">
 						<tr>
 							<?php if (trim($category->category_name) == '') : ?>
-							<td><?php echo $tab ; ?><input type="text" name="name[<?php echo $category->language_id ; ?>][<?php echo $category->category_id ; ?>]" value=""></td>
+								<td><?php echo $tab ; ?><input type="text" name="name[<?php echo $category->language_id ; ?>][<?php echo $category->category_id ; ?>]" value=""></td>
 							<?php else :?>
-							<td><?php echo $tab . $category->category_name ; ?></td>
+								<td><?php echo $tab . $category->category_name ; ?></td>
+							<?php endif ?>
 							<td><input type="text" name="order[<?php echo $category->category_id ; ?>]" maxlength="2" size="2" value="<?php echo  $category->category_order ; ?>"></td>
 							<td><?php echo lang('admin.status'.ord($category->category_status)) ; ?></td>
 							<td>
