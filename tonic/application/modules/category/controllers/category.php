@@ -109,8 +109,8 @@ class Category extends MX_Controller
 			var_dump($where, $order_by);
 		$categories = $this->mdl_category->get_join_where($where, $order_by)->result();
 		var_dump($categories);
-		exit;
 		$categories_structure = $this->generate_categories_tree($categories);
+		var_dump($categories_structure);
 		//}
 		//
 		//return $categories_structure;
