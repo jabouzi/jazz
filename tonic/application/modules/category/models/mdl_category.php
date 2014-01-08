@@ -41,12 +41,13 @@ class Mdl_category extends CI_Model
 		return $query;
 	}
 	
-	function get_join_where($where)
+	function get_join_where($where, $order_by)
 	{
 		$this->db->select('*');
 		$this->db->from('tonic_categories');
 		$this->db->join('tonic_categories_i18n', 'tonic_categories.category_id = tonic_categories_i18n.category_id');
 		$this->db->where($where);
+		$this->db->order_by($order_by);
 		$query = $this->db->get();
 		return $query;
 	}
