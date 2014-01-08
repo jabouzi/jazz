@@ -97,16 +97,15 @@ class Category extends MX_Controller
 			$categories_structure[$temp[1]] = $temp[0];
 		}
 		
-		//var_dump($tree);
 		return $categories_structure;
 	}
 	
-	private function get_categories()
+	private function get_categories($structure)
 	{
 		$categories = array();
 		$order_by = 'tonic_categories.category_parent_id ASC, tonic_categories.category_order ASC';
 		$results = $this->mdl_category->get_join($order_by)->result();
-		var_dump($results);
+		var_dump($structure);
 		foreach($results as $result)
 		{
 			$categories[$result->language_id][] = $result;
