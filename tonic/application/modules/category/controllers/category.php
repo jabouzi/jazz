@@ -106,7 +106,7 @@ class Category extends MX_Controller
 		$categories_structure = $this->generate_categories_tree($categories);
 		//var_dump($categories, $categories_structure);
 		$a = explode('||', $categories_structure);
-		var_dump(explode('|', $a));
+		foreach($a as $b) var_dump(explode('|', $b));
 		//}
 		//
 		//return $categories_structure;
