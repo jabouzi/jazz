@@ -104,7 +104,7 @@ class Category extends MX_Controller
 		$where = array('language_id = ' => $default_language);
 		$categories = $this->mdl_category->get_join_where($where, $order_by)->result();
 		$categories_structure = $this->generate_categories_tree($categories);
-		var_dump($categories_structure);
+		var_dump($categories, $categories_structure);
 		//}
 		//
 		//return $categories_structure;
