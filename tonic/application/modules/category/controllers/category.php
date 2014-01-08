@@ -108,16 +108,17 @@ class Category extends MX_Controller
 		{	
 			foreach($structure as $id => $struct)
 			{
-				$categories[$language->language_id][] = $this->get_category($id);
+				$categories[$language->language_id][] = $this->get_category($id, $language->language_id);
 			}
 		}
 		
 		return $categories;
 	}
 	
-	private function get_category($category_id)
+	private function get_category($category_id, $language_id = 0)
 	{
 		$where = array('tonic_categories.category_id = ' => $category_id);
+		if ($language_id) $where['language_id = '] = $language_id
 		$category = $this->mdl_category->get_join_where($where)->row();
 		
 		return $category;
