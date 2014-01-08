@@ -97,6 +97,7 @@ class Category extends MX_Controller
 			$categories_structure[$temp[1]] = $temp[0];
 		}
 		
+		var_dump($tree);
 		return $categories_structure;
 	}
 	
