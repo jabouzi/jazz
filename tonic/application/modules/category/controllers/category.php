@@ -67,14 +67,14 @@ class Category extends MX_Controller
 	
 	private function generate_categories_tree($categories, $parent = 0, $depth = 0)
 	{
-		$tree = array();
+		$tree = '';
 		foreach($categories as $category)
 		{
 			if($category->category_parent_id == $parent)
 			{
 				$tab = str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $depth);
-				$tree[$category->category_id] = $tab;
-				$tree[$category->category_id] = $this->generate_categories_tree($categories, $category->category_id, $depth+1);
+				$tree .= $this->category_id;
+				$tree .= $this->generate_categories_tree($categories, $category->category_id, $depth+1);
 			}
 		}
 
@@ -102,13 +102,7 @@ class Category extends MX_Controller
 		$default_language = modules::run('language/get_default_language');
 		$order_by = 'tonic_categories.category_id ASC, tonic_categories.category_order ASC';
 		$where = array('language_id = ' => $default_language);
-		//$categories = $this->mdl_category->get_where_custom('tonic_categories_i18n', $where);
-		//$languages = modules::run('language/get_languages');
-		//foreach($languages as $language)
-		//{
-			var_dump($where, $order_by);
 		$categories = $this->mdl_category->get_join_where($where, $order_by)->result();
-		var_dump($categories);
 		$categories_structure = $this->generate_categories_tree($categories);
 		var_dump($categories_structure);
 		//}
