@@ -100,7 +100,7 @@ class Category extends MX_Controller
 	{
 		$categories_structure = array();
 		$default_language = modules::run('language/get_default_language');
-		$order_by = array('category_id ASC', 'category_order ASC');
+		$order_by = 'category_id ASC, category_order ASC';
 		$where = array('language_id = ' => $default_language);
 		//$categories = $this->mdl_category->get_where_custom('tonic_categories_i18n', $where);
 		//$languages = modules::run('language/get_languages');
