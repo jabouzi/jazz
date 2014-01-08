@@ -90,12 +90,12 @@ class Category extends MX_Controller
 		$categories = $this->mdl_category->get_join_where($where, $order_by)->result();
 		$structure = $this->generate_categories_tree($categories);
 		$tree = explode('||', $structure);
-		if (end($tree) == '') $tree = array_pop($tree);
+		if (end($tree) == '') array_pop($tree);
 		foreach($tree as $node)
 		{
 			$categories_structure[] = explode('|', $node);
 		}
-
+		var_dump($categories_structure);
 		return $categories_structure;
 	}
 	
