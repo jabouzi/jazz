@@ -26,9 +26,9 @@
 						<?php foreach ($categories[$language->language_id] as $category) : ?>
 							<tr>
 								<?php if (trim($category->category_name) == '') : ?>
-									<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $structure[$category->category_id][0]) ?><input type="text" name="name[<?php echo $category->language_id ; ?>][<?php echo $category->category_id ; ?>]" value=""></td>
+									<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $categories['structure'][$category->category_id][0]) ?><input type="text" name="name[<?php echo $category->language_id ; ?>][<?php echo $category->category_id ; ?>]" value=""></td>
 								<?php else :?>
-									<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $structure[$category->category_id][0]) . $category->category_name ; ?></td>
+									<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $categories['structure'][$category->category_id][0]) . $category->category_name ; ?></td>
 								<?php endif ?>
 								<?php if (!$index) : ?> 
 									<td><input type="text" name="order[<?php echo $category->category_id ; ?>]" maxlength="2" size="2" value="<?php echo  $category->category_order ; ?>"></td>

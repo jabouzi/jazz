@@ -11,29 +11,35 @@ class Category extends MX_Controller
 	function index()
 	{
 		$view_data['page_title'] = lang('category.title');
-		$view_data['admin_widgets']['categories'] = $this->show();
-		echo modules::run('template', $view_data);
-	}
-	
-	private function show()
-	{
-		$this->load->helper('form');
-		$this->load->helper('array');
-		$view_data['languages'] = modules::run('language/get_languages');
 		$structure = $this->get_categories_structure();
-		$view_data['categories'] = $this->get_categories($structure);
-		$view_data['structure'] = $structure;
-		return $this->load->view('category', $view_data, true);
+		$categories = $this->get_categories($structure);
+		$categories['structure'] = $structure;
+		$view_data['admin_widgets']['categories'] = $this->show('category', $categories);
+		echo modules::run('template', $view_data);
 	}
 	
 	function newcategory()
 	{
-		
+		$view_data['page_title'] = lang('category.new');
+		$view_data['admin_widgets']['category'] = $this->show('newcategory', array());
+		echo modules::run('template', $view_data);
 	}
 	
-	function editcategory($category_id)
+	function editcategory($category_id = 0)
 	{
-		
+		if (!$category_id) redirect('dashboard');
+		$view_data['page_title'] = lang('category.edit');
+		$category = $this->get_category($category_id);
+		$view_data['admin_widgets']['category'] = $this->show('edituser', $category);
+		echo modules::run('template', $view_data);
+	}
+	
+	private function show($view, $category_data)
+	{
+		$this->load->helper('form');
+		$view_data['categories'] = $category_data;
+		$view_data['languages'] = modules::run('language/get_languages');
+		return $this->load->view('category', $view_data, true);
 	}
 	
 	function process_newcategory()
