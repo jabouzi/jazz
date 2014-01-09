@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '209.104.115.222';
-$db['default']['username'] = 'jazz';
-$db['default']['password'] = 'Sq5cyBcvR5zuTsEU';
-$db['default']['database'] = 'jazz';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'jabouzic_db';
+$db['default']['password'] = '7024043';
+$db['default']['database'] = 'jabouzic_jazz';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
