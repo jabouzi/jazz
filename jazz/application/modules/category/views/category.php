@@ -23,7 +23,7 @@
 						</tr> 
 					</thead> 
 					<tbody id="workflow_list">
-						<?php foreach ($categories[$language->language_id] as $category) : echo '<pre>';var_dump($category); echo '</pre>';?>
+						<?php foreach ($categories[$language->language_id] as $category) : ?>
 							<tr>
 								<?php if (trim($category->category_name) == '') : ?>
 									<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $categories['structure'][$category->category_id][0]) ?><input type="text" name="name[<?php echo $category->language_id ; ?>][<?php echo $category->category_id ; ?>]" value=""></td>
