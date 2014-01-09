@@ -6,6 +6,7 @@
 			<? endforeach; ?>
 		</ul>
 	</header>
+	<form id="categories_form" method="post" action="<?php echo site_url('category/process'); ?>">
 		<?php $index = 0; ?>
 		<?php foreach($languages as $language) : ?>
 			<div id="<?php echo $language->language_code; ?>" class="tab_content">
@@ -51,6 +52,7 @@
 					<input type="button" id="add_language" value="<?php echo lang('admin.add'); ?>">
 				</div>
 		</footer>
+	</form>
 	<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
 	<input type="hidden" id="error_message" value="">
 	<div style="display:none" id="new_language">
