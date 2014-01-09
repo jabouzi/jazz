@@ -10,7 +10,7 @@ class Mdl_wysiwyg extends CI_Model
 	
 	function get_table()
 	{
-		$table = "tonic_Wysiwyg";
+		$table = "jazz_Wysiwyg";
 		return $table;
 	}
 	

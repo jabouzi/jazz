@@ -19,35 +19,35 @@
 				<td>Lorem Ipsum Dolor Sit Amet</td> 
 				<td>Articles</td> 
 				<td>5th April 2011</td> 
-				<td><input type="image" src="/tonic/assets/images/icn_edit.png" title="Edit"><input type="image" src="/tonic/assets/images/icn_trash.png" title="Trash"></td> 
+				<td><input type="image" src="/jazz/assets/images/icn_edit.png" title="Edit"><input type="image" src="/jazz/assets/images/icn_trash.png" title="Trash"></td> 
 			</tr> 
 			<tr> 
 				<td><input type="checkbox"></td> 
 				<td>Ipsum Lorem Dolor Sit Amet</td> 
 				<td>Freebies</td> 
 				<td>6th April 2011</td> 
-					<td><input type="image" src="/tonic/assets/images/icn_edit.png" title="Edit"><input type="image" src="/tonic/assets/images/icn_trash.png" title="Trash"></td> 
+					<td><input type="image" src="/jazz/assets/images/icn_edit.png" title="Edit"><input type="image" src="/jazz/assets/images/icn_trash.png" title="Trash"></td> 
 			</tr>
 			<tr> 
 				<td><input type="checkbox"></td> 
 				<td>Sit Amet Dolor Ipsum</td> 
 				<td>Tutorials</td> 
 				<td>10th April 2011</td> 
-				<td><input type="image" src="/tonic/assets/images/icn_edit.png" title="Edit"><input type="image" src="/tonic/assets/images/icn_trash.png" title="Trash"></td> 
+				<td><input type="image" src="/jazz/assets/images/icn_edit.png" title="Edit"><input type="image" src="/jazz/assets/images/icn_trash.png" title="Trash"></td> 
 			</tr> 
 			<tr> 
 				<td><input type="checkbox"></td> 
 				<td>Dolor Lorem Amet</td> 
 				<td>Articles</td> 
 				<td>16th April 2011</td> 
-					<td><input type="image" src="/tonic/assets/images/icn_edit.png" title="Edit"><input type="image" src="/tonic/assets/images/icn_trash.png" title="Trash"></td> 
+					<td><input type="image" src="/jazz/assets/images/icn_edit.png" title="Edit"><input type="image" src="/jazz/assets/images/icn_trash.png" title="Trash"></td> 
 			</tr>
 			<tr> 
 				<td><input type="checkbox"></td> 
 				<td>Dolor Lorem Amet</td> 
 				<td>Articles</td> 
 				<td>16th April 2011</td> 
-				<td><input type="image" src="/tonic/assets/images/icn_edit.png" title="Edit"><input type="image" src="/tonic/assets/images/icn_trash.png" title="Trash"></td> 
+				<td><input type="image" src="/jazz/assets/images/icn_edit.png" title="Edit"><input type="image" src="/jazz/assets/images/icn_trash.png" title="Trash"></td> 
 			</tr>  
 		</tbody> 
 		</table>			

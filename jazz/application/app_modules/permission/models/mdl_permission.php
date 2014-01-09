@@ -10,7 +10,7 @@ class Mdl_permission extends CI_Model
 	
 	function get($order_by)
 	{
-		$table = 'tonic_permissions';
+		$table = 'jazz_permissions';
 		$this->db->order_by($order_by);
 		$query = $this->db->get($table);
 		return $query;
@@ -18,7 +18,7 @@ class Mdl_permission extends CI_Model
 	
 	function get_with_limit($limit, $offset, $order_by)
 	{
-		$table = 'tonic_permissions';
+		$table = 'jazz_permissions';
 		$this->db->limit($limit, $offset);
 		$this->db->order_by($order_by);
 		$query = $this->db->get($table);
@@ -27,7 +27,7 @@ class Mdl_permission extends CI_Model
 	
 	function get_where($id)
 	{
-		$table = 'tonic_permissions';
+		$table = 'jazz_permissions';
 		$this->db->where('permission_id', $id);
 		$query = $this->db->get($table);
 		return $query;
@@ -36,8 +36,8 @@ class Mdl_permission extends CI_Model
 	function get_join()
 	{
 		$this->db->select('*');
-		$this->db->from('tonic_permissions');
-		$this->db->join('tonic_permissions_i18n', 'tonic_permissions.permission_id = tonic_permissions_i18n.permission_id');
+		$this->db->from('jazz_permissions');
+		$this->db->join('jazz_permissions_i18n', 'jazz_permissions.permission_id = jazz_permissions_i18n.permission_id');
 		$query = $this->db->get();
 		return $query;
 	}
@@ -69,7 +69,7 @@ class Mdl_permission extends CI_Model
 	
 	function count_where($where)
 	{
-		$table = 'tonic_permissions';
+		$table = 'jazz_permissions';
 		$this->db->where($where);
 		$query = $this->db->get($table);
 		$num_rows = $query->num_rows();
@@ -78,7 +78,7 @@ class Mdl_permission extends CI_Model
 	
 	function count_all()
 	{
-		$table = 'tonic_permissions';
+		$table = 'jazz_permissions';
 		$query = $this->db->get($table);
 		$num_rows = $query->num_rows();
 		return $num_rows;
@@ -86,7 +86,7 @@ class Mdl_permission extends CI_Model
 	
 	function get_max()
 	{
-		$table = 'tonic_permissions';
+		$table = 'jazz_permissions';
 		$this->db->select_max('permission_id');
 		$query = $this->db->get($table);
 		$row = $query->row();

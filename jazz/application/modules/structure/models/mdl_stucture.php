@@ -10,7 +10,7 @@ class Mdl_structure extends CI_Model
 	
 	function get_table()
 	{
-		$table = "tonic_structure";
+		$table = "jazz_structure";
 		return $table;
 	}
 	

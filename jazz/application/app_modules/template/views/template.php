@@ -5,21 +5,21 @@
 	<meta charset="utf-8"/>
 	<title><?php echo $page_title; ?> - <?php echo lang('dashboard.title1'); ?></title>
 	
-	<link rel="stylesheet" href="/tonic/assets/css/bootstrap-3.0.0.min.css" type="text/css">
-	<link rel="stylesheet" href="/tonic/assets/css/bootstrap-multiselect.css" type="text/css">
-	<link rel="stylesheet" href="/tonic/assets/css/admin.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/jazz/assets/css/bootstrap-3.0.0.min.css" type="text/css">
+	<link rel="stylesheet" href="/jazz/assets/css/bootstrap-multiselect.css" type="text/css">
+	<link rel="stylesheet" href="/jazz/assets/css/admin.css" type="text/css" media="screen" />
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<script src="/tonic/assets/js/jquery.min.js" type="text/javascript"></script>
-	<script src="/tonic/assets/js/jquery-ui.min.js" type="text/javascript"></script>
-	<script src="/tonic/assets/js/hideshow.js" type="text/javascript"></script>
-	<script src="/tonic/assets/js/jquery.tablesorter.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="/tonic/assets/js/jquery.equalHeight.js"></script>
-	<script type="text/javascript" src="/tonic/assets/js/bootstrap-3.0.0.min.js"></script>
-	<script type="text/javascript" src="/tonic/assets/js/bootstrap-multiselect.js"></script>
-	<script type="text/javascript" src="/tonic/assets/js/tonic.js"></script>
+	<script src="/jazz/assets/js/jquery.min.js" type="text/javascript"></script>
+	<script src="/jazz/assets/js/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="/jazz/assets/js/hideshow.js" type="text/javascript"></script>
+	<script src="/jazz/assets/js/jquery.tablesorter.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/jazz/assets/js/jquery.equalHeight.js"></script>
+	<script type="text/javascript" src="/jazz/assets/js/bootstrap-3.0.0.min.js"></script>
+	<script type="text/javascript" src="/jazz/assets/js/bootstrap-multiselect.js"></script>
+	<script type="text/javascript" src="/jazz/assets/js/jazz.js"></script>
 	<script type="text/javascript">
 	
 </script>

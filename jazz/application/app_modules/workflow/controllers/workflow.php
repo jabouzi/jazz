@@ -34,7 +34,7 @@ class Workflow extends MX_Controller
 				{
 					$data = array('workflow_name' => $workflow);
 					$where = array('workflow_id = ' => $id, 'admin_language_code = ' => $lang);
-					$this->update_workflow('tonic_workflows_i18n', $where, $data);
+					$this->update_workflow('jazz_workflows_i18n', $where, $data);
 				}
 			}
 		}
@@ -43,7 +43,7 @@ class Workflow extends MX_Controller
 		{
 			$data = array('workflow_order' => $order);
 			$where = array('workflow_id = ' => $id);
-			$this->update_workflow('tonic_workflows', $where, $data);
+			$this->update_workflow('jazz_workflows', $where, $data);
 		}
 
 		foreach ($this->input->post('new') as $workflow)
@@ -52,22 +52,22 @@ class Workflow extends MX_Controller
 			if ($workflow != '')
 			{
 				$data = array('workflow_order' => '0');
-				$this->add_workflow('tonic_workflows', $data);
+				$this->add_workflow('jazz_workflows', $data);
 				$workflow_id = $this->get_last_workflow_id();
 				foreach($this->lang->languages as $code => $lang)
 				{
 					$data = array('admin_language_code' => $code, 'workflow_id' => $workflow_id);
 					$data['workflow_name'] = '';
 					if ($code == $this->input->post('active_lang')) $data['workflow_name'] = $workflow;
-					$this->add_workflow('tonic_workflows_i18n', $data);
+					$this->add_workflow('jazz_workflows_i18n', $data);
 				}
 			}
 		}
 		
 		foreach($this->input->post('delete') as $id => $value)
 		{
-			$this->delete_workflow('tonic_workflows', $id);
-			$this->delete_workflow('tonic_workflows_i18n', $id);
+			$this->delete_workflow('jazz_workflows', $id);
+			$this->delete_workflow('jazz_workflows_i18n', $id);
 		}
 		
 		$this->session->set_userdata('success_message', lang('workflow.success'));

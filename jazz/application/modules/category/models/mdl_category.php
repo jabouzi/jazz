@@ -17,7 +17,7 @@ class Mdl_category extends CI_Model
 	
 	function get_with_limit($limit, $offset, $order_by)
 	{
-		$table = 'tonic_categories';
+		$table = 'jazz_categories';
 		$this->db->limit($limit, $offset);
 		$this->db->order_by($order_by);
 		$query = $this->db->get($table);
@@ -34,8 +34,8 @@ class Mdl_category extends CI_Model
 	function get_join()
 	{
 		$this->db->select('*');
-		$this->db->from('tonic_categories');
-		$this->db->join('tonic_categories_i18n', 'tonic_categories.category_id = tonic_categories_i18n.category_id');
+		$this->db->from('jazz_categories');
+		$this->db->join('jazz_categories_i18n', 'jazz_categories.category_id = jazz_categories_i18n.category_id');
 		$query = $this->db->get();
 		return $query;
 	}
@@ -43,8 +43,8 @@ class Mdl_category extends CI_Model
 	function get_join_where($where)
 	{
 		$this->db->select('*');
-		$this->db->from('tonic_categories');
-		$this->db->join('tonic_categories_i18n', 'tonic_categories.category_id = tonic_categories_i18n.category_id');
+		$this->db->from('jazz_categories');
+		$this->db->join('jazz_categories_i18n', 'jazz_categories.category_id = jazz_categories_i18n.category_id');
 		$this->db->where($where);
 		$query = $this->db->get();
 		return $query;
@@ -78,7 +78,7 @@ class Mdl_category extends CI_Model
 	
 	function count_where($where)
 	{
-		$table = 'tonic_categories';
+		$table = 'jazz_categories';
 		$this->db->where($where);
 		$query = $this->db->get($table);
 		$num_rows = $query->num_rows();
@@ -87,7 +87,7 @@ class Mdl_category extends CI_Model
 	
 	function count_all()
 	{
-		$table = 'tonic_categories';
+		$table = 'jazz_categories';
 		$query = $this->db->get($table);
 		$num_rows = $query->num_rows();
 		return $num_rows;
@@ -95,7 +95,7 @@ class Mdl_category extends CI_Model
 	
 	function get_max($column)
 	{
-		$table = 'tonic_categories';
+		$table = 'jazz_categories';
 		$this->db->select_max($column);
 		$query = $this->db->get($table);
 		$row = $query->row();

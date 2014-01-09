@@ -10,7 +10,7 @@ class Mdl_user extends CI_Model
 	
 	function get($order_by = 'user_id')
 	{
-		$table = "tonic_users";
+		$table = "jazz_users";
 		$this->db->order_by($order_by);
 		$query = $this->db->get($table);
 		return $query;
@@ -18,7 +18,7 @@ class Mdl_user extends CI_Model
 	
 	function get_with_limit($limit, $offset, $order_by)
 	{
-		$table = "tonic_users";
+		$table = "jazz_users";
 		$this->db->limit($limit, $offset);
 		$this->db->order_by($order_by);
 		$query = $this->db->get($table);
@@ -27,7 +27,7 @@ class Mdl_user extends CI_Model
 	
 	function get_where($id)
 	{
-		$table = "tonic_users";
+		$table = "jazz_users";
 		$this->db->where('user_id', $id);
 		$query = $this->db->get($table);
 		return $query;
@@ -35,41 +35,41 @@ class Mdl_user extends CI_Model
 	
 	function get_where_custom($where)
 	{
-		$table = "tonic_users";
+		$table = "jazz_users";
 		$query = $this->db->get_where($table, $where);
 		return $query;
 	}
 	
 	function insert($data)
 	{
-		$table = "tonic_users";
+		$table = "jazz_users";
 		$this->db->insert($table, $data);
 		return $this->db->insert_id();
 	}
 	
 	function insert_activity($data)
 	{
-		$table = "tonic_users_activities";
+		$table = "jazz_users_activities";
 		$this->db->insert($table, $data);
 	}
 	
 	function update($id, $data)
 	{
-		$table = "tonic_users";
+		$table = "jazz_users";
 		$this->db->where('user_id', $id);
 		$this->db->update($table, $data);
 	}
 	
 	function delete($id)
 	{
-		$table = "tonic_users";
+		$table = "jazz_users";
 		$this->db->where('user_id', $id);
 		$this->db->delete($table);
 	}
 	
 	function count_where($where)
 	{
-		$table = "tonic_users";
+		$table = "jazz_users";
 		$query = $this->db->get_where($table, $where);
 		$num_rows = $query->num_rows();
 		return $num_rows;
@@ -77,7 +77,7 @@ class Mdl_user extends CI_Model
 	
 	function count_all()
 	{
-		$table	= "tonic_users";
+		$table	= "jazz_users";
 		$query	= $this->db->get($table);
 		$num_rows = $query->num_rows();
 		return $num_rows;
@@ -85,7 +85,7 @@ class Mdl_user extends CI_Model
 	
 	function get_max()
 	{
-		$table = "tonic_users";
+		$table = "jazz_users";
 		$this->db->select_max('id');
 		$query = $this->db->get($table);
 		$row   = $query->row();

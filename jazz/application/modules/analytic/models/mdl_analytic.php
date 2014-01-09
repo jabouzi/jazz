@@ -10,7 +10,7 @@ class Mdl_analytic extends CI_Model
 	
 	function get_table()
 	{
-		$table = "tonic_analytic";
+		$table = "jazz_analytic";
 		return $table;
 	}
 	
