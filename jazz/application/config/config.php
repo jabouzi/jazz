@@ -374,7 +374,7 @@ $config['modules_locations'] = array(
 );
 
 //$config['app_key'] = str_rot13(str_replace('www.', '', strtolower($_SERVER['HTTP_HOST'])));
-$config['app_key'] = str_rot13('tonic.dev.tgiprojects.com');
+$config['app_key'] = str_rot13('jazz.dev.tgiprojects.com');
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */

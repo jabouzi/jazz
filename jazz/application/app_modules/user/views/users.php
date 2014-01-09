@@ -19,8 +19,8 @@
 					<td><?php echo $item->user_email ?></td>
 					<td><?php echo lang('admin.status'.ord($item->user_status)); ?></td>
 					<td>
-						<?php echo anchor('user/edituser/'.$item->user_id, '<input type="image" src="/tonic/assets/images/icn_edit.png" title="'.lang('user.edit').'">'); ?>
-						<input type="image" src="/tonic/assets/images/icn_trash.png" title="<?php echo lang('user.delete'); ?>">
+						<?php echo anchor('user/edituser/'.$item->user_id, '<input type="image" src="/jazz/assets/images/icn_edit.png" title="'.lang('user.edit').'">'); ?>
+						<input type="image" src="/jazz/assets/images/icn_trash.png" title="<?php echo lang('user.delete'); ?>">
 					</td>
 				</tr>
 			<?php endforeach ?>

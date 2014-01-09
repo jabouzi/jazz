@@ -44,7 +44,7 @@ class Login extends MX_Controller
 	{
 		$this->islogin();
 
-		$this->load->helper('tonic_string');
+		$this->load->helper('jazz_string');
 		$this->load->library('encryption');
 		$this->load->model('mdl_login');
 		
@@ -83,7 +83,7 @@ class Login extends MX_Controller
 	
 	function autologin()
 	{
-		$this->load->helper('tonic_string');
+		$this->load->helper('jazz_string');
 		$this->load->model('mdl_login');
 		
 		$result = false;
@@ -102,7 +102,7 @@ class Login extends MX_Controller
 		else
 		{	
 			$hash = generate_random_string(26);
-			$result = $this->mdl_login->get_where_custom('tonic_users', 'user_email', $username)->row();
+			$result = $this->mdl_login->get_where_custom('jazz_users', 'user_email', $username)->row();
 			modules::run('user/save_session_data', $result);
 			modules::run('user/save_user_activity', $result);
 			$this->deletecookie($username, $old_hash);
@@ -119,7 +119,7 @@ class Login extends MX_Controller
 		if ($cookie)
 		{
 			$hash = $this->db->escape($cookie[1]);
-			$query = "UPDATE tonic_cookies SET cookie_user_status = b'1' WHERE cookie_hash = {$hash}";
+			$query = "UPDATE jazz_cookies SET cookie_user_status = b'1' WHERE cookie_hash = {$hash}";
 			$result = $this->mdl_login->custom_query($query);
 		}
 		$this->session->sess_destroy();
@@ -142,7 +142,7 @@ class Login extends MX_Controller
 		if ($cookie)
 		{
 			$hash = $cookie[1];
-			$result = $this->mdl_login->get_where_custom('tonic_cookies', 'cookie_hash', $hash)->row();
+			$result = $this->mdl_login->get_where_custom('jazz_cookies', 'cookie_hash', $hash)->row();
 			return ord($result->cookie_user_status);
 		}
 		
@@ -152,7 +152,7 @@ class Login extends MX_Controller
 	private function getcookie()
 	{		
 		$this->load->helper('cookie');
-		$cookie = get_cookie('tonic_cms');
+		$cookie = get_cookie('jazz_cms');
 
 		if ($cookie)
 		{
@@ -168,7 +168,7 @@ class Login extends MX_Controller
 		$this->load->helper('cookie');
 		
 		$cookie = array(
-			'name'   => 'tonic_cms',
+			'name'   => 'jazz_cms',
 			'value'  => $value.'||'.$hash,
 			'expire' => 31536000,
 			'domain' => '.'.$_SERVER['HTTP_HOST'],
@@ -184,7 +184,7 @@ class Login extends MX_Controller
 		$this->load->helper('cookie');
 		
 		$cookie = array(
-			'name'   => 'tonic_cms',
+			'name'   => 'jazz_cms',
 			'value'  => $value.'||'.$hash,
 			'domain' => '.'.$_SERVER['HTTP_HOST'],
 			'path'   => '/',

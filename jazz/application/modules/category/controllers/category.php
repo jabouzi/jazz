@@ -133,7 +133,7 @@ class Category extends MX_Controller
 	
 	private function get_category($category_id, $language_id = 0)
 	{
-		$where = array('tonic_categories.category_id = ' => $category_id);
+		$where = array('jazz_categories.category_id = ' => $category_id);
 		if ($language_id) $where['language_id = '] = $language_id;
 		$category = $this->mdl_category->get_join_where($where)->row();
 		

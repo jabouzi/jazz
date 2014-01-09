@@ -38,14 +38,14 @@ class Permission extends MX_Controller
 				{
 					$data = array('permission_name' => $permission);
 					$where = array('permission_id = ' => $id, 'admin_language_code = ' => $lang);
-					$this->update_permission('tonic_permissions_i18n', $where, $data);
+					$this->update_permission('jazz_permissions_i18n', $where, $data);
 				}
 				
 				$actions = element($id, $this->input->post('actions'));
 				if (is_array($actions)) $data = array('permission_actions' => serialize($actions));
 				else $data = array('permission_actions' => '');
 				$where = array('permission_id = ' => $id);
-				$this->update_permission('tonic_permissions', $where, $data);
+				$this->update_permission('jazz_permissions', $where, $data);
 			}
 		}
 
@@ -55,22 +55,22 @@ class Permission extends MX_Controller
 			if ($permission != '')
 			{
 				$data = array('permission_actions' => '');
-				$this->add_permission('tonic_permissions', $data);
+				$this->add_permission('jazz_permissions', $data);
 				$permission_id = $this->get_last_permission_id();
 				foreach($this->lang->languages as $code => $lang)
 				{
 					$data = array('admin_language_code' => $code, 'permission_id' => $permission_id);
 					$data['permission_name'] = '';
 					if ($code == $this->input->post('active_lang')) $data['permission_name'] = $permission;
-					$this->add_permission('tonic_permissions_i18n', $data);
+					$this->add_permission('jazz_permissions_i18n', $data);
 				}
 			}
 		}
 		
 		foreach($this->input->post('delete') as $id => $value)
 		{
-			$this->delete_permission('tonic_permissions', $id);
-			$this->delete_permission('tonic_permissions_i18n', $id);
+			$this->delete_permission('jazz_permissions', $id);
+			$this->delete_permission('jazz_permissions_i18n', $id);
 		}
 		
 		$this->session->set_userdata('success_message', lang('permission.success'));
@@ -93,7 +93,7 @@ class Permission extends MX_Controller
 	{
 		$permissions = array();
 		$where = array('admin_language_code = ' => $this->lang->lang(), 'permission_id > ' => 1);
-		$results = $this->mdl_permission->get_where_custom('tonic_permissions_i18n', $where);
+		$results = $this->mdl_permission->get_where_custom('jazz_permissions_i18n', $where);
 		foreach($results->result() as $permission)
 		{
 			$permissions[$permission->permission_id] = $permission->permission_name;

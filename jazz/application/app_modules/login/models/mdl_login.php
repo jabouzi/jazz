@@ -13,7 +13,7 @@ class Mdl_login extends CI_Model
 		$this->db->where('user_email', $username);
 		$this->db->where('user_password', $password);
 		
-		$query = $this->db->get('tonic_users');
+		$query = $this->db->get('jazz_users');
 		if($query->num_rows == 1)
 		{
 			$row = $query->row();			
@@ -28,7 +28,7 @@ class Mdl_login extends CI_Model
 		$this->db->where('cookie_email', $username);
 		$this->db->where('cookie_hash', $hash);
 		
-		$query = $this->db->get('tonic_cookies');
+		$query = $this->db->get('jazz_cookies');
 		if($query->num_rows == 1)
 		{
 			$row = $query->row();			
@@ -40,13 +40,13 @@ class Mdl_login extends CI_Model
 	
 	function insert_cookie($data)
 	{
-		$this->db->insert('tonic_cookies', $data);
+		$this->db->insert('jazz_cookies', $data);
 	}
 	
 	function delete_cookie($hash)
 	{
 		$this->db->where('cookie_hash', $hash);
-		$this->db->delete('tonic_cookies');
+		$this->db->delete('jazz_cookies');
 	}
 	
 	function get_where_custom($table, $col, $value)

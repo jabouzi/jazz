@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Login Form</title>
-  <link rel="stylesheet" href="/tonic/assets/css/login.css">
+  <link rel="stylesheet" href="/jazz/assets/css/login.css">
   <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
@@ -24,7 +24,7 @@
         </p>
         <p class="remember_me">
           <label>
-            <input type="checkbox" name="remember_me" id="remember_me" <?php if (get_cookie('tonic_cms')) echo 'checked'; ?> >
+            <input type="checkbox" name="remember_me" id="remember_me" <?php if (get_cookie('jazz_cms')) echo 'checked'; ?> >
             <?php echo lang('login.remember'); ?>
           </label>
         </p>

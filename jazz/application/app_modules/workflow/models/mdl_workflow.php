@@ -10,7 +10,7 @@ class Mdl_workflow extends CI_Model
 	
 	function get($order_by)
 	{
-		$table = 'tonic_workflows';
+		$table = 'jazz_workflows';
 		$this->db->order_by($order_by);
 		$query = $this->db->get($table);
 		return $query;
@@ -18,7 +18,7 @@ class Mdl_workflow extends CI_Model
 	
 	function get_with_limit($limit, $offset, $order_by)
 	{
-		$table = 'tonic_workflows';
+		$table = 'jazz_workflows';
 		$this->db->limit($limit, $offset);
 		$this->db->order_by($order_by);
 		$query = $this->db->get($table);
@@ -27,7 +27,7 @@ class Mdl_workflow extends CI_Model
 	
 	function get_where($id)
 	{
-		$table = 'tonic_workflows';
+		$table = 'jazz_workflows';
 		$this->db->where('workflow_id', $id);
 		$query = $this->db->get($table);
 		return $query;
@@ -36,15 +36,15 @@ class Mdl_workflow extends CI_Model
 	function get_join()
 	{
 		$this->db->select('*');
-		$this->db->from('tonic_workflows');
-		$this->db->join('tonic_workflows_i18n', 'tonic_workflows.workflow_id = tonic_workflows_i18n.workflow_id');
+		$this->db->from('jazz_workflows');
+		$this->db->join('jazz_workflows_i18n', 'jazz_workflows.workflow_id = jazz_workflows_i18n.workflow_id');
 		$query = $this->db->get();
 		return $query;
 	}
 	
 	function get_where_custom($where)
 	{
-		$table = 'tonic_workflows';
+		$table = 'jazz_workflows';
 		$this->db->where($where);
 		$query = $this->db->get($table);
 		return $query;
@@ -70,7 +70,7 @@ class Mdl_workflow extends CI_Model
 	
 	function count_where($where)
 	{
-		$table = 'tonic_workflows';
+		$table = 'jazz_workflows';
 		$this->db->where($where);
 		$query = $this->db->get($table);
 		$num_rows = $query->num_rows();
@@ -79,7 +79,7 @@ class Mdl_workflow extends CI_Model
 	
 	function count_all()
 	{
-		$table = 'tonic_workflows';
+		$table = 'jazz_workflows';
 		$query = $this->db->get($table);
 		$num_rows = $query->num_rows();
 		return $num_rows;
@@ -87,7 +87,7 @@ class Mdl_workflow extends CI_Model
 	
 	function get_max()
 	{
-		$table = 'tonic_workflows';
+		$table = 'jazz_workflows';
 		$this->db->select_max('workflow_id');
 		$query = $this->db->get($table);
 		$row = $query->row();
