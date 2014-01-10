@@ -99,6 +99,7 @@ $lang['category.add'] = "Add Category";
 $lang['category.delete'] = "Delete Category";
 $lang['category.update'] = "Update Category";
 $lang['category.success'] = "Category saved successfully";
+$lang['category.edit'] = "Edit Category";
 
 $lang['language.title'] = "Languages";
 $lang['language.name'] = "Language Name";
