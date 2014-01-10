@@ -24,11 +24,10 @@ class Category extends MX_Controller
 	
 	function newcategory()
 	{
-		//$view_data['page_title'] = lang('category.new');
-		//$view_data['admin_widgets']['category'] = $this->show('newcategory', array());
-		//var_dump($view_data['admin_widgets']['category']);
-		//echo modules::run('template', $view_data);
-		$this->load->view('newcategory');
+		$view_data['page_title'] = lang('category.new');
+		$view_data['admin_widgets']['category'] = $this->show('newcategory', array());
+		var_dump($view_data['admin_widgets']['category']);
+		echo modules::run('template', $view_data);
 	}
 	
 	function editcategory($category_id = 0)
@@ -45,7 +44,7 @@ class Category extends MX_Controller
 		$this->load->helper('form');
 		$view_data['categories'] = $category_data;
 		$view_data['languages'] = modules::run('language/get_languages');
-		return $this->load->view('category', $view_data, true);
+		return $this->load->view($view.'.php', $view_data, true);
 	}
 	
 	function test()
