@@ -49,7 +49,7 @@
 		<?php endforeach; ?>
 		<footer>
 				<div class="submit_link">
-					<input type="button" id="save_language" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
+					<input type="submit" id="save_language" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 					<input type="button" id="add_language" value="<?php echo lang('admin.add'); ?>">
 				</div>
 		</footer>
