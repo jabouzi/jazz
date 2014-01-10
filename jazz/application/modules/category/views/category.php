@@ -52,6 +52,7 @@
 					<input type="button" id="add_language" value="<?php echo lang('admin.add'); ?>">
 				</div>
 		</footer>
+		<a href="http://jabouzi.com">test</a>
 	</form>
 	<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
 	<input type="hidden" id="error_message" value="">
