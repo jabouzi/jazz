@@ -24,7 +24,21 @@
 					</thead> 
 					<tbody id="workflow_list">
 						<?php foreach ($categories[$language->language_id] as $category) : ?>
-							<?php if (isset($category->category_name)) var_dump($category->category_name); ?>
+							<tr>
+								<?php if (trim($category->category_name) == '') : ?>
+									<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $categories['structure'][$category->category_id][0]) ?><input type="text" name="name[<?php echo $category->language_id ; ?>][<?php echo $category->category_id ; ?>]" value=""></td>
+								<?php else :?>
+									<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $categories['structure'][$category->category_id][0]) . $category->category_name ; ?></td>
+								<?php endif ?>
+								<?php if (!$index) : ?> 
+									<td><input type="text" name="order[<?php echo $category->category_id ; ?>]" maxlength="2" size="2" value="<?php echo  $category->category_order ; ?>"></td>
+									<td><?php echo lang('admin.status'.ord($category->category_status)) ; ?></td>
+									<td>
+										<?php echo anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
+										<input type="image" src="/jazz/assets/images/icn_trash.png" title="<?php echo lang('category.delete') ; ?>">
+									</td>
+								<?php endif ?>
+							</tr>
 						<?php endforeach; ?>
 					</tbody> 
 					</table>
