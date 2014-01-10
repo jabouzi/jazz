@@ -4,7 +4,7 @@
 		<div class="module_content">
 			<fieldset style="width:48%; float:left; margin-right: 3%;">
 				<label><?php echo lang('category.parent'); ?></label>
-				<?php echo form_dropdown('category_parent_id', $permissions, $this->input->post('category_parent_id'), 'style="width:92%;"'); ?>
+				<?php echo form_dropdown('category_parent_id', $categories, $this->input->post('category_parent_id'), 'style="width:92%;"'); ?>
 			</fieldset>
 			<fieldset>
 				<label><?php echo lang('category.name'); ?></label>
