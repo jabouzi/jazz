@@ -6,7 +6,7 @@
 			<? endforeach; ?>
 		</ul>
 	</header>
-	<form id="categories_form" method="post" action="<?php echo site_url('category/process'); ?>">
+	<form id="categories_form" method="POST" action="<?php echo site_url('category/process'); ?>">
 		<?php $index = 0; ?>
 		<?php foreach($languages as $language) : ?>
 			<div id="<?php echo $language->language_code; ?>" class="tab_content">
