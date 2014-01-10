@@ -6,9 +6,10 @@
 			<? endforeach; ?>
 		</ul>
 	</header>
-	<form id="categories_form" method="POST" action="<?php echo site_url('category/process'); ?>">
+	<form method="POST" action="<?php echo site_url('category/process'); ?>">
 		<?php $index = 0; ?>
 		<?php foreach($languages as $language) : ?>
+			<? if ($language->language_code == 'en') :?>
 			<div id="<?php echo $language->language_code; ?>" class="tab_content">
 				<div class="tab_container">
 					<table class="tablesorter" cellspacing="0"> 
@@ -45,6 +46,7 @@
 				</div><!-- end of .tab_container -->
 			</div>
 			<?php $index++; ?>
+		<?php endif; ?>
 		<?php endforeach; ?>
 		<footer>
 				<div class="submit_link">
