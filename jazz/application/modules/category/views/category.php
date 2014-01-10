@@ -27,7 +27,6 @@
 							<tr>
 								<?php if (trim($category->category_name) == '') : ?>
 								<?php else :?>
-									<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $categories['structure'][$category->category_id][0]) . $category->category_name ; ?></td>
 								<?php endif ?>
 								<?php if (!$index) : ?> 
 									<td><input type="text" name="order[<?php echo $category->category_id ; ?>]" maxlength="2" size="2" value="<?php echo  $category->category_order ; ?>"></td>
