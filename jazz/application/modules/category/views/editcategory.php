@@ -4,7 +4,6 @@
 		<div class="module_content">
 			<fieldset style="width:48%; float:left; margin-right: 3%;">
 				<label><?php echo lang('category.parent'); ?></label>
-				<a href="<?php echo site_url().'en/category/editcategory/1'; ?>">LINK</a>
 				<?php echo form_dropdown('category_parent_id', $categories, $category->category_parent_id, 'style="width:92%;"'); ?>
 			</fieldset>
 			<fieldset>
