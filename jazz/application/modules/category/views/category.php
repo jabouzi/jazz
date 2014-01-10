@@ -9,7 +9,6 @@
 	<form id="categories_form" method="post" action="<?php echo site_url('category/process'); ?>">
 		<?php $index = 0; ?>
 		<?php foreach($languages as $language) : ?>
-			<?php if ($language->language_code == 'en') :?>
 			<div id="<?php echo $language->language_code; ?>" class="tab_content">
 				<div class="tab_container">
 					<table class="tablesorter" cellspacing="0"> 
@@ -32,11 +31,11 @@
 									<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $categories['structure'][$category->category_id][0]) . $category->category_name ; ?></td>
 								<?php endif ?>
 								<?php if (!$index) : ?> 
-									<td><input type="text" name="order[<?php echo $category->category_id ; ?>]" maxlength="2" size="2" value="<?php echo  $category->category_order ; ?>" data-validate="required" data-type="text" title="<?php echo lang('category.url'); ?>"></td>
+									<td><input type="text" name="order[<?php echo $category->category_id ; ?>]" maxlength="2" size="2" value="<?php echo  $category->category_order ; ?>"></td>
 									<td><?php echo lang('admin.status'.ord($category->category_status)) ; ?></td>
 									<td>
-									<a href="<?php echo site_url().'en/category/editcategory/1'; ?>">LINK</a>										
-									<input type="image" src="/jazz/assets/images/icn_trash.png" title="<?php echo lang('category.delete') ; ?>">
+										<a href="<?php echo site_url('category/editcategory/'.$category->category_id) ?>"><input type="image" src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'"></a>
+										<input type="image" src="/jazz/assets/images/icn_trash.png" title="<?php echo lang('category.delete') ; ?>">
 									</td>
 								<?php endif ?>
 							</tr>
@@ -46,7 +45,6 @@
 				</div><!-- end of .tab_container -->
 			</div>
 			<?php $index++; ?>
-			<?php endif; ?>
 		<?php endforeach; ?>
 		<footer>
 				<div class="submit_link">
