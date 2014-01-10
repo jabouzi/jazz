@@ -26,7 +26,6 @@ class Category extends MX_Controller
 	{
 		$view_data['page_title'] = lang('category.new');
 		$view_data['admin_widgets']['category'] = $this->show('newcategory', array());
-		var_dump($view_data['admin_widgets']['category']);
 		echo modules::run('template', $view_data);
 	}
 	
