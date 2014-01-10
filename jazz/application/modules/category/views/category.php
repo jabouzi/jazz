@@ -7,7 +7,7 @@
 		</ul>
 	</header>
 	<form id="categories_form" method="post" action="<?php echo site_url('category/process'); ?>">
-		<a href="<?php echo site_url().'en/category/editcategory/1'; ?>">LINK</a>
+		<a href="<?php echo site_url().'en/category/newcategory'; ?>">LINK</a>
 
 		<footer>
 				<div class="submit_link">
