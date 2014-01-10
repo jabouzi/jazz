@@ -48,16 +48,7 @@
 			<?php $index++; ?>
 		<?php endif; ?>
 		<?php endforeach; ?>
-		<footer>
-				<div class="submit_link">
-					<input type="button" id="save_category" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
-					<input type="button" id="add_category" value="<?php echo lang('admin.add'); ?>">
-				</div>
-		</footer>
+		
 	</form>
-	<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
-	<input type="hidden" id="error_message" value="">
-	<div style="display:none" id="new_language">
-		<td><input type="text" name="new[]" value="">
-	</div>
+	
 </article><!-- end of article -->
