@@ -24,8 +24,7 @@
 					</thead> 
 					<tbody id="workflow_list">
 						<?php foreach ($categories[$language->language_id] as $category) : ?>
-							
-							</tr>
+							<?php var_dump($category); ?>
 						<?php endforeach; ?>
 					</tbody> 
 					</table>
