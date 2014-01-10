@@ -19,7 +19,9 @@
 	<script type="text/javascript" src="/jazz/assets/js/jquery.equalHeight.js"></script>
 	<script type="text/javascript" src="/jazz/assets/js/bootstrap-3.0.0.min.js"></script>
 	<script type="text/javascript" src="/jazz/assets/js/bootstrap-multiselect.js"></script>
+<!--
 	<script type="text/javascript" src="/jazz/assets/js/jazz.js"></script>
+-->
 	<script type="text/javascript">
 	
 </script>
