@@ -2,6 +2,7 @@
 	<header><h3><?php echo lang('category.edit'); ?></h3></header>
 	<form id="category_profile" method="post" action="<?php echo site_url('category/process_editcategory'); ?>">
 		<div class="module_content">
+			<a href="<?php echo site_url().'en/category/editcategory/1'; ?>">LINK</a>
 			<fieldset style="width:48%; float:left; margin-right: 3%;">
 				<label><?php echo lang('category.parent'); ?></label>
 				<?php echo form_dropdown('category_parent_id', $categories, $category->category_parent_id, 'style="width:92%;"'); ?>
