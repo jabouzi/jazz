@@ -49,8 +49,8 @@
 		<?php endforeach; ?>
 		<footer>
 				<div class="submit_link">
-					<input type="submit" id="save_language" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
-					<input type="button" id="add_language" value="<?php echo lang('admin.add'); ?>">
+					<input type="button" id="save_catgories" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
+					<input type="button" id="add_category" value="<?php echo lang('admin.add'); ?>">
 				</div>
 		</footer>
 		<?php echo anchor('http://jabouzi.com', '<input type="image" src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
