@@ -35,7 +35,6 @@
 									<td><?php echo lang('admin.status'.ord($category->category_status)) ; ?></td>
 									<td>
 										<?php echo anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
-										<a href="<?php echo site_url().'/category/editcategory/'.$category->category_id; ?>"><input type="image" src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'"></a>
 										<input type="image" src="/jazz/assets/images/icn_trash.png" title="<?php echo lang('category.delete') ; ?>">
 									</td>
 								<?php endif ?>
@@ -49,13 +48,10 @@
 		<?php endforeach; ?>
 		<footer>
 				<div class="submit_link">
-					<input type="button" id="save_catgories" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
+					<input type="button" id="save_category" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 					<input type="button" id="add_category" value="<?php echo lang('admin.add'); ?>">
 				</div>
 		</footer>
-		<?php echo anchor('http://jabouzi.com', '<input type="image" src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
-
-		<a href="http://jabouzi.com">test</a>
 	</form>
 	<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
 	<input type="hidden" id="error_message" value="">
