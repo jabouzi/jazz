@@ -48,7 +48,7 @@ class Category extends MX_Controller
 	
 	function test()
 	{
-		
+		$this->load->view('test');
 	}
 	
 	function process()
