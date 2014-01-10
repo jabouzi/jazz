@@ -41,7 +41,7 @@ class Configs
 		$allmodules = array();
 		foreach($modules_paths as $key => $path)
 		{
-			$allmodules[$path] = array_diff(directory_map($path, 1), ['index.html']);
+			$allmodules[$path] = array_diff(directory_map($path, 1), array('index.html'));
 		}
 
 		return $allmodules;
