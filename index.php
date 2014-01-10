@@ -1,1 +1,1 @@
-<b>jazz cms.</b>
+<b>JAZZ CMS.</b>
