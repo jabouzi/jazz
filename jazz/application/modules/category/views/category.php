@@ -9,6 +9,7 @@
 	<form id="categories_form" method="post" action="<?php echo site_url('category/process'); ?>">
 		<?php $index = 0; ?>
 		<?php foreach($languages as $language) : ?>
+			<?php if ($language->language_code == 'en') :?>
 			<div id="<?php echo $language->language_code; ?>" class="tab_content">
 				<div class="tab_container">
 					<table class="tablesorter" cellspacing="0"> 
@@ -39,6 +40,7 @@
 									</td>
 								<?php endif ?>
 							</tr>
+						<?php endif; ?>
 						<?php endforeach; ?>
 					</tbody> 
 					</table>
