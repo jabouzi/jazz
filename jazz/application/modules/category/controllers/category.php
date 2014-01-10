@@ -24,10 +24,11 @@ class Category extends MX_Controller
 	
 	function newcategory()
 	{
-		$view_data['page_title'] = lang('category.new');
-		$view_data['admin_widgets']['category'] = $this->show('newcategory', array());
-		var_dump($view_data['admin_widgets']['category']);
-		echo modules::run('template', $view_data);
+		//$view_data['page_title'] = lang('category.new');
+		//$view_data['admin_widgets']['category'] = $this->show('newcategory', array());
+		//var_dump($view_data['admin_widgets']['category']);
+		//echo modules::run('template', $view_data);
+		$this->load->view('newcategory');
 	}
 	
 	function editcategory($category_id = 0)
