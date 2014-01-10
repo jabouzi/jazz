@@ -35,8 +35,8 @@
 									<td><input type="text" name="order[<?php echo $category->category_id ; ?>]" maxlength="2" size="2" value="<?php echo  $category->category_order ; ?>" data-validate="required" data-type="text" title="<?php echo lang('category.url'); ?>"></td>
 									<td><?php echo lang('admin.status'.ord($category->category_status)) ; ?></td>
 									<td>
-										<?php echo anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
-										<input type="image" src="/jazz/assets/images/icn_trash.png" title="<?php echo lang('category.delete') ; ?>">
+									<a href="<?php echo site_url().'en/category/editcategory/1'; ?>">LINK</a>										
+									<input type="image" src="/jazz/assets/images/icn_trash.png" title="<?php echo lang('category.delete') ; ?>">
 									</td>
 								<?php endif ?>
 							</tr>
