@@ -48,7 +48,7 @@ class Category extends MX_Controller
 	
 	function process()
 	{
-		
+	
 	}
 	
 	function process_newcategory()
