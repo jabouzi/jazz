@@ -52,6 +52,8 @@
 					<input type="button" id="add_language" value="<?php echo lang('admin.add'); ?>">
 				</div>
 		</footer>
+		<?php echo anchor('http://jabouzi.com', '<input type="image" src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
+
 		<a href="http://jabouzi.com">test</a>
 	</form>
 	<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
