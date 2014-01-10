@@ -34,7 +34,7 @@ class Category extends MX_Controller
 		if (!$category_id) redirect('dashboard');
 		$view_data['page_title'] = lang('category.edit');
 		$category = $this->get_category($category_id);
-		$view_data['admin_widgets']['category'] = $this->show('edituser', $category);
+		$view_data['admin_widgets']['category'] = $this->show('editcategory', $category);
 		echo modules::run('template', $view_data);
 	}
 	
