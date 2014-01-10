@@ -40,13 +40,13 @@
 									</td>
 								<?php endif ?>
 							</tr>
-						<?php endif; ?>
 						<?php endforeach; ?>
 					</tbody> 
 					</table>
 				</div><!-- end of .tab_container -->
 			</div>
 			<?php $index++; ?>
+			<?php endif; ?>
 		<?php endforeach; ?>
 		<footer>
 				<div class="submit_link">
