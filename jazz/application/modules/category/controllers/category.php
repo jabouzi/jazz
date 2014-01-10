@@ -46,11 +46,6 @@ class Category extends MX_Controller
 		return $this->load->view($view.'.php', $view_data, true);
 	}
 	
-	function test()
-	{
-		$this->load->view('test');
-	}
-	
 	function process()
 	{
 		
