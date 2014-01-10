@@ -35,6 +35,7 @@
 									<td><?php echo lang('admin.status'.ord($category->category_status)) ; ?></td>
 									<td>
 										<?php echo anchor('category/editcategory/'.$category->category_id, '<input type="image" src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
+										<a href="<?php echo site_url().'/category/editcategory/'.$category->category_id; ?>"><input type="image" src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'"></a>
 										<input type="image" src="/jazz/assets/images/icn_trash.png" title="<?php echo lang('category.delete') ; ?>">
 									</td>
 								<?php endif ?>
