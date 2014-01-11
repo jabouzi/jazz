@@ -35,7 +35,7 @@
 									<td><?php echo lang('admin.status'.ord($category->category_status)) ; ?></td>
 									<td>
 										<?php echo anchor('category/editcategory/'.$category->category_id, '<img src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
-										<input type="image" src="/jazz/assets/images/icn_trash.png" title="<?php echo lang('category.delete') ; ?>">
+										<?php echo anchor('category/deletecategory/'.$category->category_id, '<img src="/jazz/assets/images/icn_trash.png" title="'.lang('category.delete').'">'); ?>
 									</td>
 								<?php endif ?>
 							</tr>
