@@ -24,7 +24,7 @@
 			</fieldset>
 			<fieldset style="width:48%; float:left;">
 				<label><?php echo lang('user.status'); ?></label>
-				<?php echo form_dropdown('user_status', $status, ord($user->user_status)); ?>
+				<?php echo form_dropdown('user_active', $status, ord($user->user_active)); ?>
 			</fieldset>
 			<div class="clear"></div>
 		</div>

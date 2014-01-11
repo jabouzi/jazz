@@ -88,7 +88,7 @@ class User extends MX_Controller
 			'user_lastname' => $this->input->post('user_lastname'), 
 			'user_email' => $this->input->post('user_email'),
 			'user_permission' => $this->input->post('user_permission'),
-			'user_status' => (int)($this->input->post('user_status'))
+			'user_active' => (int)($this->input->post('user_active'))
 		);
 		if (trim($this->input->post('user_password')) != '') $user_data['user_password'] = $this->encryption->encrypt_str($this->input->post('user_password'), $this->config->item('app_key'));
 		$this->update_user($user_id, $user_data);
@@ -102,7 +102,7 @@ class User extends MX_Controller
 			'user_lastname' => $this->input->post('user_lastname'), 
 			'user_email' => $this->input->post('user_email'),
 			'user_permission' => $this->input->post('user_permission'),
-			'user_status' => (int)($this->input->post('user_status')),
+			'user_active' => (int)($this->input->post('user_active')),
 			'user_password' => $this->encryption->encrypt_str($this->input->post('user_password'), $this->config->item('app_key')),
 			'user_created' => date('Y-m-d H:i:s')
 		);

@@ -32,7 +32,7 @@
 								<?php endif ?>
 								<?php if (!$index) : ?> 
 									<td><input type="text" name="order[<?php echo $category->category_id ; ?>]" maxlength="2" size="2" value="<?php echo  $category->category_order ; ?>"></td>
-									<td><?php echo lang('admin.status'.ord($category->category_status)) ; ?></td>
+									<td><?php echo lang('admin.status'.ord($category->category_active)) ; ?></td>
 									<td>
 										<?php echo anchor('category/editcategory/'.$category->category_id, '<img src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
 										<?php echo anchor('category/deletecategory/'.$category->category_id, '<img src="/jazz/assets/images/icn_trash.png" title="'.lang('category.delete').'">'); ?>
