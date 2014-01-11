@@ -21,7 +21,7 @@
 			</fieldset>
 			<fieldset style="width:48%; float:left;">
 				<label><?php echo lang('category.status'); ?></label>
-				<?php echo form_dropdown('category_status', $status, ord($this->input->post('category_status'))); ?>
+				<?php echo form_dropdown('category_active', $status, ord($this->input->post('category_active'))); ?>
 			</fieldset>
 			<div class="clear"></div>
 		</div>

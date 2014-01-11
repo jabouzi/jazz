@@ -55,7 +55,7 @@ class Login extends MX_Controller
 		{
 			$this->show('login.failed');
 		}
-		else if(!ord($result->user_status))
+		else if(!ord($result->user_active))
 		{
 			$this->show('user.nonactive');
 		}
@@ -119,7 +119,7 @@ class Login extends MX_Controller
 		if ($cookie)
 		{
 			$hash = $this->db->escape($cookie[1]);
-			$query = "UPDATE jazz_cookies SET cookie_user_status = b'1' WHERE cookie_hash = {$hash}";
+			$query = "UPDATE jazz_cookies SET cookie_user_active = b'1' WHERE cookie_hash = {$hash}";
 			$result = $this->mdl_login->custom_query($query);
 		}
 		$this->session->sess_destroy();
@@ -143,7 +143,7 @@ class Login extends MX_Controller
 		{
 			$hash = $cookie[1];
 			$result = $this->mdl_login->get_where_custom('jazz_cookies', 'cookie_hash', $hash)->row();
-			return ord($result->cookie_user_status);
+			return ord($result->cookie_user_active);
 		}
 		
 		return false;
