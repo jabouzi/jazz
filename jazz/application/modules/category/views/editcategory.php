@@ -14,7 +14,7 @@
 			<div class="module_content">
 				<fieldset style="width:48%; float:left; margin-right: 3%;">
 					<label><?php echo lang('category.parent'); ?></label>
-					<?php echo form_dropdown('category_parent_id', $categories['categories'][$language->language_id], $category->category_parent_id, 'style="width:92%;"'); ?>
+					<?php echo form_dropdown('category_parent_id', $categories_list[$language->language_id], $category->category_parent_id, 'style="width:92%;"'); ?>
 				</fieldset>
 				<fieldset>
 					<label><?php echo lang('category.name'); ?></label>
