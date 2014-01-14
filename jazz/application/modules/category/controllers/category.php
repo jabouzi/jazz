@@ -172,6 +172,9 @@ class Category extends MX_Controller
 			}
 		}
 		
+		echo '<pre>';
+		var_dump($categories);
+		echo '</pre>';
 		return $categories;
 	}
 	
