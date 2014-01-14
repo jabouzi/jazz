@@ -9,6 +9,7 @@
 	<form id="category_profile" method="post" action="<?php echo site_url('category/process_editcategory'); ?>">
 	<?php foreach($languages as $language) : ?>
 		<div id="<?php echo $language->language_code; ?>" class="tab_content">
+		<div class="tab_container">
 			<div class="module_content">
 				<fieldset style="width:48%; float:left; margin-right: 3%;">
 					<label><?php echo lang('category.parent'); ?></label>
@@ -41,6 +42,7 @@
 					<input type="hidden" id="category_exists_url" value="<?php echo site_url('category/url_exists'); ?>">
 				</div>
 			</footer>
+		</div>
 		</div>
 	<?php endforeach ?>
 	</form>
