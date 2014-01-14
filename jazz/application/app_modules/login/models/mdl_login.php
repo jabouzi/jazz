@@ -53,7 +53,9 @@ class Mdl_login extends CI_Model
 	{
 		$this->db->where($col, $value);
 		$query = $this->db->get($table);
-		return $query;
+		if($query->num_rows) return $query;
+		
+		return false;
 	}
 	
 	function custom_query($mysql_query)
