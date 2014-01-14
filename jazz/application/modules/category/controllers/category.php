@@ -172,9 +172,9 @@ class Category extends MX_Controller
 			}
 		}
 		
-		echo '<pre>';
-		var_dump($categories);
-		echo '</pre>';
+		//echo '<pre>';
+		//var_dump($categories);
+		//echo '</pre>';
 		return $categories;
 	}
 	
@@ -184,6 +184,9 @@ class Category extends MX_Controller
 		if ($language_id) $where['language_id = '] = $language_id;
 		$category = $this->mdl_category->get_join_where($where)->row();
 		
+		echo '<pre>';
+		var_dump($category);
+		echo '</pre>';
 		return $category;
 	}
 }
