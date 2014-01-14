@@ -51,7 +51,15 @@ class Category extends MX_Controller
 	private function show($view, $category_data)
 	{
 		$this->load->helper('form');
-		$view_data['categories'] = $category_data;
+		if ($view == 'editcategory')
+		{
+			$view_data['category'] = $category_data;
+			$view_data['categories'] = $this->get_dropdown_categories();
+		}
+		else
+		{
+			$view_data['categories'] = $category_data;
+		}
 		$view_data['languages'] = modules::run('language/get_languages');
 		return $this->load->view($view.'.php', $view_data, true);
 	}
@@ -145,6 +153,20 @@ class Category extends MX_Controller
 			{
 				$categories[$language->language_id][] = $this->get_category($id, $language->language_id);
 			}
+		}
+		
+		return $categories;
+	}
+	
+	private function get_dropdown_categories()
+	{
+		$categories = array();
+		$languages = modules::run('language/get_languages');
+		foreach($languages as $language)
+		{
+			$where = array('language_id = ' => $language->language_id);
+			$result = $this->mdl_category->get_join_where($where)->row();
+			$categories[$language->language_id][] = array($result->category_id => $result->category_name);
 		}
 		
 		return $categories;
