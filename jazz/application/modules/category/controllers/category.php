@@ -53,8 +53,9 @@ class Category extends MX_Controller
 		$this->load->helper('form');
 		if ($view == 'editcategory')
 		{
-			$view_data['category'] = $category_data;
-			$view_data['categories'] = $this->get_dropdown_categories();
+			$categories = $category_data;
+			$categories['categories'] = $this->get_dropdown_categories();
+			$view_data['categories'] = $categories;
 		}
 		else
 		{
@@ -185,6 +186,8 @@ class Category extends MX_Controller
 		{
 			$where['language_id = '] = $language_id;
 			$category = $this->mdl_category->get_join_where($where)->row();
+			
+			return $category;
 		}
 		else
 		{
@@ -197,11 +200,15 @@ class Category extends MX_Controller
 					$category[$language->language_id] = $result;
 				}
 			}
+			
+			return $categories;
 		}
 		
-		echo '<pre>';
-		var_dump($category);
-		echo '</pre>';
-		return $category;
+		return false;
+		
+		//echo '<pre>';
+		//var_dump($category);
+		//echo '</pre>';
+		
 	}
 }
