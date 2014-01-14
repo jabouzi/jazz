@@ -143,6 +143,7 @@ class Login extends MX_Controller
 		{
 			$hash = $cookie[1];
 			$result = $this->mdl_login->get_where_custom('jazz_cookies', 'cookie_hash', $hash)->row();
+			var_dump($result);
 			return ord($result->cookie_user_active);
 		}
 		
