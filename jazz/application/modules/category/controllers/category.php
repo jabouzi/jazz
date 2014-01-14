@@ -53,9 +53,8 @@ class Category extends MX_Controller
 		$this->load->helper('form');
 		if ($view == 'editcategory')
 		{
-			$categories = $category_data;
-			$categories['categories'] = $this->get_dropdown_categories();
-			$view_data['categories'] = $categories;
+			$view_data['categories_list'] = $this->get_dropdown_categories();
+			$view_data['categories'] = $category_data;
 		}
 		else
 		{
