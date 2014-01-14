@@ -181,8 +181,23 @@ class Category extends MX_Controller
 	private function get_category($category_id, $language_id = 0)
 	{
 		$where = array('jazz_categories.category_id = ' => $category_id);
-		if ($language_id) $where['language_id = '] = $language_id;
-		$category = $this->mdl_category->get_join_where($where)->row();
+		if ($language_id)
+		{
+			$where['language_id = '] = $language_id;
+			$category = $this->mdl_category->get_join_where($where)->row();
+		}
+		else
+		{
+			$languages = modules::run('language/get_languages');
+			foreach($languages as $language)
+			{
+				$results = $this->mdl_category->get_join_where($where)->result();
+				foreach($results as $result)
+				{
+					$categories[$language->language_id] = $result;
+				}
+			}
+		}
 		
 		echo '<pre>';
 		var_dump($category);
