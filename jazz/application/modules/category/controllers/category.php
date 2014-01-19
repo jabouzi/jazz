@@ -17,6 +17,7 @@ class Category extends MX_Controller
 		$view_data['page_title'] = lang('category.title');
 		$structure = $this->get_categories_structure();
 		$categories = $this->get_categories($structure);
+		var_dump($categories);
 		$categories['structure'] = $structure;
 		$categories['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
 		$view_data['admin_widgets']['categories'] = $this->show('category', $categories);
@@ -172,9 +173,6 @@ class Category extends MX_Controller
 			}
 		}
 		
-		//echo '<pre>';
-		//var_dump($categories);
-		//echo '</pre>';
 		return $categories;
 	}
 	
@@ -204,10 +202,5 @@ class Category extends MX_Controller
 		}
 		
 		return false;
-		
-		//echo '<pre>';
-		//var_dump($category);
-		//echo '</pre>';
-		
 	}
 }
