@@ -20,7 +20,7 @@ class Category extends MX_Controller
 		//$this->load->driver('cache');
 		$this->cache->memcached->save('foo', $categories);
 		var_dump($this->cache->memcached->get('foo'));
-		var_dump($structure);
+		var_dump($this->cache->memcached->cache_info(), $structure);
 		$categories['structure'] = $structure;
 		$categories['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
 		$view_data['admin_widgets']['categories'] = $this->show('category', $categories);
