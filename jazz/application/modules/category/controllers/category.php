@@ -19,8 +19,8 @@ class Category extends MX_Controller
 		$categories = $this->get_categories($structure);
 		//$this->load->driver('cache');
 		$this->cache->memcached->save('foo', $categories);
-		$this->cache->memcached->get('foo');
-		var_dump($categories, $structure);
+		var_dump($this->cache->memcached->get('foo'));
+		var_dump($structure);
 		$categories['structure'] = $structure;
 		$categories['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
 		$view_data['admin_widgets']['categories'] = $this->show('category', $categories);
