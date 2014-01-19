@@ -62,7 +62,7 @@ class CI_Cache_memcached extends CI_Driver {
 	 * @param 	int			time to live
 	 * @return 	boolean 	true on success, false on failure
 	 */
-	public function save($id, $data, $ttl = 60)
+	public function save($id, $data, $ttl = 0)
 	{
 		if (get_class($this->_memcached) == 'Memcached')
 		{
