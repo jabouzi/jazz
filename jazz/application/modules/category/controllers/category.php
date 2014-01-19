@@ -17,7 +17,7 @@ class Category extends MX_Controller
 		$view_data['page_title'] = lang('category.title');
 		$structure = $this->get_categories_structure();
 		$categories = $this->get_categories($structure);
-		var_dump($categories);
+		var_dump($categories, $structure);
 		$categories['structure'] = $structure;
 		$categories['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
 		$view_data['admin_widgets']['categories'] = $this->show('category', $categories);
