@@ -14,7 +14,6 @@ class Category extends MX_Controller
 	
 	function index()
 	{
-		phpinfo();
 		$view_data['page_title'] = lang('category.title');
 		$structure = $this->get_categories_structure();
 		$categories = $this->get_categories($structure);
