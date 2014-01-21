@@ -128,7 +128,8 @@ class Category extends MX_Controller
 	{
 		$categories_structure = array();
 		$where = array('language_id = ' => $language);
-		$categories = $this->mdl_category->get_join_where('category_id', 'category_parent_id', $where)->result();
+		$select = 'jazz_categories.category_id', 'jazz_categories.category_parent_id';
+		$categories = $this->mdl_category->get_join_where($select, $where)->result();
 		var_dump('1', $categories);
 		$structure = $this->generate_categories_tree($categories);
 		$tree = explode('||', $structure);
