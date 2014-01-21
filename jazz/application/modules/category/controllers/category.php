@@ -127,7 +127,7 @@ class Category extends MX_Controller
 	private function get_categories_structure($language)
 	{
 		$categories_structure = array();
-		$where = array('language_id = ' => $language->language_id);
+		$where = array('language_id = ' => $language);
 		$categories = $this->mdl_category->get_join_where('category_id', 'category_parent_id', $where)->result();
 		var_dump('1', $categories);
 		$structure = $this->generate_categories_tree($categories);
