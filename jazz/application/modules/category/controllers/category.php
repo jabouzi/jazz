@@ -1,9 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
-error_reporting(-1);
-
 class Category extends MX_Controller
 {
 	function __construct()
@@ -17,10 +13,9 @@ class Category extends MX_Controller
 		$view_data['page_title'] = lang('category.title');
 		$structure = $this->get_categories_structure();
 		$categories = $this->get_categories($structure);
-		//$this->load->driver('cache');
-		$this->cache->memcached->save('foo', $categories);
-		var_dump($this->cache->memcached->get('foo'));
-		var_dump($this->cache->memcached->cache_info(), $structure);
+		//$this->cache->memcached->save('foo', $categories);
+		//var_dump($this->cache->memcached->get('foo'));
+		//var_dump($this->cache->memcached->cache_info(), $structure);
 		$categories['structure'] = $structure;
 		$categories['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
 		$view_data['admin_widgets']['categories'] = $this->show('category', $categories);
@@ -135,6 +130,7 @@ class Category extends MX_Controller
 		$default_language = modules::run('language/get_default_language');
 		$where = array('language_id = ' => $default_language);
 		$categories = $this->mdl_category->get_join_where($where)->result();
+		var_dump('1', $categories);
 		$structure = $this->generate_categories_tree($categories);
 		$tree = explode('||', $structure);
 		if (end($tree) == '') array_pop($tree);
@@ -159,6 +155,7 @@ class Category extends MX_Controller
 			}
 		}
 		
+		var_dump('2', $categories);
 		return $categories;
 	}
 	

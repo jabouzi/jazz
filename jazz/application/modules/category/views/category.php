@@ -55,6 +55,7 @@
 	</form>
 	<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
 	<input type="hidden" id="error_message" value="">
+	<input type="hidden" id="active_lang" name="active_lang" value="en">
 	<div style="display:none" id="new_language">
 		<td><input type="text" name="new[]" value="">
 	</div>
