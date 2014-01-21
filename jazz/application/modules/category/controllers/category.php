@@ -124,12 +124,11 @@ class Category extends MX_Controller
 		return $tree;
 	}
 	
-	private function get_categories_structure()
+	private function get_categories_structure($language)
 	{
 		$categories_structure = array();
-		$default_language = modules::run('language/get_default_language');
-		$where = array('language_id = ' => $default_language);
-		$categories = $this->mdl_category->get_join_where($where)->result();
+		$where = array('language_id = ' => $language->language_id);
+		$categories = $this->mdl_category->get_join_where('category_id', 'category_parent_id', $where)->result();
 		var_dump('1', $categories);
 		$structure = $this->generate_categories_tree($categories);
 		$tree = explode('||', $structure);
@@ -149,8 +148,7 @@ class Category extends MX_Controller
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
 		{
-			var_dump($language);
-			$structure = $this->get_categories_structure($language);
+			$structure = $this->get_categories_structure($language->language_id);
 			foreach($structure as $id => $struct)
 			{
 				$categories[$language->language_id][] = $this->get_category($id, $language->language_id);

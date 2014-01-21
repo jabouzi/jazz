@@ -40,9 +40,9 @@ class Mdl_category extends CI_Model
 		return $query;
 	}
 	
-	function get_join_where($where)
+	function get_join_where($select, $where)
 	{
-		$this->db->select('*');
+		$this->db->select($select);
 		$this->db->from('jazz_categories');
 		$this->db->join('jazz_categories_i18n', 'jazz_categories.category_id = jazz_categories_i18n.category_id');
 		$this->db->where($where);
