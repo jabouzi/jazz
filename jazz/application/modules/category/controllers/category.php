@@ -140,6 +140,8 @@ class Category extends MX_Controller
 			$categories_structure[$temp[1]] = $temp[0];
 		}
 		
+		var_dump($categories_structure);
+		
 		return $categories_structure;
 	}
 	
