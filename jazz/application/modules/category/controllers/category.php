@@ -11,8 +11,8 @@ class Category extends MX_Controller
 	function index()
 	{
 		$view_data['page_title'] = lang('category.title');
-		$structure = $this->get_categories_structure();
-		$categories = $this->get_categories($structure);
+		//$structure = $this->get_categories_structure();
+		$categories = $this->get_categories();
 		//$this->cache->memcached->save('foo', $categories);
 		//var_dump($this->cache->memcached->get('foo'));
 		//var_dump($this->cache->memcached->cache_info(), $structure);
@@ -143,12 +143,14 @@ class Category extends MX_Controller
 		return $categories_structure;
 	}
 	
-	private function get_categories($structure)
+	private function get_categories()
 	{
 		$categories = array();
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
-		{	
+		{
+			var_dump($language);
+			$structure = get_categories_structure($language);
 			foreach($structure as $id => $struct)
 			{
 				$categories[$language->language_id][] = $this->get_category($id, $language->language_id);
