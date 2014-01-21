@@ -130,7 +130,6 @@ class Category extends MX_Controller
 		$where = array('language_id = ' => $language);
 		$select = 'jazz_categories.category_id, jazz_categories.category_parent_id';
 		$categories = $this->mdl_category->get_join_where($select, $where)->result();
-		var_dump('1', $categories);
 		$structure = $this->generate_categories_tree($categories);
 		$tree = explode('||', $structure);
 		if (end($tree) == '') array_pop($tree);
@@ -139,8 +138,6 @@ class Category extends MX_Controller
 			$temp = explode('|', $node);
 			$categories_structure[$temp[1]] = $temp[0];
 		}
-		
-		var_dump($categories_structure);
 		
 		return $categories_structure;
 	}
@@ -169,7 +166,7 @@ class Category extends MX_Controller
 		foreach($languages as $language)
 		{
 			$where = array('language_id = ' => $language->language_id);
-			$results = $this->mdl_category->get_join_where($where)->result();
+			$results = $this->mdl_category->get_join_where('*', $where)->result();
 			foreach($results as $result)
 			{
 				$categories[$language->language_id][$result->category_id] = $result->category_name;
@@ -185,7 +182,7 @@ class Category extends MX_Controller
 		if ($language_id)
 		{
 			$where['language_id = '] = $language_id;
-			$category = $this->mdl_category->get_join_where($where)->row();
+			$category = $this->mdl_category->get_join_where('*', $where)->row();
 			
 			return $category;
 		}
