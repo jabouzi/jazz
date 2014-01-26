@@ -65,8 +65,6 @@ class Category extends MX_Controller
 		else
 		{
 			$view_data = $category_data;
-			var_dump($view_data['structures']);
-			var_dump($view_data['categories']);
 		}
 		//$view_data['languages'] = modules::run('language/get_languages');
 		return $this->load->view($view.'.php', $view_data, true);
@@ -187,7 +185,7 @@ class Category extends MX_Controller
 			//$categories[$language->language_id]['structure'] = $structure;
 			//foreach($structure as $id => $struct)
 			//{
-				$categories[$language->language_id] = $results;
+				$categories[$language->language_id][$results->catgory_id] = $results;
 			//}
 		}
 		$this->cache->memcached->save('get_categories', $categories);
