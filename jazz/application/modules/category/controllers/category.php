@@ -15,12 +15,12 @@ class Category extends MX_Controller
 	{
 		//var_dump($this->categories);
 		$view_data['page_title'] = lang('category.title');
-		$structure = $this->get_categories_structure();
+		$structures = $this->get_categories_structure();
 		$categories = $this->get_categories();
 		//$this->cache->memcached->save('foo', $categories);
 		//var_dump($this->cache->memcached->get('foo'));
 		//var_dump($this->cache->memcached->cache_info(), $structure);
-		$categories['structure'] = $structure;
+		$categories['structures'] = $structures;
 		$categories['categories'] = $categories;
 		$categories['languages'] = modules::run('language/get_languages');
 		$categories['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
