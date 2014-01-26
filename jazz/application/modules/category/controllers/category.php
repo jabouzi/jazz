@@ -143,7 +143,7 @@ class Category extends MX_Controller
 			$categories_structure[$temp[1]] = $temp[0];
 		}
 		
-		var_dump($categories_structure);
+		//var_dump($categories_structure);
 		$this->cache->memcached->save('get_categories_structure', $categories_structure);
 		
 		return $categories_structure;
@@ -151,7 +151,7 @@ class Category extends MX_Controller
 	
 	private function get_categories()
 	{
-		var_dump($this->cache->memcached->get('get_categories'));
+		//var_dump($this->cache->memcached->get('get_categories'));
 		if ($this->cache->memcached->get('get_categories')) return $this->cache->memcached->get('get_categories');
 		$categories = array();
 		$languages = modules::run('language/get_languages');
