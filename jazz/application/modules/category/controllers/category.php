@@ -124,13 +124,13 @@ class Category extends MX_Controller
 		return $tree;
 	}
 	
-	private function get_categories_structure($language)
+	private function get_categories_structure($language_id)
 	{
 		$categories_structure = array();
-		$where = array('language_id = ' => $language);
+		$where = array('language_id = ' => $language_id);
 		$select = 'jazz_categories.category_id, jazz_categories.category_parent_id';
 		$categories = $this->mdl_category->get_join_where($select, $where)->result();
-		var_dump($categories);
+		var_dump($categories, $this->get_dropdown_categories($language_id));
 		$structure = $this->generate_categories_tree($categories);
 		$tree = explode('||', $structure);
 		if (end($tree) == '') array_pop($tree);
@@ -163,18 +163,14 @@ class Category extends MX_Controller
 		return $categories;
 	}
 	
-	private function get_dropdown_categories()
+	private function get_dropdown_categories($language_id)
 	{
 		$categories = array();
-		$languages = modules::run('language/get_languages');
-		foreach($languages as $language)
+		$where = array('language_id = ' => $language_id);
+		$results = $this->mdl_category->get_join_where('*', $where)->result();
+		foreach($results as $result)
 		{
-			$where = array('language_id = ' => $language->language_id);
-			$results = $this->mdl_category->get_join_where('*', $where)->result();
-			foreach($results as $result)
-			{
-				$categories[$language->language_id][$result->category_id] = $result->category_name;
-			}
+			$categories[$language->language_id][$result->category_id] = array($result->category_name, $result->category_id, $result->category_parent_id);
 		}
 		
 		return $categories;
