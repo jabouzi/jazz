@@ -161,7 +161,7 @@ class Category extends MX_Controller
 			}
 		}
 		
-		//var_dump($categories_structure);
+		var_dump($categories_structure);
 		$this->cache->memcached->save('get_categories_structure', $categories_structure);
 		
 		return $categories_structure;
