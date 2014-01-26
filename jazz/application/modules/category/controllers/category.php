@@ -2,11 +2,14 @@
 
 class Category extends MX_Controller
 {
+	private $categories = array();
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('mdl_category');
 		$this->cache->memcached->clean();
+		$this->categories = $this->get_categories();
+		var_dump($this->categories);exit;
 	}
 	
 	function index()
@@ -113,7 +116,7 @@ class Category extends MX_Controller
 	private function generate_categories_tree($categories, $parent = 0, $depth = 0)
 	{
 		$tree = '';
-		var_dump($categories);
+		//var_dump($categories);
 		foreach($categories as $category)
 		{
 			if($category[2] == $parent)
@@ -157,7 +160,7 @@ class Category extends MX_Controller
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
 		{
-			$structure = $this->get_categories_structure($language->language_id);
+			//$structure = $this->get_categories_structure($language->language_id);
 			$categories[$language->language_id]['structure'] = $structure;
 			foreach($structure as $id => $struct)
 			{
