@@ -179,7 +179,8 @@ class Category extends MX_Controller
 		foreach($results as $result)
 		{
 			$categories[$language_id][$result->category_id] = array($result->category_name, $result->category_id, $result->category_parent_id);
-		}		
+		}
+		var_dump($categories);
 		$this->cache->memcached->save('get_dropdown_categories', $categories);
 		
 		return $categories;
