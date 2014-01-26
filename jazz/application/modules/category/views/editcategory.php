@@ -24,7 +24,7 @@
 					<label><?php echo lang('category.url'); ?></label>
 					<input style="height: 30px;" type="text" name="category_url" id="category_url" value="<?php echo $category->category_url; ?>" data-validate="required" data-type="text" title="<?php echo lang('category.url'); ?>">
 				</fieldset>
-				<fieldset style="width:20%; float:left; margin-right: 3%;">
+				<fieldset style="width:48%; float:left; margin-right: 3%;">
 					<label><?php echo lang('category.order'); ?></label>
 					<input style="height: 30px;" type="text" name="category_order" id="category_order" value="<?php echo $category->category_order; ?>" data-validate="required" data-type="order" title="<?php echo lang('category.order'); ?>">
 				</fieldset>
