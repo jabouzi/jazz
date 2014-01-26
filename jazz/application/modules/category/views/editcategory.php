@@ -12,7 +12,7 @@
 		<div id="<?php echo $language->language_code; ?>" class="tab_content">
 		<div class="tab_container">
 			<div class="module_content">
-				<fieldset style="width:48%; float:left; margin-right: 3%;">
+				<fieldset style="width:48%; float:left;">
 					<label><?php echo lang('category.parent'); ?></label>
 					<?php echo form_dropdown('category_parent_id', $categories_list[$language->language_id], $category->category_parent_id, 'style="width:92%;"'); ?>
 				</fieldset>
