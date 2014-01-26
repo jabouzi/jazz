@@ -201,10 +201,7 @@ class Category extends MX_Controller
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
 		{
-			foreach($results as $result)
-			{
-				$category[$language->language_id] = get_language_category($category_id, $language->language_id);
-			}
+			$category[$language->language_id] = get_language_category($category_id, $language->language_id);
 		}
 		
 		return $category;
