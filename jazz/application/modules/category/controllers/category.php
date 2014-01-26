@@ -151,7 +151,7 @@ class Category extends MX_Controller
 		foreach($languages as $language)
 		{
 			$structure = $this->get_categories_structure($language->language_id);
-			var_dump($structure);
+			//var_dump($structure);
 			foreach($structure as $id => $struct)
 			{
 				$categories[$language->language_id][] = $this->get_category($id, $language->language_id);
