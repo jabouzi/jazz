@@ -13,7 +13,7 @@ class Category extends MX_Controller
 	
 	function index()
 	{
-		var_dump($this->categories);exit;
+		//var_dump($this->categories);
 		$view_data['page_title'] = lang('category.title');
 		//$structure = $this->get_categories_structure();
 		$categories = $this->get_categories();
@@ -119,10 +119,10 @@ class Category extends MX_Controller
 		//var_dump($categories);
 		foreach($categories as $category)
 		{
-			if($category[2] == $parent)
+			if($category->category_parent_id == $parent)
 			{
-				$tree .= $depth.'|'.$category[1];
-				$tree .= '||'.$this->generate_categories_tree($categories, $category[1], $depth+1);
+				$tree .= $depth.'|'.$category->category_id;
+				$tree .= '||'.$this->generate_categories_tree($categories, $category->category_id, $depth+1);
 			}
 		}
 		//var_dump($tree);
@@ -136,8 +136,8 @@ class Category extends MX_Controller
 		//$where = array('language_id = ' => $language_id);
 		//$select = 'jazz_categories.category_id, jazz_categories.category_parent_id';
 		//$categories = $this->mdl_category->get_join_where($select, $where)->result();
-		$categories = $this->get_dropdown_categories($language_id);
-		$structure = $this->generate_categories_tree($categories[$language_id]);
+		//$categories = $this->get_dropdown_categories($language_id);
+		$structure = $this->generate_categories_tree(element($language_id, $this->get_categories()));
 		$tree = explode('||', $structure);
 		if (end($tree) == '') array_pop($tree);
 		foreach($tree as $node)
@@ -146,7 +146,7 @@ class Category extends MX_Controller
 			$categories_structure[$temp[1]] = $temp[0];
 		}
 		
-		//var_dump($categories_structure);
+		var_dump($categories_structure);
 		$this->cache->memcached->save('get_categories_structure', $categories_structure);
 		
 		return $categories_structure;
