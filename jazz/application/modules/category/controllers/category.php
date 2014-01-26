@@ -6,6 +6,7 @@ class Category extends MX_Controller
 	{
 		parent::__construct();
 		$this->load->model('mdl_category');
+		$this->cache->memcached->clean();
 	}
 	
 	function index()
