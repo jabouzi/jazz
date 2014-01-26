@@ -16,7 +16,6 @@ class Category extends MX_Controller
 		$categories = $this->get_categories();
 		$categories_data['structures'] = $structures;
 		$categories_data['categories'] = $categories;
-		$categories_data['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
 		$view_data['admin_widgets']['categories'] = $this->show('category', $categories_data);
 		echo modules::run('template', $view_data);
 	}
@@ -58,6 +57,7 @@ class Category extends MX_Controller
 		{
 			$view_data = $category_data;
 		}
+		$view_data['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
 		$view_data['languages'] = modules::run('language/get_languages');
 		return $this->load->view($view.'.php', $view_data, true);
 	}
