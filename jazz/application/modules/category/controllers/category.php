@@ -114,10 +114,10 @@ class Category extends MX_Controller
 		$tree = '';
 		foreach($categories as $category)
 		{
-			if($category->category_parent_id == $parent)
+			if($category[2] == $parent)
 			{
-				$tree .= $depth.'|'.$category->category_id;
-				$tree .= '||'.$this->generate_categories_tree($categories, $category->category_id, $depth+1);
+				$tree .= $depth.'|'.$category[1];
+				$tree .= '||'.$this->generate_categories_tree($categories, $category[1], $depth+1);
 			}
 		}
 
@@ -126,11 +126,12 @@ class Category extends MX_Controller
 	
 	private function get_categories_structure($language_id)
 	{
+		if ($this->cache->memcached->get('get_categories_structure')) return $this->cache->memcached->get('get_categories_structure');
 		$categories_structure = array();
-		$where = array('language_id = ' => $language_id);
-		$select = 'jazz_categories.category_id, jazz_categories.category_parent_id';
-		$categories = $this->mdl_category->get_join_where($select, $where)->result();
-		var_dump($categories, $this->get_dropdown_categories($language_id));
+		//$where = array('language_id = ' => $language_id);
+		//$select = 'jazz_categories.category_id, jazz_categories.category_parent_id';
+		//$categories = $this->mdl_category->get_join_where($select, $where)->result();
+		$categories, $this->get_dropdown_categories($language_id);
 		$structure = $this->generate_categories_tree($categories);
 		$tree = explode('||', $structure);
 		if (end($tree) == '') array_pop($tree);
@@ -139,25 +140,26 @@ class Category extends MX_Controller
 			$temp = explode('|', $node);
 			$categories_structure[$temp[1]] = $temp[0];
 		}
+		$this->cache->memcached->save('get_categories_structure', $categories_structure);
 		
 		return $categories_structure;
 	}
 	
 	private function get_categories()
 	{
-		//if ($this->cache->memcached->get('get_categories')) return $this->cache->memcached->get('get_categories');
+		if ($this->cache->memcached->get('get_categories')) return $this->cache->memcached->get('get_categories');
 		$categories = array();
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
 		{
 			$structure = $this->get_categories_structure($language->language_id);
-			var_dump($structure);
+			$categories[$language->language_id]['structure'] = $structure;
 			foreach($structure as $id => $struct)
 			{
 				$categories[$language->language_id][$id] = $this->get_category($id, $language->language_id);
 			}
 		}
-		//$this->cache->memcached->save('get_categories', $categories);
+		$this->cache->memcached->save('get_categories', $categories);
 		
 		var_dump('2', $categories);
 		return $categories;
@@ -165,13 +167,15 @@ class Category extends MX_Controller
 	
 	private function get_dropdown_categories($language_id)
 	{
+		if ($this->cache->memcached->get('get_dropdown_categories')) return $this->cache->memcached->get('get_dropdown_categories');
 		$categories = array();
 		$where = array('language_id = ' => $language_id);
 		$results = $this->mdl_category->get_join_where('*', $where)->result();
 		foreach($results as $result)
 		{
 			$categories[$language_id][$result->category_id] = array($result->category_name, $result->category_id, $result->category_parent_id);
-		}
+		}		
+		$this->cache->memcached->save('get_dropdown_categories', $categories);
 		
 		return $categories;
 	}
