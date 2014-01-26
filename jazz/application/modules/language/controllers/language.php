@@ -55,7 +55,7 @@ class Language extends MX_Controller
 	{
 		if ($this->cache->memcached->get('site_languages')) return $this->cache->memcached->get('site_languages');
 		$languages = $this->mdl_language->get('language_default DESC, language_name ASC');
-		$this->cache->memcached->save('site_languages', $languages);
+		$this->cache->memcached->save('site_languages', $languages->result());
 		return $languages->result();
 	}
 	
