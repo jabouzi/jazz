@@ -131,6 +131,7 @@ class Category extends MX_Controller
 	
 	private function get_categories_structure()
 	{
+		$this->load->helper('array');
 		if ($this->cache->memcached->get('get_categories_structure')) return $this->cache->memcached->get('get_categories_structure');
 		$categories_structure = array();
 		//$where = array('language_id = ' => $language_id);
