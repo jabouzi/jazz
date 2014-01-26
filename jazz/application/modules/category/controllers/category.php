@@ -125,6 +125,7 @@ class Category extends MX_Controller
 				$tree .= '||'.$this->generate_categories_tree($categories, $category->category_id, $depth+1);
 			}
 		}
+		
 		//var_dump($tree);
 		return $tree;
 	}
@@ -141,7 +142,16 @@ class Category extends MX_Controller
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
 		{
-			$structure = $this->generate_categories_tree(element($language->language_id, $this->get_categories()));
+			if ($this->cache->memcached->get('generate_categories_tree_'.$language->language_id))
+			{
+				$structure = $this->cache->memcached->get('generate_categories_tree_'.$language->language_id);
+			}
+			else
+			{
+				$structure = $this->generate_categories_tree(element($language->language_id, $this->get_categories()));
+				$this->cache->memcached->save('generate_categories_tree_'.$language->language_id, $structure);
+			}
+
 			$tree = explode('||', $structure);
 			if (end($tree) == '') array_pop($tree);
 			foreach($tree as $node)
@@ -151,7 +161,7 @@ class Category extends MX_Controller
 			}
 		}
 		
-		var_dump($categories_structure);
+		//var_dump($categories_structure);
 		$this->cache->memcached->save('get_categories_structure', $categories_structure);
 		
 		return $categories_structure;
