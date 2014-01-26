@@ -176,17 +176,21 @@ class Category extends MX_Controller
 		return $categories;
 	}
 	
-	private function get_dropdown_categories($language_id)
+	private function get_dropdown_categories()
 	{
 		if ($this->cache->memcached->get('get_dropdown_categories')) return $this->cache->memcached->get('get_dropdown_categories');
 		$categories = array();
-		$where = array('language_id = ' => $language_id);
-		$results = $this->mdl_category->get_join_where('*', $where)->result();
-		foreach($results as $result)
+		$languages = modules::run('language/get_languages');
+		foreach($languages as $language)
 		{
-			$categories[$language_id][$result->category_id] = $result->category_name;
+			$where = array('language_id = ' => $language->language_id);
+			$results = $this->mdl_category->get_join_where('*', $where)->result();
+			foreach($results as $result)
+			{
+				$categories[$language_id][$result->category_id] = $result->category_name;
+			}
+			$this->cache->memcached->save('get_dropdown_categories', $categories);
 		}
-		$this->cache->memcached->save('get_dropdown_categories', $categories);
 		
 		return $categories;
 	}
