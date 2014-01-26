@@ -34,7 +34,6 @@ class Category extends MX_Controller
 		if (!$category_id) redirect('dashboard');
 		$view_data['page_title'] = lang('category.edit');
 		$category = $this->get_category($category_id);
-		var_dump($category);
 		$view_data['admin_widgets']['category'] = $this->show('editcategory', $category);
 		echo modules::run('template', $view_data);
 	}
@@ -97,12 +96,12 @@ class Category extends MX_Controller
 		redirect('category/editcategory/'.$category_id);
 	}
 	
-	private function update_profile($category_id, $category_data)
-	{
-		$this->mdl_category->update($category_id, $category_data);
-		$this->session->set_categorydata('success_message', lang('category.success'));
-		redirect('category');
-	}
+	//private function update_profile($category_id, $category_data)
+	//{
+		//$this->mdl_category->update($category_id, $category_data);
+		//$this->session->set_categorydata('success_message', lang('category.success'));
+		//redirect('category');
+	//}
 	
 	private function delete_category($category_id)
 	{
@@ -199,18 +198,16 @@ class Category extends MX_Controller
 			return $this->get_language_category($category_id, $language_id);
 		}
 		
-		$where = array('jazz_categories.category_id = ' => $category_id);
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
 		{
-			$results = $this->mdl_category->get_join_where('*', $where)->result();
 			foreach($results as $result)
 			{
-				$categories[$language->language_id] = $result;
+				$category[$language->language_id] = get_language_category($category_id, $language->language_id);
 			}
 		}
 		
-		return $categories;
+		return $category;
 	}
 	
 	private function get_language_category($category_id, $language_id = 0)
