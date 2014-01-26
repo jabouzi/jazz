@@ -15,7 +15,7 @@ class Category extends MX_Controller
 	{
 		//var_dump($this->categories);
 		$view_data['page_title'] = lang('category.title');
-		//$structure = $this->get_categories_structure();
+		$structure = $this->get_categories_structure();
 		$categories = $this->get_categories();
 		//$this->cache->memcached->save('foo', $categories);
 		//var_dump($this->cache->memcached->get('foo'));
