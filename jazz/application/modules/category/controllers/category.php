@@ -203,7 +203,7 @@ class Category extends MX_Controller
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
 		{
-			$results = $this->mdl_category->get_join_where($where)->result();
+			$results = $this->mdl_category->get_join_where('*', $where)->result();
 			foreach($results as $result)
 			{
 				$categories[$language->language_id] = $result;
