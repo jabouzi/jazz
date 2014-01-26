@@ -161,7 +161,7 @@ class Category extends MX_Controller
 			}
 		}
 		
-		var_dump($categories_structure);
+		//var_dump($categories_structure);
 		$this->cache->memcached->save('get_categories_structure', $categories_structure);
 		
 		return $categories_structure;
@@ -199,7 +199,7 @@ class Category extends MX_Controller
 		$results = $this->mdl_category->get_join_where('*', $where)->result();
 		foreach($results as $result)
 		{
-			$categories[$language_id][$result->category_id] = array($result->category_name, $result->category_id, $result->category_parent_id);
+			$categories[$language_id][$result->category_id] = $result->category_name;
 		}
 		//var_dump($categories);
 		$this->cache->memcached->save('get_dropdown_categories', $categories);
