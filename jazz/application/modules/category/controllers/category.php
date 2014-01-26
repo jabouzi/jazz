@@ -24,7 +24,7 @@ class Category extends MX_Controller
 		$categories_data['categories'] = $categories;
 		$categories_data['languages'] = modules::run('language/get_languages');
 		$categories_data['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
-		var_dump($categories_data);
+		//var_dump($categories_data);
 		$view_data['admin_widgets']['categories'] = $this->show('category', $categories_data);
 		echo modules::run('template', $view_data);
 	}
