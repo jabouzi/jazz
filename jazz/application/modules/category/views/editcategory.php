@@ -1,5 +1,5 @@
 <article class="module width_full">
-	<header><h3><?php echo lang('category.edit'); ?></h3>
+	<header><h3 class="tabs_involved"><?php echo lang('category.edit'); ?></h3>
 		<ul class="tabs">
 			<?php foreach($languages as $language) : ?>
 				<li><a href="#<?php echo $language->language_code; ?>"><?php echo ucfirst(strtolower($language->language_name)); ?></a></li>
