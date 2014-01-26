@@ -21,7 +21,7 @@
 						</tr> 
 					</thead> 
 					<tbody id="workflow_list">
-						<?php if (element($language->language_id, $structures) : ?>
+						<?php if (element($language->language_id, $structures) ): ?>
 							<?php foreach ($structures[$language->language_id] as $category_id => $structure) : ?>
 								<?php $category = $categories[$language->language_id][$category_id]; ?>
 								<tr>
