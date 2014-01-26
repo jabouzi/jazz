@@ -134,6 +134,7 @@ class Category extends MX_Controller
 		//$categories = $this->mdl_category->get_join_where($select, $where)->result();
 		$categories = $this->get_dropdown_categories($language_id);
 		$structure = $this->generate_categories_tree($categories);
+		var_dump($structure);
 		$tree = explode('||', $structure);
 		if (end($tree) == '') array_pop($tree);
 		foreach($tree as $node)
