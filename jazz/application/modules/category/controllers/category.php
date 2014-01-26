@@ -2,13 +2,13 @@
 
 class Category extends MX_Controller
 {
-	private $categories = array();
+	//private $categories = array();
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('mdl_category');
 		$this->cache->memcached->clean();
-		$this->categories = $this->get_categories();
+		//$this->categories = $this->get_categories();
 	}
 	
 	function index()
@@ -20,10 +20,12 @@ class Category extends MX_Controller
 		//$this->cache->memcached->save('foo', $categories);
 		//var_dump($this->cache->memcached->get('foo'));
 		//var_dump($this->cache->memcached->cache_info(), $structure);
-		//$categories['structure'] = $structure;
+		$categories['structure'] = $structure;
+		$categories['categories'] = $categories;
+		$categories['languages'] = modules::run('language/get_languages');
 		$categories['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
 		$view_data['admin_widgets']['categories'] = $this->show('category', $categories);
-		//echo modules::run('template', $view_data);
+		echo modules::run('template', $view_data);
 	}
 	
 	function newcategory()
