@@ -113,7 +113,7 @@ class Category extends MX_Controller
 	private function generate_categories_tree($categories, $parent = 0, $depth = 0)
 	{
 		$tree = '';
-		//var_dump($categories);
+		var_dump($categories);
 		foreach($categories as $category)
 		{
 			if($category[2] == $parent)
@@ -180,7 +180,7 @@ class Category extends MX_Controller
 		{
 			$categories[$language_id][$result->category_id] = array($result->category_name, $result->category_id, $result->category_parent_id);
 		}
-		var_dump($categories);
+		//var_dump($categories);
 		$this->cache->memcached->save('get_dropdown_categories', $categories);
 		
 		return $categories;
