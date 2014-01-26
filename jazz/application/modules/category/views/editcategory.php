@@ -18,15 +18,15 @@
 				</fieldset>
 				<fieldset style="width:100%;">
 					<label><?php echo lang('category.name'); ?></label>
-					<input type="text" name="category_name" id="category_name" value="<?php echo $category->category_name; ?>" data-validate="required" data-type="text" title="<?php echo lang('category.name'); ?>">
+					<input style="height: 30px;" type="text" name="category_name" id="category_name" value="<?php echo $category->category_name; ?>" data-validate="required" data-type="text" title="<?php echo lang('category.name'); ?>">
 				</fieldset>
 				<fieldset>
 					<label><?php echo lang('category.url'); ?></label>
-					<input type="text" name="category_url" id="category_url" value="<?php echo $category->category_url; ?>" data-validate="required" data-type="text" title="<?php echo lang('category.url'); ?>">
+					<input style="height: 30px;" type="text" name="category_url" id="category_url" value="<?php echo $category->category_url; ?>" data-validate="required" data-type="text" title="<?php echo lang('category.url'); ?>">
 				</fieldset>
 				<fieldset style="width:48%; float:left; margin-right: 3%;">
 					<label><?php echo lang('category.order'); ?></label>
-					<input type="text" name="category_order" id="category_order" value="<?php echo $category->category_order; ?>" data-validate="required" data-type="order" title="<?php echo lang('category.order'); ?>">
+					<input style="height: 30px;" type="text" name="category_order" id="category_order" value="<?php echo $category->category_order; ?>" data-validate="required" data-type="order" title="<?php echo lang('category.order'); ?>">
 				</fieldset>
 				<fieldset style="width:48%; float:left; margin-right: 3%;">
 					<label><?php echo lang('category.status'); ?></label>
