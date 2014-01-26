@@ -160,11 +160,14 @@ class Category extends MX_Controller
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
 		{
+			$where = array('language_id = ' => $language_id);
+			$results = $this->mdl_category->get_join_where('*', $where)->result();
+			var_dump($results);
 			//$structure = $this->get_categories_structure($language->language_id);
 			//$categories[$language->language_id]['structure'] = $structure;
 			//foreach($structure as $id => $struct)
 			//{
-				$categories[$language->language_id][$id] = $this->get_category($id, $language->language_id);
+				$categories[$language->language_id][] = $this->get_category($id, $language->language_id);
 			//}
 		}
 		$this->cache->memcached->save('get_categories', $categories);
