@@ -66,6 +66,7 @@ class Category extends MX_Controller
 		{
 			$view_data = $category_data;
 			var_dump($view_data['structures']);
+			var_dump($view_data['categories']);
 		}
 		//$view_data['languages'] = modules::run('language/get_languages');
 		return $this->load->view($view.'.php', $view_data, true);
