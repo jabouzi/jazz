@@ -121,7 +121,7 @@ class Category extends MX_Controller
 				$tree .= '||'.$this->generate_categories_tree($categories, $category[1], $depth+1);
 			}
 		}
-
+		var_dump($tree);
 		return $tree;
 	}
 	
