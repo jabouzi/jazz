@@ -9,11 +9,11 @@ class Category extends MX_Controller
 		$this->load->model('mdl_category');
 		$this->cache->memcached->clean();
 		$this->categories = $this->get_categories();
-		var_dump($this->categories);exit;
 	}
 	
 	function index()
 	{
+		var_dump($this->categories);exit;
 		$view_data['page_title'] = lang('category.title');
 		//$structure = $this->get_categories_structure();
 		$categories = $this->get_categories();
