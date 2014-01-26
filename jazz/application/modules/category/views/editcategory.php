@@ -12,7 +12,7 @@
 		<div id="<?php echo $language->language_code; ?>" class="tab_content">
 		<div class="tab_container">
 			<div class="module_content">
-				<fieldset style="width:48%; float:left;">
+				<fieldset style="width:48%; float:left; margin-right: 3%;">
 					<label><?php echo lang('category.parent'); ?></label>
 					<?php echo form_dropdown('category_parent_id', $categories_list[$language->language_id], $category->category_parent_id, 'style="width:92%;"'); ?>
 				</fieldset>
@@ -28,7 +28,7 @@
 					<label><?php echo lang('category.order'); ?></label>
 					<input type="text" name="category_order" id="category_order" value="<?php echo $category->category_order; ?>" data-validate="required" data-type="order" title="<?php echo lang('category.order'); ?>">
 				</fieldset>
-				<fieldset style="width:48%; float:left;">
+				<fieldset style="width:48%; float:left; margin-right: 3%;">
 					<label><?php echo lang('category.status'); ?></label>
 					<?php echo form_dropdown('category_active', $status, ord($category->category_active)); ?>
 				</fieldset>
