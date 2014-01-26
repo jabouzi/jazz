@@ -65,8 +65,9 @@ class Category extends MX_Controller
 		else
 		{
 			$view_data = $category_data;
+			var_dump($view_data);
 		}
-		$view_data['languages'] = modules::run('language/get_languages');
+		//$view_data['languages'] = modules::run('language/get_languages');
 		return $this->load->view($view.'.php', $view_data, true);
 	}
 	
