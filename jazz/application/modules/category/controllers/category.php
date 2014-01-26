@@ -144,16 +144,22 @@ class Category extends MX_Controller
 	
 	private function get_categories()
 	{
+		if ($this->cache->memcached->get('get_categories')) return $this->cache->memcached->get('get_categories');
+				//$this->cache->memcached->save('foo', $categories);
+		//var_dump($this->cache->memcached->get('foo'));
+		//var_dump($this->cache->memcached->cache_info(), $structure);
 		$categories = array();
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
 		{
 			$structure = $this->get_categories_structure($language->language_id);
+			var_dump($structure);
 			foreach($structure as $id => $struct)
 			{
 				$categories[$language->language_id][] = $this->get_category($id, $language->language_id);
 			}
 		}
+		$this->cache->memcached->save('get_categories', $categories);
 		
 		var_dump('2', $categories);
 		return $categories;
@@ -178,29 +184,30 @@ class Category extends MX_Controller
 	
 	private function get_category($category_id, $language_id = 0)
 	{
-		$where = array('jazz_categories.category_id = ' => $category_id);
 		if ($language_id)
 		{
-			$where['language_id = '] = $language_id;
-			$category = $this->mdl_category->get_join_where('*', $where)->row();
-			
-			return $category;
-		}
-		else
-		{
-			$languages = modules::run('language/get_languages');
-			foreach($languages as $language)
-			{
-				$results = $this->mdl_category->get_join_where($where)->result();
-				foreach($results as $result)
-				{
-					$categories[$language->language_id] = $result;
-				}
-			}
-			
-			return $categories;
+			return $this->get_language_category($category_id, $language_id);
 		}
 		
-		return false;
+		$where = array('jazz_categories.category_id = ' => $category_id);
+		$languages = modules::run('language/get_languages');
+		foreach($languages as $language)
+		{
+			$results = $this->mdl_category->get_join_where($where)->result();
+			foreach($results as $result)
+			{
+				$categories[$language->language_id] = $result;
+			}
+		}
+		
+		return $categories;
+	}
+	
+	private function get_language_category($category_id, $language_id = 0)
+	{
+		$where = array('jazz_categories.category_id = ' => $category_id, 'language_id = ' => $language_id);
+		$category = $this->mdl_category->get_join_where('*', $where)->row();
+		
+		return $category;
 	}
 }
