@@ -7,7 +7,6 @@
 		</ul>
 	</header>
 	<form id="categories_form" method="post" action="<?php echo site_url('category/process'); ?>">
-		<?php $index = 0; ?>
 		<?php foreach($languages as $language) : ?>
 			<div id="<?php echo $language->language_code; ?>" class="tab_content">
 				<div class="tab_container">
@@ -43,7 +42,6 @@
 					</table>
 				</div><!-- end of .tab_container -->
 			</div>
-			<?php $index++; ?>
 		<?php endforeach; ?>
 		<footer>
 				<div class="submit_link">
