@@ -20,12 +20,12 @@ class Category extends MX_Controller
 		//$this->cache->memcached->save('foo', $categories);
 		//var_dump($this->cache->memcached->get('foo'));
 		//var_dump($this->cache->memcached->cache_info(), $structure);
-		$categories['structures'] = $structures;
-		$categories['categories'] = $categories;
-		$categories['languages'] = modules::run('language/get_languages');
-		$categories['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
-		var_dump($categories);exit;
-		$view_data['admin_widgets']['categories'] = $this->show('category', $categories);
+		$categories_data['structures'] = $structures;
+		$categories_data['categories'] = $categories;
+		$categories_data['languages'] = modules::run('language/get_languages');
+		$categories_data['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
+		var_dump($categories_data);exit;
+		$view_data['admin_widgets']['categories'] = $this->show('category', $categories_data);
 		echo modules::run('template', $view_data);
 	}
 	
