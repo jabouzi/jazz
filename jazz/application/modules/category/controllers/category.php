@@ -161,11 +161,11 @@ class Category extends MX_Controller
 		foreach($languages as $language)
 		{
 			//$structure = $this->get_categories_structure($language->language_id);
-			$categories[$language->language_id]['structure'] = $structure;
-			foreach($structure as $id => $struct)
-			{
+			//$categories[$language->language_id]['structure'] = $structure;
+			//foreach($structure as $id => $struct)
+			//{
 				$categories[$language->language_id][$id] = $this->get_category($id, $language->language_id);
-			}
+			//}
 		}
 		$this->cache->memcached->save('get_categories', $categories);
 		
