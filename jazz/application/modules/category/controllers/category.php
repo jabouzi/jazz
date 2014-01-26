@@ -119,13 +119,15 @@ class Category extends MX_Controller
 	private function generate_categories_tree($categories, $parent = 0, $depth = 0)
 	{
 		$tree = '';
-		var_dump($categories);
-		foreach($categories as $category)
+		if($categories)
 		{
-			if($category->category_parent_id == $parent)
+			foreach($categories as $category)
 			{
-				$tree .= $depth.'|'.$category->category_id;
-				$tree .= '||'.$this->generate_categories_tree($categories, $category->category_id, $depth+1);
+				if($category->category_parent_id == $parent)
+				{
+					$tree .= $depth.'|'.$category->category_id;
+					$tree .= '||'.$this->generate_categories_tree($categories, $category->category_id, $depth+1);
+				}
 			}
 		}
 		
