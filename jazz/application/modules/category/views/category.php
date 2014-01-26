@@ -15,11 +15,9 @@
 					<thead> 
 						<tr> 
 							<th><?php echo lang('category.name'); ?></th>
-							<?php if (!$index) : ?> 
-								<th><?php echo lang('category.order'); ?></th>
-								<th><?php echo lang('category.status'); ?></th>
-								<th><?php echo lang('admin.action'); ?></th>
-							<?php endif; ?>
+							<th><?php echo lang('category.order'); ?></th>
+							<th><?php echo lang('category.status'); ?></th>
+							<th><?php echo lang('admin.action'); ?></th>
 						</tr> 
 					</thead> 
 					<tbody id="workflow_list">
