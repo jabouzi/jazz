@@ -113,6 +113,7 @@ class Category extends MX_Controller
 	private function generate_categories_tree($categories, $parent = 0, $depth = 0)
 	{
 		$tree = '';
+		var_dump($categories);
 		foreach($categories as $category)
 		{
 			if($category[2] == $parent)
