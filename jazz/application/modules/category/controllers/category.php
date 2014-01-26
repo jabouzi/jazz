@@ -11,12 +11,12 @@ class Category extends MX_Controller
 	function index()
 	{
 		$view_data['page_title'] = lang('category.title');
-		//$structure = $this->get_categories_structure();
+		$structure = $this->get_categories_structure();
 		$categories = $this->get_categories();
 		//$this->cache->memcached->save('foo', $categories);
 		//var_dump($this->cache->memcached->get('foo'));
 		//var_dump($this->cache->memcached->cache_info(), $structure);
-		//$categories['structure'] = $structure;
+		$categories['structure'] = $structure;
 		$categories['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
 		$view_data['admin_widgets']['categories'] = $this->show('category', $categories);
 		echo modules::run('template', $view_data);
@@ -146,9 +146,6 @@ class Category extends MX_Controller
 	private function get_categories()
 	{
 		if ($this->cache->memcached->get('get_categories')) return $this->cache->memcached->get('get_categories');
-				//$this->cache->memcached->save('foo', $categories);
-		//var_dump($this->cache->memcached->get('foo'));
-		//var_dump($this->cache->memcached->cache_info(), $structure);
 		$categories = array();
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
