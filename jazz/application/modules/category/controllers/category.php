@@ -134,7 +134,7 @@ class Category extends MX_Controller
 		//$select = 'jazz_categories.category_id, jazz_categories.category_parent_id';
 		//$categories = $this->mdl_category->get_join_where($select, $where)->result();
 		$categories = $this->get_dropdown_categories($language_id);
-		$structure = $this->generate_categories_tree($categories);
+		$structure = $this->generate_categories_tree($categories[$language_id]);
 		$tree = explode('||', $structure);
 		if (end($tree) == '') array_pop($tree);
 		foreach($tree as $node)
