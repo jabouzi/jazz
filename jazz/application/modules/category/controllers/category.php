@@ -2,29 +2,22 @@
 
 class Category extends MX_Controller
 {
-	//private $categories = array();
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('mdl_category');
 		$this->cache->memcached->clean();
-		//$this->categories = $this->get_categories();
 	}
 	
 	function index()
 	{
-		//var_dump($this->categories);
 		$view_data['page_title'] = lang('category.title');
 		$structures = $this->get_categories_structure();
 		$categories = $this->get_categories();
-		//$this->cache->memcached->save('foo', $categories);
-		//var_dump($this->cache->memcached->get('foo'));
-		//var_dump($this->cache->memcached->cache_info(), $structure);
 		$categories_data['structures'] = $structures;
 		$categories_data['categories'] = $categories;
 		$categories_data['languages'] = modules::run('language/get_languages');
 		$categories_data['status'] = array(0 => 'icn_alert_error.png', 1 => 'icn_alert_success.png');
-		//var_dump($categories_data);
 		$view_data['admin_widgets']['categories'] = $this->show('category', $categories_data);
 		echo modules::run('template', $view_data);
 	}
@@ -41,6 +34,7 @@ class Category extends MX_Controller
 		if (!$category_id) redirect('dashboard');
 		$view_data['page_title'] = lang('category.edit');
 		$category = $this->get_category($category_id);
+		var_dump($category);
 		$view_data['admin_widgets']['category'] = $this->show('editcategory', $category);
 		echo modules::run('template', $view_data);
 	}
@@ -66,7 +60,6 @@ class Category extends MX_Controller
 		{
 			$view_data = $category_data;
 		}
-		//$view_data['languages'] = modules::run('language/get_languages');
 		return $this->load->view($view.'.php', $view_data, true);
 	}
 	
@@ -130,8 +123,7 @@ class Category extends MX_Controller
 				}
 			}
 		}
-		
-		//var_dump($tree);
+
 		return $tree;
 	}
 	
@@ -140,10 +132,6 @@ class Category extends MX_Controller
 		$this->load->helper('array');
 		if ($this->cache->memcached->get('get_categories_structure')) return $this->cache->memcached->get('get_categories_structure');
 		$categories_structure = array();
-		//$where = array('language_id = ' => $language_id);
-		//$select = 'jazz_categories.category_id, jazz_categories.category_parent_id';
-		//$categories = $this->mdl_category->get_join_where($select, $where)->result();
-		//$categories = $this->get_dropdown_categories($language_id);
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
 		{
@@ -164,9 +152,7 @@ class Category extends MX_Controller
 				$temp = explode('|', $node);
 				$categories_structure[$language->language_id][$temp[1]] = $temp[0];
 			}
-		}
-		
-		//var_dump($categories_structure);
+		}		
 		$this->cache->memcached->save('get_categories_structure', $categories_structure);
 		
 		return $categories_structure;
@@ -174,7 +160,6 @@ class Category extends MX_Controller
 	
 	private function get_categories()
 	{
-		//var_dump($this->cache->memcached->get('get_categories'));
 		if ($this->cache->memcached->get('get_categories')) return $this->cache->memcached->get('get_categories');
 		$categories = array();
 		$languages = modules::run('language/get_languages');
@@ -182,17 +167,13 @@ class Category extends MX_Controller
 		{
 			$where = array('language_id = ' => $language->language_id);
 			$results = $this->mdl_category->get_join_where('*', $where)->result();
-			//var_dump($results);
-			//$structure = $this->get_categories_structure($language->language_id);
-			//$categories[$language->language_id]['structure'] = $structure;
 			foreach($results as $result)
 			{
 				$categories[$language->language_id][$result->category_id] = $result;
 			}
 		}
 		$this->cache->memcached->save('get_categories', $categories);
-		
-		//var_dump('2', $categories);
+				
 		return $categories;
 	}
 	
@@ -206,7 +187,6 @@ class Category extends MX_Controller
 		{
 			$categories[$language_id][$result->category_id] = $result->category_name;
 		}
-		//var_dump($categories);
 		$this->cache->memcached->save('get_dropdown_categories', $categories);
 		
 		return $categories;
