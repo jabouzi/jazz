@@ -145,7 +145,7 @@ class Category extends MX_Controller
 	
 	private function get_categories()
 	{
-		if ($this->cache->memcached->get('get_categories')) return $this->cache->memcached->get('get_categories');
+		//if ($this->cache->memcached->get('get_categories')) return $this->cache->memcached->get('get_categories');
 		$categories = array();
 		$languages = modules::run('language/get_languages');
 		foreach($languages as $language)
@@ -157,7 +157,7 @@ class Category extends MX_Controller
 				$categories[$language->language_id][] = $this->get_category($id, $language->language_id);
 			}
 		}
-		$this->cache->memcached->save('get_categories', $categories);
+		//$this->cache->memcached->save('get_categories', $categories);
 		
 		var_dump('2', $categories);
 		return $categories;
