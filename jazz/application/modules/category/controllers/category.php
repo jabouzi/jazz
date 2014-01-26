@@ -146,6 +146,7 @@ class Category extends MX_Controller
 	{
 		$categories = array();
 		$languages = modules::run('language/get_languages');
+		var_dump($languages);
 		foreach($languages as $language)
 		{
 			$structure = $this->get_categories_structure($language->language_id);
