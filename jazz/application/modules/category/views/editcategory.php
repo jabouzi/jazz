@@ -16,7 +16,7 @@
 					<label><?php echo lang('category.parent'); ?></label>
 					<?php echo form_dropdown('category_parent_id', $categories_list[$language->language_id], $category->category_parent_id, 'style="width:92%;"'); ?>
 				</fieldset>
-				<fieldset>
+				<fieldset style="width:100%;">
 					<label><?php echo lang('category.name'); ?></label>
 					<input type="text" name="category_name" id="category_name" value="<?php echo $category->category_name; ?>" data-validate="required" data-type="text" title="<?php echo lang('category.name'); ?>">
 				</fieldset>
