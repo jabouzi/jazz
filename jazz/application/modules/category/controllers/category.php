@@ -129,7 +129,7 @@ class Category extends MX_Controller
 		return $tree;
 	}
 	
-	private function get_categories_structure($language_id)
+	private function get_categories_structure()
 	{
 		if ($this->cache->memcached->get('get_categories_structure')) return $this->cache->memcached->get('get_categories_structure');
 		$categories_structure = array();
@@ -137,13 +137,17 @@ class Category extends MX_Controller
 		//$select = 'jazz_categories.category_id, jazz_categories.category_parent_id';
 		//$categories = $this->mdl_category->get_join_where($select, $where)->result();
 		//$categories = $this->get_dropdown_categories($language_id);
-		$structure = $this->generate_categories_tree(element($language_id, $this->get_categories()));
-		$tree = explode('||', $structure);
-		if (end($tree) == '') array_pop($tree);
-		foreach($tree as $node)
+		$languages = modules::run('language/get_languages');
+		foreach($languages as $language)
 		{
-			$temp = explode('|', $node);
-			$categories_structure[$temp[1]] = $temp[0];
+			$structure = $this->generate_categories_tree(element($language->language_id, $this->get_categories()));
+			$tree = explode('||', $structure);
+			if (end($tree) == '') array_pop($tree);
+			foreach($tree as $node)
+			{
+				$temp = explode('|', $node);
+				$categories_structure[$language->language_id][$temp[1]] = $temp[0];
+			}
 		}
 		
 		var_dump($categories_structure);
