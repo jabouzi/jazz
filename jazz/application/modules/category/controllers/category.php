@@ -179,6 +179,7 @@ class Category extends MX_Controller
 		{
 			$where = array('language_id = ' => $language->language_id);
 			$results = $this->mdl_category->get_join_where('*', $where)->result();
+			var_dump($results);
 			foreach($results as $result)
 			{
 				$categories[$language->language_id][$result->category_id] = $result->category_name;
