@@ -239,5 +239,7 @@ class Category extends MX_Controller
 		$category->language_id = $language_id;
 		$category->category_name = '';
 		$category->category_url = '';
+		
+		return $category;
 	}
 }
