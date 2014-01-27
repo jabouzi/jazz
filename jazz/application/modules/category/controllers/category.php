@@ -216,7 +216,22 @@ class Category extends MX_Controller
 	{
 		$where = array('jazz_categories.category_id = ' => $category_id, 'language_id = ' => $language_id);
 		$category = $this->mdl_category->get_join_where('*', $where)->row();
-		var_dump($category);
+		if (empty($category))
+		{
+			$category = new stdClass;
+			$category->category_id = '';
+			$category->category_parent_id = '';
+			$category->category_order = ''; 
+			$category->category_active = '';
+			$category->category_deleted = '';
+			$category->category_depth = ''; 
+			$category->category_created = '';
+			$category->category_modified = ''; 
+			$category->language_id = '';
+			$category->category_name = '';
+			$category->category_url = '';
+		}
+		
 		return $category;
 	}
 }
