@@ -47,12 +47,12 @@
 				<div class="submit_link">
 					<input type="button" id="save_category" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
 					<input type="button" id="add_category" value="<?php echo lang('admin.add'); ?>">
+					<input type="hidden" id="active_lang" name="active_lang" value="en">
 				</div>
 		</footer>
 	</form>
 	<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
 	<input type="hidden" id="error_message" value="">
-	<input type="hidden" id="active_lang" name="active_lang" value="en">
 	<div style="display:none" id="new_language">
 		<td><input type="text" name="new[]" value="">
 	</div>
