@@ -218,20 +218,26 @@ class Category extends MX_Controller
 		$category = $this->mdl_category->get_join_where('*', $where)->row();
 		if (empty($category))
 		{
-			$category = new stdClass;
-			$category->category_id = '';
-			$category->category_parent_id = '';
-			$category->category_order = ''; 
-			$category->category_active = '';
-			$category->category_deleted = '';
-			$category->category_depth = ''; 
-			$category->category_created = '';
-			$category->category_modified = ''; 
-			$category->language_id = '';
-			$category->category_name = '';
-			$category->category_url = '';
+			return $this->get_empty_category($category_id, $language_id);
 		}
 		
 		return $category;
+	}
+	
+	private function get_empty_category($category_id, $language_id)
+	{
+		$result = $this->mdl_category->get_where('jazz_categories', $category_id)->row();
+		$category = new stdClass;
+		$category->category_id = $category_id;
+		$category->category_parent_id = $result->category_parent_id;
+		$category->category_order = $result->category_order; 
+		$category->category_active = $result->category_active; 
+		$category->category_deleted = $result->category_deleted; 
+		$category->category_depth = $result->category_depth; 
+		$category->category_created = $result->category_created; 
+		$category->category_modified = $result->category_modified; 
+		$category->language_id = $language_id;
+		$category->category_name = '';
+		$category->category_url = '';
 	}
 }
