@@ -209,6 +209,8 @@ class Category extends MX_Controller
 			$category[$language->language_id] = $this->get_language_category($category_id, $language->language_id);
 		}
 		
+		var_dump($category);
+		
 		return $category;
 	}
 	
