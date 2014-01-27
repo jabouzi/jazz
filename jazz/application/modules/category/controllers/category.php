@@ -53,7 +53,7 @@ class Category extends MX_Controller
 		{
 			$view_data['categories_list'] = $this->get_dropdown_categories();
 			$view_data['categories'] = $category_data;
-			$view_data['status'] = array(0 => lang('admin.status0'), 1 => 'admin.status1');
+			$view_data['status'] = array(0 => lang('admin.status0'), 1 => lang('admin.status1'));
 		}
 		else
 		{
@@ -96,13 +96,6 @@ class Category extends MX_Controller
 		$this->session->set_categorydata('success_message', lang('category.success'));
 		redirect('category/editcategory/'.$category_id);
 	}
-	
-	//private function update_profile($category_id, $category_data)
-	//{
-		//$this->mdl_category->update($category_id, $category_data);
-		//$this->session->set_categorydata('success_message', lang('category.success'));
-		//redirect('category');
-	//}
 	
 	private function delete_category($category_id)
 	{
