@@ -209,8 +209,6 @@ class Category extends MX_Controller
 			$category[$language->language_id] = $this->get_language_category($category_id, $language->language_id);
 		}
 		
-		var_dump($category);
-		
 		return $category;
 	}
 	
@@ -218,7 +216,7 @@ class Category extends MX_Controller
 	{
 		$where = array('jazz_categories.category_id = ' => $category_id, 'language_id = ' => $language_id);
 		$category = $this->mdl_category->get_join_where('*', $where)->row();
-		
+		var_dump($category);
 		return $category;
 	}
 }
