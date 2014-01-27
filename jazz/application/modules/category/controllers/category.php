@@ -189,7 +189,7 @@ class Category extends MX_Controller
 			}
 		}
 		$this->cache->memcached->save('get_dropdown_categories', $categories);
-		var_dump($categories);
+
 		return $categories;
 	}
 	
