@@ -44,7 +44,7 @@
 		<footer>
 			<div class="submit_link">
 				<input type="button" id="save_category_profile" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
-				<input type="button" id="save_category_profile" value="<?php echo lang('admin.add'); ?>" class="submit_form alt_btn" data-toggle="modal" data-target="#myModal">
+				<input type="button" id="add_language" value="<?php echo lang('admin.add'); ?>" class="alt_btn" data-toggle="modal" data-target="#addLanguage">
 				<input type="hidden" name="category_id" id="category_id" value="<?php echo $category->category_id; ?>">
 				<input type="hidden" id="category_exists_url" value="<?php echo site_url('category/url_exists'); ?>">
 				<input type="hidden" id="active_lang" name="active_lang" value="en">
