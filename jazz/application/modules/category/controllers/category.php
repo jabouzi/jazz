@@ -213,10 +213,10 @@ class Category extends MX_Controller
 	{
 		$where = array('jazz_categories.category_id = ' => $category_id, 'language_id = ' => $language_id);
 		$category = $this->mdl_category->get_join_where('*', $where)->row();
-		if (empty($category))
-		{
-			return $this->get_empty_category($category_id, $language_id);
-		}
+		//if (empty($category))
+		//{
+			//return $this->get_empty_category($category_id, $language_id);
+		//}
 		
 		return $category;
 	}
