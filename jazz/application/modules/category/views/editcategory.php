@@ -53,3 +53,12 @@
 	<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
 	<input type="hidden" id="error_message" value="">
 </article><!-- end article -->
+<button class="btn btn-primary" data-toggle="modal" data-target=".bs-modal-sm">Small modal</button>
+
+<div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
