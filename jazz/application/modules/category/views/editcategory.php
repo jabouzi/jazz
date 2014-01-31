@@ -2,40 +2,44 @@
 	<header><h3 class="tabs_involved"><?php echo lang('category.edit'); ?></h3>
 		<ul class="tabs">
 			<?php foreach($languages as $language) : ?>
-				<li><a href="#<?php echo $language->language_code; ?>"><?php echo ucfirst(strtolower($language->language_name)); ?></a></li>
+				<? if (isset($categories[$language->language_id])) :?>
+					<li><a href="#<?php echo $language->language_code; ?>"><?php echo ucfirst(strtolower($language->language_name)); ?></a></li>
+				<? endif; ?>
 			<? endforeach; ?>
 		</ul>
 	</header>
 	<form id="category_profile" method="post" action="<?php echo site_url('category/process_editcategory'); ?>">
 		<?php foreach($languages as $language) : ?>
-			<?php $category = $categories[$language->language_id]; ?>
-			<div id="<?php echo $language->language_code; ?>" class="tab_content">
-				<div class="tab_container">
-					<div class="module_content">
-						<fieldset style="width:48%; float:left; margin-right: 3%;">
-							<label><?php echo lang('category.parent'); ?></label>
-							<?php echo form_dropdown('category_parent_id', $categories_list[$language->language_id], $category->category_parent_id, 'style="width:92%;"'); ?>
-						</fieldset>
-						<fieldset style="width:100%;">
-							<label><?php echo lang('category.name'); ?></label>
-							<input style="height: 30px;" type="text" name="category_name" id="category_name" value="<?php echo $category->category_name; ?>" data-validate="required" data-type="text" title="<?php echo lang('category.name'); ?>">
-						</fieldset>
-						<fieldset>
-							<label><?php echo lang('category.url'); ?></label>
-							<input style="height: 30px;" type="text" name="category_url" id="category_url" value="<?php echo $category->category_url; ?>" data-validate="required" data-type="text" title="<?php echo lang('category.url'); ?>">
-						</fieldset>
-						<fieldset style="width:48%; float:left; margin-right: 3%;">
-							<label><?php echo lang('category.order'); ?></label>
-							<input style="height: 30px;" type="text" name="category_order" id="category_order" value="<?php echo $category->category_order; ?>" data-validate="required" data-type="order" title="<?php echo lang('category.order'); ?>">
-						</fieldset>
-						<fieldset style="width:48%; float:left; margin-right: 3%;">
-							<label><?php echo lang('category.status'); ?></label>
-							<?php echo form_dropdown('category_active', $status, ord($category->category_active)); ?>
-						</fieldset>
-						<div class="clear"></div>
+			<? if (isset($categories[$language->language_id])) :?>
+				<?php $category = $categories[$language->language_id]; ?>
+				<div id="<?php echo $language->language_code; ?>" class="tab_content">
+					<div class="tab_container">
+						<div class="module_content">
+							<fieldset style="width:48%; float:left; margin-right: 3%;">
+								<label><?php echo lang('category.parent'); ?></label>
+								<?php echo form_dropdown('category_parent_id', $categories_list[$language->language_id], $category->category_parent_id, 'style="width:92%;"'); ?>
+							</fieldset>
+							<fieldset style="width:100%;">
+								<label><?php echo lang('category.name'); ?></label>
+								<input style="height: 30px;" type="text" name="category_name" id="category_name" value="<?php echo $category->category_name; ?>" data-validate="required" data-type="text" title="<?php echo lang('category.name'); ?>">
+							</fieldset>
+							<fieldset>
+								<label><?php echo lang('category.url'); ?></label>
+								<input style="height: 30px;" type="text" name="category_url" id="category_url" value="<?php echo $category->category_url; ?>" data-validate="required" data-type="text" title="<?php echo lang('category.url'); ?>">
+							</fieldset>
+							<fieldset style="width:48%; float:left; margin-right: 3%;">
+								<label><?php echo lang('category.order'); ?></label>
+								<input style="height: 30px;" type="text" name="category_order" id="category_order" value="<?php echo $category->category_order; ?>" data-validate="required" data-type="order" title="<?php echo lang('category.order'); ?>">
+							</fieldset>
+							<fieldset style="width:48%; float:left; margin-right: 3%;">
+								<label><?php echo lang('category.status'); ?></label>
+								<?php echo form_dropdown('category_active', $status, ord($category->category_active)); ?>
+							</fieldset>
+							<div class="clear"></div>
+						</div>
 					</div>
 				</div>
-			</div>
+			<? endif; ?>
 		<?php endforeach ?>
 		<footer>
 			<div class="submit_link">
