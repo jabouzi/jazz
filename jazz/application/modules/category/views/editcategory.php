@@ -2,7 +2,7 @@
 	<header><h3 class="tabs_involved"><?php echo lang('category.edit'); ?></h3>
 		<ul class="tabs">
 			<?php foreach($languages as $language) : ?>
-				<? if (isset($categories[$language->language_id])) :?>
+				<? if (!empty($categories[$language->language_id])) :?>
 					<li><a href="#<?php echo $language->language_code; ?>"><?php echo ucfirst(strtolower($language->language_name)); ?></a></li>
 				<? endif; ?>
 			<? endforeach; ?>
@@ -10,7 +10,7 @@
 	</header>
 	<form id="category_profile" method="post" action="<?php echo site_url('category/process_editcategory'); ?>">
 		<?php foreach($languages as $language) : ?>
-			<? if (isset($categories[$language->language_id])) :?>
+			<? if (!empty($categories[$language->language_id])) :?>
 				<?php $category = $categories[$language->language_id]; ?>
 				<div id="<?php echo $language->language_code; ?>" class="tab_content">
 					<div class="tab_container">
