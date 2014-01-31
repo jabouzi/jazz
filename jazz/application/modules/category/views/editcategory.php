@@ -44,6 +44,7 @@
 		<footer>
 			<div class="submit_link">
 				<input type="button" id="save_category_profile" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
+				<input type="button" id="save_category_profile" value="<?php echo lang('admin.add'); ?>" class="submit_form alt_btn" data-toggle="modal" data-target="#myModal">
 				<input type="hidden" name="category_id" id="category_id" value="<?php echo $category->category_id; ?>">
 				<input type="hidden" id="category_exists_url" value="<?php echo site_url('category/url_exists'); ?>">
 				<input type="hidden" id="active_lang" name="active_lang" value="en">
@@ -54,11 +55,13 @@
 	<input type="hidden" id="error_message" value="">
 </article><!-- end article -->
 
+<!--
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Launch demo modal
 </button>
+-->
 
-<div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade bs-modal-sm" id="addLanguage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
