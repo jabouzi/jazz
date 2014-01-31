@@ -53,7 +53,6 @@ class Category extends MX_Controller
 		{
 			$view_data['categories_list'] = $this->get_dropdown_categories();
 			$view_data['categories'] = $category_data;
-			var_dump($category_data);
 			$view_data['status'] = array(0 => lang('admin.status0'), 1 => lang('admin.status1'));
 		}
 		else
