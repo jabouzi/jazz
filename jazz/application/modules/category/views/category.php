@@ -2,7 +2,9 @@
 	<header><h3 class="tabs_involved"><?php echo lang('category.categorys'); ?></h3>
 		<ul class="tabs">
 			<?php foreach($languages as $language) : ?>
-				<li><a href="#<?php echo $language->language_code; ?>"><?php echo ucfirst(strtolower($language->language_name)); ?></a></li>
+				<? if (isset($categories[$language->language_id])) :?>
+					<li><a href="#<?php echo $language->language_code; ?>"><?php echo ucfirst(strtolower($language->language_name)); ?></a></li>
+				<? endif; ?>
 			<? endforeach; ?>
 		</ul>
 	</header>
