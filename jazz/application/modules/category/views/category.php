@@ -68,8 +68,20 @@
         <h4 class="modal-title"><?php echo lang('language.add'); ?></h4>
       </div>
       <div class="modal-body">
-        <p><label>English</label><input type="checkbox" value="1" name="en"></p>
-        <p><label>Deutsch</label><input type="checkbox" value="1" name="de"></p>
+			<table class="tablesorter" cellspacing="0"> 
+				<thead> 
+					<tr> 
+						<th><?php echo lang('permission.name'); ?></th>
+					</tr> 
+				</thead> 
+				<tbody id="permission_list">
+					<?php foreach ($permissions[$code] as $id => $permission) : ?>
+						<tr>
+							<td><?php echo form_multiselect('languages[]', $languages, array(), "class='permissions-multi-select'"); ?></td>
+						</tr>
+					<?php endforeach ?>
+				</tbody> 
+			</table>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo lang('admin.cancel'); ?></button>
