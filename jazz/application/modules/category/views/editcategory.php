@@ -55,12 +55,6 @@
 	<input type="hidden" id="error_message" value="">
 </article><!-- end article -->
 
-<!--
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
--->
-
 <div class="modal fade bs-modal-sm" id="addLanguage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

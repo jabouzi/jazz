@@ -48,7 +48,7 @@
 		<footer>
 				<div class="submit_link">
 					<input type="button" id="save_category" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
-					<input type="button" id="add_category" value="<?php echo lang('admin.add'); ?>">
+					<input type="button" id="add_category" value="<?php echo lang('admin.add'); ?>" data-toggle="modal" data-target="#addLanguage">
 					<input type="hidden" id="active_lang" name="active_lang" value="en">
 				</div>
 		</footer>
@@ -59,3 +59,22 @@
 		<td><input type="text" name="new[]" value="">
 	</div>
 </article><!-- end of article -->
+
+<div class="modal fade bs-modal-sm" id="addLanguage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><?php echo lang('language.add'); ?></h4>
+      </div>
+      <div class="modal-body">
+        <p><label>English</label><input type="checkbox" value="1" name="en"></p>
+        <p><label>Deutsch</label><input type="checkbox" value="1" name="de"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo lang('admin.cancel'); ?></button>
+        <button type="button" class="btn btn-primary"><?php echo lang('admin.save'); ?></button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
