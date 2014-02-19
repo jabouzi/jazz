@@ -71,15 +71,13 @@
 			<table class="tablesorter" cellspacing="0"> 
 				<thead> 
 					<tr> 
-						<th><?php echo lang('permission.name'); ?></th>
+						<th><?php echo lang('language.name'); ?></th>
 					</tr> 
 				</thead> 
 				<tbody id="permission_list">
-					<?php foreach ($permissions[$code] as $id => $permission) : ?>
-						<tr>
-							<td><?php echo form_multiselect('languages[]', $languages, array(), "class='permissions-multi-select'"); ?></td>
-						</tr>
-					<?php endforeach ?>
+					<tr>
+						<td><?php echo form_multiselect('languages[]', $languages, array(), "class='permissions-multi-select'"); ?></td>
+					</tr>
 				</tbody> 
 			</table>
       </div>
