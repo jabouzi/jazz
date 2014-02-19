@@ -22,7 +22,7 @@ class Permission extends MX_Controller
 		$view_data['admin_languages'] = $this->lang->languages;
 		$view_data['permissions'] = $this->get_permissions();
 		$view_data['actions'] = $this->get_permission_actions_list();
-		$view_data['attributes'] = "class='permissions-multi-select'";
+		$view_data['attributes'] = "class='permissions-multi-select'";var_dump($view_data);exit;
 
 		return $this->load->view('permission', $view_data, true);
 	}
