@@ -68,12 +68,7 @@
         <h4 class="modal-title"><?php echo lang('language.add'); ?></h4>
       </div>
       <div class="modal-body">
-			<table class="tablesorter" cellspacing="0"> 
-				<thead> 
-					<tr> 
-						<th><?php echo lang('language.name'); ?></th>
-					</tr> 
-				</thead> 
+			<table class="tablesorter" cellspacing="0">  
 				<tbody id="permission_list">
 					<?php foreach($languages as $language) : ?>
 						<tr>
