@@ -75,9 +75,13 @@
 					</tr> 
 				</thead> 
 				<tbody id="permission_list">
-					<tr>
-						<td><?php echo form_multiselect('languages[]', $languages, array(), "class='permissions-multi-select'"); ?></td>
-					</tr>
+					<?php foreach($languages as $language) : ?>
+						<? if (!isset($categories[$language->language_id])) :?>
+						<tr>
+							<td><input type="radio" value="<?php echo $language->language_code; ?>" name="cat_other_lang" ><?php echo ucfirst(strtolower($language->language_name)); ?></td>
+						<? endif; ?>
+						</tr>
+					<? endforeach; ?>
 				</tbody> 
 			</table>
       </div>
