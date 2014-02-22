@@ -68,15 +68,11 @@
         <h4 class="modal-title"><?php echo lang('language.add'); ?></h4>
       </div>
       <div class="modal-body">
-			<table class="tablesorter" cellspacing="0">  
-				<tbody id="permission_list">
-					<?php foreach($languages as $language) : ?>
-						<tr>
-							<td><input type="radio" value="<?php echo $language->language_code; ?>" name="cat_other_lang" ><?php echo ucfirst(strtolower($language->language_name)); ?></td>
-						</tr>
-					<? endforeach; ?>
-				</tbody> 
-			</table>
+			<ul>
+			<?php foreach($languages as $language) : ?>
+				<li><input type="radio" value="<?php echo $language->language_code; ?>" name="cat_other_lang" ><?php echo ucfirst(strtolower($language->language_name)); ?></li>
+			<? endforeach; ?>
+			</ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo lang('admin.cancel'); ?></button>
