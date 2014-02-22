@@ -69,7 +69,7 @@
       </div>
       <div class="modal-body">
 			<table class="tablesorter" cellspacing="0">  
-				<tbody id="permission_list">
+				<tbody>
 					<?php foreach($languages as $language) : ?>
 						<tr>
 							<td><input type="radio" value="<?php echo $language->language_code; ?>" name="cat_other_lang" ><?php echo ucfirst(strtolower($language->language_name)); ?></td>
@@ -78,7 +78,7 @@
 				</tbody> 
 			</table>
       </div>
-      <div>
+      <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo lang('admin.cancel'); ?></button>
         <button type="button" class="btn btn-primary"><?php echo lang('admin.save'); ?></button>
       </div>
