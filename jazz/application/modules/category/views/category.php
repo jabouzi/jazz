@@ -78,7 +78,7 @@
 				</tbody> 
 			</table>
       </div>
-      <div class="modal-footer">
+      <div>
         <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo lang('admin.cancel'); ?></button>
         <button type="button" class="btn btn-primary"><?php echo lang('admin.save'); ?></button>
       </div>
