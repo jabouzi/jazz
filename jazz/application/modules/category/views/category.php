@@ -69,7 +69,7 @@
       </div>
       <div class="modal-body">
 			<table class="tablesorter" cellspacing="0">  
-				<tbody>
+				<tbody id="permission_list">
 					<?php foreach($languages as $language) : ?>
 						<tr>
 							<td><input type="radio" value="<?php echo $language->language_code; ?>" name="cat_other_lang" ><?php echo ucfirst(strtolower($language->language_name)); ?></td>
