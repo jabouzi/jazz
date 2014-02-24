@@ -72,7 +72,7 @@
 				<tbody id="permission_list">
 					<?php foreach($languages as $language) : ?>
 						<tr>
-							<td><input type="radio" value="<?php echo $language->language_code; ?>" name="cat_other_lang" ><?php echo ucfirst(strtolower($language->language_name)); ?></td>
+							<td><?php echo ucfirst(strtolower($language->language_name)); ?> <input type="radio" value="<?php echo $language->language_code; ?>" name="cat_other_lang" ></td>
 						</tr>
 					<? endforeach; ?>
 				</tbody> 
