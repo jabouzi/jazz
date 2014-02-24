@@ -65,6 +65,12 @@
       <div class="modal-body">
         <p><label>English</label><input type="checkbox" value="1" name="en"></p>
         <p><label>Deutsch</label><input type="checkbox" value="1" name="de"></p>
+        <p>
+			<select name="lang">
+				<option>English</option>
+				<option>Deutsch</option>
+			</select>
+        </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo lang('admin.cancel'); ?></button>
