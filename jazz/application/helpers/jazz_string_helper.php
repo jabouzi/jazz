@@ -5,6 +5,8 @@ function friendly_url($string, $separator = '-')
 	setlocale(LC_CTYPE, 'en_US.UTF8');
 	$string = iconv("utf-8", "ASCII//TRANSLIT//IGNORE", $string);
 	$string = preg_replace('/\\s+/', $separator, $string);
+        $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); 
+        $string = preg_replace('/-+/', '-', $string);
 	$string = trim($string, $separator);
 	$string = strtolower($string);
 
