@@ -2,10 +2,10 @@
 
 /* Database config */
 
-$db_host		= '';
-$db_user		= '';
-$db_pass		= '';
-$db_database		= ''; 
+$db_host		= 'localhost';
+$db_user		= 'jabouzic_db';
+$db_pass		= '7024043';
+$db_database		= 'jabouzic_jazz'; 
 
 /* End config */
 
