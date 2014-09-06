@@ -41,10 +41,10 @@
 							<input type="checkbox" name="remember_me" id="remember_me" <?php echo $checked; ?> <?php echo lang('login.remember'); ?>
 							<i class="fa fa-square-o small"></i>
 						</label>
-						<p>
+						<label>
 							<?php echo lang('login.lang'); ?>
 							<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
-						</p>
+						</label>
 					</div>
 					<div class="text-center">
 						<a href="../index.html" class="btn btn-primary">Sign in</a>
