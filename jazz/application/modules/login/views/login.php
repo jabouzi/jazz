@@ -21,38 +21,41 @@
 <div class="container-fluid">
 	<div id="page-login" class="row">
 		<div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-			<div class="text-right">
+			<div class="text-center">
+				<p><?php echo lang($message); ?></p>
 			</div>
-			<div class="box">
-				<div class="box-content">
-					<div class="text-center">
-						<h3 class="page-header"><?php echo lang('login.title'); ?></h3>
-					</div>
-					<div class="form-group">
-						<label class="control-label"><?php echo lang('login.email'); ?></label>
-						<input type="text" class="form-control" name="email" value="<?php echo $this->input->post('email'); ?>"/>
-					</div>
-					<div class="form-group">
-						<label class="control-label"><?php echo lang('login.password'); ?></label>
-						<input type="password" class="form-control" name="password" value="<?php echo $this->input->post('password'); ?>"/>
-					</div>
-					<div class="checkbox">
-						<label><?php echo lang('login.remember'); ?></label>
-						<input type="checkbox" name="remember_me" id="remember_me" <?php echo $checked; ?> > 
-						<i class="fa fa-square-o small"></i>
-					</div>
-					<div class="checkbox">
-						<label>
-							<?php echo lang('login.lang'); ?>
-							<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
-						</label>
-					</div>
-					<div class="text-center">
-						<a href="../index.html" class="btn btn-primary">Sign in</a>
+			<form method="post" action="<?php echo site_url('login/process'); ?>">
+				<div class="box">
+					<div class="box-content">
+						<div class="text-center">
+							<h3 class="page-header"><?php echo lang('login.title'); ?></h3>
+						</div>
+						<div class="form-group">
+							<label class="control-label"><?php echo lang('login.email'); ?></label>
+							<input type="text" class="form-control" name="email" value="<?php echo $this->input->post('email'); ?>"/>
+						</div>
+						<div class="form-group">
+							<label class="control-label"><?php echo lang('login.password'); ?></label>
+							<input type="password" class="form-control" name="password" value="<?php echo $this->input->post('password'); ?>"/>
+						</div>
+						<div class="checkbox">
+							<label><?php echo lang('login.remember'); ?></label>
+							<input type="checkbox" name="remember_me" id="remember_me" <?php echo $checked; ?> > 
+							<i class="fa fa-square-o small"></i>
+						</div>
+						<div class="checkbox">
+							<label>
+								<?php echo lang('login.lang'); ?>
+								<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
+							</label>
+						</div>
+						<div class="text-center">
+							<a href="" class="btn btn-primary">Sign in</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			</form>
+		</div>.
 	</div>
 </div>
 </body>
