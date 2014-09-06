@@ -1,40 +1,58 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Login Form</title>
-<link rel="stylesheet" href="/jazz/assets/css/login.css">
-<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-</head>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title><?php echo lang('login.title'); ?></title>
+		<meta name="description" content="description">
+		<meta name="author" content="Evgeniya">
+		<meta name="keyword" content="keywords">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../plugins/bootstrap/bootstrap.css" rel="stylesheet">
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../css/style.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
 <body>
-  <section class="container">
-	<div class="login">
-		<h1><?php echo lang('login.title'); ?></h1>
-		<p><?php echo lang($message); ?></p>
-		<form method="post" action="<?php echo site_url('login/process'); ?>">
-			<p><input type="text" name="email" value="<?php echo $this->input->post('email'); ?>" placeholder="<?php echo lang('login.email'); ?>"></p>
-			<p><input type="password" name="password" value="<?php echo $this->input->post('password'); ?>" placeholder="<?php echo lang('login.password'); ?>"></p>
-			<p>
-				<?php echo lang('login.lang'); ?>
-				<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
-			</p>
-			<p class="remember_me">
-				<label>
-				<input type="checkbox" name="remember_me" id="remember_me" <?php echo $checked; ?> >
-				<?php echo lang('login.remember'); ?>
-				</label>
-			</p>
-		<p class="submit"><input type="submit" name="commit" value="<?php echo lang('login.login'); ?>"></p>
-		</form>
+<div class="container-fluid">
+	<div id="page-login" class="row">
+		<div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+			<div class="text-right">
+			</div>
+			<div class="box">
+				<div class="box-content">
+					<div class="text-center">
+						<h3 class="page-header"><?php echo lang('login.title'); ?></h3>
+					</div>
+					<div class="form-group">
+						<label class="control-label"><?php echo lang('login.email'); ?></label>
+						<input type="text" class="form-control" name="email" value="<?php echo $this->input->post('email'); ?>"/>
+					</div>
+					<div class="form-group">
+						<label class="control-label"><?php echo lang('login.password'); ?></label>
+						<input type="password" class="form-control" name="password" value="<?php echo $this->input->post('password'); ?>"/>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="remember_me" id="remember_me" <?php echo $checked; ?> <?php echo lang('login.remember'); ?>
+							<i class="fa fa-square-o small"></i>
+						</label>
+						<p>
+							<?php echo lang('login.lang'); ?>
+							<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
+						</p>
+					</div>
+					<div class="text-center">
+						<a href="../index.html" class="btn btn-primary">Sign in</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-
-	<div class="login-help">
-		<p><?php echo lang('login.forget'); ?> <a href="index.html"><?php echo lang('login.reset'); ?></a>.</p>
-	</div>
-  </section>
+</div>
 </body>
 </html>
