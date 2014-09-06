@@ -50,7 +50,7 @@
 							</label>
 						</div>
 						<div class="text-center">
-							<a href="" class="btn btn-primary">Sign in</a>
+							<input type="submit" class="btn btn-primary" value="<?php echo lang('login.login'); ?>">
 						</div>
 					</div>
 				</div>
