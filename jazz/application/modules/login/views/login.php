@@ -40,6 +40,8 @@
 						<label>
 							<input type="checkbox" name="remember_me" id="remember_me" <?php echo $checked; ?> > <?php echo lang('login.remember'); ?>
 						</label>
+					</div>
+					<div class="checkbox">
 						<label>
 							<?php echo lang('login.lang'); ?>
 							<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
