@@ -37,8 +37,9 @@
 						<input type="password" class="form-control" name="password" value="<?php echo $this->input->post('password'); ?>"/>
 					</div>
 					<div class="checkbox">
-						<input type="checkbox" name="remember_me" id="remember_me" <?php echo $checked; ?> > 
 						<label><?php echo lang('login.remember'); ?></label>
+						<input type="checkbox" name="remember_me" id="remember_me" <?php echo $checked; ?> > 
+						<i class="fa fa-square-o small"></i>
 					</div>
 					<div class="checkbox">
 						<label>
