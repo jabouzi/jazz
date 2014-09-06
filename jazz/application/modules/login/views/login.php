@@ -38,7 +38,7 @@
 					</div>
 					<div class="checkbox">
 						<label>
-							<input type="checkbox" name="remember_me" id="remember_me" <?php echo $checked; ?> <?php echo lang('login.remember'); ?>
+							<input type="checkbox" name="remember_me" id="remember_me" <?php echo $checked; ?> > <?php echo lang('login.remember'); ?>
 						</label>
 						<label>
 							<?php echo lang('login.lang'); ?>
