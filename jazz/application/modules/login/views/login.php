@@ -22,7 +22,7 @@
 	<div id="page-login" class="row">
 		<div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 			<div class="text-center">
-				<p><?php echo lang($message); ?></p>
+				<p class="bg-danger"><?php echo lang($message); ?></p>
 			</div>
 			<form method="post" action="<?php echo site_url('login/process'); ?>">
 				<div class="box">
