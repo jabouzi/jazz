@@ -1,7 +1,9 @@
 {
 	"name":"structure.title",
 	"version":"0.1",
-	"permissions":["structure.add","structure.delete","structure.update"],
-	"delete":"true",
-	"update":"true"
+	"permissions":[],
+	"menu":"1",
+	"add":"false",
+	"delete":"false",
+	"update":"false",
 }

@@ -1,7 +1,9 @@
 {
 	"name":"analytic.title",
 	"version":"0.1",
-	"permissions":["analytic.add","analytic.delete","analytic.update"],
-	"delete":"true",
-	"update":"true"
+	"permissions":[],
+	"menu":"0",
+	"add":"false",
+	"delete":"false",
+	"update":"false",
 }
