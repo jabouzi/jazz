@@ -315,6 +315,16 @@
 		</div>
 		<!--Start Content-->
 		<div id="content" class="col-xs-12 col-sm-10">
+			<!--Start Breadcrumb-->
+			<div class="row">
+				<div id="breadcrumb" class="col-xs-12">
+					<ol class="breadcrumb">
+						<li><a href="index.html"><?php echo anchor('dashboard', lang('dashboard.title2')); ?></a></li>
+						<li><a href="#"><?php echo $page_title; ?></a></li>
+					</ol>
+				</div>
+			</div>
+			<!--End Breadcrumb-->
 			<?php 
 				$display_info = 'style="display:none"';
 				$display_warning = 'style="display:none"';
