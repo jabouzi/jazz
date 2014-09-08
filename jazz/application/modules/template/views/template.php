@@ -342,7 +342,7 @@
 			<h4 <?php echo $display_success; ?> class="alert_success"><?php echo $success_message; ?></h4>
 	
 			<?php 
-				var_dump($_SESSION, $languages);
+				var_dump($this->session->all_userdata(), $languages);
 				foreach($admin_widgets as $widget => $content)
 				{
 					echo $content;
