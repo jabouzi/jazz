@@ -16,8 +16,8 @@ class Dashboard extends MX_Controller
 	function show()
 	{
 		$view_data['page_title'] = lang('dashboard.title3');
-		$view_data['admin_widgets']['analytic_preview'] = modules::run('analytic/preview');
-		$view_data['admin_widgets']['structure_preview'] = modules::run('structure/preview');
+		$view_data['admin_widgets']['analytic'] = modules::run('analytic/show');
+		//$view_data['admin_widgets']['structure_preview'] = modules::run('structure/preview');
 		echo modules::run('template', $view_data);
 	}
 	
