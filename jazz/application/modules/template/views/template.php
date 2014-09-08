@@ -49,7 +49,7 @@
 	<div class="container-fluid expanded-panel">
 		<div class="row">
 			<div id="logo" class="col-xs-12 col-sm-2">
-				<a href="index.html">JAZZ CMS</a><?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
+				<a href="index.html">JAZZ CMS</a>
 			</div>
 			<div id="top-panel" class="col-xs-12 col-sm-10">
 				<div class="row">
@@ -60,6 +60,7 @@
 						<div id="search">
 							<input type="text" placeholder="search"/>
 							<i class="fa fa-search"></i>
+							<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
 						</div>
 					</div>
 					<div class="col-xs-4 col-sm-8 top-panel-right">
