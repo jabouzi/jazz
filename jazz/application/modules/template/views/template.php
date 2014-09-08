@@ -315,33 +315,28 @@
 		</div>
 		<!--Start Content-->
 		<div id="content" class="col-xs-12 col-sm-10">
-			<div class="preloader">
-				<img src="img/devoops_getdata.gif" class="devoops-getdata" alt="preloader"/>
-			</div>
-			<div id="ajax-content">
-				<?php 
-					$display_info = 'style="display:none"';
-					$display_warning = 'style="display:none"';
-					$display_error = 'style="display:none"';
-					$display_success = 'style="display:none"';
-					if ($info_message) $display_info = '';
-					if ($warning_message) $display_warning = '';
-					if ($error_message) $display_error = '';
-					if ($success_message) $display_success = ''; 
-				?>
-		
-				<h4 <?php echo $display_info; ?> class="alert_info"><?php echo $info_message; ?></h4>
-				<h4 <?php echo $display_warning; ?> class="alert_warning"><?php echo $warning_message; ?></h4>
-				<h4 <?php echo $display_error; ?> class="alert_error"><?php echo $error_message; ?></h4>
-				<h4 <?php echo $display_success; ?> class="alert_success"><?php echo $success_message; ?></h4>
-		
-				<?php 
-					foreach($admin_widgets as $widget => $content)
-					{
-						echo $content;
-					}
-				?>
-			</div>
+			<?php 
+				$display_info = 'style="display:none"';
+				$display_warning = 'style="display:none"';
+				$display_error = 'style="display:none"';
+				$display_success = 'style="display:none"';
+				if ($info_message) $display_info = '';
+				if ($warning_message) $display_warning = '';
+				if ($error_message) $display_error = '';
+				if ($success_message) $display_success = ''; 
+			?>
+	
+			<h4 <?php echo $display_info; ?> class="alert_info"><?php echo $info_message; ?></h4>
+			<h4 <?php echo $display_warning; ?> class="alert_warning"><?php echo $warning_message; ?></h4>
+			<h4 <?php echo $display_error; ?> class="alert_error"><?php echo $error_message; ?></h4>
+			<h4 <?php echo $display_success; ?> class="alert_success"><?php echo $success_message; ?></h4>
+	
+			<?php 
+				foreach($admin_widgets as $widget => $content)
+				{
+					echo $content;
+				}
+			?>
 		</div>
 		<!--End Content-->
 	</div>
