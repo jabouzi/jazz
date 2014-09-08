@@ -2,6 +2,8 @@
 	"name":"template.title",
 	"version":"0.1",
 	"permissions":[],
+	"menu":"0",
+	"add":"false",
 	"delete":"false",
-	"update":"true"
+	"update":"false",
 }
