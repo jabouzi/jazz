@@ -151,6 +151,7 @@
 	
 			<?php 
 				//var_dump($this->session->all_userdata(), $languages, $this->lang->lang());
+				var_dump(current_url());
 				foreach($admin_widgets as $widget => $content)
 				{
 					echo $content;
