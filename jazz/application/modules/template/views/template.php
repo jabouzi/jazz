@@ -90,11 +90,10 @@
 						<span class="hidden-xs"><?php echo lang('content.title'); ?></span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="ajax-link" href="ajax/charts_xcharts.html">xCharts</a></li>
-						<li><a class="ajax-link" href="ajax/charts_flot.html">Flot Charts</a></li>
-						<li><a class="ajax-link" href="ajax/charts_google.html">Google Charts</a></li>
-						<li><a class="ajax-link" href="ajax/charts_morris.html">Morris Charts</a></li>
-						<li><a class="ajax-link" href="ajax/charts_coindesk.html">CoinDesk realtime</a></li>
+						<li><a href="#">New Article</a></li>
+						<li><a href="#">All structure</a></li>
+						<li><?php echo anchor('category', lang('category.title')) ?></li>
+						<li><?php echo anchor('language', lang('language.title')) ?></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -103,9 +102,10 @@
 						 <span class="hidden-xs"><?php echo lang('user.title'); ?></span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="ajax-link" href="ajax/tables_simple.html">Simple Tables</a></li>
-						<li><a class="ajax-link" href="ajax/tables_datatables.html">Data Tables</a></li>
-						<li><a class="ajax-link" href="ajax/tables_beauty.html">Beauty Tables</a></li>
+						<li><?php echo anchor('user/newuser', lang('user.new')) ?></li>
+						<li><?php echo anchor('user/users', lang('user.users')) ?></li>
+						<li><?php echo anchor('user', lang('user.profile')) ?></li>
+						<li><?php echo anchor('login/logout', lang('login.logout')) ?></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -114,9 +114,9 @@
 						 <span class="hidden-xs"><?php echo lang('admin.title'); ?></span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="ajax-link" href="ajax/forms_elements.html">Elements</a></li>
-						<li><a class="ajax-link" href="ajax/forms_layouts.html">Layouts</a></li>
-						<li><a class="ajax-link" href="ajax/forms_file_uploader.html">File Uploader</a></li>
+						<li><?php echo anchor('workflow', lang('workflow.title')) ?></li>
+						<li><?php echo anchor('permission', lang('permission.title')) ?></li>
+						<li><a href="#">User Modules</a></li>
 					</ul>
 				</li>
 			</ul>
