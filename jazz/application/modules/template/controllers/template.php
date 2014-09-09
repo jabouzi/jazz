@@ -12,6 +12,7 @@ class Template extends MX_Controller
 	{
 		if ($this->session->userdata('user_email'))
 		{
+			var_dump($this->uri->segment(1), $this->uri->segment(2), $this->uri->segment(3));
 			$this->load->helper('form');
 			$this->load->helper('array');
 			
