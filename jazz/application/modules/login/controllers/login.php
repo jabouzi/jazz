@@ -33,7 +33,7 @@ class Login extends MX_Controller
 			$view_data['languages'][site_url().$this->lang->switch_uri($key)] = ucfirst(strtolower($value));
 		}
 		$view_data['lang'] = site_url().$this->lang->switch_uri($this->lang->lang());
-		$view_data['redirect'] = 'onChange="window.document.location.href=this.options[this.selectedIndex].value;"';
+		$view_data['redirect'] = 'class="form-control" onChange="window.document.location.href=this.options[this.selectedIndex].value;"';
 		$view_data['message'] = $message;
 		$view_data['checked'] = '';
 		if ($this->getcookie()) $view_data['checked'] = 'checked';
