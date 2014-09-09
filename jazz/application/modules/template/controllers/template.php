@@ -12,7 +12,23 @@ class Template extends MX_Controller
 	{
 		if ($this->session->userdata('user_email'))
 		{
-			var_dump($this->uri->segment(1), $this->uri->segment(2), $this->uri->segment(3));
+			$actives = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+			if ($this->uri->segment(2) == 'dashboard' || $this->uri->segment(2) == '')
+			{
+				$actives[0] = 'active';
+			}
+			else if($this->uri->segment(2) == 'category')
+			{
+				$actives[1] = 'active-parent active';
+				$actives[4] = 'active-parent active';
+			}
+			else if($this->uri->segment(2) == 'language')
+			{
+				$actives[1] = 'active-parent active';
+				$actives[5] = 'active-parent active';
+			}
+			
+			//var_dump($this->uri->segment(1), $this->uri->segment(2), $this->uri->segment(3));
 			$this->load->helper('form');
 			$this->load->helper('array');
 			
@@ -25,6 +41,7 @@ class Template extends MX_Controller
 			{
 				$view_data['languages'][site_url().$this->lang->switch_uri($key)] = ucfirst(strtolower($value));
 			}
+			
 			$view_data['lang'] = site_url().$this->lang->switch_uri($this->lang->lang());
 			$view_data['redirect'] = 'class="form-control" onChange="window.document.location.href=this.options[this.selectedIndex].value;"';
 			$this->load->view('template', $view_data);

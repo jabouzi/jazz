@@ -79,44 +79,44 @@
 		<div id="sidebar-left" class="col-xs-2 col-sm-2">
 			<ul class="nav main-menu">
 				<li>
-					<a href="<?php echo site_url('dashboard'); ?>" class="active">
+					<a href="<?php echo site_url('dashboard'); ?>" class="<?php echo $actives[0]; ?>">
 						<i class="fa fa-dashboard"></i>
 						<span class="hidden-xs"><?php echo lang('dashboard.title3'); ?></span>
 					</a>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle">
+					<a href="#" class="dropdown-toggle" class="<?php echo $actives[1]; ?>">
 						<i class="fa fa-pencil-square-o"></i>
 						<span class="hidden-xs"><?php echo lang('content.title'); ?></span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="#">New Article</a></li>
-						<li><a href="#">All structure</a></li>
-						<li><?php echo anchor('category', lang('category.title')) ?></li>
-						<li><?php echo anchor('language', lang('language.title')) ?></li>
+						<li><a href="#" class="<?php echo $actives[2]; ?>">New Article</a></li>
+						<li><a href="#" class="<?php echo $actives[3]; ?>">All structure</a></li>
+						<li><?php echo anchor('category', lang('category.title'), array('class' => $actives[4])) ?></li>
+						<li><?php echo anchor('language', lang('language.title'), array('class' => $actives[5])) ?></li>
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle">
+					<a href="#" class="dropdown-toggle" class="<?php echo $actives[6]; ?>">
 						<i class="fa fa-user"></i>
 						 <span class="hidden-xs"><?php echo lang('user.title'); ?></span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><?php echo anchor('user/newuser', lang('user.new')) ?></li>
-						<li><?php echo anchor('user/users', lang('user.users')) ?></li>
-						<li><?php echo anchor('user', lang('user.profile')) ?></li>
-						<li><?php echo anchor('login/logout', lang('login.logout')) ?></li>
+						<li><?php echo anchor('user/newuser', lang('user.new'), array('class' => $actives[7])) ?></li>
+						<li><?php echo anchor('user/users', lang('user.users'), array('class' => $actives[8])) ?></li>
+						<li><?php echo anchor('user', lang('user.profile'), array('class' => $actives[9])) ?></li>
+						<li><?php echo anchor('login/logout', lang('login.logout'), array('class' => $actives[10])) ?></li>
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle">
+					<a href="#" class="dropdown-toggle" class="<?php echo $actives[11]; ?>">
 						<i class="fa fa-cog"></i>
 						 <span class="hidden-xs"><?php echo lang('admin.title'); ?></span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><?php echo anchor('workflow', lang('workflow.title')) ?></li>
-						<li><?php echo anchor('permission', lang('permission.title')) ?></li>
-						<li><a href="#">User Modules</a></li>
+						<li><?php echo anchor('workflow', lang('workflow.title'), array('class' => $actives[12])) ?></li>
+						<li><?php echo anchor('permission', lang('permission.title'), array('class' => $actives[13])) ?></li>
+						<li><a href="#" class="<?php echo $actives[2]; ?>">User Modules</a></li>
 					</ul>
 				</li>
 			</ul>
