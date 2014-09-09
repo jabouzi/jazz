@@ -46,7 +46,7 @@
 						</div>
 						<div class="checkbox">
 							<label>
-								<?php echo lang('login.lang'); ?>
+								<?php// echo lang('login.lang'); ?>
 								<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
 							</label>
 						</div>
