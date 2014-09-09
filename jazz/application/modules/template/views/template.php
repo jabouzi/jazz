@@ -86,7 +86,7 @@
 				</li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle">
-						<i class="fa fa-bar-chart-o"></i>
+						<i class="fa fa-pencil-square-o"></i>
 						<span class="hidden-xs"><?php echo lang('content.title'); ?></span>
 					</a>
 					<ul class="dropdown-menu">
@@ -98,7 +98,7 @@
 				</li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle">
-						<i class="fa fa-table"></i>
+						<i class="fa fa-user"></i>
 						 <span class="hidden-xs"><?php echo lang('user.title'); ?></span>
 					</a>
 					<ul class="dropdown-menu">
@@ -110,7 +110,7 @@
 				</li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle">
-						<i class="fa fa-pencil-square-o"></i>
+						<i class="fa fa-cog"></i>
 						 <span class="hidden-xs"><?php echo lang('admin.title'); ?></span>
 					</a>
 					<ul class="dropdown-menu">
