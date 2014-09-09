@@ -12,8 +12,8 @@ class Template extends MX_Controller
 	{
 		if ($this->session->userdata('user_email'))
 		{
-			$actives = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-			$blocks = array(0,0,0,0);
+			$actives = array('','','','','','','','','','','','','','','');
+			$blocks = array('','','','');
 			if ($this->uri->segment(2) == 'dashboard' || $this->uri->segment(2) == '')
 			{
 				$actives[0] = 'active';
