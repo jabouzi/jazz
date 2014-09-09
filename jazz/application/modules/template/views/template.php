@@ -63,40 +63,9 @@
 						</div>
 					</div>
 					<div class="col-xs-4 col-sm-8 top-panel-right">
-						<ul class="nav navbar-nav pull-right panel-menu">
-							<li class="hidden-xs">
-								<a href="index.html" class="modal-link">
-									<i class="fa fa-bell"></i>
-									<span class="badge">7</span>
-								</a>
-							</li>
-							<li class="hidden-xs">
-								<a class="ajax-link" href="ajax/calendar.html">
-									<i class="fa fa-calendar"></i>
-									<span class="badge">7</span>
-								</a>
-							</li>
-							<li class="hidden-xs">
-								<a href="ajax/page_messages.html" class="ajax-link">
-									<i class="fa fa-envelope"></i>
-									<span class="badge">7</span>
-								</a>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle account" data-toggle="dropdown">
-									<div class="avatar">
-										<img src="img/avatar.jpg" class="img-rounded" alt="avatar" />
-									</div>
-									<i class="fa fa-angle-down pull-right"></i>
-									<div class="user-mini pull-right">
-										<span class="welcome"></span>
-										<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
-										<span></span>
-									</div>
-								</a>
-								
-							</li>
-						</ul>
+						<div class="user-mini pull-right">
+							<span><?php echo form_dropdown('lang', $languages, $lang, $redirect); ?></span>
+						</div>
 					</div>
 				</div>
 			</div>
