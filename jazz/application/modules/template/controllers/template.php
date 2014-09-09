@@ -42,6 +42,7 @@ class Template extends MX_Controller
 				$view_data['languages'][site_url().$this->lang->switch_uri($key)] = ucfirst(strtolower($value));
 			}
 			
+			$view_data['actives'] = $actives;
 			$view_data['lang'] = site_url().$this->lang->switch_uri($this->lang->lang());
 			$view_data['redirect'] = 'class="form-control" onChange="window.document.location.href=this.options[this.selectedIndex].value;"';
 			$this->load->view('template', $view_data);
