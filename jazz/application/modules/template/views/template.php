@@ -150,7 +150,7 @@
 			<h4 <?php echo $display_success; ?> class="alert_success"><?php echo $success_message; ?></h4>
 	
 			<?php 
-				var_dump($this->session->all_userdata(), $languages, $this->lang->lang());
+				//var_dump($this->session->all_userdata(), $languages, $this->lang->lang());
 				foreach($admin_widgets as $widget => $content)
 				{
 					echo $content;
