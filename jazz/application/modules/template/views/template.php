@@ -79,7 +79,7 @@
 		<div id="sidebar-left" class="col-xs-2 col-sm-2">
 			<ul class="nav main-menu">
 				<li>
-					<a href="<?php echo anchor('dashboard'); ?>" class="active ajax-link">
+					<a href="<?php echo base_url('dashboard'); ?>" class="active ajax-link">
 						<i class="fa fa-dashboard"></i>
 						<span class="hidden-xs"><?php echo lang('dashboard.title3'); ?></span>
 					</a>
