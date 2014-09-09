@@ -89,7 +89,7 @@
 						<i class="fa fa-pencil-square-o"></i>
 						<span class="hidden-xs"><?php echo lang('content.title'); ?></span>
 					</a>
-					<ul class="dropdown-menu">
+					<ul class="dropdown-menu" class="<?php echo $blocks[0]; ?>">
 						<li><a href="#" class="<?php echo $actives[2]; ?>">New Article</a></li>
 						<li><a href="#" class="<?php echo $actives[3]; ?>">All structure</a></li>
 						<li><?php echo anchor('category', lang('category.title'), array('class' => $actives[4])) ?></li>
@@ -101,7 +101,7 @@
 						<i class="fa fa-user"></i>
 						 <span class="hidden-xs"><?php echo lang('user.title'); ?></span>
 					</a>
-					<ul class="dropdown-menu">
+					<ul class="dropdown-menu" class="<?php echo $blocks[1]; ?>">
 						<li><?php echo anchor('user/newuser', lang('user.new'), array('class' => $actives[7])) ?></li>
 						<li><?php echo anchor('user/users', lang('user.users'), array('class' => $actives[8])) ?></li>
 						<li><?php echo anchor('user', lang('user.profile'), array('class' => $actives[9])) ?></li>
@@ -113,7 +113,7 @@
 						<i class="fa fa-cog"></i>
 						 <span class="hidden-xs"><?php echo lang('admin.title'); ?></span>
 					</a>
-					<ul class="dropdown-menu">
+					<ul class="dropdown-menu" class="<?php echo $blocks[2]; ?>">
 						<li><?php echo anchor('workflow', lang('workflow.title'), array('class' => $actives[12])) ?></li>
 						<li><?php echo anchor('permission', lang('permission.title'), array('class' => $actives[13])) ?></li>
 						<li><a href="#" class="<?php echo $actives[2]; ?>">User Modules</a></li>
