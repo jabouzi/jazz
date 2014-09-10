@@ -116,7 +116,7 @@
 					<ul class="dropdown-menu" style="<?php echo $blocks[2]; ?>">
 						<li><?php echo anchor('workflow', lang('workflow.title'), array('class' => $actives[12])) ?></li>
 						<li><?php echo anchor('permission', lang('permission.title'), array('class' => $actives[13])) ?></li>
-						<li><a href="#" class="<?php echo $actives[2]; ?>">User Modules</a></li>
+						<li><a href="#" class="<?php echo $actives[14]; ?>">User Modules</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -152,7 +152,7 @@
 			<?php 
 				//var_dump($this->session->all_userdata(), $languages, $this->lang->lang());
 				//var_dump(current_url());
-				//var_dump($this->uri->segment(1), $this->uri->segment(2), $this->uri->segment(3));
+				var_dump($this->uri->segment(1), $this->uri->segment(2), $this->uri->segment(3));
 				foreach($admin_widgets as $widget => $content)
 				{
 					echo $content;
