@@ -174,5 +174,20 @@
 <script src="/jazz/assets/plugins/tinymce/jquery.tinymce.min.js"></script>
 <!-- All functions for this theme + document.ready processing -->
 <script src="/jazz/assets/js/devoops.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	// Create jQuery-UI tabs
+	$("#tabs").tabs();
+	// Sortable for elements
+	$(".sort").sortable({
+		items: "div.col-sm-2",
+		appendTo: 'div.box-content'
+	});
+	var icons = {
+		header: "ui-icon-circle-arrow-e",
+		activeHeader: "ui-icon-circle-arrow-s"
+	};
+});
+</script>
 </body>
 </html>
