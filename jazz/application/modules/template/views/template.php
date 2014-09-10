@@ -152,7 +152,7 @@
 			<?php 
 				//var_dump($this->session->all_userdata(), $languages, $this->lang->lang());
 				//var_dump(current_url());
-				var_dump($this->uri->segment(1), $this->uri->segment(2), $this->uri->segment(3), $actives);
+				//var_dump($this->uri->segment(1), $this->uri->segment(2), $this->uri->segment(3), $actives);
 				foreach($admin_widgets as $widget => $content)
 				{
 					echo $content;
