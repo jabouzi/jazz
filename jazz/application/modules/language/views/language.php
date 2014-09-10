@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-xs-12">
-		<div class="box">			
+		<div class="box">
 			<form id="languages_form" method="post" action="<?php echo site_url('language/process'); ?>">
 				<div class="box-content">
 					<div id="tabs">
