@@ -28,9 +28,9 @@
 											<?php $category = $categories[$language->language_id][$category_id]; ?>
 											<tr>
 												<?php if (trim($category->category_name) == '') : ?>
-													<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $structure) ?><input type="text" name="name[<?php echo $category->language_id ; ?>][<?php echo $category->category_id ; ?>]" value=""></td>
+													<td><?php echo str_repeat('<span><nobr>|—</nobr></span>', $structure) ?><input type="text" name="name[<?php echo $category->language_id ; ?>][<?php echo $category->category_id ; ?>]" value=""></td>
 												<?php else :?>
-													<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $structure) . $category->category_name ; ?></td>
+													<td><?php echo str_repeat('<span><nobr>|—</nobr></span>', $structure) . $category->category_name ; ?></td>
 												<?php endif ?>
 												<td><input type="text" name="order[<?php echo $category->category_id ; ?>]" maxlength="2" size="2" value="<?php echo  $category->category_order ; ?>"></td>
 												<td><img src="/jazz/assets/images/<?php echo $status[ord($category->category_active)]; ?>" title="<?php echo lang('category.status'); ?>"></td>
