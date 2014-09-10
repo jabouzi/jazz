@@ -15,8 +15,8 @@
 					<tbody>
 						<?php foreach ($languages->result() as $language) : ?>
 							<tr>
-								<td><input type="text" name="language_name[<?php echo $language->language_id; ?>]" id="language_name_<?php echo $language->language_id; ?>" value="<?php echo $language->language_name; ?>" data-validate="required" data-type="text" title="<?php echo lang('language.name'); ?>"></td>
-								<td><input type="text" name="language_code[<?php echo $language->language_id; ?>]" id="language_code_<?php echo $language->language_id; ?>" value="<?php echo $language->language_code; ?>" data-validate="required" data-type="text" title="<?php echo lang('language.code'); ?>"></td>
+								<td><div class="radio"><input type="text" name="language_name[<?php echo $language->language_id; ?>]" id="language_name_<?php echo $language->language_id; ?>" value="<?php echo $language->language_name; ?>" data-validate="required" data-type="text" title="<?php echo lang('language.name'); ?>"></div></td>
+								<td><div class="radio"><input type="text" name="language_code[<?php echo $language->language_id; ?>]" id="language_code_<?php echo $language->language_id; ?>" value="<?php echo $language->language_code; ?>" data-validate="required" data-type="text" title="<?php echo lang('language.code'); ?>"></div></td>
 								<td><div class="radio"><label><input type="radio" name="language_default" value="<?php echo $language->language_id; ?>" <?php if (ord($language->language_default)) echo 'checked'; ?> >&nbsp;<i class="fa fa-circle-o"></i></label></div></td>
 								<td>
 									<?php echo anchor('language/delete_language/'.$language->language_id, '&nbsp;', array('class' => "fa fa-trash-o", 'title' => lang('language.delete'))); ?>
