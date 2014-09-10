@@ -4,9 +4,9 @@
 			<div class="box-content">
 				<div id="tabs">
 					<ul>
-						<li><a href="http://jazz.jabouzi.com/jazz/fr/category#tabs-1">Android</a></li>
-						<li><a href="http://jazz.jabouzi.com/jazz/fr/category#tabs-2">Firefox OS</a></li>
-						<li><a href="http://jazz.jabouzi.com/jazz/fr/category#tabs-3">Linux</a></li>
+						<li><a href="#tabs-1">Android</a></li>
+						<li><a href="#tabs-2">Firefox OS</a></li>
+						<li><a href="#tabs-3">Linux</a></li>
 					</ul>
 					<div id="tabs-1">
 						<p>

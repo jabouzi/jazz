@@ -57,9 +57,9 @@ $(document).ready(function () {
 			window.location.hash = url;
 			LoadAjaxContent(url);
 		}
-		if ($(this).attr('href') == '#') {
-			e.preventDefault();
-		}
+		//if ($(this).attr('href') == '#') {
+			//e.preventDefault();
+		//}
 	});
 	var height = window.innerHeight - 49;
 	$('#main').css('min-height', height)
