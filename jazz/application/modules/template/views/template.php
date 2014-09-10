@@ -62,7 +62,7 @@
 							<i class="fa fa-search"></i>
 						</div>
 					</div>
-					<div class="col-xs-4 col-sm-8 top-panel-right">
+					<div class="col-xs-8 col-sm-4 top-panel-right">
 						<div class="search">
 							<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
 						</div>
