@@ -2,7 +2,6 @@
 	<div class="col-xs-12">
 		<div class="box">
 			<div class="box-content">
-				<p>For basic styling add the base class <code>.table</code> to any <code>&lt;table&gt;</code>.</p>
 				<table class="table">
 					<thead>
 						<tr>
