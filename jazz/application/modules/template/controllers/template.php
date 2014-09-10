@@ -30,6 +30,36 @@ class Template extends MX_Controller
 				$actives[5] = 'active-parent active';
 				$blocks[0] = 'display:block';
 			}
+			else if($this->uri->segment(2) == 'newuser')
+			{
+				$actives[6] = 'active-parent active';
+				$actives[7] = 'active-parent active';
+				$blocks[1] = 'display:block';
+			}
+			else if($this->uri->segment(2) == 'users')
+			{
+				$actives[6] = 'active-parent active';
+				$actives[8] = 'active-parent active';
+				$blocks[1] = 'display:block';
+			}
+			else if($this->uri->segment(2) == 'user')
+			{
+				$actives[6] = 'active-parent active';
+				$actives[9] = 'active-parent active';
+				$blocks[1] = 'display:block';
+			}
+			else if($this->uri->segment(2) == 'workflow')
+			{
+				$actives[11] = 'active-parent active';
+				$actives[12] = 'active-parent active';
+				$blocks[2] = 'display:block';
+			}
+			else if($this->uri->segment(2) == 'permission')
+			{
+				$actives[11] = 'active-parent active';
+				$actives[13] = 'active-parent active';
+				$blocks[2] = 'display:block';
+			}
 			
 			//var_dump($this->uri->segment(1), $this->uri->segment(2), $this->uri->segment(3));
 			$this->load->helper('form');
