@@ -4,50 +4,49 @@
 			<div class="box-content">
 				<div id="tabs">
 					<ul>
-						<li><a href="#tabs-1">Android</a></li>
-						<li><a href="#tabs-2">Firefox OS</a></li>
-						<li><a href="#tabs-3">Linux</a></li>
+						<?php foreach($languages as $language) : ?>
+							<? if (isset($categories[$language->language_id])) :?>
+								<li><a href="#<?php echo $language->language_code; ?>"><?php echo ucfirst(strtolower($language->language_name)); ?></a></li>
+							<? endif; ?>
+						<? endforeach; ?>
 					</ul>
 					<div id="tabs-1">
-						<div class="box-content">
-							<p>Use <code>.table-striped</code> to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code>.</p>
-							<table class="table table-striped">
-								<thead>
-									<tr>
-										<th>#</th>
-										<th>Name</th>
-										<th>Homepage</th>
-										<th>Description</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Nginx</td>
-										<td>http://nginx.org</td>
-										<td>webserver</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Apache</td>
-										<td>http://apache.org</td>
-										<td>webserver</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>Skype</td>
-										<td>http://www.skype.com</td>
-										<td>Messenger</td>
-									</tr>
-									<tr>
-										<td>4</td>
-										<td>Blender</td>
-										<td>http://www.blender.org</td>
-										<td>3D-modeller</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Name</th>
+									<th>Homepage</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Nginx</td>
+									<td>http://nginx.org</td>
+									<td>webserver</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Apache</td>
+									<td>http://apache.org</td>
+									<td>webserver</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Skype</td>
+									<td>http://www.skype.com</td>
+									<td>Messenger</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Blender</td>
+									<td>http://www.blender.org</td>
+									<td>3D-modeller</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 					<div id="tabs-2">
 						<p>
