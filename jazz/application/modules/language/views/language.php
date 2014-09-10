@@ -1,7 +1,6 @@
 <div class="row">
 	<div class="col-xs-12">
 		<div class="box">			
-			<form id="languages_form" method="post" action="<?php echo site_url('language/process'); ?>">
 				<div class="box-content">
 					<table class="table table-striped"> 
 					<thead> 
@@ -32,7 +31,6 @@
 							<input type="button" id="add_language" value="<?php echo lang('admin.add'); ?>">
 						</div>
 				</footer>
-			</form>
 				<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
 				<input type="hidden" id="error_message" value="">
 				<div style="display:none" id="new_language">
