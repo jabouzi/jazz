@@ -11,6 +11,7 @@
 						<? endforeach; ?>
 					</ul>
 					<?php foreach($languages as $language) : ?>
+						<? if (isset($categories[$language->language_id])) :?>
 						<div id="<?php echo $language->language_code; ?>">
 							<table class="table table-striped"> 
 								<thead> 
@@ -43,6 +44,7 @@
 								</tbody> 
 							</table>
 						</div>
+						<?php endif; ?>
 					<?php endforeach; ?>
 					<div id="tabs-1">
 						<table class="table table-striped">
