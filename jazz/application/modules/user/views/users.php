@@ -14,12 +14,12 @@
 							</tr> 
 						</thead> 
 						<tbody id="workflow_list">
-							<?php var_dump($users_status); foreach ($user->result() as $item) : ?>
+							<?php foreach ($user->result() as $item) : ?>
 								<tr>
 									<td><?php echo $item->user_firstname ?></td>
 									<td><?php echo $item->user_lastname ?></td>
 									<td><?php echo $item->user_email ?></td>
-									<td><span class="<?php echo $users_status[ord($item->user_active)]; ?>" title="<?php echo lang('admin.status'.ord($item->user_active)); ?>"></span></td>
+									<td><span class="<?php echo $status[ord($item->user_active)]; ?>" title="<?php echo lang('admin.status'.ord($item->user_active)); ?>"></span></td>
 									<td>
 										<?php echo anchor('user/edituser/'.$item->user_id, '&nbsp;', array('class' => "fa fa-edit", 'title' => lang('user.edit'))); ?>
 										<?php echo anchor('user/deleteuser/'.$item->user_id, '&nbsp;', array('class' => "fa fa-trash-o", 'title' => lang('user.delete'))); ?>

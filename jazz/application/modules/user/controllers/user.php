@@ -18,7 +18,6 @@ class User extends MX_Controller
 	
 	function users()
 	{
-		$view_data['users_status'] = array(0 => 'fa fa-times-circle', 1 => 'fa fa-check-circle');
 		$view_data['page_title'] = lang('user.users');
 		$users = $this->mdl_user->get_where_custom(array('user_permission > ' => $this->session->userdata('user_permission')));
 		$view_data['admin_widgets']['user'] = $this->show('users', $users);
@@ -47,7 +46,7 @@ class User extends MX_Controller
 	{
 		$this->load->helper('form');
 		$view_data['user'] = $user_data;
-		$view_data['status'] = array(0 => lang('user.status0'), 1 => lang('user.status1'));
+		$view_data['status'] = array(0 => 'fa fa-times-circle', 1 => 'fa fa-check-circle');
 		$view_data['permissions'] = modules::run('permission/get_permissions_dropdown');
 		return $this->load->view($view.'.php', $view_data, true);
 	}
