@@ -36,7 +36,7 @@
 													<td><img src="/jazz/assets/images/<?php echo $status[ord($category->category_active)]; ?>" title="<?php echo lang('category.status'); ?>"></td>
 													<td>
 														<?php echo anchor('category/editcategory/'.$category->category_id, '', array('class' => "fa fa-edit", 'title' => lang('category.edit'))); ?>
-														<?php echo anchor('category/deletecategory/'.$category->category_id, '', array('class' => "fa-trash-o", 'title' => lang('category.delete'))); ?>
+														<?php echo anchor('category/deletecategory/'.$category->category_id, '', array('class' => "fa fa-trash-o", 'title' => lang('category.delete'))); ?>
 													</td>
 												</tr>
 											<?php endforeach; ?>
