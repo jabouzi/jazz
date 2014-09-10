@@ -30,13 +30,13 @@ class Template extends MX_Controller
 				$actives[5] = 'active-parent active';
 				$blocks[0] = 'display:block';
 			}
-			else if($this->uri->segment(2) == 'newuser')
+			else if($this->uri->segment(3) == 'newuser')
 			{
 				$actives[6] = 'active-parent active';
 				$actives[7] = 'active-parent active';
 				$blocks[1] = 'display:block';
 			}
-			else if($this->uri->segment(2) == 'users')
+			else if($this->uri->segment(3) == 'users')
 			{
 				$actives[6] = 'active-parent active';
 				$actives[8] = 'active-parent active';
