@@ -8,6 +8,10 @@
 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////
 $(document).ready(function () {
+	if ($(this).attr('href') == '#') {
+			e.preventDefault();
+	}		
+	$("#tabs").tabs();
 	$('.show-sidebar').on('click', function () {
 		$('div#main').toggleClass('sidebar-show');
 		setTimeout(MessagesMenuWidth, 250);
@@ -52,11 +56,6 @@ $(document).ready(function () {
 			//window.location.hash = url;
 			//LoadAjaxContent(url);
 		//}
-		if ($(this).attr('href') == '#') {
-			e.preventDefault();
-		}
-		
-		$("#tabs").tabs();
 	});
 	/*var height = window.innerHeight - 49;
 	$('#main').css('min-height', height)
