@@ -48,7 +48,7 @@
 <header class="navbar">
 	<div class="container-fluid expanded-panel">
 		<div class="row">
-			<div id="logo" class="col-xs-12 col-sm-2">
+			<div class="col-xs-12 col-sm-2">
 				<a href="index.html"><?php echo $this->session->userdata('user_firstname'); ?> <?php echo $this->session->userdata('user_lastname'); ?></a>
 			</div>
 			<div id="top-panel" class="col-xs-12 col-sm-10">
