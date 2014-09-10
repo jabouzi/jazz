@@ -40,18 +40,18 @@ $(document).ready(function () {
 			$(this).parents("ul.dropdown-menu").find('a').removeClass('active');
 			$(this).addClass('active')
 		}
-		if ($(this).hasClass('ajax-link')) {
-			e.preventDefault();
-			if ($(this).hasClass('add-full')) {
-				$('#content').addClass('full-content');
-			}
-			else {
-				$('#content').removeClass('full-content');
-			}
-			var url = $(this).attr('href');
-			window.location.hash = url;
-			LoadAjaxContent(url);
-		}
+		//if ($(this).hasClass('ajax-link')) {
+			//e.preventDefault();
+			//if ($(this).hasClass('add-full')) {
+				//$('#content').addClass('full-content');
+			//}
+			//else {
+				//$('#content').removeClass('full-content');
+			//}
+			//var url = $(this).attr('href');
+			//window.location.hash = url;
+			//LoadAjaxContent(url);
+		//}
 		//if ($(this).attr('href') == '#') {
 			//e.preventDefault();
 		//}
