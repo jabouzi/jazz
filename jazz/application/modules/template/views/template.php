@@ -64,7 +64,7 @@
 					</div>
 					<div class="col-xs-4 col-sm-8 top-panel-right">
 						<div class="search user-mini pull-right">
-							<span style="line-height: 50px;"><?php echo form_dropdown('lang', $languages, $lang, $redirect); ?></span>
+							<span><?php echo form_dropdown('lang', $languages, $lang, $redirect); ?></span>
 						</div>
 					</div>
 				</div>
