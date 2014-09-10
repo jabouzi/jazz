@@ -53,9 +53,10 @@ $(document).ready(function () {
 			//LoadAjaxContent(url);
 		//}
 		if ($(this).attr('href') == '#') {
-			console.log('#');
 			e.preventDefault();
 		}
+		
+		$("#tabs").tabs();
 	});
 	/*var height = window.innerHeight - 49;
 	$('#main').css('min-height', height)
