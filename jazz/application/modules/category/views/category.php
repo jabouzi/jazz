@@ -9,14 +9,45 @@
 						<li><a href="#tabs-3">Linux</a></li>
 					</ul>
 					<div id="tabs-1">
-						<p>
-							Android is an operating system based on the Linux kernel, and designed primarily for touchscreen
-							mobile devices such as smartphones and tablet computers. Initially developed by Android, Inc.,
-							which Google backed financially and later bought in 2005, Android was unveiled in 2007 along with
-							the founding of the Open Handset Alliance: a consortium of hardware, software, and telecommunication
-							companies devoted to advancing open standards for mobile devices. The first publicly available
-							smartphone running Android, the HTC Dream, was released on October 22, 2008.
-						</p>
+						<div class="box-content">
+							<p>Use <code>.table-striped</code> to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code>.</p>
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Name</th>
+										<th>Homepage</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Nginx</td>
+										<td>http://nginx.org</td>
+										<td>webserver</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Apache</td>
+										<td>http://apache.org</td>
+										<td>webserver</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>Skype</td>
+										<td>http://www.skype.com</td>
+										<td>Messenger</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Blender</td>
+										<td>http://www.blender.org</td>
+										<td>3D-modeller</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 					<div id="tabs-2">
 						<p>
