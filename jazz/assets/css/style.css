@@ -2363,3 +2363,11 @@ td.beauty-hover {
 	color: #B7B7B7;
 	margin-right: 7px;
 }
+
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+	color: #525252;
+}
+
+.ui-widget-content {
+	color: #525252;
+}
