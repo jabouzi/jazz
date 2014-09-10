@@ -18,7 +18,7 @@ class User extends MX_Controller
 	
 	function users()
 	{
-		$view_data['status'] = array(0 => 'fa fa-times-circle', 1 => 'fa fa-check-circle');
+		$view_data['users_status'] = array(0 => 'fa fa-times-circle', 1 => 'fa fa-check-circle');
 		$view_data['page_title'] = lang('user.users');
 		$users = $this->mdl_user->get_where_custom(array('user_permission > ' => $this->session->userdata('user_permission')));
 		$view_data['admin_widgets']['user'] = $this->show('users', $users);
