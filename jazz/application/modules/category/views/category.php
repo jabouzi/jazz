@@ -1,88 +1,88 @@
-<article class="module width_full">
-	<header><h3 class="tabs_involved"><?php echo lang('category.categorys'); ?></h3>
-		<ul class="tabs">
-			<?php foreach($languages as $language) : ?>
-				<? if (isset($categories[$language->language_id])) :?>
-					<li><a href="#<?php echo $language->language_code; ?>"><?php echo ucfirst(strtolower($language->language_name)); ?></a></li>
-				<? endif; ?>
-			<? endforeach; ?>
-		</ul>
-	</header>
-	<form id="categories_form" method="post" action="<?php echo site_url('category/process'); ?>">
-		<?php foreach($languages as $language) : ?>
-			<div id="<?php echo $language->language_code; ?>" class="tab_content">
-				<div class="tab_container">
-					<table class="tablesorter" cellspacing="0"> 
-					<thead> 
-						<tr> 
-							<th><?php echo lang('category.name'); ?></th>
-							<th><?php echo lang('category.order'); ?></th>
-							<th><?php echo lang('category.status'); ?></th>
-							<th><?php echo lang('admin.action'); ?></th>
-						</tr> 
-					</thead> 
-					<tbody id="workflow_list">
-						<?php if (element($language->language_id, $structures) ): ?>
-							<?php foreach ($structures[$language->language_id] as $category_id => $structure) : ?>
-								<?php $category = $categories[$language->language_id][$category_id]; ?>
-								<tr>
-									<?php if (trim($category->category_name) == '') : ?>
-										<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $structure) ?><input type="text" name="name[<?php echo $category->language_id ; ?>][<?php echo $category->category_id ; ?>]" value=""></td>
-									<?php else :?>
-										<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $structure) . $category->category_name ; ?></td>
-									<?php endif ?>
-									<td><input type="text" name="order[<?php echo $category->category_id ; ?>]" maxlength="2" size="2" value="<?php echo  $category->category_order ; ?>"></td>
-									<td><img src="/jazz/assets/images/<?php echo $status[ord($category->category_active)]; ?>" title="<?php echo lang('category.status'); ?>"></td>
-									<td>
-										<?php echo anchor('category/editcategory/'.$category->category_id, '<img src="/jazz/assets/images/icn_edit.png" title="'.lang('category.edit').'">'); ?>
-										<?php echo anchor('category/deletecategory/'.$category->category_id, '<img src="/jazz/assets/images/icn_trash.png" title="'.lang('category.delete').'">'); ?>
-									</td>
-								</tr>
-							<?php endforeach; ?>
-						<?php endif; ?>
-					</tbody> 
-					</table>
-				</div><!-- end of .tab_container -->
-			</div>
-		<?php endforeach; ?>
-		<footer>
-				<div class="submit_link">
-					<input type="button" id="save_category" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
-					<input type="button" id="add_category" value="<?php echo lang('admin.add'); ?>" data-toggle="modal" data-target="#addLanguage">
-					<input type="hidden" id="active_lang" name="active_lang" value="en">
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-search"></i>
+					<span>UI Tabs</span>
 				</div>
-		</footer>
-	</form>
-	<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
-	<input type="hidden" id="error_message" value="">
-	<div style="display:none" id="new_language">
-		<td><input type="text" name="new[]" value="">
+				<div class="box-icons pull-right">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content">
+				<div id="tabs">
+					<ul>
+						<li><a href="#tabs-1">Android</a></li>
+						<li><a href="#tabs-2">Firefox OS</a></li>
+						<li><a href="#tabs-3">Linux</a></li>
+					</ul>
+					<div id="tabs-1">
+						<p>
+							Android is an operating system based on the Linux kernel, and designed primarily for touchscreen
+							mobile devices such as smartphones and tablet computers. Initially developed by Android, Inc.,
+							which Google backed financially and later bought in 2005, Android was unveiled in 2007 along with
+							the founding of the Open Handset Alliance: a consortium of hardware, software, and telecommunication
+							companies devoted to advancing open standards for mobile devices. The first publicly available
+							smartphone running Android, the HTC Dream, was released on October 22, 2008.
+						</p>
+					</div>
+					<div id="tabs-2">
+						<p>
+							Firefox OS (project name: Boot to Gecko, also known as B2G) is a Linux-based open-source operating
+							system for smartphones and tablet computers and is set to be used on smart TVs. It is being developed
+							by Mozilla, the non-profit organization best known for the Firefox web browser. Firefox OS is
+							designed to provide a "complete" community-based alternative system for mobile devices, using open
+							standards and approaches such as HTML5 applications, JavaScript, a robust privilege model, open web
+							APIs to communicate directly with cellphone hardware, and application marketplace. As such,
+							it competes with proprietary systems such as Apple's iOS, Google's Chrome OS and Microsoft's Windows
+							Phone, as well as other open source systems such as Android, Jolla's Sailfish OS and Ubuntu Touch.
+						</p>
+					</div>
+					<div id="tabs-3">
+						<p>
+							Linux is a Unix-like and POSIX-compliant computer operating system assembled under the model of free
+							and open source software development and distribution. The defining component of Linux is the Linux
+							kernel, an operating system kernel first released on 5 October 1991 by Linus Torvalds.
+						</p>
+						<p>
+							Linux was originally developed as a free operating system for Intel x86-based personal computers.
+							It has since been ported to more computer hardware platforms than any other operating system.
+							It is a leading operating system on servers and other big iron systems such as mainframe computers
+							and supercomputers: as of June 2013, more than 95% of the world's 500 fastest supercomputers run
+							some variant of Linux, including all the 44 fastest. Linux also runs on embedded systems (devices
+							where the operating system is typically built into the firmware and highly tailored to the system)
+							such as mobile phones, tablet computers, network routers, building automation controls,
+							televisions and video game consoles; the Android system in wide use on mobile devices is built on
+							the Linux kernel.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-</article><!-- end of article -->
-
-<div class="modal fade bs-modal-sm" id="addLanguage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title"><?php echo lang('language.add'); ?></h4>
-      </div>
-      <div class="modal-body">
-			<table class="tablesorter" cellspacing="0">  
-				<tbody id="permission_list">
-					<?php foreach($languages as $language) : ?>
-						<tr>
-							<td style="border-bottom-color:#FFF"><?php echo ucfirst(strtolower($language->language_name)); ?></td>
-							<td style="border-bottom-color:#FFF"><input type="radio" value="<?php echo $language->language_code; ?>" name="cat_other_lang" ></td>
-						</tr>
-					<? endforeach; ?>
-				</tbody> 
-			</table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo lang('admin.cancel'); ?></button>
-        <button type="button" class="btn btn-primary"><?php echo lang('admin.save'); ?></button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	// Create jQuery-UI tabs
+	$("#tabs").tabs();
+	// Sortable for elements
+	$(".sort").sortable({
+		items: "div.col-sm-2",
+		appendTo: 'div.box-content'
+	});
+	var icons = {
+		header: "ui-icon-circle-arrow-e",
+		activeHeader: "ui-icon-circle-arrow-s"
+	};
+});
+</script>
