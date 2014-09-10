@@ -22,7 +22,7 @@
 									<td><?php echo lang('admin.status'.ord($item->user_active)); ?></td>
 									<td>
 										<?php echo anchor('user/edituser/'.$item->user_id, '&nbsp;', array('class' => "fa fa-edit", 'title' => lang('user.edit'))); ?>
-										<?php echo anchor('user/deleteuser/'.$category->category_id, '&nbsp;', array('class' => "fa fa-trash-o", 'title' => lang('user.delete'))); ?>
+										<?php echo anchor('user/deleteuser/'.$category->user_id, '&nbsp;', array('class' => "fa fa-trash-o", 'title' => lang('user.delete'))); ?>
 									</td>
 								</tr>
 							<?php endforeach ?>
