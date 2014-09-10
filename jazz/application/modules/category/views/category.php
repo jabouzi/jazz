@@ -2,7 +2,6 @@
 	<div class="col-xs-12">
 		<div class="box">
 			<div class="box-content">
-				<div id="tabs">
 					<ul>
 						<?php foreach($languages as $language) : ?>
 							<? if (isset($categories[$language->language_id])) :?>
@@ -46,7 +45,6 @@
 						</div>
 						<?php endif; ?>
 					<?php endforeach; ?>
-				</div>
 			</div>
 		</div>
 	</div>
