@@ -33,7 +33,7 @@
 														<td><?php echo str_repeat('<span class="dash_space"><nobr>|—</nobr></span>', $structure) . $category->category_name ; ?></td>
 													<?php endif ?>
 													<td><input type="text" name="order[<?php echo $category->category_id ; ?>]" maxlength="2" size="2" value="<?php echo  $category->category_order ; ?>"></td>
-													<td><img src="/jazz/assets/images/<?php echo $status[ord($category->category_active)]; ?>" title="<?php echo lang('category.status'); ?>"></td>
+													<td><span class="<?php echo $status[ord($category->category_active)]; ?>" title="<?php echo lang('category.status'); ?>"></span></td>
 													<td>
 														<?php echo anchor('category/editcategory/'.$category->category_id, '&nbsp;', array('class' => "fa fa-edit", 'title' => lang('category.edit'))); ?>
 														<?php echo anchor('category/deletecategory/'.$category->category_id, '&nbsp;', array('class' => "fa fa-trash-o", 'title' => lang('category.delete'))); ?>
