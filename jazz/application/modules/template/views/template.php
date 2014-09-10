@@ -61,7 +61,7 @@
 							<input type="text" placeholder="search"/>
 							<i class="fa fa-search"></i>
 						</div>
-						<div class="search">
+						<div class="pull-right">
 							<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
 						</div>
 					</div>
