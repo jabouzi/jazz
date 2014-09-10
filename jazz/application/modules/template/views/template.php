@@ -63,7 +63,7 @@
 						</div>
 					</div>
 					<div class="col-xs-4 col-sm-8 top-panel-right">
-						<div class="user-mini pull-right">
+						<div class="nav navbar-nav pull-right panel-menu user-mini pull-right">
 							<span><?php echo form_dropdown('lang', $languages, $lang, $redirect); ?></span>
 						</div>
 					</div>
