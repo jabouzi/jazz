@@ -12,6 +12,7 @@
 					</ul>
 					<?php foreach($languages as $language) : ?>
 						<div id="<?php echo $language->language_code; ?>">
+							<div class="box-content">
 							<table class="table table-striped"> 
 								<thead> 
 									<tr> 
@@ -42,6 +43,7 @@
 									<?php endif; ?>
 								</tbody> 
 							</table>
+						</div>
 						</div>
 					<?php endforeach; ?>
 				</div>
