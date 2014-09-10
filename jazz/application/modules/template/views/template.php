@@ -63,7 +63,7 @@
 						</div>
 					</div>
 					<div class="col-xs-8 col-sm-4 top-panel-right">
-						<div class="search">
+						<div class="search user-mini pull-right">
 							<?php echo form_dropdown('lang', $languages, $lang, $redirect); ?>
 						</div>
 					</div>
