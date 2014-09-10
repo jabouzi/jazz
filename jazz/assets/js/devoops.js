@@ -53,6 +53,7 @@ $(document).ready(function () {
 			//LoadAjaxContent(url);
 		//}
 		if ($(this).attr('href') == '#') {
+			console.log('#');
 			e.preventDefault();
 		}
 	});
