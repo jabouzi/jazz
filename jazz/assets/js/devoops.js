@@ -12,11 +12,6 @@ $(document).ready(function () {
 		$('div#main').toggleClass('sidebar-show');
 		setTimeout(MessagesMenuWidth, 250);
 	});
-	var ajax_url = location.hash.replace(/^#/, '');
-	if (ajax_url.length < 1) {
-		ajax_url = 'ajax/dashboard.html';
-	}
-	//LoadAjaxContent(ajax_url);
 	$('.main-menu').on('click', 'a', function (e) {
 		var parents = $(this).parents('li');
 		var li = $(this).closest('li.dropdown');
@@ -61,7 +56,7 @@ $(document).ready(function () {
 			//e.preventDefault();
 		//}
 	});
-	var height = window.innerHeight - 49;
+	/*var height = window.innerHeight - 49;
 	$('#main').css('min-height', height)
 		.on('click', '.expand-link', function (e) {
 			var body = $('body');
@@ -139,7 +134,7 @@ $(document).ready(function () {
 					'<div class="form-group"><label class="control-label">Password</label><input type="password" class="form-control" name="password" /></div>');
 		var button = $('<div class="text-center"><a href="index.html" class="btn btn-primary">Unlock</a></div>');
 		OpenModalBox(header, form, button);
-	});
+	});*/
 });
 
 
