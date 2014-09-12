@@ -23,24 +23,6 @@
 								<input type="text" class="form-control" name="user_email" id="user_email"  value="<?php echo $user->user_email; ?>"/>
 							</div>
 						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label"><?php echo lang('user.password'); ?></label>
-							<div class="col-sm-5">
-								<input type="text" class="form-control" name="user_password" id="user_password" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label"><?php echo lang('user.permission'); ?></label>
-							<div class="col-sm-5">
-								<?php echo form_dropdown('user_permission', $permissions, $this->input->post('user_permission'), 'class="populate placeholder"'); ?>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label"><?php echo lang('user.status'); ?></label>
-							<div class="col-sm-5">
-								<?php echo form_dropdown('user_active', $user_active, $this->input->post('user_active'), 'class="populate placeholder"'); ?>
-							</div>
-						</div>
 					</fieldset>
 					<div class="form-group">
 						<div class="col-sm-9 col-sm-offset-3">
