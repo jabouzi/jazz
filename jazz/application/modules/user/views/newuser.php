@@ -2,7 +2,7 @@
 	<div class="col-xs-12">
 		<div class="box">
 			<div class="box-content">
-				<form id="defaultForm" method="post" action="validators.html" class="form-horizontal">
+				<form id="defaultForm" method="post" action="<?php echo site_url('user/process_newuser'); ?>" class="form-horizontal">
 					<fieldset>
 						<legend><?php echo lang('user.new'); ?></legend>
 						<div class="form-group">
@@ -18,88 +18,29 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-3 control-label">Country</label>
+							<label class="col-sm-3 control-label"><?php echo lang('user.email'); ?></label>
 							<div class="col-sm-5">
-								<select class="populate placeholder" name="country" id="s2_country">
-									<option value="">-- Select a country --</option>
-									<option value="fr">France</option>
-									<option value="de">Germany</option>
-									<option value="it">Italy</option>
-									<option value="jp">Japan</option>
-									<option value="ru">Russia</option>
-									<option value="gb">United Kingdom</option>
-									<option value="us">United State</option>
-								</select>
+								<input type="text" class="form-control" name="user_email" id="user_email" />
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="col-sm-9 col-sm-offset-3">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox"  name="acceptTerms" /> Accept the terms and policies
-										<i class="fa fa-square-o small"></i>
-									</label>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-					<fieldset>
-						<legend>Regular expression based validators</legend>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Email address</label>
+							<label class="col-sm-3 control-label"><?php echo lang('user.password'); ?></label>
 							<div class="col-sm-5">
-								<input type="text" class="form-control" name="email" />
+								<input type="text" class="form-control" name="user_password" id="user_password" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-3 control-label">Website</label>
+							<label class="col-sm-3 control-label"><?php echo lang('user.permission'); ?></label>
 							<div class="col-sm-5">
-								<input type="text" class="form-control" name="website" placeholder="http://" />
+								<?php echo form_dropdown('user_permission', $permissions, $this->input->post('user_permission'), 'class="populate placeholder"'); ?>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-3 control-label">Phone number</label>
+							<label class="col-sm-3 control-label"><?php echo lang('user.status'); ?></label>
 							<div class="col-sm-5">
-								<input type="text" class="form-control" name="phoneNumber" />
+								<?php echo form_dropdown('user_active', $active, $this->input->post('user_active'), 'class="populate placeholder"'); ?>
 							</div>
 						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Hex color</label>
-							<div class="col-sm-3">
-								<input type="text" class="form-control" name="color" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">US zip code</label>
-							<div class="col-sm-3">
-								<input type="text" class="form-control" name="zipCode" />
-							</div>
-						</div>
-					</fieldset>
-					<fieldset>
-						<legend>Identical validator</legend>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Password</label>
-							<div class="col-sm-5">
-								<input type="password" class="form-control" name="password" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Retype password</label>
-							<div class="col-sm-5">
-								<input type="password" class="form-control" name="confirmPassword" />
-							</div>
-						</div>
-					</fieldset>
-					<fieldset>
-						<legend>Other validators</legend>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Ages</label>
-							<div class="col-sm-3">
-								<input type="text" class="form-control" name="ages" />
-							</div>
-						</div>
-					</fieldset>
 					<div class="form-group">
 						<div class="col-sm-9 col-sm-offset-3">
 							<button type="submit" class="btn btn-primary">Submit</button>
