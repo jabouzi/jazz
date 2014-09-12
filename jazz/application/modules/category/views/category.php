@@ -49,16 +49,16 @@
 									</div>
 								<?php endif; ?>
 							<?php endforeach; ?>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-9 col-sm-offset-3">
-								<button type="submit" class="btn btn-primary" id="save_category"><?php echo lang('admin.save'); ?></button>
-							</div>
-							<div class="col-sm-9 col-sm-offset-3">
-								<button type="submit" class="btn btn-primary"  id="add_category"><?php echo lang('admin.add'); ?></button>
-							</div>
-						</div>
+						</div>						
 					</fieldset>
+					<div class="form-group">
+						<div class="col-sm-9 col-sm-offset-3">
+							<button type="submit" class="btn btn-primary" id="save_category"><?php echo lang('admin.save'); ?></button>
+						</div>
+						<div class="col-sm-9 col-sm-offset-3">
+							<button type="submit" class="btn btn-primary"  id="add_category"><?php echo lang('admin.add'); ?></button>
+						</div>
+					</div>
 				</form>	
 			</div>
 		</div>
