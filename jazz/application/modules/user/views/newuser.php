@@ -4,7 +4,7 @@
 			<form id="user_profile" method="post" action="<?php echo site_url('user/process_newuser'); ?>">
 				<div class="box-content">
 					<div id="tabs">
-						<table class="table-bordered">
+						<table>
 							<tbody>
 								<tr>
 									<td><div class="radio"><?php echo lang('user.firstname'); ?></div></td>
