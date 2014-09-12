@@ -1,6 +1,109 @@
 <div class="row">
 	<div class="col-xs-12">
 		<div class="box">
+			<div class="box-content">
+				<form id="defaultForm" method="post" action="validators.html" class="form-horizontal">
+					<fieldset>
+						<legend>Not Empty validator</legend>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Username</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" name="username" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Country</label>
+							<div class="col-sm-5">
+								<select class="populate placeholder" name="country" id="s2_country">
+									<option value="">-- Select a country --</option>
+									<option value="fr">France</option>
+									<option value="de">Germany</option>
+									<option value="it">Italy</option>
+									<option value="jp">Japan</option>
+									<option value="ru">Russia</option>
+									<option value="gb">United Kingdom</option>
+									<option value="us">United State</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-9 col-sm-offset-3">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"  name="acceptTerms" /> Accept the terms and policies
+										<i class="fa fa-square-o small"></i>
+									</label>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Regular expression based validators</legend>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Email address</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" name="email" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Website</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" name="website" placeholder="http://" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Phone number</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" name="phoneNumber" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Hex color</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="color" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">US zip code</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="zipCode" />
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Identical validator</legend>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Password</label>
+							<div class="col-sm-5">
+								<input type="password" class="form-control" name="password" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Retype password</label>
+							<div class="col-sm-5">
+								<input type="password" class="form-control" name="confirmPassword" />
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Other validators</legend>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Ages</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="ages" />
+							</div>
+						</div>
+					</fieldset>
+					<div class="form-group">
+						<div class="col-sm-9 col-sm-offset-3">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			
+			
 			<form id="user_profile" method="post" action="<?php echo site_url('user/process_newuser'); ?>">
 				<div class="box-content">
 					<div id="tabs">
