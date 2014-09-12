@@ -49,7 +49,7 @@
 							<?php endif; ?>
 						<?php endforeach; ?>
 					</div>
-				<fieldset>	
+				</fieldset>	
 			</div>
 		</div>
 	</div>
