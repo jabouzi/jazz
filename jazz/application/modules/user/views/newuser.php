@@ -38,7 +38,7 @@
 						<div class="form-group">
 							<label class="col-sm-3 control-label"><?php echo lang('user.status'); ?></label>
 							<div class="col-sm-5">
-								<?php echo form_dropdown('user_active', $active, $this->input->post('user_active'), 'class="populate placeholder"'); ?>
+								<?php echo form_dropdown('user_active', $user_active, $this->input->post('user_active'), 'class="populate placeholder"'); ?>
 							</div>
 						</div>
 					<div class="form-group">
