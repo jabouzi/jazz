@@ -46,18 +46,13 @@
 						<div class="col-sm-9 col-sm-offset-3">
 							<button type="submit" class="btn btn-primary">Submit</button>
 						</div>
-					</div>
+					</div>					
 				</form>
+				<input type="button" id="save_user_profile" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
+				<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
+				<input type="hidden" id="error_message" value="">
+				<input type="hidden" id="email_exists_url" value="<?php echo site_url('user/email_exists'); ?>">
 			</div>
-			<?php /*<footer>
-				<div class="submit_link">
-					<input type="button" id="save_user_profile" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
-					<input type="hidden" id="admin_error" value="<?php echo lang('admin.error'); ?>">
-					<input type="hidden" id="error_message" value="">
-					<input type="hidden" id="email_exists_url" value="<?php echo site_url('user/email_exists'); ?>">
-				</div>
-			</footer>
-			</form> */?>
 		</div>
 	</div>
 </div>
