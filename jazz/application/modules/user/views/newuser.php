@@ -24,7 +24,7 @@
 								</tr>
 								<tr style="width:48%; float:left; margin-right: 3%;">
 									<td><div class="radio"><?php echo lang('user.permissions'); ?></div></td>
-									<td><div class="radio"><?php echo form_dropdown('user_permission', $permissions, $this->input->post('user_permission'), 'style="width:92%;"'); ?>
+									<td><div class="radio"><?php echo form_dropdown('user_permission', $permissions, $this->input->post('user_permission'), 'style="width:92%;"'); ?></div></td>
 								</tr>
 								<tr style="width:48%; float:left;">
 									<td><div class="radio"><?php echo lang('user.status'); ?></div></td>
