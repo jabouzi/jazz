@@ -4,11 +4,17 @@
 			<div class="box-content">
 				<form id="defaultForm" method="post" action="validators.html" class="form-horizontal">
 					<fieldset>
-						<legend>Not Empty validator</legend>
+						<legend><?php echo lang('user.new'); ?></legend>
 						<div class="form-group">
-							<label class="col-sm-3 control-label">Username</label>
+							<label class="col-sm-3 control-label"><?php echo lang('user.firstname'); ?></label>
 							<div class="col-sm-5">
-								<input type="text" class="form-control" name="username" />
+								<input type="text" class="form-control" name="user_firstname" id="user_firstname" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><?php echo lang('user.lastname'); ?></label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" name="user_lastname" id="user_lastname" />
 							</div>
 						</div>
 						<div class="form-group">
