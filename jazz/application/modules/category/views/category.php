@@ -53,7 +53,7 @@
 						<div class="form-group">
 							<div class="col-sm-9">
 								<button type="submit" class="btn btn-primary" id="save_category"><?php echo lang('admin.save'); ?></button>
-								<button type="submit" class="btn btn-primary"  id="add_category"><?php echo lang('admin.add'); ?></button>
+								<button type="submit" class="btn btn-primary" id="add_category"><?php echo lang('admin.add'); ?></button>
 							</div>
 						</div>
 					</fieldset>

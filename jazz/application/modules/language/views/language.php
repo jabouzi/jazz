@@ -28,11 +28,12 @@
 							</table>
 						</div>
 						<footer>
-								<div class="submit_link">
-									<input type="button" id="save_language" value="<?php echo lang('admin.save'); ?>" class="submit_form alt_btn">
-									<input type="button" id="add_language" value="<?php echo lang('admin.add'); ?>">
-								</div>
-						</footer>
+						<div class="form-group">
+							<div class="col-sm-9">
+								<button type="submit" class="btn btn-primary" id="save_language"><?php echo lang('admin.save'); ?></button>
+								<button type="submit" class="btn btn-primary" id="add_language"><?php echo lang('admin.add'); ?></button>
+							</div>
+						</div>
 					</fieldset>
 				</div>
 			</form>
