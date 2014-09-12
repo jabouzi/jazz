@@ -4,31 +4,31 @@
 			<form id="user_profile" method="post" action="<?php echo site_url('user/process_newuser'); ?>">
 				<div class="box-content">
 					<div id="tabs">
-						<table class="table table-striped">
+						<table class="table">
 							<tbody>
 								<tr>
-									<td><div class="radio"><label><?php echo lang('user.firstname'); ?></label></div></td>
-									<td><div class="radio"><label><input type="text" name="user_firstname" id="user_firstname" value="<?php echo $this->input->post('user_firstname'); ?>" data-validate="required" data-type="text" title="<?php echo lang('user.firstname'); ?>"></label></div></td>
+									<td><div class="radio"><?php echo lang('user.firstname'); ?></div></td>
+									<td><div class="radio"><input type="text" name="user_firstname" id="user_firstname" value="<?php echo $this->input->post('user_firstname'); ?>" data-validate="required" data-type="text" title="<?php echo lang('user.firstname'); ?>"></div></td>
 								</tr>
 								<tr>
-									<td><div class="radio"><label><?php echo lang('user.lastname'); ?></label></div></td>
-									<td><div class="radio"><label><input type="text" name="user_lastname" id="user_lastname" value="<?php echo $this->input->post('user_lastname'); ?>" data-validate="required" data-type="text" title="<?php echo lang('user.lastname'); ?>"></label></div></td>
+									<td><div class="radio"><?php echo lang('user.lastname'); ?></div></td>
+									<td><div class="radio"><input type="text" name="user_lastname" id="user_lastname" value="<?php echo $this->input->post('user_lastname'); ?>" data-validate="required" data-type="text" title="<?php echo lang('user.lastname'); ?>"></div></td>
 								</tr>
 								<tr>
-									<td><div class="radio"><label><?php echo lang('user.email'); ?></label></div></td>
-									<td><div class="radio"><label><input type="text" name="user_email" id="user_email" value="<?php echo $this->input->post('user_email'); ?>" data-validate="required" data-type="email" title="<?php echo lang('user.email'); ?>"></label></div></td>
+									<td><div class="radio"><?php echo lang('user.email'); ?></div></td>
+									<td><div class="radio"><input type="text" name="user_email" id="user_email" value="<?php echo $this->input->post('user_email'); ?>" data-validate="required" data-type="email" title="<?php echo lang('user.email'); ?>"></div></td>
 								</tr>
 								<tr>
-									<td><div class="radio"><label><?php echo lang('user.password'); ?></label></div></td>
-									<td><div class="radio"><label><input type="password" name="user_password" id="user_password" value="<?php echo $this->input->post('user_password'); ?>" data-validate="required" data-type="text" title="<?php echo lang('user.password'); ?>"></label></div></td>
+									<td><div class="radio"><?php echo lang('user.password'); ?></div></td>
+									<td><div class="radio"><input type="password" name="user_password" id="user_password" value="<?php echo $this->input->post('user_password'); ?>" data-validate="required" data-type="text" title="<?php echo lang('user.password'); ?>"></div></td>
 								</tr>
 								<tr style="width:48%; float:left; margin-right: 3%;">
-									<td><div class="radio"><label><?php echo lang('user.permissions'); ?></label></div></td>
-									<td><div class="radio"><label><?php echo form_dropdown('user_permission', $permissions, $this->input->post('user_permission'), 'style="width:92%;"'); ?>
+									<td><div class="radio"><?php echo lang('user.permissions'); ?></div></td>
+									<td><div class="radio"><?php echo form_dropdown('user_permission', $permissions, $this->input->post('user_permission'), 'style="width:92%;"'); ?>
 								</tr>
 								<tr style="width:48%; float:left;">
-									<td><div class="radio"><label><?php echo lang('user.status'); ?></label></div></td>
-									<td><div class="radio"><label><?php echo form_dropdown('user_active', $status, $this->input->post('user_active')); ?></label></div></td>
+									<td><div class="radio"><?php echo lang('user.status'); ?></div></td>
+									<td><div class="radio"><?php echo form_dropdown('user_active', $status, $this->input->post('user_active')); ?></div></td>
 								</tr>
 							</tbody>
 						</table>
