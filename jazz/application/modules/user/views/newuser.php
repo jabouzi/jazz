@@ -47,7 +47,7 @@
 						</div>
 					</div>
 				</form>
-			</div>
+			</div><?php var_dump($active); ?>
 			
 			
 			
