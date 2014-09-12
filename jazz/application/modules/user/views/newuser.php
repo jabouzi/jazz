@@ -41,6 +41,7 @@
 								<?php echo form_dropdown('user_active', $user_active, $this->input->post('user_active'), 'class="populate placeholder"'); ?>
 							</div>
 						</div>
+					</fieldset>
 					<div class="form-group">
 						<div class="col-sm-9 col-sm-offset-3">
 							<button type="submit" class="btn btn-primary">Submit</button>
