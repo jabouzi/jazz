@@ -3,7 +3,7 @@
 		<div class="box">
 			<div class="box-content">
 				<fieldset>
-					<legend><?php echo lang('category.categorys'); ?></legend>
+					<legend><?php echo lang('category.title'); ?></legend>
 					<div id="tabs">
 						<ul>
 							<?php foreach($languages as $language) : ?>
