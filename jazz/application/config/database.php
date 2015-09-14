@@ -48,10 +48,27 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'jabouzic_db';
-$db['default']['password'] = '7024043';
-$db['default']['database'] = 'jabouzic_jazz';
+if (strstr($_SERVER['HTTP_HOST'], 'jabouzi.com'))
+{
+	$db['default']['hostname'] = 'localhost';
+	$db['default']['username'] = 'jabouzic_db';
+	$db['default']['password'] = '7024043';
+	$db['default']['database'] = 'jabouzic_jazz';
+}
+else if(strstr($_SERVER['HTTP_HOST'], 'dev.tgiprojects.com'))
+{
+	$db['default']['hostname'] = 'localhost';
+	$db['default']['username'] = 'jabouzic_db';
+	$db['default']['password'] = '7024043';
+	$db['default']['database'] = 'jabouzic_jazz';
+}
+else
+{
+	$db['default']['hostname'] = 'localhost';
+	$db['default']['username'] = 'root';
+	$db['default']['password'] = '7024043';
+	$db['default']['database'] = 'jazz';
+}
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
