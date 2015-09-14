@@ -17,4 +17,10 @@ class Structure extends MX_Controller
 		$view_data = array();
 		return $this->load->view('structure', $view_data, true);
 	}
+	
+	function preview()
+	{
+		$view_data = array();
+		return $this->load->view('structure_preview', $view_data, true);
+	}
 }
